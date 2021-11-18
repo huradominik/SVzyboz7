@@ -1,0 +1,15 @@
+#-----------------------------------------------------------
+# Vivado v2021.1.1 (64-bit)
+# SW Build 3286242 on Wed Jul 28 13:10:47 MDT 2021
+# IP Build 3279568 on Wed Jul 28 16:48:48 MDT 2021
+# Start of session at: Fri Oct 22 15:30:39 2021
+# Process ID: 672
+# Current directory: C:/Scanway/Vivado/ScanEye_trigger
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent30424 C:\Scanway\Vivado\ScanEye_trigger\ScanEye_trigger.xpr
+# Log file: C:/Scanway/Vivado/ScanEye_trigger/vivado.log
+# Journal file: C:/Scanway/Vivado/ScanEye_trigger\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project C:/Scanway/Vivado/ScanEye_trigger/ScanEye_trigger.xpr
+update_compile_order -fileset sources_1
+opopen_bd_design {C:/Scanway/Vivado/ScanEye_trigger/ScanEye_trigger.srcs/sources_1/bd/scaneye_trigger/scaneye_trigger.bd}

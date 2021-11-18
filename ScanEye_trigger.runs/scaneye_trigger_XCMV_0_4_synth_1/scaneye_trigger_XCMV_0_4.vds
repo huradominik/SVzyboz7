@@ -1,0 +1,304 @@
+#-----------------------------------------------------------
+# Vivado v2021.1.1 (64-bit)
+# SW Build 3286242 on Wed Jul 28 13:10:47 MDT 2021
+# IP Build 3279568 on Wed Jul 28 16:48:48 MDT 2021
+# Start of session at: Mon Nov 15 09:43:27 2021
+# Process ID: 24136
+# Current directory: C:/Scanway/Vivado/ScanEye_trigger/ScanEye_trigger.runs/scaneye_trigger_XCMV_0_4_synth_1
+# Command line: vivado.exe -log scaneye_trigger_XCMV_0_4.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source scaneye_trigger_XCMV_0_4.tcl
+# Log file: C:/Scanway/Vivado/ScanEye_trigger/ScanEye_trigger.runs/scaneye_trigger_XCMV_0_4_synth_1/scaneye_trigger_XCMV_0_4.vds
+# Journal file: C:/Scanway/Vivado/ScanEye_trigger/ScanEye_trigger.runs/scaneye_trigger_XCMV_0_4_synth_1\vivado.jou
+#-----------------------------------------------------------
+source scaneye_trigger_XCMV_0_4.tcl -notrace
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Scanway/Vivado/ip_repo/XCMV_1.0'.
+WARNING: [IP_Flow 19-2248] Failed to load user IP repository 'c:/Scanway/Vivado/divider_presc'; Can't find the specified path.
+If this directory should no longer be in your list of user repositories, go to the IP Settings dialog and remove it.
+WARNING: [IP_Flow 19-2248] Failed to load user IP repository 'c:/Scanway/Vivado/divide_count_IP'; Can't find the specified path.
+If this directory should no longer be in your list of user repositories, go to the IP Settings dialog and remove it.
+WARNING: [IP_Flow 19-2248] Failed to load user IP repository 'c:/Scanway/Vivado/prescaler_IP'; Can't find the specified path.
+If this directory should no longer be in your list of user repositories, go to the IP Settings dialog and remove it.
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2021.1/data/ip'.
+Command: synth_design -top scaneye_trigger_XCMV_0_4 -part xc7z020clg400-1 -mode out_of_context
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7z020'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z020'
+INFO: [Device 21-403] Loading part xc7z020clg400-1
+INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
+INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
+INFO: [Synth 8-7075] Helper process launched with PID 9452
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 1352.676 ; gain = 0.000
+---------------------------------------------------------------------------------
+INFO: [Synth 8-638] synthesizing module 'scaneye_trigger_XCMV_0_4' [c:/Scanway/Vivado/ScanEye_trigger/ScanEye_trigger.gen/sources_1/bd/scaneye_trigger/ip/scaneye_trigger_XCMV_0_4/synth/scaneye_trigger_XCMV_0_4.vhd:89]
+	Parameter C_S_AXI_DATA_WIDTH bound to: 32 - type: integer 
+	Parameter C_S_AXI_ADDR_WIDTH bound to: 6 - type: integer 
+	Parameter C_NUM_OF_INTR bound to: 1 - type: integer 
+	Parameter C_INTR_SENSITIVITY bound to: 32'b11111111111111111111111111111111 
+	Parameter C_INTR_ACTIVE_STATE bound to: 32'b11111111111111111111111111111111 
+	Parameter C_IRQ_SENSITIVITY bound to: 1 - type: integer 
+	Parameter C_IRQ_ACTIVE_STATE bound to: 1 - type: integer 
+	Parameter INITIALIZATION_DELAY_TICK bound to: 2000 - type: integer 
+	Parameter RESET_DELAY_TICK bound to: 1500 - type: integer 
+	Parameter IS_TIMER_TRIGGER bound to: 0 - type: bool 
+	Parameter INTERRUPT_ENABLE bound to: 1 - type: bool 
+INFO: [Synth 8-3491] module 'XCMV_v1_0' declared at 'c:/Scanway/Vivado/ScanEye_trigger/ScanEye_trigger.gen/sources_1/bd/scaneye_trigger/ipshared/b11e/hdl/XCMV_v1_0.vhd:5' bound to instance 'U0' of component 'XCMV_v1_0' [c:/Scanway/Vivado/ScanEye_trigger/ScanEye_trigger.gen/sources_1/bd/scaneye_trigger/ip/scaneye_trigger_XCMV_0_4/synth/scaneye_trigger_XCMV_0_4.vhd:174]
+INFO: [Synth 8-638] synthesizing module 'XCMV_v1_0' [c:/Scanway/Vivado/ScanEye_trigger/ScanEye_trigger.gen/sources_1/bd/scaneye_trigger/ipshared/b11e/hdl/XCMV_v1_0.vhd:75]
+	Parameter INITIALIZATION_DELAY_TICK bound to: 2000 - type: integer 
+	Parameter RESET_DELAY_TICK bound to: 1500 - type: integer 
+	Parameter C_S_AXI_DATA_WIDTH bound to: 32 - type: integer 
+	Parameter C_S_AXI_ADDR_WIDTH bound to: 6 - type: integer 
+	Parameter C_NUM_OF_INTR bound to: 1 - type: integer 
+	Parameter C_INTR_SENSITIVITY bound to: -1 - type: integer 
+	Parameter C_INTR_ACTIVE_STATE bound to: -1 - type: integer 
+	Parameter C_IRQ_SENSITIVITY bound to: 1 - type: integer 
+	Parameter C_IRQ_ACTIVE_STATE bound to: 1 - type: integer 
+INFO: [Synth 8-3491] module 'XCMV_v1_0_S_AXI' declared at 'c:/Scanway/Vivado/ScanEye_trigger/ScanEye_trigger.gen/sources_1/bd/scaneye_trigger/ipshared/b11e/hdl/XCMV_v1_0_S_AXI.vhd:5' bound to instance 'XCMV_v1_0_S_AXI_inst' of component 'XCMV_v1_0_S_AXI' [c:/Scanway/Vivado/ScanEye_trigger/ScanEye_trigger.gen/sources_1/bd/scaneye_trigger/ipshared/b11e/hdl/XCMV_v1_0.vhd:138]
+INFO: [Synth 8-638] synthesizing module 'XCMV_v1_0_S_AXI' [c:/Scanway/Vivado/ScanEye_trigger/ScanEye_trigger.gen/sources_1/bd/scaneye_trigger/ipshared/b11e/hdl/XCMV_v1_0_S_AXI.vhd:109]
+	Parameter DATA_WIDTH bound to: 32 - type: integer 
+	Parameter COUNTER_VALUE_INIT bound to: 2000 - type: integer 
+	Parameter COUNTER_VALUE_RESET bound to: 1500 - type: integer 
+INFO: [Synth 8-3491] module 'top_trigger' declared at 'c:/Scanway/Vivado/ScanEye_trigger/ScanEye_trigger.gen/sources_1/bd/scaneye_trigger/ipshared/b11e/src/top_trigger.vhd:16' bound to instance 'top_trigger_inst' of component 'top_trigger' [c:/Scanway/Vivado/ScanEye_trigger/ScanEye_trigger.gen/sources_1/bd/scaneye_trigger/ipshared/b11e/hdl/XCMV_v1_0_S_AXI.vhd:938]
+INFO: [Synth 8-638] synthesizing module 'top_trigger' [c:/Scanway/Vivado/ScanEye_trigger/ScanEye_trigger.gen/sources_1/bd/scaneye_trigger/ipshared/b11e/src/top_trigger.vhd:56]
+INFO: [Synth 8-638] synthesizing module 'init_cmv' [c:/Scanway/Vivado/ScanEye_trigger/ScanEye_trigger.gen/sources_1/bd/scaneye_trigger/ipshared/b11e/src/init_cmv.vhd:52]
+INFO: [Synth 8-256] done synthesizing module 'init_cmv' (1#1) [c:/Scanway/Vivado/ScanEye_trigger/ScanEye_trigger.gen/sources_1/bd/scaneye_trigger/ipshared/b11e/src/init_cmv.vhd:52]
+INFO: [Synth 8-638] synthesizing module 'seq_reset' [c:/Scanway/Vivado/ScanEye_trigger/ScanEye_trigger.gen/sources_1/bd/scaneye_trigger/ipshared/b11e/src/seq_reset.vhd:21]
+INFO: [Synth 8-256] done synthesizing module 'seq_reset' (2#1) [c:/Scanway/Vivado/ScanEye_trigger/ScanEye_trigger.gen/sources_1/bd/scaneye_trigger/ipshared/b11e/src/seq_reset.vhd:21]
+INFO: [Synth 8-638] synthesizing module 'load_data' [c:/Scanway/Vivado/ScanEye_trigger/ScanEye_trigger.gen/sources_1/bd/scaneye_trigger/ipshared/b11e/src/load_data.vhd:66]
+INFO: [Synth 8-256] done synthesizing module 'load_data' (3#1) [c:/Scanway/Vivado/ScanEye_trigger/ScanEye_trigger.gen/sources_1/bd/scaneye_trigger/ipshared/b11e/src/load_data.vhd:66]
+INFO: [Synth 8-638] synthesizing module 'internal_mode' [c:/Scanway/Vivado/ScanEye_trigger/ScanEye_trigger.gen/sources_1/bd/scaneye_trigger/ipshared/b11e/src/internal_mode.vhd:42]
+INFO: [Synth 8-256] done synthesizing module 'internal_mode' (4#1) [c:/Scanway/Vivado/ScanEye_trigger/ScanEye_trigger.gen/sources_1/bd/scaneye_trigger/ipshared/b11e/src/internal_mode.vhd:42]
+INFO: [Synth 8-638] synthesizing module 'external_exp' [c:/Scanway/Vivado/ScanEye_trigger/ScanEye_trigger.gen/sources_1/bd/scaneye_trigger/ipshared/b11e/src/external_exp.vhd:50]
+INFO: [Synth 8-256] done synthesizing module 'external_exp' (5#1) [c:/Scanway/Vivado/ScanEye_trigger/ScanEye_trigger.gen/sources_1/bd/scaneye_trigger/ipshared/b11e/src/external_exp.vhd:50]
+INFO: [Synth 8-638] synthesizing module 'fsm_trig_2' [c:/Scanway/Vivado/ScanEye_trigger/ScanEye_trigger.gen/sources_1/bd/scaneye_trigger/ipshared/b11e/src/fsm_trig_2.vhd:60]
+INFO: [Synth 8-256] done synthesizing module 'fsm_trig_2' (6#1) [c:/Scanway/Vivado/ScanEye_trigger/ScanEye_trigger.gen/sources_1/bd/scaneye_trigger/ipshared/b11e/src/fsm_trig_2.vhd:60]
+INFO: [Synth 8-256] done synthesizing module 'top_trigger' (7#1) [c:/Scanway/Vivado/ScanEye_trigger/ScanEye_trigger.gen/sources_1/bd/scaneye_trigger/ipshared/b11e/src/top_trigger.vhd:56]
+INFO: [Synth 8-256] done synthesizing module 'XCMV_v1_0_S_AXI' (8#1) [c:/Scanway/Vivado/ScanEye_trigger/ScanEye_trigger.gen/sources_1/bd/scaneye_trigger/ipshared/b11e/hdl/XCMV_v1_0_S_AXI.vhd:109]
+INFO: [Synth 8-256] done synthesizing module 'XCMV_v1_0' (9#1) [c:/Scanway/Vivado/ScanEye_trigger/ScanEye_trigger.gen/sources_1/bd/scaneye_trigger/ipshared/b11e/hdl/XCMV_v1_0.vhd:75]
+INFO: [Synth 8-256] done synthesizing module 'scaneye_trigger_XCMV_0_4' (10#1) [c:/Scanway/Vivado/ScanEye_trigger/ScanEye_trigger.gen/sources_1/bd/scaneye_trigger/ip/scaneye_trigger_XCMV_0_4/synth/scaneye_trigger_XCMV_0_4.vhd:89]
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 1352.676 ; gain = 0.000
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 1352.676 ; gain = 0.000
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 1352.676 ; gain = 0.000
+---------------------------------------------------------------------------------
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.028 . Memory (MB): peak = 1352.676 ; gain = 0.000
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Completed Processing XDC Constraints
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1392.664 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.042 . Memory (MB): peak = 1392.668 ; gain = 0.004
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:15 ; elapsed = 00:00:16 . Memory (MB): peak = 1392.668 ; gain = 39.992
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7z020clg400-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:15 ; elapsed = 00:00:16 . Memory (MB): peak = 1392.668 ; gain = 39.992
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:15 ; elapsed = 00:00:16 . Memory (MB): peak = 1392.668 ; gain = 39.992
+---------------------------------------------------------------------------------
+INFO: [Synth 8-802] inferred FSM for state register 'fms_process.state_reg' in module 'fsm_trig_2'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                  init_s |                         00000001 |                              000
+                  idle_s |                         00000010 |                              001
+               seq_rst_s |                         00000100 |                              010
+         load_settings_s |                         00001000 |                              011
+                   spi_s |                         00010000 |                              100
+          internal_exp_s |                         00100000 |                              101
+          external_exp_s |                         01000000 |                              110
+             acq_image_s |                         10000000 |                              111
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'fms_process.state_reg' using encoding 'one-hot' in module 'fsm_trig_2'
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:16 ; elapsed = 00:00:17 . Memory (MB): peak = 1392.668 ; gain = 39.992
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input   32 Bit       Adders := 1     
+	   3 Input   32 Bit       Adders := 2     
+	   2 Input   11 Bit       Adders := 1     
+	   2 Input    6 Bit       Adders := 1     
+	   3 Input    4 Bit       Adders := 2     
+	   2 Input    4 Bit       Adders := 3     
++---Registers : 
+	               32 Bit    Registers := 8     
+	               11 Bit    Registers := 1     
+	                6 Bit    Registers := 3     
+	                4 Bit    Registers := 3     
+	                2 Bit    Registers := 2     
+	                1 Bit    Registers := 63    
++---Muxes : 
+	   2 Input   32 Bit        Muxes := 22    
+	   3 Input   32 Bit        Muxes := 1     
+	   7 Input   32 Bit        Muxes := 6     
+	   8 Input    8 Bit        Muxes := 1     
+	   2 Input    8 Bit        Muxes := 17    
+	   5 Input    8 Bit        Muxes := 1     
+	   2 Input    4 Bit        Muxes := 12    
+	   4 Input    4 Bit        Muxes := 1     
+	   5 Input    4 Bit        Muxes := 1     
+	   4 Input    3 Bit        Muxes := 2     
+	   2 Input    1 Bit        Muxes := 77    
+	   6 Input    1 Bit        Muxes := 1     
+	   5 Input    1 Bit        Muxes := 7     
+	   4 Input    1 Bit        Muxes := 1     
+	   8 Input    1 Bit        Muxes := 16    
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 220 (col length:60)
+BRAMs: 280 (col length: RAMB18 60 RAMB36 30)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:21 ; elapsed = 00:00:22 . Memory (MB): peak = 1392.668 ; gain = 39.992
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:28 ; elapsed = 00:00:29 . Memory (MB): peak = 1392.668 ; gain = 39.992
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:29 ; elapsed = 00:00:30 . Memory (MB): peak = 1392.668 ; gain = 39.992
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:29 ; elapsed = 00:00:30 . Memory (MB): peak = 1398.211 ; gain = 45.535
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:33 ; elapsed = 00:00:34 . Memory (MB): peak = 1407.070 ; gain = 54.395
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:33 ; elapsed = 00:00:34 . Memory (MB): peak = 1407.070 ; gain = 54.395
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:33 ; elapsed = 00:00:34 . Memory (MB): peak = 1407.070 ; gain = 54.395
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:33 ; elapsed = 00:00:34 . Memory (MB): peak = 1407.070 ; gain = 54.395
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:33 ; elapsed = 00:00:34 . Memory (MB): peak = 1407.070 ; gain = 54.395
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:33 ; elapsed = 00:00:34 . Memory (MB): peak = 1407.070 ; gain = 54.395
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+-------+------+
+|      |Cell   |Count |
++------+-------+------+
+|1     |CARRY4 |    54|
+|2     |LUT1   |     6|
+|3     |LUT2   |   100|
+|4     |LUT3   |    35|
+|5     |LUT4   |   191|
+|6     |LUT5   |    59|
+|7     |LUT6   |   323|
+|8     |FDRE   |   396|
+|9     |FDSE   |    10|
++------+-------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:33 ; elapsed = 00:00:34 . Memory (MB): peak = 1407.070 ; gain = 54.395
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 0 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:24 ; elapsed = 00:00:32 . Memory (MB): peak = 1407.070 ; gain = 14.402
+Synthesis Optimization Complete : Time (s): cpu = 00:00:33 ; elapsed = 00:00:34 . Memory (MB): peak = 1407.070 ; gain = 54.395
+INFO: [Project 1-571] Translating synthesized netlist
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.027 . Memory (MB): peak = 1419.184 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 54 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1424.789 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Synth Design complete, checksum: 883ea68b
+INFO: [Common 17-83] Releasing license: Synthesis
+42 Infos, 3 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:38 ; elapsed = 00:00:40 . Memory (MB): peak = 1424.789 ; gain = 72.113
+INFO: [Common 17-1381] The checkpoint 'C:/Scanway/Vivado/ScanEye_trigger/ScanEye_trigger.runs/scaneye_trigger_XCMV_0_4_synth_1/scaneye_trigger_XCMV_0_4.dcp' has been generated.
+INFO: [Coretcl 2-1648] Added synthesis output to IP cache for IP scaneye_trigger_XCMV_0_4, cache-ID = 4411c19d14b2a4fd
+INFO: [Coretcl 2-1174] Renamed 9 cell refs.
+INFO: [Common 17-1381] The checkpoint 'C:/Scanway/Vivado/ScanEye_trigger/ScanEye_trigger.runs/scaneye_trigger_XCMV_0_4_synth_1/scaneye_trigger_XCMV_0_4.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file scaneye_trigger_XCMV_0_4_utilization_synth.rpt -pb scaneye_trigger_XCMV_0_4_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Mon Nov 15 09:44:15 2021...

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="ASCII"?>
+<systemproject:SystemProject xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:sdkproject="http://www.xilinx.com/sdkproject" xmlns:systemproject="http://www.xilinx.com/systemproject" name="StarVIBE_soft_system" platform="C:/Scanway/Vivado/ScanEye_trigger/workspace/scaneye_trigger_wrapper_32/export/scaneye_trigger_wrapper_32/scaneye_trigger_wrapper_32.xpfm" platformUID="xilinx:zybo-z7-20::0.0(custom)" sysConfig="scaneye_trigger_wrapper_32" runtime="cpp" rootFSLocation="" linuxImage="" sysroot="">
+  <configuration name="Debug" id="com.xilinx.sdx.system.managedbuilder.debugConfiguration.675616636">
+    <configBuildOptions xsi:type="systemproject:SystemOptions">
+      <applications name="StarVIBE_soft" domainName="freertos10_xilinx_ps7_cortexa9_0" domainPrettyName="freertos10_xilinx_ps7_cortexa9_0" appBuildConfig="Debug"/>
+      <options xsi:type="sdkproject:SdkOptions" generateSdCard="true"/>
+    </configBuildOptions>
+  </configuration>
+  <configuration name="Release" id="com.xilinx.sdx.system.managedbuilder.releaseConfiguration.1853619035">
+    <configBuildOptions xsi:type="systemproject:SystemOptions">
+      <applications name="StarVIBE_soft" domainName="freertos10_xilinx_ps7_cortexa9_0" domainPrettyName="freertos10_xilinx_ps7_cortexa9_0" appBuildConfig="Release"/>
+      <options xsi:type="sdkproject:SdkOptions" generateSdCard="true"/>
+    </configBuildOptions>
+  </configuration>
+</systemproject:SystemProject>

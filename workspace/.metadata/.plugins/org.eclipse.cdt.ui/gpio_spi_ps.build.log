@@ -1,0 +1,40 @@
+11:17:57 **** Incremental Build of configuration Debug for project gpio_spi_ps ****
+make all 
+make --no-print-directory pre-build
+a9-linaro-pre-build-step
+' '
+make --no-print-directory main-build
+'Building file: ../src/helloworld.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/helloworld.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -IC:/Scanway/Vivado/ScanEye_trigger/workspace/scaneye_trigger_wrapper_spi_ps/export/scaneye_trigger_wrapper_spi_ps/sw/scaneye_trigger_wrapper_spi_ps/standalone_ps7_cortexa9_0/bspinclude/include -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.o" -o "src/helloworld.o" "../src/helloworld.c"
+../src/helloworld.c: In function 'main':
+../src/helloworld.c:69:5: warning: unused variable 'writeValue' [-Wunused-variable]
+   69 |  u8 writeValue[8] = {ADC_CH0, 0x0, ADC_CH1, 0x0, ADC_CH2, 0x0, ADC_CH3, 0x0};
+      |     ^~~~~~~~~~
+../src/helloworld.c:68:5: warning: unused variable 'readValue' [-Wunused-variable]
+   68 |  u8 readValue[8];
+      |     ^~~~~~~~~
+In file included from ../src/helloworld.c:54:
+../src/helloworld.c: At top level:
+../src/spips_access.h:14:12: warning: 'SpiSetupIntrSystem' declared 'static' but never defined [-Wunused-function]
+   14 | static int SpiSetupIntrSystem(XScuGic *IntcInstancePtr, XSpiPs *SpiInstancePtr, u16 SpiIntrId);
+      |            ^~~~~~~~~~~~~~~~~~
+../src/spips_access.h:18:15: warning: 'SpiPsInterface' defined but not used [-Wunused-variable]
+   18 | static XSpiPs SpiPsInterface;
+      |               ^~~~~~~~~~~~~~
+'Finished building: ../src/helloworld.c'
+' '
+'Building target: gpio_spi_ps.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -LC:/Scanway/Vivado/ScanEye_trigger/workspace/scaneye_trigger_wrapper_spi_ps/export/scaneye_trigger_wrapper_spi_ps/sw/scaneye_trigger_wrapper_spi_ps/standalone_ps7_cortexa9_0/bsplib/lib -o "gpio_spi_ps.elf"  ./src/GPIO_access.o ./src/SPI_access.o ./src/helloworld.o ./src/platform.o ./src/spips_access.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: gpio_spi_ps.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size gpio_spi_ps.elf  |tee "gpio_spi_ps.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  40502	   1976	  22904	  65382	   ff66	gpio_spi_ps.elf
+'Finished building: gpio_spi_ps.elf.size'
+' '
+
+11:17:57 Build Finished (took 845ms)
+

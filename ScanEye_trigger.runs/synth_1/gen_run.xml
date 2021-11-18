@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GenRun Id="synth_1" LaunchPart="xc7z020clg400-1" LaunchTime="1636965740">
+  <File Type="PA-TCL" Name="scaneye_trigger_wrapper.tcl"/>
+  <File Type="RDS-PROPCONSTRS" Name="scaneye_trigger_wrapper_drc_synth.rpt"/>
+  <File Type="REPORTS-TCL" Name="scaneye_trigger_wrapper_reports.tcl"/>
+  <File Type="RDS-RDS" Name="scaneye_trigger_wrapper.vds"/>
+  <File Type="RDS-UTIL" Name="scaneye_trigger_wrapper_utilization_synth.rpt"/>
+  <File Type="RDS-UTIL-PB" Name="scaneye_trigger_wrapper_utilization_synth.pb"/>
+  <File Type="RDS-DCP" Name="scaneye_trigger_wrapper.dcp"/>
+  <File Type="VDS-TIMINGSUMMARY" Name="scaneye_trigger_wrapper_timing_summary_synth.rpt"/>
+  <File Type="VDS-TIMING-PB" Name="scaneye_trigger_wrapper_timing_summary_synth.pb"/>
+  <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1" RelGenDir="$PGENDIR/sources_1">
+    <Filter Type="Srcs"/>
+    <File Path="$PSRCDIR/sources_1/bd/scaneye_trigger/scaneye_trigger.bd">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PGENDIR/sources_1/bd/scaneye_trigger/hdl/scaneye_trigger_wrapper.vhd">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <Config>
+      <Option Name="DesignMode" Val="RTL"/>
+      <Option Name="TopModule" Val="scaneye_trigger_wrapper"/>
+      <Option Name="TopAutoSet" Val="TRUE"/>
+    </Config>
+  </FileSet>
+  <FileSet Name="constrs_in" Type="Constrs" RelSrcDir="$PSRCDIR/constrs_1">
+    <Filter Type="Constrs"/>
+    <File Path="$PSRCDIR/constrs_1/new/GPIO_LED.xdc">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/constrs_1/new/GPIO_SW.xdc">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/constrs_1/new/SPI_PMOD.xdc">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/constrs_1/new/CLOCK_PMOD.xdc">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/constrs_1/new/GPIO_OUT.xdc">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+      </FileInfo>
+    </File>
+    <Config>
+      <Option Name="ConstrsType" Val="XDC"/>
+    </Config>
+  </FileSet>
+  <FileSet Name="utils" Type="Utils" RelSrcDir="$PSRCDIR/utils_1">
+    <Filter Type="Utils"/>
+    <Config>
+      <Option Name="TopAutoSet" Val="TRUE"/>
+    </Config>
+  </FileSet>
+  <Strategy Version="1" Minor="2">
+    <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2020"/>
+    <Step Id="synth_design"/>
+  </Strategy>
+  <BlockFileSet Type="BlockSrcs" Name="scaneye_trigger_axi_gpio_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="scaneye_trigger_axi_timer_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="scaneye_trigger_processing_system7_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="scaneye_trigger_axi_quad_spi_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="scaneye_trigger_rst_ps7_0_100M_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="scaneye_trigger_xbar_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="scaneye_trigger_ila_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="scaneye_trigger_clk_wiz_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="scaneye_trigger_XCMV_0_4"/>
+  <BlockFileSet Type="BlockSrcs" Name="scaneye_trigger_auto_pc_0"/>
+</GenRun>

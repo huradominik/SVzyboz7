@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="ASCII"?>
+<sdkproject:SdkProject xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:sdkproject="http://www.xilinx.com/sdkproject" name="gpio_spi_ps" location="C:/Scanway/Vivado/ScanEye_trigger/workspace/gpio_spi_ps" platform="C:/Scanway/Vivado/ScanEye_trigger/workspace/scaneye_trigger_wrapper_spi_ps/export/scaneye_trigger_wrapper_spi_ps/scaneye_trigger_wrapper_spi_ps.xpfm" platformUID="xilinx:zybo-z7-20::0.0(custom)" systemProject="gpio_spi_ps_system" sysConfig="scaneye_trigger_wrapper_spi_ps" runtime="cpp" cpu="standalone_ps7_cortexa9_0" cpuInstance="ps7_cortexa9_0" os="standalone" mssSignature="f61f8fe988d4bf5d985fa5440db14a70">
+  <configuration name="Debug" id="xilinx.gnu.armv7.exe.debug.1090321298">
+    <configBuildOptions xsi:type="sdkproject:SdkOptions"/>
+    <lastBuildOptions xsi:type="sdkproject:SdkOptions"/>
+  </configuration>
+  <configuration name="Release" id="xilinx.gnu.armv7.exe.release.592207436" dirty="true">
+    <configBuildOptions xsi:type="sdkproject:SdkOptions"/>
+  </configuration>
+  <template appTemplateName="empty_application"/>
+</sdkproject:SdkProject>

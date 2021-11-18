@@ -1,0 +1,42 @@
+#-----------------------------------------------------------
+# Vivado v2020.2 (64-bit)
+# SW Build 3064766 on Wed Nov 18 09:12:45 MST 2020
+# IP Build 3064653 on Wed Nov 18 14:17:31 MST 2020
+# Start of session at: Mon Oct 11 08:17:41 2021
+# Process ID: 7500
+# Current directory: E:/Viv/ScanEye_trigger
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent31268 E:\Viv\ScanEye_trigger\ScanEye_trigger.xpr
+# Log file: E:/Viv/ScanEye_trigger/vivado.log
+# Journal file: E:/Viv/ScanEye_trigger\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project E:/Viv/ScanEye_trigger/ScanEye_trigger.xpr
+Scanning sources...
+Finished scanning sources
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'e:/Viv/ip_repo/XCMV_1.0'.
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'e:/Viv/divider_presc'.
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'e:/Viv/divide_count_IP'.
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'e:/Viv/prescaler_IP'.
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'E:/Xilinx/Vivado/2020.2/data/ip'.
+open_project: Time (s): cpu = 00:00:28 ; elapsed = 00:00:44 . Memory (MB): peak = 1094.207 ; gain = 141.707
+open_bd_design {E:/Viv/ScanEye_trigger/ScanEye_trigger.srcs/sources_1/bd/scaneye_trigger/scaneye_trigger.bd}
+Reading block design file <E:/Viv/ScanEye_trigger/ScanEye_trigger.srcs/sources_1/bd/scaneye_trigger/scaneye_trigger.bd>...
+Adding component instance block -- xilinx.com:ip:axi_timer:2.0 - axi_timer_0
+Adding component instance block -- xilinx.com:ip:processing_system7:5.5 - processing_system7_0
+Adding component instance block -- xilinx.com:ip:xlconcat:2.1 - xlconcat_0
+Adding component instance block -- xilinx.com:ip:axi_gpio:2.0 - axi_gpio_0
+Adding component instance block -- xilinx.com:ip:axi_interconnect:2.1 - ps7_0_axi_periph
+Adding component instance block -- xilinx.com:ip:axi_crossbar:2.1 - xbar
+Adding component instance block -- xilinx.com:ip:axi_protocol_converter:2.1 - auto_pc
+Adding component instance block -- xilinx.com:ip:proc_sys_reset:5.0 - rst_ps7_0_100M
+Adding component instance block -- xilinx.com:ip:clk_wiz:6.0 - clk_wiz_0
+Adding component instance block -- xilinx.com:ip:axi_quad_spi:3.2 - SPI
+Adding component instance block -- xilinx.com:ip:ila:6.2 - ila_0
+INFO: [xilinx.com:ip:ila:6.2-6] /ila_0: Xilinx recommends using the System ILA IP in IP Integrator. The System ILA IP is functionally equivalent to an ILA and offers additional benefits in debugging interfaces both within IP Integrator and the Hardware Manager. Consult the Programming and Debug User Guide UG908 for further details.
+Adding component instance block -- xilinx.com:user:XCMV:1.0 - XCMV_0
+Successfully read diagram <scaneye_trigger> from block design file <E:/Viv/ScanEye_trigger/ScanEye_trigger.srcs/sources_1/bd/scaneye_trigger/scaneye_trigger.bd>
+open_bd_design: Time (s): cpu = 00:00:28 ; elapsed = 00:00:47 . Memory (MB): peak = 1257.043 ; gain = 137.848
+update_compile_order -fileset sources_1
+exit
+INFO: [Common 17-206] Exiting Vivado at Mon Oct 11 08:27:41 2021...

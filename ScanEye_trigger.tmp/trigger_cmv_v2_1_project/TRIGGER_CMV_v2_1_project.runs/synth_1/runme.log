@@ -1,0 +1,275 @@
+
+*** Running vivado
+    with args -log TRIGGER_CMV_v2_0.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source TRIGGER_CMV_v2_0.tcl
+
+
+
+****** Vivado v2020.2 (64-bit)
+  **** SW Build 3064766 on Wed Nov 18 09:12:45 MST 2020
+  **** IP Build 3064653 on Wed Nov 18 14:17:31 MST 2020
+    ** Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
+
+source TRIGGER_CMV_v2_0.tcl -notrace
+create_project: Time (s): cpu = 00:00:03 ; elapsed = 00:00:10 . Memory (MB): peak = 924.758 ; gain = 0.000
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'e:/Viv/ip_repo/TRIGGER_CMV_2.0'.
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'e:/Viv/divider_presc'.
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'e:/Viv/divide_count_IP'.
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'e:/Viv/prescaler_IP'.
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'E:/Xilinx/Vivado/2020.2/data/ip'.
+update_ip_catalog: Time (s): cpu = 00:00:01 ; elapsed = 00:00:06 . Memory (MB): peak = 924.758 ; gain = 0.000
+WARNING: [IP_Flow 19-4995] The host OS only allows 260 characters in a normal path. The IP cache path is more than 80 characters. If you experience issues with IP caching, please consider changing the IP cache to a location with a shorter path. Alternately consider using the OS subst command to map part of the path to a drive letter. 
+Current IP cache path is e:/viv/scaneye_trigger/scaneye_trigger.tmp/trigger_cmv_v2_1_project/TRIGGER_CMV_v2_1_project.cache/ip 
+Command: synth_design -top TRIGGER_CMV_v2_0 -part xc7z020clg400-1
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7z020'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z020'
+INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
+INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
+INFO: [Synth 8-7075] Helper process launched with PID 4880
+---------------------------------------------------------------------------------
+Starting Synthesize : Time (s): cpu = 00:00:05 ; elapsed = 00:00:11 . Memory (MB): peak = 924.758 ; gain = 0.000
+---------------------------------------------------------------------------------
+INFO: [Synth 8-638] synthesizing module 'TRIGGER_CMV_v2_0' [e:/Viv/ip_repo/TRIGGER_CMV_2.0/hdl/TRIGGER_CMV_v2_0.vhd:56]
+	Parameter C_S00_AXI_DATA_WIDTH bound to: 32 - type: integer 
+	Parameter C_S00_AXI_ADDR_WIDTH bound to: 5 - type: integer 
+	Parameter C_S_AXI_DATA_WIDTH bound to: 32 - type: integer 
+	Parameter C_S_AXI_ADDR_WIDTH bound to: 5 - type: integer 
+INFO: [Synth 8-3491] module 'TRIGGER_CMV_v2_0_S00_AXI' declared at 'e:/Viv/ip_repo/TRIGGER_CMV_2.0/hdl/TRIGGER_CMV_v2_0_S00_AXI.vhd:5' bound to instance 'TRIGGER_CMV_v2_0_S00_AXI_inst' of component 'TRIGGER_CMV_v2_0_S00_AXI' [e:/Viv/ip_repo/TRIGGER_CMV_2.0/hdl/TRIGGER_CMV_v2_0.vhd:101]
+INFO: [Synth 8-638] synthesizing module 'TRIGGER_CMV_v2_0_S00_AXI' [e:/Viv/ip_repo/TRIGGER_CMV_2.0/hdl/TRIGGER_CMV_v2_0_S00_AXI.vhd:93]
+	Parameter C_S_AXI_DATA_WIDTH bound to: 32 - type: integer 
+	Parameter C_S_AXI_ADDR_WIDTH bound to: 5 - type: integer 
+INFO: [Synth 8-226] default block is never used [e:/Viv/ip_repo/TRIGGER_CMV_2.0/hdl/TRIGGER_CMV_v2_0_S00_AXI.vhd:447]
+	Parameter DATA_WIDTH bound to: 32 - type: integer 
+	Parameter COUNTER_VALUE_INIT bound to: 1600 - type: integer 
+	Parameter COUNTER_VALUE_SEQ_RST bound to: 2000 - type: integer 
+INFO: [Synth 8-3491] module 'top_trigger' declared at 'e:/Viv/ip_repo/TRIGGER_CMV_2.0/hdl/top_trigger.vhd:15' bound to instance 'top_trigger_inst' of component 'top_trigger' [e:/Viv/ip_repo/TRIGGER_CMV_2.0/hdl/TRIGGER_CMV_v2_0_S00_AXI.vhd:489]
+INFO: [Synth 8-638] synthesizing module 'top_trigger' [e:/Viv/ip_repo/TRIGGER_CMV_2.0/hdl/top_trigger.vhd:55]
+	Parameter DATA_WIDTH bound to: 32 - type: integer 
+	Parameter COUNTER_VALUE_INIT bound to: 1600 - type: integer 
+	Parameter COUNTER_VALUE_SEQ_RST bound to: 2000 - type: integer 
+INFO: [Synth 8-638] synthesizing module 'init_cmv' [e:/Viv/ip_repo/TRIGGER_CMV_2.0/hdl/init_cmv.vhd:47]
+	Parameter COUNTER_VALUE bound to: 1600 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'init_cmv' (1#1) [e:/Viv/ip_repo/TRIGGER_CMV_2.0/hdl/init_cmv.vhd:47]
+INFO: [Synth 8-638] synthesizing module 'seq_reset' [e:/Viv/ip_repo/TRIGGER_CMV_2.0/hdl/seq_reset.vhd:23]
+	Parameter COUNTER_VALUE bound to: 2000 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'seq_reset' (2#1) [e:/Viv/ip_repo/TRIGGER_CMV_2.0/hdl/seq_reset.vhd:23]
+INFO: [Synth 8-638] synthesizing module 'load_data' [e:/Viv/ip_repo/TRIGGER_CMV_2.0/hdl/load_data.vhd:66]
+INFO: [Synth 8-256] done synthesizing module 'load_data' (3#1) [e:/Viv/ip_repo/TRIGGER_CMV_2.0/hdl/load_data.vhd:66]
+INFO: [Synth 8-638] synthesizing module 'internal_mode' [e:/Viv/ip_repo/TRIGGER_CMV_2.0/hdl/internal_mode.vhd:37]
+INFO: [Synth 8-256] done synthesizing module 'internal_mode' (4#1) [e:/Viv/ip_repo/TRIGGER_CMV_2.0/hdl/internal_mode.vhd:37]
+INFO: [Synth 8-638] synthesizing module 'external_exp' [e:/Viv/ip_repo/TRIGGER_CMV_2.0/hdl/external_exp.vhd:55]
+INFO: [Synth 8-256] done synthesizing module 'external_exp' (5#1) [e:/Viv/ip_repo/TRIGGER_CMV_2.0/hdl/external_exp.vhd:55]
+INFO: [Synth 8-638] synthesizing module 'fsm_trig_2' [e:/Viv/ip_repo/TRIGGER_CMV_2.0/hdl/fsm_trig_2.vhd:70]
+	Parameter DATA_WIDTH bound to: 32 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'fsm_trig_2' (6#1) [e:/Viv/ip_repo/TRIGGER_CMV_2.0/hdl/fsm_trig_2.vhd:70]
+INFO: [Synth 8-256] done synthesizing module 'top_trigger' (7#1) [e:/Viv/ip_repo/TRIGGER_CMV_2.0/hdl/top_trigger.vhd:55]
+INFO: [Synth 8-256] done synthesizing module 'TRIGGER_CMV_v2_0_S00_AXI' (8#1) [e:/Viv/ip_repo/TRIGGER_CMV_2.0/hdl/TRIGGER_CMV_v2_0_S00_AXI.vhd:93]
+INFO: [Synth 8-256] done synthesizing module 'TRIGGER_CMV_v2_0' (9#1) [e:/Viv/ip_repo/TRIGGER_CMV_2.0/hdl/TRIGGER_CMV_v2_0.vhd:56]
+---------------------------------------------------------------------------------
+Finished Synthesize : Time (s): cpu = 00:00:07 ; elapsed = 00:00:16 . Memory (MB): peak = 937.461 ; gain = 12.703
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:07 ; elapsed = 00:00:17 . Memory (MB): peak = 937.461 ; gain = 12.703
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7z020clg400-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:07 ; elapsed = 00:00:17 . Memory (MB): peak = 937.461 ; gain = 12.703
+---------------------------------------------------------------------------------
+INFO: [Device 21-403] Loading part xc7z020clg400-1
+INFO: [Synth 8-802] inferred FSM for state register 'fms_process.state_reg' in module 'fsm_trig_2'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                  init_s |                             0000 |                             0000
+               seq_rst_s |                             0001 |                             0010
+                  idle_s |                             0010 |                             0001
+             load_data_s |                             0011 |                             0011
+                   spi_s |                             0100 |                             0100
+           timer_trigg_s |                             0101 |                             0101
+          internal_exp_s |                             0110 |                             0110
+          external_exp_s |                             0111 |                             0111
+             acq_image_s |                             1000 |                             1000
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'fms_process.state_reg' using encoding 'sequential' in module 'fsm_trig_2'
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:09 ; elapsed = 00:00:18 . Memory (MB): peak = 937.461 ; gain = 12.703
+---------------------------------------------------------------------------------
+No constraint files found.
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input   11 Bit       Adders := 2     
+	   2 Input    6 Bit       Adders := 1     
+	   3 Input    4 Bit       Adders := 1     
+	   2 Input    4 Bit       Adders := 1     
++---Registers : 
+	               32 Bit    Registers := 8     
+	               11 Bit    Registers := 2     
+	                6 Bit    Registers := 1     
+	                5 Bit    Registers := 2     
+	                4 Bit    Registers := 1     
+	                2 Bit    Registers := 2     
+	                1 Bit    Registers := 35    
++---Muxes : 
+	   2 Input   32 Bit        Muxes := 7     
+	   8 Input   32 Bit        Muxes := 7     
+	   2 Input    4 Bit        Muxes := 10    
+	   9 Input    4 Bit        Muxes := 1     
+	   6 Input    4 Bit        Muxes := 1     
+	   4 Input    3 Bit        Muxes := 2     
+	   2 Input    1 Bit        Muxes := 52    
+	   4 Input    1 Bit        Muxes := 1     
+	   6 Input    1 Bit        Muxes := 7     
+	   9 Input    1 Bit        Muxes := 18    
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 220 (col length:60)
+BRAMs: 280 (col length: RAMB18 60 RAMB36 30)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+No constraint files found.
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:15 ; elapsed = 00:00:32 . Memory (MB): peak = 1161.375 ; gain = 236.617
+---------------------------------------------------------------------------------
+No constraint files found.
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:15 ; elapsed = 00:00:33 . Memory (MB): peak = 1166.922 ; gain = 242.164
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:16 ; elapsed = 00:00:33 . Memory (MB): peak = 1176.133 ; gain = 251.375
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:20 ; elapsed = 00:00:37 . Memory (MB): peak = 1176.133 ; gain = 251.375
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:20 ; elapsed = 00:00:38 . Memory (MB): peak = 1176.133 ; gain = 251.375
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:20 ; elapsed = 00:00:38 . Memory (MB): peak = 1176.133 ; gain = 251.375
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:20 ; elapsed = 00:00:38 . Memory (MB): peak = 1176.133 ; gain = 251.375
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:20 ; elapsed = 00:00:38 . Memory (MB): peak = 1176.133 ; gain = 251.375
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:20 ; elapsed = 00:00:38 . Memory (MB): peak = 1176.133 ; gain = 251.375
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+-------+------+
+|      |Cell   |Count |
++------+-------+------+
+|1     |BUFG   |     1|
+|2     |CARRY4 |    12|
+|3     |LUT1   |     5|
+|4     |LUT2   |    16|
+|5     |LUT3   |    14|
+|6     |LUT4   |    60|
+|7     |LUT5   |    74|
+|8     |LUT6   |   105|
+|9     |MUXF7  |    34|
+|10    |FDRE   |   358|
+|11    |FDSE   |     6|
+|12    |IBUF   |    52|
+|13    |OBUF   |    44|
++------+-------+------+
+
+Report Instance Areas: 
++------+--------------------------------+-------------------------+------+
+|      |Instance                        |Module                   |Cells |
++------+--------------------------------+-------------------------+------+
+|1     |top                             |                         |   781|
+|2     |  TRIGGER_CMV_v2_0_S00_AXI_inst |TRIGGER_CMV_v2_0_S00_AXI |   684|
+|3     |    top_trigger_inst            |top_trigger              |   301|
+|4     |      external_mode_inst        |external_exp             |   111|
+|5     |      fsm_trig_2_inst           |fsm_trig_2               |    89|
+|6     |      init_inst                 |init_cmv                 |    34|
+|7     |      internal_mode_inst        |internal_mode            |    23|
+|8     |      load_data_inst            |load_data                |     4|
+|9     |      seq_reset_inst            |seq_reset                |    40|
++------+--------------------------------+-------------------------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:20 ; elapsed = 00:00:38 . Memory (MB): peak = 1176.133 ; gain = 251.375
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 0 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:20 ; elapsed = 00:00:38 . Memory (MB): peak = 1176.133 ; gain = 251.375
+Synthesis Optimization Complete : Time (s): cpu = 00:00:20 ; elapsed = 00:00:38 . Memory (MB): peak = 1176.133 ; gain = 251.375
+INFO: [Project 1-571] Translating synthesized netlist
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.040 . Memory (MB): peak = 1179.012 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 46 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1277.695 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+INFO: [Common 17-83] Releasing license: Synthesis
+41 Infos, 1 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:27 ; elapsed = 00:00:54 . Memory (MB): peak = 1277.695 ; gain = 352.938
+INFO: [Common 17-1381] The checkpoint 'e:/Viv/ScanEye_trigger/ScanEye_trigger.tmp/trigger_cmv_v2_1_project/TRIGGER_CMV_v2_1_project.runs/synth_1/TRIGGER_CMV_v2_0.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file TRIGGER_CMV_v2_0_utilization_synth.rpt -pb TRIGGER_CMV_v2_0_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Tue Sep  7 15:24:10 2021...

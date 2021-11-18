@@ -1,0 +1,52 @@
+Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2021.1.1 (win64) Build 3286242 Wed Jul 28 13:10:47 MDT 2021
+| Date         : Mon Nov 15 09:46:01 2021
+| Host         : DESKTOP-JATBKJM running 64-bit major release  (build 9200)
+| Command      : report_drc -file scaneye_trigger_wrapper_drc_opted.rpt -pb scaneye_trigger_wrapper_drc_opted.pb -rpx scaneye_trigger_wrapper_drc_opted.rpx
+| Design       : scaneye_trigger_wrapper
+| Device       : xc7z020clg400-1
+| Speed File   : -1
+| Design State : Synthesized
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Report DRC
+
+Table of Contents
+-----------------
+1. REPORT SUMMARY
+2. REPORT DETAILS
+
+1. REPORT SUMMARY
+-----------------
+            Netlist: netlist
+          Floorplan: design_1
+      Design limits: <entire design considered>
+           Ruledeck: default
+             Max violations: <unlimited>
+             Violations found: 3
++--------+----------+---------------------------------+------------+
+| Rule   | Severity | Description                     | Violations |
++--------+----------+---------------------------------+------------+
+| BUFC-1 | Warning  | Input Buffer Connections        | 2          |
+| RPBF-3 | Warning  | IO port buffering is incomplete | 1          |
++--------+----------+---------------------------------+------------+
+
+2. REPORT DETAILS
+-----------------
+BUFC-1#1 Warning
+Input Buffer Connections  
+Input buffer spi_pmod_sck_iobuf/IBUF (in spi_pmod_sck_iobuf macro) has no loads. It is recommended to have an input buffer drive an internal load.
+Related violations: <none>
+
+BUFC-1#2 Warning
+Input Buffer Connections  
+Input buffer spi_pmod_ss_iobuf_0/IBUF (in spi_pmod_ss_iobuf_0 macro) has no loads. It is recommended to have an input buffer drive an internal load.
+Related violations: <none>
+
+RPBF-3#1 Warning
+IO port buffering is incomplete  
+Device port frame_req_0 expects both input and output buffering but the buffers are incomplete.
+Related violations: <none>
+
+

@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;StarVIBE_soft/src/devices/clkwizz_access.c&apos; to &apos;clkwiz_access.c&apos;" description="Rename resource &apos;clkwizz_access.c&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="src/devices/clkwizz_access.c" name="clkwiz_access.c" stamp="1636972668658" updateReferences="true"/>
+</session>

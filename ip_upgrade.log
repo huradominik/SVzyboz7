@@ -1,0 +1,142 @@
+Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
+--------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2021.1.1 (win64) Build 3286242 Wed Jul 28 13:10:47 MDT 2021
+| Date         : Thu Nov  4 15:03:31 2021
+| Host         : DESKTOP-JATBKJM running 64-bit major release  (build 9200)
+| Command      : upgrade_ip
+| Device       : xc7z020clg400-1
+--------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'scaneye_trigger_XCMV_0_4'
+
+1. Summary
+----------
+
+SUCCESS in the upgrade of scaneye_trigger_XCMV_0_4 from xilinx.com:user:XCMV:1.0 (Rev. 18) to xilinx.com:user:XCMV:1.1 (Rev. 1)
+
+
+
+
+
+
+Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
+--------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2021.1.1 (win64) Build 3286242 Wed Jul 28 13:10:47 MDT 2021
+| Date         : Fri Oct 22 11:13:57 2021
+| Host         : DESKTOP-JATBKJM running 64-bit major release  (build 9200)
+| Command      : upgrade_ip
+| Device       : xc7z020clg400-1
+--------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'scaneye_trigger_XCMV_0_4'
+
+1. Summary
+----------
+
+SUCCESS in the upgrade of scaneye_trigger_XCMV_0_4 (xilinx.com:user:XCMV:1.0) from (Rev. 17) to (Rev. 18)
+
+
+
+
+
+
+Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
+--------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2021.1.1 (win64) Build 3286242 Wed Jul 28 13:10:47 MDT 2021
+| Date         : Fri Oct 22 08:19:34 2021
+| Host         : DESKTOP-JATBKJM running 64-bit major release  (build 9200)
+| Command      : upgrade_ip
+| Device       : xc7z020clg400-1
+--------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'scaneye_trigger_ps7_0_axi_periph_0'
+
+1. Summary
+----------
+
+SUCCESS in the upgrade of scaneye_trigger_ps7_0_axi_periph_0 (xilinx.com:ip:axi_interconnect:2.1) from (Rev. 23) to (Rev. 25)
+
+
+
+
+
+
+Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
+--------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2021.1.1 (win64) Build 3286242 Wed Jul 28 13:10:47 MDT 2021
+| Date         : Fri Oct 22 08:19:34 2021
+| Host         : DESKTOP-JATBKJM running 64-bit major release  (build 9200)
+| Command      : upgrade_ip
+| Device       : xc7z020clg400-1
+--------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'scaneye_trigger_clk_wiz_0_0'
+
+1. Summary
+----------
+
+SUCCESS in the upgrade of scaneye_trigger_clk_wiz_0_0 (xilinx.com:ip:clk_wiz:6.0) from (Rev. 6) to (Rev. 8)
+
+
+
+
+
+
+Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
+--------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2021.1.1 (win64) Build 3286242 Wed Jul 28 13:10:47 MDT 2021
+| Date         : Fri Oct 22 08:19:34 2021
+| Host         : DESKTOP-JATBKJM running 64-bit major release  (build 9200)
+| Command      : upgrade_ip
+| Device       : xc7z020clg400-1
+--------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'scaneye_trigger_axi_timer_0_0'
+
+1. Summary
+----------
+
+SUCCESS in the upgrade of scaneye_trigger_axi_timer_0_0 (xilinx.com:ip:axi_timer:2.0) from (Rev. 24) to (Rev. 26)
+
+
+
+
+
+
+Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
+--------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2021.1.1 (win64) Build 3286242 Wed Jul 28 13:10:47 MDT 2021
+| Date         : Fri Oct 22 08:19:34 2021
+| Host         : DESKTOP-JATBKJM running 64-bit major release  (build 9200)
+| Command      : upgrade_ip
+| Device       : xc7z020clg400-1
+--------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'scaneye_trigger_axi_quad_spi_0_0'
+
+1. Summary
+----------
+
+SUCCESS in the upgrade of scaneye_trigger_axi_quad_spi_0_0 (xilinx.com:ip:axi_quad_spi:3.2) from (Rev. 21) to (Rev. 23)
+
+
+
+
+
+
+Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
+--------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2021.1.1 (win64) Build 3286242 Wed Jul 28 13:10:47 MDT 2021
+| Date         : Fri Oct 22 08:19:34 2021
+| Host         : DESKTOP-JATBKJM running 64-bit major release  (build 9200)
+| Command      : upgrade_ip
+| Device       : xc7z020clg400-1
+--------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'scaneye_trigger_axi_gpio_0_0'
+
+1. Summary
+----------
+
+SUCCESS in the upgrade of scaneye_trigger_axi_gpio_0_0 (xilinx.com:ip:axi_gpio:2.0) from (Rev. 24) to (Rev. 26)
+

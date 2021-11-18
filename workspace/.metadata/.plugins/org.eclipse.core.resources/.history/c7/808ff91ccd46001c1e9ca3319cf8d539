@@ -1,0 +1,12 @@
+#ifndef USERINTERFACE_H_
+#define USERINTERFACE_H_
+
+
+char interfaceMain();
+void interfaceCmv12000();
+void interfaceHousekeeping();
+void interfaceSettings();
+
+
+
+#endif

@@ -1,0 +1,38 @@
+14:02:44 **** Incremental Build of configuration Debug for project SPI_GPIO ****
+make all 
+make --no-print-directory pre-build
+a9-linaro-pre-build-step
+' '
+make --no-print-directory main-build
+'Building file: ../src/helloworld.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/helloworld.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -IC:/Scanway/Vivado/ScanEye_trigger/workspace/scaneye_trigger_wrapper_SPI_GPIO/export/scaneye_trigger_wrapper_SPI_GPIO/sw/scaneye_trigger_wrapper_SPI_GPIO/standalone_ps7_cortexa9_0/bspinclude/include -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.o" -o "src/helloworld.o" "../src/helloworld.c"
+../src/helloworld.c: In function 'main':
+../src/helloworld.c:69:17: warning: initialization of 'u16 *' {aka 'short unsigned int *'} from incompatible pointer type 'u8 (*)[8]' {aka 'unsigned char (*)[8]'} [-Wincompatible-pointer-types]
+   69 |  u16 *ptrRead = &readValue;
+      |                 ^
+../src/helloworld.c:70:18: warning: initialization of 'u16 *' {aka 'short unsigned int *'} from incompatible pointer type 'u8 (*)[8]' {aka 'unsigned char (*)[8]'} [-Wincompatible-pointer-types]
+   70 |  u16 *ptrWrite = &writeValue;
+      |                  ^
+../src/helloworld.c:70:7: warning: unused variable 'ptrWrite' [-Wunused-variable]
+   70 |  u16 *ptrWrite = &writeValue;
+      |       ^~~~~~~~
+../src/helloworld.c:69:7: warning: unused variable 'ptrRead' [-Wunused-variable]
+   69 |  u16 *ptrRead = &readValue;
+      |       ^~~~~~~
+'Finished building: ../src/helloworld.c'
+' '
+'Building target: SPI_GPIO.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -LC:/Scanway/Vivado/ScanEye_trigger/workspace/scaneye_trigger_wrapper_SPI_GPIO/export/scaneye_trigger_wrapper_SPI_GPIO/sw/scaneye_trigger_wrapper_SPI_GPIO/standalone_ps7_cortexa9_0/bsplib/lib -o "SPI_GPIO.elf"  ./src/GPIO_access.o ./src/SPI_access.o ./src/helloworld.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: SPI_GPIO.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size SPI_GPIO.elf  |tee "SPI_GPIO.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  35450	   1968	  22808	  60226	   eb42	SPI_GPIO.elf
+'Finished building: SPI_GPIO.elf.size'
+' '
+
+14:02:45 Build Finished (took 778ms)
+
