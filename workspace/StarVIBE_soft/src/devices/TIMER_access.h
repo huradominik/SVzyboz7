@@ -21,10 +21,18 @@
 #define TMRCTR_INTC_ID			XPAR_FABRIC_TMRCTR_0_VEC_ID
 #define TMRCTR_DEVICE_ID		XPAR_AXI_TIMER_0_DEVICE_ID
 
+#define TIMER_FREQUENCY 		XPAR_AXI_TIMER_0_CLOCK_FREQ_HZ
+
 #define TIMER_CNTR_0	 0
 #define TIMER_CNTR_1	 1
-#define TIMER_1_US 	     48
+#define COUNTER_DIRECTION	 1  /* 1-down ; 0-up */
 
+#if (COUNTER_DIRECTION)
+
+	#define TIMER_1_US 	     (TIMER_FREQUENCY/1000000U)-2
+#else
+	#define TIMER_1_US		 0xffffffffU-(TIMER_FREQUENCY/1000000U)-2
+#endif
 
 /*********************** Function Prototyping *********************************/
 

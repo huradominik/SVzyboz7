@@ -41,7 +41,7 @@ static int SetupInterruptSystem(XGpio *InstancePtr)
 	 * driver.
 	 */
 
-	GicConfig = XScuGic_LookupConfig(INTC_DEVICES_ID);
+	GicConfig = XScuGic_LookupConfig(INTC_DEVICE_ID);
 	if (GicConfig == NULL)
 	{
 		return XST_FAILURE;

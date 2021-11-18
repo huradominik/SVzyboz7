@@ -72,6 +72,7 @@ static void vTaskHousekeeping(void *p);
 static void vTaskCommunication(void *p);
 static void vTaskUserInterface(void *p);
 
+
 static void vTaskCmvSoftTrigger(void *p);
 
 
@@ -205,11 +206,10 @@ static void vTaskCmvSoftTrigger(void *p) // parametry jako struktura
 	BaseType_t Status;
 	u32 GpioReg;
 	cmvConfig *cmvConfigInst =  (cmvConfig* ) p;
-	TickType_t SysTime;
 
 	u32 cpu_tick = 0;
 	u8 bit_mode = 12;
-	u32 cmv_freq = 250; // -> napisaæ funkcje do odczytu wartosci zegara z clk_wiz
+	u32 cmv_freq = 250000000; // -> napisaæ funkcje do odczytu wartosci zegara z clk_wiz
 
 	/*
 	 * Pulse signals T_EXP1, TEXP2, FRAME_REQ should be at least 8, 10, 12 * LVDS
@@ -221,6 +221,11 @@ static void vTaskCmvSoftTrigger(void *p) // parametry jako struktura
 
 	if(cmvConfigInst->SensorMode == cmv_mode_normal)
 	{
+		/* protect against change settings of sensor mode */
+		GpioReg = XGpio_DiscreteRead(&GpioInstance, GPIO_CHANNEL); // odczyt wartosci z gpio
+		GpioReg &= ~CMV_FRAME_REQ;	//
+		XGpio_DiscreteSet(&GpioInstance, GPIO_CHANNEL, GpioReg);
+
 		if(cmvConfigInst->ExposureMode == cmv_exp_external)
 		{
 			for(int i=0; i<cmvConfigInst->NumberOfFrame; i++)
@@ -236,7 +241,7 @@ static void vTaskCmvSoftTrigger(void *p) // parametry jako struktura
 			 * 1-AXI Timer [50MHz]
 			 */
 
-			XTmrCtr_SetResetValue(&TimerInstance, TIMER_CNTR_0, cmvConfigInst->ExposureTimeUs * TIMER_1_US); // ustawienie wartoœci odliczania
+			XTmrCtr_SetResetValue(&TimerInstance, TIMER_CNTR_0, cmvConfigInst->ExposureTimeTexp1Us * TIMER_1_US); // ustawienie wartoœci odliczania
 			XTmrCtr_Start(&TimerInstance, TIMER_CNTR_0);  /* Start counting   */
 
 			/*
@@ -272,13 +277,14 @@ static void vTaskCmvSoftTrigger(void *p) // parametry jako struktura
 			GpioReg &= ~CMV_FRAME_REQ;
 			XGpio_DiscreteSet(&GpioInstance, GPIO_CHANNEL, GpioReg);
 
+			/************************************************/
 			/*  SEMAFOR -> przerwanie od odebranego zdjêcia */
 			/************************************************/
 
-			xil_printf("zdjêcie zrobione nr: %d\n\r",i);
+			xil_printf("zdjêcie zrobione nr: %d\n\r",i+1);
 			}
 			xil_printf("IMAGE ACQUISITION NORMAL(EXTERNAL) DONE \n\r");
-		} else
+		} else // internal
 		{
 			for (int i=0; i<cmvConfigInst->NumberOfFrame; i++)
 			{
@@ -296,9 +302,45 @@ static void vTaskCmvSoftTrigger(void *p) // parametry jako struktura
 				vTaskDelay(pdMS_TO_TICKS(1000));
 				xil_printf("zdjêcie zrobione nr: %d\n\r",i);
 			}
+
+			/************************************************/
 			/*  SEMAFOR -> przerwanie od odebranego zdjêcia */
+			/************************************************/
 			xil_printf("IMAGE ACQUISITION NORMAL(INTERNAL) DONE \n\r");
 		}
+	}
+	else if(cmvConfigInst->SensorMode == cmv_mode_continuous)
+	{
+		/* Continuous mode possible only in Internal exposure */
+		cmvConfigInst->ExposureMode = cmv_exp_internal;
+
+		/*
+		 * Check status of FRAME_REQ,
+		 * if 1 then acquision is running, then stop grab images,
+		 * if 0 then acquisition is not running, then start grab images
+		 */
+		GpioReg = XGpio_DiscreteRead(&GpioInstance, GPIO_CHANNEL);
+//		xil_printf("test FRAME_REQ: %d",GpioReg);
+//		vTaskDelay(pdMS_TO_TICKS(2000));
+		if((GpioReg & 0x1) == 0x1)
+		{
+			/* Deassert FRAME_REQ signal */
+			cmvConfigInst->ContinuousModeOn = FALSE;
+			GpioReg = XGpio_DiscreteRead(&GpioInstance, GPIO_CHANNEL);
+			GpioReg &= ~CMV_FRAME_REQ;
+			XGpio_DiscreteSet(&GpioInstance, GPIO_CHANNEL, GpioReg);
+		} else
+		{
+			/* Assert FRAME_REQ signal */
+			cmvConfigInst->ContinuousModeOn = TRUE;
+			GpioReg = XGpio_DiscreteRead(&GpioInstance, GPIO_CHANNEL);
+			GpioReg |= CMV_FRAME_REQ;
+			XGpio_DiscreteSet(&GpioInstance, GPIO_CHANNEL, GpioReg);
+		}
+	}
+	else if(cmvConfigInst->SensorMode == cmv_mode_hdr)
+	{
+
 	}
 
 	xSemaphoreGive(xSemaphoreUserInterface);
@@ -325,9 +367,10 @@ static void vTaskUserInterface(void *p)
 
 	/* Temporary initialization */
 	cmvConfigPtr->ExposureMode = cmv_exp_external;
-	cmvConfigPtr->ExposureTimeUs = 3000000;
+	cmvConfigPtr->ExposureTimeTexp1Us = 3000000;
 	cmvConfigPtr->NumberOfFrame = 4;
 	cmvConfigPtr->SensorMode = cmv_mode_normal;
+	cmvConfigPtr->ContinuousModeOn = FALSE;
 	/*****************************/
 
 	static Hk_data xReceiveHk[NUMBER_OF_CHANNELS];
@@ -342,8 +385,21 @@ static void vTaskUserInterface(void *p)
 			submain = 'A';
 			while(submain != INTERFACE_EXIT)
 			{
-				submain = interfaceCmv12000(); // sensor cmv12000 menu
-				if( submain == '1')
+				xil_printf("\x1B[H\x1B[J");
+				xil_printf("CMV12000 Image\n\r");
+				if(cmvConfigPtr->SensorMode == cmv_mode_continuous)
+				{
+					xil_printf("1) Grab image[continuous_mode] - ");
+					if(cmvConfigPtr->ContinuousModeOn)xil_printf("stop\n\r");
+					else xil_printf("start\n\r");
+				}
+				else xil_printf("1) Grab image\n\r");
+				xil_printf("2) Settings\n\r");
+				xil_printf("3) Exit\n\r");
+				xil_printf("Pick options:");
+				scanf(" %c",&submain);
+
+				if( submain == '1') /* GRAB IMAGE */
 				{
 					xil_printf("\x1B[H\x1B[J");
 					xil_printf("Procedura wywolania zdjecia...\n\r");
@@ -355,23 +411,24 @@ static void vTaskUserInterface(void *p)
 					vTaskDelay(pdMS_TO_TICKS(2000));
 
 				}
-				if (submain == '2')
+				if (submain == '2') /* SETTINGS */
 				{
 					sub = 'A';
-					while(sub != '0') {
+					while(sub != '0')
+					{
 					xil_printf("\x1B[H\x1B[J");
 					xil_printf(" Settings\n\r");
 					xil_printf("1) Exposure Mode: ");
 					if (cmvConfigPtr->ExposureMode == 1) {xil_printf(" External\n\r");} else {xil_printf(" Internal\n\r");}
 
-					xil_printf("2) Exposure Time: %d \n\r",cmvConfigPtr->ExposureTimeUs);
+					xil_printf("2) Exposure Time: %d \n\r",cmvConfigPtr->ExposureTimeTexp1Us);
 
 					xil_printf("3) Number of frame: %d \n\r",cmvConfigPtr->NumberOfFrame);
 
 					xil_printf("4) Sensor Mode: ");
-					if (cmvConfigPtr->SensorMode == 0) {xil_printf(" Normal \n\r");}
-					else if(cmvConfigPtr->SensorMode == 1) {xil_printf(" Continuous \n\r");}
-					else if(cmvConfigPtr->SensorMode == 2) {xil_printf(" HDR \n\r");}
+					if (cmvConfigPtr->SensorMode == cmv_mode_normal) {xil_printf(" Normal \n\r");}
+					else if(cmvConfigPtr->SensorMode == cmv_mode_continuous) {xil_printf(" Continuous \n\r");}
+					else if(cmvConfigPtr->SensorMode == cmv_mode_hdr) {xil_printf(" HDR \n\r");}
 
 					xil_printf("5) EXIT\n\r");
 					xil_printf("Which option modyfi? :\n\r");
@@ -382,12 +439,12 @@ static void vTaskUserInterface(void *p)
 						sub = '0';
 					}
 
-					if(sub == '1')
+					if(sub == '1') /* EXPOSURE MODE */
 					{
 						xil_printf("\x1B[H\x1B[J");
 						xil_printf("Exposure mode: \n\r",cmvConfigPtr->ExposureMode);
-						xil_printf("1) External exposure mode: \n\r");
-						xil_printf("2) Internal exposure mode: \n\r");
+						xil_printf("1) External \n\r");
+						xil_printf("2) Internal \n\r");
 						xil_printf("3) EXIT \n\r");
 						scanf(" %c",&subsub);
 
@@ -395,9 +452,44 @@ static void vTaskUserInterface(void *p)
 						if(subsub == '2') { cmvConfigPtr->ExposureMode = cmv_exp_internal;};
 						if(subsub < '1' && subsub > '2') {subsub = '0';};
 					}
+					if(sub == '2') /* EXPOSURE TIME */
+					{
+						xil_printf("\x1B[H\x1B[J");
+						xil_printf(" Exposure Time: %d \n\r",cmvConfigPtr->ExposureTimeTexp1Us);
+						xil_printf("Enter value[us]:");
+						scanf(" %d",&cmvConfigPtr->ExposureTimeTexp1Us);
+					}
+					if(sub == '3') /* NUMBER OF FRAMES */
+					{
+						xil_printf("\x1B[H\x1B[J");
+						xil_printf(" Number of frame: %d \n\r",cmvConfigPtr->NumberOfFrame);
+						xil_printf("Enter value:");
+						scanf(" %d",&cmvConfigPtr->NumberOfFrame);
+					}
+					if(sub == '4') /* SENSOR MODE */
+					{
+						xil_printf("\x1B[H\x1B[J");
+						xil_printf("Sensor mode: \n\r",cmvConfigPtr->SensorMode);
+						xil_printf("1) Normal  \n\r");
+						xil_printf("2) Continuous \n\r");
+						xil_printf("3) HDR \n\r");
+						xil_printf("4) EXIT \n\r");
+						scanf(" %c",&subsub);
+						/* protect against change mode */
+						if(cmvConfigPtr->ContinuousModeOn && (subsub == '1' || subsub == '3'))
+							{
+								xil_printf("First turn off Continuous mode");
+								vTaskDelay(pdMS_TO_TICKS(2000));
+								subsub = '0';
+							}
+						if(subsub == '1') { cmvConfigPtr->SensorMode = cmv_mode_normal;};
+						if(subsub == '2') { cmvConfigPtr->SensorMode = cmv_mode_continuous;};
+						if(subsub == '3') { cmvConfigPtr->SensorMode = cmv_mode_hdr;};
+						if(subsub < '1' && subsub > '3') {subsub = '0';};
+					}
 					}
 				}
-				if (submain == '3')
+				if (submain == '3') /* EXIT */
 				{
 					submain = '0';
 				}
