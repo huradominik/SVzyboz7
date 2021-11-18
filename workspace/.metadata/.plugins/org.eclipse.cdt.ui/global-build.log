@@ -1,6 +1,6 @@
 Nothing to build in platform 'scaneye_trigger_wrapper_32'
 
-15:39:12 **** Incremental Build of configuration Debug for project StarVIBE_soft ****
+11:27:27 **** Incremental Build of configuration Debug for project StarVIBE_soft ****
 make all 
 make --no-print-directory pre-build
 a9-linaro-pre-build-step
@@ -9,104 +9,104 @@ make --no-print-directory main-build
 'Building file: ../src/main.c'
 'Invoking: ARM v7 gcc compiler'
 arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -IC:/Scanway/Vivado/ScanEye_trigger/workspace/scaneye_trigger_wrapper_32/export/scaneye_trigger_wrapper_32/sw/scaneye_trigger_wrapper_32/freertos10_xilinx_ps7_cortexa9_0/bspinclude/include -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
+In file included from ../src/main.c:33:
+../src/devices/TIMER_access.h:20: warning: "INTC_DEVICE_ID" redefined
+   20 | #define INTC_DEVICE_ID   XPAR_PS7_SCUGIC_0_DEVICE_ID
+      | 
 In file included from ../src/main.c:31:
-../src/devices/trigger_cmv_access.h:13: warning: "INTC_DEVICES_ID" redefined
-   13 | #define INTC_DEVICES_ID   XPAR_SCUGIC_0_DEVICE_ID
+../src/devices/trigger_cmv_access.h:13: note: this is the location of the previous definition
+   13 | #define INTC_DEVICE_ID    XPAR_SCUGIC_0_DEVICE_ID
       | 
-In file included from ../src/main.c:28:
-../src/devices/GPIO_access.h:13: note: this is the location of the previous definition
-   13 | #define INTC_DEVICES_ID   XPAR_PS7_SCUGIC_0_DEVICE_ID
-      | 
-In file included from ../src/main.c:35:
+In file included from ../src/main.c:36:
 ../src/cmvsoft.h:28:1: warning: data definition has no type or storage class
    28 | init_cmvSoft();
       | ^~~~~~~~~~~~
 ../src/cmvsoft.h:28:1: warning: type defaults to 'int' in declaration of 'init_cmvSoft' [-Wimplicit-int]
 ../src/main.c: In function 'vTaskCmvSoftTrigger':
-../src/main.c:192:13: warning: variable 'SysTime' set but not used [-Wunused-but-set-variable]
-  192 |  TickType_t SysTime;
+../src/main.c:208:13: warning: unused variable 'SysTime' [-Wunused-variable]
+  208 |  TickType_t SysTime;
       |             ^~~~~~~
-../src/main.c:189:13: warning: unused variable 'Status' [-Wunused-variable]
-  189 |  BaseType_t Status;
+../src/main.c:205:13: warning: unused variable 'Status' [-Wunused-variable]
+  205 |  BaseType_t Status;
       |             ^~~~~~
 ../src/main.c: In function 'vTaskUserInterface':
-../src/main.c:328:6: warning: implicit declaration of function 'scanf' [-Wimplicit-function-declaration]
-  328 |      scanf(" %c",&sub);
+../src/main.c:376:6: warning: implicit declaration of function 'scanf' [-Wimplicit-function-declaration]
+  376 |      scanf(" %c",&sub);
       |      ^~~~~
-../src/main.c:328:6: warning: incompatible implicit declaration of built-in function 'scanf'
-../src/main.c:36:1: note: include '<stdio.h>' or provide a declaration of 'scanf'
-   35 | #include "cmvsoft.h"
+../src/main.c:376:6: warning: incompatible implicit declaration of built-in function 'scanf'
+../src/main.c:37:1: note: include '<stdio.h>' or provide a declaration of 'scanf'
+   36 | #include "cmvsoft.h"
   +++ |+#include <stdio.h>
-   36 | 
-../src/main.c:399:5: warning: incompatible implicit declaration of built-in function 'scanf'
-  399 |     scanf(" %c",&submain);
+   37 | 
+../src/main.c:448:5: warning: incompatible implicit declaration of built-in function 'scanf'
+  448 |     scanf(" %c",&submain);
       |     ^~~~~
-../src/main.c:399:5: note: include '<stdio.h>' or provide a declaration of 'scanf'
-../src/main.c:286:17: warning: unused variable 'xReceiveHk' [-Wunused-variable]
-  286 |  static Hk_data xReceiveHk[NUMBER_OF_CHANNELS];
+../src/main.c:448:5: note: include '<stdio.h>' or provide a declaration of 'scanf'
+../src/main.c:331:17: warning: unused variable 'xReceiveHk' [-Wunused-variable]
+  331 |  static Hk_data xReceiveHk[NUMBER_OF_CHANNELS];
       |                 ^~~~~~~~~~
-../src/main.c:274:6: warning: unused variable 'channel' [-Wunused-variable]
-  274 |  int channel;
+../src/main.c:319:6: warning: unused variable 'channel' [-Wunused-variable]
+  319 |  int channel;
       |      ^~~~~~~
-../src/main.c:273:6: warning: unused variable 'cmv_mode' [-Wunused-variable]
-  273 |  int cmv_mode = TRUE;
+../src/main.c:318:6: warning: unused variable 'cmv_mode' [-Wunused-variable]
+  318 |  int cmv_mode = TRUE;
       |      ^~~~~~~~
-../src/main.c:272:7: warning: unused variable 'liczba' [-Wunused-variable]
-  272 |  int *liczba;
+../src/main.c:317:7: warning: unused variable 'liczba' [-Wunused-variable]
+  317 |  int *liczba;
       |       ^~~~~~
-../src/main.c:267:7: warning: unused variable 'value' [-Wunused-variable]
-  267 |  char value;
+../src/main.c:312:7: warning: unused variable 'value' [-Wunused-variable]
+  312 |  char value;
       |       ^~~~~
-../src/main.c:266:13: warning: unused variable 'Status' [-Wunused-variable]
-  266 |  BaseType_t Status;
+../src/main.c:311:13: warning: unused variable 'Status' [-Wunused-variable]
+  311 |  BaseType_t Status;
       |             ^~~~~~
 ../src/main.c: In function 'vTaskHousekeeping':
-../src/main.c:427:6: warning: unused variable 'channel' [-Wunused-variable]
-  427 |  u32 channel;
+../src/main.c:477:6: warning: unused variable 'channel' [-Wunused-variable]
+  477 |  u32 channel;
       |      ^~~~~~~
-../src/main.c:426:16: warning: unused variable 'thousands' [-Wunused-variable]
-  426 |  u32 whole[4], thousands[4];
+../src/main.c:476:16: warning: unused variable 'thousands' [-Wunused-variable]
+  476 |  u32 whole[4], thousands[4];
       |                ^~~~~~~~~
-../src/main.c:426:6: warning: unused variable 'whole' [-Wunused-variable]
-  426 |  u32 whole[4], thousands[4];
+../src/main.c:476:6: warning: unused variable 'whole' [-Wunused-variable]
+  476 |  u32 whole[4], thousands[4];
       |      ^~~~~
-../src/main.c:421:13: warning: variable 'xStatus' set but not used [-Wunused-but-set-variable]
-  421 |  BaseType_t xStatus;
+../src/main.c:471:13: warning: variable 'xStatus' set but not used [-Wunused-but-set-variable]
+  471 |  BaseType_t xStatus;
       |             ^~~~~~~
 ../src/main.c: In function 'vTaskCommunication':
-../src/main.c:480:7: warning: unused variable 'work' [-Wunused-variable]
-  480 |  UINT work[FF_MAX_SS];
+../src/main.c:530:7: warning: unused variable 'work' [-Wunused-variable]
+  530 |  UINT work[FF_MAX_SS];
       |       ^~~~
-../src/main.c:479:9: warning: unused variable 'Path' [-Wunused-variable]
-  479 |  TCHAR *Path = "0:/";
+../src/main.c:529:9: warning: unused variable 'Path' [-Wunused-variable]
+  529 |  TCHAR *Path = "0:/";
       |         ^~~~
-../src/main.c:477:14: warning: unused variable 'FileName' [-Wunused-variable]
-  477 |  static char FileName[32] = "pom.txt";
+../src/main.c:527:14: warning: unused variable 'FileName' [-Wunused-variable]
+  527 |  static char FileName[32] = "pom.txt";
       |              ^~~~~~~~
-../src/main.c:476:8: warning: unused variable 'fatfs' [-Wunused-variable]
-  476 |  FATFS fatfs;
+../src/main.c:526:8: warning: unused variable 'fatfs' [-Wunused-variable]
+  526 |  FATFS fatfs;
       |        ^~~~~
-../src/main.c:475:6: warning: unused variable 'fil' [-Wunused-variable]
-  475 |  FIL fil;
+../src/main.c:525:6: warning: unused variable 'fil' [-Wunused-variable]
+  525 |  FIL fil;
       |      ^~~
-../src/main.c:474:10: warning: unused variable 'Res' [-Wunused-variable]
-  474 |  FRESULT Res;
+../src/main.c:524:10: warning: unused variable 'Res' [-Wunused-variable]
+  524 |  FRESULT Res;
       |          ^~~
 At top level:
-../src/main.c:477:14: warning: 'FileName' defined but not used [-Wunused-variable]
-  477 |  static char FileName[32] = "pom.txt";
+../src/main.c:527:14: warning: 'FileName' defined but not used [-Wunused-variable]
+  527 |  static char FileName[32] = "pom.txt";
       |              ^~~~~~~~
-../src/main.c:286:17: warning: 'xReceiveHk' defined but not used [-Wunused-variable]
-  286 |  static Hk_data xReceiveHk[NUMBER_OF_CHANNELS];
+../src/main.c:331:17: warning: 'xReceiveHk' defined but not used [-Wunused-variable]
+  331 |  static Hk_data xReceiveHk[NUMBER_OF_CHANNELS];
       |                 ^~~~~~~~~~
-../src/main.c:595:13: warning: 'vTaskCmvTest' defined but not used [-Wunused-function]
-  595 | static void vTaskCmvTest(void *p)
+../src/main.c:645:13: warning: 'vTaskCmvTest' defined but not used [-Wunused-function]
+  645 | static void vTaskCmvTest(void *p)
       |             ^~~~~~~~~~~~
-../src/main.c:470:13: warning: 'vTaskCommunication' defined but not used [-Wunused-function]
-  470 | static void vTaskCommunication(void *p)
+../src/main.c:520:13: warning: 'vTaskCommunication' defined but not used [-Wunused-function]
+  520 | static void vTaskCommunication(void *p)
       |             ^~~~~~~~~~~~~~~~~~
-../src/main.c:418:13: warning: 'vTaskHousekeeping' defined but not used [-Wunused-function]
-  418 | static void vTaskHousekeeping(void *p)
+../src/main.c:468:13: warning: 'vTaskHousekeeping' defined but not used [-Wunused-function]
+  468 | static void vTaskHousekeeping(void *p)
       |             ^~~~~~~~~~~~~~~~~
 'Finished building: ../src/main.c'
 ' '
@@ -118,6 +118,6 @@ arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=non
 'Invoking: ARM v7 Print Size'
 arm-none-eabi-size StarVIBE_soft.elf  |tee "StarVIBE_soft.elf.size"
    text	   data	    bss	    dec	    hex	filename
- 134160	   3568	 212448	 350176	  557e0	StarVIBE_soft.elf
+ 134712	   3568	 212448	 350728	  55a08	StarVIBE_soft.elf
 'Finished building: StarVIBE_soft.elf.size'
 ' '

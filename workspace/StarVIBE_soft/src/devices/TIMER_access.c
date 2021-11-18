@@ -5,9 +5,13 @@
 #include "timer_access.h"
 #include "xil_printf.h"
 
+#include "FreeRTOS.h"
+#include "semphr.h"
+
 
 /* Determine in ZYNQ7000.c implementation    */
 extern XScuGic xInterruptController;
+extern SemaphoreHandle_t xSemaphoreTimer;
 
 
 /************************** Variable Definitions ********************************/
@@ -20,22 +24,16 @@ volatile int TimerExpired;
 static void TimerCounterHandler(void *CallbackRef, u8 TmrCtrNumber)
 {
 	XTmrCtr *InstancePtr = (XTmrCtr *)CallbackRef;
+	BaseType_t xHigherPriorityTaskWoken = pdFALSE;
 
 	/*
-	 * Check if the timer counter has expired, checking is not necessary
-	 * since that's the reason this function is executed, this just shows
-	 * how the callback reference can be used as a pointer to the instance
-	 * of the timer counter that expired, increment a shared variable so
-	 * the main thread of execution can see the timer expired
+	 * Semafor do synchronizacji tasku dla zewnetrzenj ekspozycji
+	 * po wystapieniu przerwania nastepuje ustawienie sygnalu FRAME_REQ
 	 */
-	if(XTmrCtr_IsExpired(InstancePtr, TmrCtrNumber))
-	{
-		TimerExpired++;
-		if (TimerExpired == 20)
-			XTmrCtr_SetOptions(InstancePtr, TmrCtrNumber, 0);
-	}
+	xSemaphoreGiveFromISR(xSemaphoreTimer, &xHigherPriorityTaskWoken);
 
-	xil_printf("Timer Interrupt occur\n\r");
+
+	portYIELD_FROM_ISR(xHigherPriorityTaskWoken);
 }
 
 int SetupInterruptSystem_TMR(XTmrCtr *TimerInstance)
@@ -70,6 +68,8 @@ int SetupInterruptSystem_TMR(XTmrCtr *TimerInstance)
 	 * Enable non-critical exception
 	 */
 	Xil_ExceptionEnable();
+
+	XScuGic_SetPriorityTriggerType( &xInterruptController, TMRCTR_INTC_ID, portLOWEST_USABLE_INTERRUPT_PRIORITY << portPRIORITY_SHIFT, 0x3 );
 
 	Status = XScuGic_Connect(&xInterruptController, TMRCTR_INTC_ID, (Xil_InterruptHandler) XTmrCtr_InterruptHandler, TimerInstance);
 	if (Status != XST_SUCCESS)
@@ -126,16 +126,20 @@ int init_timer()
 	 * itself automatically and continue repeatedly, without this option
 	 * it would expire once only
 	 */
-	XTmrCtr_SetOptions(&TimerInstance, TIMER_CNTR_0, XTC_INT_MODE_OPTION | XTC_AUTO_RELOAD_OPTION);
-			//XTC_INT_MODE_OPTION | XTC_AUTO_RELOAD_OPTION);
+	XTmrCtr_SetOptions(&TimerInstance, TIMER_CNTR_0, XTC_INT_MODE_OPTION | XTC_DOWN_COUNT_OPTION);
+			//XTC_DOWN_COUNT_OPTION | XTC_INT_MODE_OPTION | XTC_AUTO_RELOAD_OPTION);
 
+	/*
+	 * Counter down: TIMING_INTERVAL = (TLRx +2 ) * AXI_CLOCK_PERIOD  		<------- set
+	 * Counter up: TIMING_INTERVAL = (MAX_COUNT - TLRx +2) * AXI_CLOCK_PERIOD
+	 */
 
 	/*
 	 * Set a reset value for the timer counter such that it will expire
 	 * eariler than letting it roll over from 0, the reset value is loaded
 	 * into the timer counter when it is started
 	 */
-	XTmrCtr_SetResetValue(&TimerInstance, TIMER_CNTR_0, RESET_VALUE);
+	XTmrCtr_SetResetValue(&TimerInstance, TIMER_CNTR_0, 1000*TIMER_1_US);
 
 
 	/*

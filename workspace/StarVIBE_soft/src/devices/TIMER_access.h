@@ -23,7 +23,7 @@
 
 #define TIMER_CNTR_0	 0
 #define TIMER_CNTR_1	 1
-#define RESET_VALUE 	 0x0
+#define TIMER_1_US 	     48
 
 
 /*********************** Function Prototyping *********************************/

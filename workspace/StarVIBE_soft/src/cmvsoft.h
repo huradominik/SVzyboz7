@@ -18,7 +18,7 @@ typedef struct{
 	char *ImageName;
 	cmv_exp ExposureMode;
 	cmv_mode SensorMode;
-	u32 ExposureTime; 	/* Value of exposure time in us */
+	u32 ExposureTimeUs; 	/* Value of exposure time in us */
 	u32 NumberOfFrame;
 } cmvConfig;
 

@@ -24,7 +24,7 @@ static int SetupInterruptSystem(XCmv *InstancePtr)
 	 * Use this configuration info down below when initializing this
 	 * driver.
 	 */
-	GicConfig = XScuGic_LookupConfig(INTC_DEVICES_ID);
+	GicConfig = XScuGic_LookupConfig(INTC_DEVICE_ID);
 	if (GicConfig == NULL)
 	{
 		return XST_FAILURE;

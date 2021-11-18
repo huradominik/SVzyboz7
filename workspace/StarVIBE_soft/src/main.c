@@ -30,6 +30,7 @@
 #include "devices/clkwiz_access.h"
 #include "devices/trigger_cmv_access.h"
 #include "devices/uartps_access.h"
+#include "devices/TIMER_access.h"
 
 #include "userinterface.h"
 #include "cmvsoft.h"
@@ -55,12 +56,14 @@ extern XSpi	SpiInstance;
 //extern XTmrCtr TimerInstance;
 extern XCmv TriggerCmvInstance;
 extern XUartPs UartPsInstance;
+extern XTmrCtr TimerInstance;
 
 XClk_Wiz_Config CfgPtr_Dynamic;
 
 QueueHandle_t xQueueHKcomm = NULL;
 
 SemaphoreHandle_t xSemaphoreUserInterface = NULL;
+SemaphoreHandle_t xSemaphoreTimer = NULL;
 
 /* Initialization and operation function for FPGA components */
 static void vTaskInitialize( void *p);
@@ -104,10 +107,16 @@ int main( void )
 	}
 
 	xSemaphoreUserInterface = xSemaphoreCreateBinary();
-	if(xSemaphoreUserInterface == NULL)
+	if (xSemaphoreUserInterface == NULL)
 	{
 		xil_printf("Unable to create xSemaphoreUserInterface\n\r");
 		return -1;
+	}
+
+	xSemaphoreTimer = xSemaphoreCreateBinary();
+	if (xSemaphoreTimer == NULL)
+	{
+		xil_printf("Unable to create xSemaphoreTimer\n\r");
 	}
 
 	xTaskCreate( vTaskInitialize,
@@ -162,6 +171,13 @@ static void vTaskInitialize(void *p)
 	{
 		xil_printf("Sensor CMV12000 Initialize FAILURE\n\r");
 	}
+
+	Status = init_timer();
+	if (Status != XST_SUCCESS)
+	{
+		xil_printf("AXI Timer initialize FAILURE\n\r");
+	}
+
 /*	Status = init_uartps();
 	if (Status == XST_FAILURE)
 	{
@@ -201,7 +217,7 @@ static void vTaskCmvSoftTrigger(void *p) // parametry jako struktura
 	 *
 	 * cpu_tick = (cpu_freq[MHz] * bit_mode / cmv_input_freq[MHz]) + 1
 	 */
-	cpu_tick = (CPU_CLK_FREQ_HZ * bit_mode / cmv_freq) + 5;
+	cpu_tick = (CPU_CLK_FREQ_HZ * bit_mode / cmv_freq) + 1;
 
 	if(cmvConfigInst->SensorMode == cmv_mode_normal)
 	{
@@ -214,7 +230,14 @@ static void vTaskCmvSoftTrigger(void *p) // parametry jako struktura
 			GpioReg = XGpio_DiscreteRead(&GpioInstance, GPIO_CHANNEL); // odczyt wartosci z gpio
 			GpioReg |= CMV_TEXP1;	//
 			XGpio_DiscreteSet(&GpioInstance, GPIO_CHANNEL, GpioReg);
-			// uruchomienie timera
+
+			/*
+			 * Timer for count exposure time between T_EXP1 and FRAME_REQ
+			 * 1-AXI Timer [50MHz]
+			 */
+
+			XTmrCtr_SetResetValue(&TimerInstance, TIMER_CNTR_0, cmvConfigInst->ExposureTimeUs * TIMER_1_US); // ustawienie wartoœci odliczania
+			XTmrCtr_Start(&TimerInstance, TIMER_CNTR_0);  /* Start counting   */
 
 			/*
 			 * Pulse signals T_EXP1, TEXP2, FRAME_REQ should be at least 8, 10, 12 * LVDS
@@ -222,7 +245,6 @@ static void vTaskCmvSoftTrigger(void *p) // parametry jako struktura
 			 *
 			 * cpu_tick = (cpu_freq[MHz] * bit_mode / cmv_input_freq[MHz]) + 1
 			 */
-
 			for(int i=0; i<cpu_tick; i++) {} // sygnal
 
 			/* Deassert T_EXP1 signal */
@@ -230,11 +252,12 @@ static void vTaskCmvSoftTrigger(void *p) // parametry jako struktura
 			GpioReg &= ~CMV_TEXP1;
 			XGpio_DiscreteSet(&GpioInstance, GPIO_CHANNEL, GpioReg);
 
-			/* exposure time */
-			SysTime = xTaskGetTickCount();
-			//vTaskDelayUntil(&SysTime, pdMS_TO_TICKS(cmvConfigInst->ExposureTime)/1000);
+			/* Wait for count apropriate exposure time */
+			xSemaphoreTake(xSemaphoreTimer, portMAX_DELAY);
 
-			vTaskDelay(pdMS_TO_TICKS(1000));
+			/* Stop Timer	*/
+			XTmrCtr_Stop(&TimerInstance, TIMER_CNTR_0);
+
 
 
 			/* Assert FRAME_REQ signal */
@@ -244,16 +267,40 @@ static void vTaskCmvSoftTrigger(void *p) // parametry jako struktura
 
 			for(int i=0; i<cpu_tick; i++) {} // Signal pulse
 
+			/* Deassert FRAME_REQ signal */
 			GpioReg = XGpio_DiscreteRead(&GpioInstance, GPIO_CHANNEL);
 			GpioReg &= ~CMV_FRAME_REQ;
 			XGpio_DiscreteSet(&GpioInstance, GPIO_CHANNEL, GpioReg);
 
 			/*  SEMAFOR -> przerwanie od odebranego zdjêcia */
+			/************************************************/
+
 			xil_printf("zdjêcie zrobione nr: %d\n\r",i);
 			}
-			xil_printf("IMAGE ACQUISITION DONE \n\r");
+			xil_printf("IMAGE ACQUISITION NORMAL(EXTERNAL) DONE \n\r");
+		} else
+		{
+			for (int i=0; i<cmvConfigInst->NumberOfFrame; i++)
+			{
+				/* Assert FRAME_REQ signal */
+				GpioReg = XGpio_DiscreteRead(&GpioInstance, GPIO_CHANNEL);
+				GpioReg |= CMV_FRAME_REQ;
+				XGpio_DiscreteSet(&GpioInstance, GPIO_CHANNEL, GpioReg);
+
+				for(int i=0; i<cpu_tick; i++) {} // pulse
+
+				GpioReg = XGpio_DiscreteRead(&GpioInstance, GPIO_CHANNEL);
+				GpioReg &= ~CMV_FRAME_REQ;
+				XGpio_DiscreteSet(&GpioInstance, GPIO_CHANNEL, GpioReg);
+
+				vTaskDelay(pdMS_TO_TICKS(1000));
+				xil_printf("zdjêcie zrobione nr: %d\n\r",i);
+			}
+			/*  SEMAFOR -> przerwanie od odebranego zdjêcia */
+			xil_printf("IMAGE ACQUISITION NORMAL(INTERNAL) DONE \n\r");
 		}
 	}
+
 	xSemaphoreGive(xSemaphoreUserInterface);
 
 	vTaskDelete(NULL);
@@ -278,7 +325,7 @@ static void vTaskUserInterface(void *p)
 
 	/* Temporary initialization */
 	cmvConfigPtr->ExposureMode = cmv_exp_external;
-	cmvConfigPtr->ExposureTime = 1000;
+	cmvConfigPtr->ExposureTimeUs = 3000000;
 	cmvConfigPtr->NumberOfFrame = 4;
 	cmvConfigPtr->SensorMode = cmv_mode_normal;
 	/*****************************/
@@ -292,6 +339,7 @@ static void vTaskUserInterface(void *p)
 		switch(main)
 		{
 			case '1':
+			submain = 'A';
 			while(submain != INTERFACE_EXIT)
 			{
 				submain = interfaceCmv12000(); // sensor cmv12000 menu
@@ -303,18 +351,20 @@ static void vTaskUserInterface(void *p)
 					xTaskCreate(vTaskCmvSoftTrigger, "CMV_SOFT", THREAD_STACKSIZE, (void *)cmvConfigPtr, DEFAULT_THREAD_PRIO+2, NULL);
 
 					xSemaphoreTake(xSemaphoreUserInterface, portMAX_DELAY);
+
 					vTaskDelay(pdMS_TO_TICKS(2000));
 
 				}
 				if (submain == '2')
 				{
+					sub = 'A';
 					while(sub != '0') {
 					xil_printf("\x1B[H\x1B[J");
 					xil_printf(" Settings\n\r");
 					xil_printf("1) Exposure Mode: ");
 					if (cmvConfigPtr->ExposureMode == 1) {xil_printf(" External\n\r");} else {xil_printf(" Internal\n\r");}
 
-					xil_printf("2) Exposure Time: %d \n\r",cmvConfigPtr->ExposureTime);
+					xil_printf("2) Exposure Time: %d \n\r",cmvConfigPtr->ExposureTimeUs);
 
 					xil_printf("3) Number of frame: %d \n\r",cmvConfigPtr->NumberOfFrame);
 
@@ -347,7 +397,7 @@ static void vTaskUserInterface(void *p)
 					}
 					}
 				}
-				if (sub == '3')
+				if (submain == '3')
 				{
 					submain = '0';
 				}
@@ -356,6 +406,7 @@ static void vTaskUserInterface(void *p)
 			break;
 
 			case '2': // HOUSEKEEPING
+				submain = 'A';
 			while(submain != '0')
 			{
 				submain = interfaceHousekeeping(); // wykolanie menu housekeeping
@@ -387,10 +438,10 @@ static void vTaskUserInterface(void *p)
 					submain = '0';
 				}
 
-			} submain = 'A';
-
+			}
 			break;
 			case '3':
+				submain = 'A';
 			while(submain != '0')
 			{
 				xil_printf("\x1B[H\x1B[J");
@@ -403,10 +454,11 @@ static void vTaskUserInterface(void *p)
 				{
 					submain = '0';
 				}
-			} submain = 'A';
+			}
 			break;
 			default:
 				{
+					xil_printf("\x1B[H\x1B[J");
 					xil_printf("Press another value\n\r");
 					vTaskDelay(pdMS_TO_TICKS(1000));
 				}
