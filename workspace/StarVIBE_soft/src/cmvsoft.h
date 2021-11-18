@@ -12,6 +12,7 @@ typedef enum{
 	cmv_mode_normal = 0,
 	cmv_mode_continuous = 1,
 	cmv_mode_hdr = 2,
+	cmv_mode_multislope = 3,
 }cmv_mode;
 
 typedef struct{

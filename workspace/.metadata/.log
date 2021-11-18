@@ -7777,3 +7777,372 @@ Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.]. Thread: Worker-113: Laun
 
 !ENTRY com.xilinx.sdk.utils 0 0 2021-11-18 14:04:58.266
 !MESSAGE XSCT command with result: [configparams force-mem-access 0], Result: [null, ]. Thread: Worker-113: Launching Debugger_StarVIBE_soft-GDB
+
+!ENTRY com.xilinx.sdk.utils 0 0 2021-11-18 14:48:32.359
+!MESSAGE XSCT Command: [ ::hsi::utils::set_current_hw_sw C:/Scanway/Vivado/ScanEye_trigger/workspace/scaneye_trigger_wrapper_32/export/scaneye_trigger_wrapper_32/hw/scaneye_trigger_wrapper_32.xsa C:/Scanway/Vivado/ScanEye_trigger/workspace/scaneye_trigger_wrapper_32/export/scaneye_trigger_wrapper_32/sw/scaneye_trigger_wrapper_32/freertos10_xilinx_ps7_cortexa9_0/system.mss ], Thread: Worker-127: Build Project
+
+!ENTRY com.xilinx.sdk.utils 0 0 2021-11-18 14:48:32.377
+!MESSAGE XSCT command with result: [ ::hsi::utils::set_current_hw_sw C:/Scanway/Vivado/ScanEye_trigger/workspace/scaneye_trigger_wrapper_32/export/scaneye_trigger_wrapper_32/hw/scaneye_trigger_wrapper_32.xsa C:/Scanway/Vivado/ScanEye_trigger/workspace/scaneye_trigger_wrapper_32/export/scaneye_trigger_wrapper_32/sw/scaneye_trigger_wrapper_32/freertos10_xilinx_ps7_cortexa9_0/system.mss ], Result: [null, ]. Thread: Worker-127: Build Project
+
+!ENTRY com.xilinx.sdk.utils 0 0 2021-11-18 14:48:32.378
+!MESSAGE XSCT Command: [::hsi::utils::get_hw_sw_details -json C:/Scanway/Vivado/ScanEye_trigger/workspace/scaneye_trigger_wrapper_32/export/scaneye_trigger_wrapper_32/hw/scaneye_trigger_wrapper_32.xsa C:/Scanway/Vivado/ScanEye_trigger/workspace/scaneye_trigger_wrapper_32/export/scaneye_trigger_wrapper_32/sw/scaneye_trigger_wrapper_32/freertos10_xilinx_ps7_cortexa9_0/system.mss], Thread: Worker-127: Build Project
+
+!ENTRY com.xilinx.sdk.utils 0 0 2021-11-18 14:48:32.384
+!MESSAGE XSCT command with result: [::hsi::utils::get_hw_sw_details -json C:/Scanway/Vivado/ScanEye_trigger/workspace/scaneye_trigger_wrapper_32/export/scaneye_trigger_wrapper_32/hw/scaneye_trigger_wrapper_32.xsa C:/Scanway/Vivado/ScanEye_trigger/workspace/scaneye_trigger_wrapper_32/export/scaneye_trigger_wrapper_32/sw/scaneye_trigger_wrapper_32/freertos10_xilinx_ps7_cortexa9_0/system.mss], Result: [null, {"procname": "ps7_cortexa9_0",
+"osname": "freertos10_xilinx",
+"osver": "1.9",
+}]. Thread: Worker-127: Build Project
+
+!ENTRY com.xilinx.sdk.utils 1 0 2021-11-18 14:48:32.385
+!MESSAGE Generating MD5 hash for file: C:\Scanway\Vivado\ScanEye_trigger\workspace\scaneye_trigger_wrapper_32\export\scaneye_trigger_wrapper_32\sw\scaneye_trigger_wrapper_32\freertos10_xilinx_ps7_cortexa9_0\system.mss ...
+
+!ENTRY com.xilinx.sdk.utils 0 0 2021-11-18 14:48:32.386
+!MESSAGE XSCT Command: [::hsi::utils::closesw C:/Scanway/Vivado/ScanEye_trigger/workspace/scaneye_trigger_wrapper_32/export/scaneye_trigger_wrapper_32/sw/scaneye_trigger_wrapper_32/freertos10_xilinx_ps7_cortexa9_0/system.mss], Thread: Worker-127: Build Project
+
+!ENTRY com.xilinx.sdk.utils 0 0 2021-11-18 14:48:32.390
+!MESSAGE XSCT command with result: [::hsi::utils::closesw C:/Scanway/Vivado/ScanEye_trigger/workspace/scaneye_trigger_wrapper_32/export/scaneye_trigger_wrapper_32/sw/scaneye_trigger_wrapper_32/freertos10_xilinx_ps7_cortexa9_0/system.mss], Result: [null, ]. Thread: Worker-127: Build Project
+
+!ENTRY com.xilinx.sdk.utils 0 0 2021-11-18 14:54:56.418
+!MESSAGE XSCT Command: [ ::hsi::utils::set_current_hw_sw C:/Scanway/Vivado/ScanEye_trigger/workspace/scaneye_trigger_wrapper_32/export/scaneye_trigger_wrapper_32/hw/scaneye_trigger_wrapper_32.xsa C:/Scanway/Vivado/ScanEye_trigger/workspace/scaneye_trigger_wrapper_32/export/scaneye_trigger_wrapper_32/sw/scaneye_trigger_wrapper_32/freertos10_xilinx_ps7_cortexa9_0/system.mss ], Thread: Worker-130: Build Project
+
+!ENTRY com.xilinx.sdk.utils 0 0 2021-11-18 14:54:56.424
+!MESSAGE XSCT command with result: [ ::hsi::utils::set_current_hw_sw C:/Scanway/Vivado/ScanEye_trigger/workspace/scaneye_trigger_wrapper_32/export/scaneye_trigger_wrapper_32/hw/scaneye_trigger_wrapper_32.xsa C:/Scanway/Vivado/ScanEye_trigger/workspace/scaneye_trigger_wrapper_32/export/scaneye_trigger_wrapper_32/sw/scaneye_trigger_wrapper_32/freertos10_xilinx_ps7_cortexa9_0/system.mss ], Result: [null, ]. Thread: Worker-130: Build Project
+
+!ENTRY com.xilinx.sdk.utils 0 0 2021-11-18 14:54:56.425
+!MESSAGE XSCT Command: [::hsi::utils::get_hw_sw_details -json C:/Scanway/Vivado/ScanEye_trigger/workspace/scaneye_trigger_wrapper_32/export/scaneye_trigger_wrapper_32/hw/scaneye_trigger_wrapper_32.xsa C:/Scanway/Vivado/ScanEye_trigger/workspace/scaneye_trigger_wrapper_32/export/scaneye_trigger_wrapper_32/sw/scaneye_trigger_wrapper_32/freertos10_xilinx_ps7_cortexa9_0/system.mss], Thread: Worker-130: Build Project
+
+!ENTRY com.xilinx.sdk.utils 0 0 2021-11-18 14:54:56.430
+!MESSAGE XSCT command with result: [::hsi::utils::get_hw_sw_details -json C:/Scanway/Vivado/ScanEye_trigger/workspace/scaneye_trigger_wrapper_32/export/scaneye_trigger_wrapper_32/hw/scaneye_trigger_wrapper_32.xsa C:/Scanway/Vivado/ScanEye_trigger/workspace/scaneye_trigger_wrapper_32/export/scaneye_trigger_wrapper_32/sw/scaneye_trigger_wrapper_32/freertos10_xilinx_ps7_cortexa9_0/system.mss], Result: [null, {"procname": "ps7_cortexa9_0",
+"osname": "freertos10_xilinx",
+"osver": "1.9",
+}]. Thread: Worker-130: Build Project
+
+!ENTRY com.xilinx.sdk.utils 1 0 2021-11-18 14:54:56.432
+!MESSAGE Generating MD5 hash for file: C:\Scanway\Vivado\ScanEye_trigger\workspace\scaneye_trigger_wrapper_32\export\scaneye_trigger_wrapper_32\sw\scaneye_trigger_wrapper_32\freertos10_xilinx_ps7_cortexa9_0\system.mss ...
+
+!ENTRY com.xilinx.sdk.utils 0 0 2021-11-18 14:54:56.433
+!MESSAGE XSCT Command: [::hsi::utils::closesw C:/Scanway/Vivado/ScanEye_trigger/workspace/scaneye_trigger_wrapper_32/export/scaneye_trigger_wrapper_32/sw/scaneye_trigger_wrapper_32/freertos10_xilinx_ps7_cortexa9_0/system.mss], Thread: Worker-130: Build Project
+
+!ENTRY com.xilinx.sdk.utils 0 0 2021-11-18 14:54:56.436
+!MESSAGE XSCT command with result: [::hsi::utils::closesw C:/Scanway/Vivado/ScanEye_trigger/workspace/scaneye_trigger_wrapper_32/export/scaneye_trigger_wrapper_32/sw/scaneye_trigger_wrapper_32/freertos10_xilinx_ps7_cortexa9_0/system.mss], Result: [null, ]. Thread: Worker-130: Build Project
+
+!ENTRY com.xilinx.sdk.utils 0 0 2021-11-18 14:59:51.616
+!MESSAGE XSCT Command: [ ::hsi::utils::set_current_hw_sw C:/Scanway/Vivado/ScanEye_trigger/workspace/scaneye_trigger_wrapper_32/export/scaneye_trigger_wrapper_32/hw/scaneye_trigger_wrapper_32.xsa C:/Scanway/Vivado/ScanEye_trigger/workspace/scaneye_trigger_wrapper_32/export/scaneye_trigger_wrapper_32/sw/scaneye_trigger_wrapper_32/freertos10_xilinx_ps7_cortexa9_0/system.mss ], Thread: Worker-132: Build Project
+
+!ENTRY com.xilinx.sdk.utils 0 0 2021-11-18 14:59:51.622
+!MESSAGE XSCT command with result: [ ::hsi::utils::set_current_hw_sw C:/Scanway/Vivado/ScanEye_trigger/workspace/scaneye_trigger_wrapper_32/export/scaneye_trigger_wrapper_32/hw/scaneye_trigger_wrapper_32.xsa C:/Scanway/Vivado/ScanEye_trigger/workspace/scaneye_trigger_wrapper_32/export/scaneye_trigger_wrapper_32/sw/scaneye_trigger_wrapper_32/freertos10_xilinx_ps7_cortexa9_0/system.mss ], Result: [null, ]. Thread: Worker-132: Build Project
+
+!ENTRY com.xilinx.sdk.utils 0 0 2021-11-18 14:59:51.623
+!MESSAGE XSCT Command: [::hsi::utils::get_hw_sw_details -json C:/Scanway/Vivado/ScanEye_trigger/workspace/scaneye_trigger_wrapper_32/export/scaneye_trigger_wrapper_32/hw/scaneye_trigger_wrapper_32.xsa C:/Scanway/Vivado/ScanEye_trigger/workspace/scaneye_trigger_wrapper_32/export/scaneye_trigger_wrapper_32/sw/scaneye_trigger_wrapper_32/freertos10_xilinx_ps7_cortexa9_0/system.mss], Thread: Worker-132: Build Project
+
+!ENTRY com.xilinx.sdk.utils 0 0 2021-11-18 14:59:51.631
+!MESSAGE XSCT command with result: [::hsi::utils::get_hw_sw_details -json C:/Scanway/Vivado/ScanEye_trigger/workspace/scaneye_trigger_wrapper_32/export/scaneye_trigger_wrapper_32/hw/scaneye_trigger_wrapper_32.xsa C:/Scanway/Vivado/ScanEye_trigger/workspace/scaneye_trigger_wrapper_32/export/scaneye_trigger_wrapper_32/sw/scaneye_trigger_wrapper_32/freertos10_xilinx_ps7_cortexa9_0/system.mss], Result: [null, {"procname": "ps7_cortexa9_0",
+"osname": "freertos10_xilinx",
+"osver": "1.9",
+}]. Thread: Worker-132: Build Project
+
+!ENTRY com.xilinx.sdk.utils 1 0 2021-11-18 14:59:51.633
+!MESSAGE Generating MD5 hash for file: C:\Scanway\Vivado\ScanEye_trigger\workspace\scaneye_trigger_wrapper_32\export\scaneye_trigger_wrapper_32\sw\scaneye_trigger_wrapper_32\freertos10_xilinx_ps7_cortexa9_0\system.mss ...
+
+!ENTRY com.xilinx.sdk.utils 0 0 2021-11-18 14:59:51.634
+!MESSAGE XSCT Command: [::hsi::utils::closesw C:/Scanway/Vivado/ScanEye_trigger/workspace/scaneye_trigger_wrapper_32/export/scaneye_trigger_wrapper_32/sw/scaneye_trigger_wrapper_32/freertos10_xilinx_ps7_cortexa9_0/system.mss], Thread: Worker-132: Build Project
+
+!ENTRY com.xilinx.sdk.utils 0 0 2021-11-18 14:59:51.638
+!MESSAGE XSCT command with result: [::hsi::utils::closesw C:/Scanway/Vivado/ScanEye_trigger/workspace/scaneye_trigger_wrapper_32/export/scaneye_trigger_wrapper_32/sw/scaneye_trigger_wrapper_32/freertos10_xilinx_ps7_cortexa9_0/system.mss], Result: [null, ]. Thread: Worker-132: Build Project
+
+!ENTRY com.xilinx.sdk.utils 0 0 2021-11-18 15:01:01.003
+!MESSAGE XSCT Command: [ ::hsi::utils::set_current_hw_sw C:/Scanway/Vivado/ScanEye_trigger/workspace/scaneye_trigger_wrapper_32/export/scaneye_trigger_wrapper_32/hw/scaneye_trigger_wrapper_32.xsa C:/Scanway/Vivado/ScanEye_trigger/workspace/scaneye_trigger_wrapper_32/export/scaneye_trigger_wrapper_32/sw/scaneye_trigger_wrapper_32/freertos10_xilinx_ps7_cortexa9_0/system.mss ], Thread: Worker-131: Build Project
+
+!ENTRY com.xilinx.sdk.utils 0 0 2021-11-18 15:01:01.009
+!MESSAGE XSCT command with result: [ ::hsi::utils::set_current_hw_sw C:/Scanway/Vivado/ScanEye_trigger/workspace/scaneye_trigger_wrapper_32/export/scaneye_trigger_wrapper_32/hw/scaneye_trigger_wrapper_32.xsa C:/Scanway/Vivado/ScanEye_trigger/workspace/scaneye_trigger_wrapper_32/export/scaneye_trigger_wrapper_32/sw/scaneye_trigger_wrapper_32/freertos10_xilinx_ps7_cortexa9_0/system.mss ], Result: [null, ]. Thread: Worker-131: Build Project
+
+!ENTRY com.xilinx.sdk.utils 0 0 2021-11-18 15:01:01.010
+!MESSAGE XSCT Command: [::hsi::utils::get_hw_sw_details -json C:/Scanway/Vivado/ScanEye_trigger/workspace/scaneye_trigger_wrapper_32/export/scaneye_trigger_wrapper_32/hw/scaneye_trigger_wrapper_32.xsa C:/Scanway/Vivado/ScanEye_trigger/workspace/scaneye_trigger_wrapper_32/export/scaneye_trigger_wrapper_32/sw/scaneye_trigger_wrapper_32/freertos10_xilinx_ps7_cortexa9_0/system.mss], Thread: Worker-131: Build Project
+
+!ENTRY com.xilinx.sdk.utils 0 0 2021-11-18 15:01:01.015
+!MESSAGE XSCT command with result: [::hsi::utils::get_hw_sw_details -json C:/Scanway/Vivado/ScanEye_trigger/workspace/scaneye_trigger_wrapper_32/export/scaneye_trigger_wrapper_32/hw/scaneye_trigger_wrapper_32.xsa C:/Scanway/Vivado/ScanEye_trigger/workspace/scaneye_trigger_wrapper_32/export/scaneye_trigger_wrapper_32/sw/scaneye_trigger_wrapper_32/freertos10_xilinx_ps7_cortexa9_0/system.mss], Result: [null, {"procname": "ps7_cortexa9_0",
+"osname": "freertos10_xilinx",
+"osver": "1.9",
+}]. Thread: Worker-131: Build Project
+
+!ENTRY com.xilinx.sdk.utils 1 0 2021-11-18 15:01:01.016
+!MESSAGE Generating MD5 hash for file: C:\Scanway\Vivado\ScanEye_trigger\workspace\scaneye_trigger_wrapper_32\export\scaneye_trigger_wrapper_32\sw\scaneye_trigger_wrapper_32\freertos10_xilinx_ps7_cortexa9_0\system.mss ...
+
+!ENTRY com.xilinx.sdk.utils 0 0 2021-11-18 15:01:01.019
+!MESSAGE XSCT Command: [::hsi::utils::closesw C:/Scanway/Vivado/ScanEye_trigger/workspace/scaneye_trigger_wrapper_32/export/scaneye_trigger_wrapper_32/sw/scaneye_trigger_wrapper_32/freertos10_xilinx_ps7_cortexa9_0/system.mss], Thread: Worker-131: Build Project
+
+!ENTRY com.xilinx.sdk.utils 0 0 2021-11-18 15:01:01.023
+!MESSAGE XSCT command with result: [::hsi::utils::closesw C:/Scanway/Vivado/ScanEye_trigger/workspace/scaneye_trigger_wrapper_32/export/scaneye_trigger_wrapper_32/sw/scaneye_trigger_wrapper_32/freertos10_xilinx_ps7_cortexa9_0/system.mss], Result: [null, ]. Thread: Worker-131: Build Project
+
+!ENTRY com.xilinx.sdk.utils 0 0 2021-11-18 15:08:58.025
+!MESSAGE XSCT Command: [ ::hsi::utils::set_current_hw_sw C:/Scanway/Vivado/ScanEye_trigger/workspace/scaneye_trigger_wrapper_32/export/scaneye_trigger_wrapper_32/hw/scaneye_trigger_wrapper_32.xsa C:/Scanway/Vivado/ScanEye_trigger/workspace/scaneye_trigger_wrapper_32/export/scaneye_trigger_wrapper_32/sw/scaneye_trigger_wrapper_32/freertos10_xilinx_ps7_cortexa9_0/system.mss ], Thread: Worker-124: Build Project
+
+!ENTRY com.xilinx.sdk.utils 0 0 2021-11-18 15:08:58.032
+!MESSAGE XSCT command with result: [ ::hsi::utils::set_current_hw_sw C:/Scanway/Vivado/ScanEye_trigger/workspace/scaneye_trigger_wrapper_32/export/scaneye_trigger_wrapper_32/hw/scaneye_trigger_wrapper_32.xsa C:/Scanway/Vivado/ScanEye_trigger/workspace/scaneye_trigger_wrapper_32/export/scaneye_trigger_wrapper_32/sw/scaneye_trigger_wrapper_32/freertos10_xilinx_ps7_cortexa9_0/system.mss ], Result: [null, ]. Thread: Worker-124: Build Project
+
+!ENTRY com.xilinx.sdk.utils 0 0 2021-11-18 15:08:58.034
+!MESSAGE XSCT Command: [::hsi::utils::get_hw_sw_details -json C:/Scanway/Vivado/ScanEye_trigger/workspace/scaneye_trigger_wrapper_32/export/scaneye_trigger_wrapper_32/hw/scaneye_trigger_wrapper_32.xsa C:/Scanway/Vivado/ScanEye_trigger/workspace/scaneye_trigger_wrapper_32/export/scaneye_trigger_wrapper_32/sw/scaneye_trigger_wrapper_32/freertos10_xilinx_ps7_cortexa9_0/system.mss], Thread: Worker-124: Build Project
+
+!ENTRY com.xilinx.sdk.utils 0 0 2021-11-18 15:08:58.040
+!MESSAGE XSCT command with result: [::hsi::utils::get_hw_sw_details -json C:/Scanway/Vivado/ScanEye_trigger/workspace/scaneye_trigger_wrapper_32/export/scaneye_trigger_wrapper_32/hw/scaneye_trigger_wrapper_32.xsa C:/Scanway/Vivado/ScanEye_trigger/workspace/scaneye_trigger_wrapper_32/export/scaneye_trigger_wrapper_32/sw/scaneye_trigger_wrapper_32/freertos10_xilinx_ps7_cortexa9_0/system.mss], Result: [null, {"procname": "ps7_cortexa9_0",
+"osname": "freertos10_xilinx",
+"osver": "1.9",
+}]. Thread: Worker-124: Build Project
+
+!ENTRY com.xilinx.sdk.utils 1 0 2021-11-18 15:08:58.041
+!MESSAGE Generating MD5 hash for file: C:\Scanway\Vivado\ScanEye_trigger\workspace\scaneye_trigger_wrapper_32\export\scaneye_trigger_wrapper_32\sw\scaneye_trigger_wrapper_32\freertos10_xilinx_ps7_cortexa9_0\system.mss ...
+
+!ENTRY com.xilinx.sdk.utils 0 0 2021-11-18 15:08:58.042
+!MESSAGE XSCT Command: [::hsi::utils::closesw C:/Scanway/Vivado/ScanEye_trigger/workspace/scaneye_trigger_wrapper_32/export/scaneye_trigger_wrapper_32/sw/scaneye_trigger_wrapper_32/freertos10_xilinx_ps7_cortexa9_0/system.mss], Thread: Worker-124: Build Project
+
+!ENTRY com.xilinx.sdk.utils 0 0 2021-11-18 15:08:58.046
+!MESSAGE XSCT command with result: [::hsi::utils::closesw C:/Scanway/Vivado/ScanEye_trigger/workspace/scaneye_trigger_wrapper_32/export/scaneye_trigger_wrapper_32/sw/scaneye_trigger_wrapper_32/freertos10_xilinx_ps7_cortexa9_0/system.mss], Result: [null, ]. Thread: Worker-124: Build Project
+
+!ENTRY com.xilinx.sdk.utils 0 0 2021-11-18 15:09:02.378
+!MESSAGE XSCT Command: [disconnect tcfchan#32], Thread: Thread-4031
+
+!ENTRY com.xilinx.sdk.utils 0 0 2021-11-18 15:09:02.451
+!MESSAGE XSCT command with result: [disconnect tcfchan#32], Result: [null, ]. Thread: Thread-4031
+
+!ENTRY com.xilinx.sdk.utils 0 0 2021-11-18 15:09:05.414
+!MESSAGE XSCT Command: [connect -url tcp:127.0.0.1:3121], Thread: Worker-117: Launching Debugger_StarVIBE_soft-GDB
+
+!ENTRY com.xilinx.sdk.utils 0 0 2021-11-18 15:09:05.421
+!MESSAGE XSCT command with result: [connect -url tcp:127.0.0.1:3121], Result: [null, tcfchan#33]. Thread: Worker-117: Launching Debugger_StarVIBE_soft-GDB
+
+!ENTRY com.xilinx.sdk.utils 0 0 2021-11-18 15:09:05.423
+!MESSAGE XSCT Command: [jtag targets -filter {level == 0}], Thread: Worker-117: Launching Debugger_StarVIBE_soft-GDB
+
+!ENTRY com.xilinx.sdk.utils 0 0 2021-11-18 15:09:05.490
+!MESSAGE XSCT command with result: [jtag targets -filter {level == 0}], Result: [null,   1* Digilent Zybo Z7 210351AD67FBA]. Thread: Worker-117: Launching Debugger_StarVIBE_soft-GDB
+
+!ENTRY com.xilinx.sdk.utils 0 0 2021-11-18 15:09:05.492
+!MESSAGE XSCT Command: [version -server], Thread: Worker-117: Launching Debugger_StarVIBE_soft-GDB
+
+!ENTRY com.xilinx.sdk.utils 0 0 2021-11-18 15:09:05.503
+!MESSAGE XSCT command with result: [version -server], Result: [null, 2021.1.1]. Thread: Worker-117: Launching Debugger_StarVIBE_soft-GDB
+
+!ENTRY com.xilinx.sdk.utils 0 0 2021-11-18 15:09:05.504
+!MESSAGE XSCT Command: [version], Thread: Worker-117: Launching Debugger_StarVIBE_soft-GDB
+
+!ENTRY com.xilinx.sdk.utils 0 0 2021-11-18 15:09:05.505
+!MESSAGE XSCT command with result: [version], Result: [null, xsct 2021.1
+SW Build 38 on 2021-07-20-20:33:42
+Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.]. Thread: Worker-117: Launching Debugger_StarVIBE_soft-GDB
+
+!ENTRY com.xilinx.sdk.utils 0 0 2021-11-18 15:09:05.506
+!MESSAGE XSCT Command: [jtag targets -filter {level == 0}], Thread: Worker-117: Launching Debugger_StarVIBE_soft-GDB
+
+!ENTRY com.xilinx.sdk.utils 0 0 2021-11-18 15:09:05.513
+!MESSAGE XSCT command with result: [jtag targets -filter {level == 0}], Result: [null,   1* Digilent Zybo Z7 210351AD67FBA]. Thread: Worker-117: Launching Debugger_StarVIBE_soft-GDB
+
+!ENTRY com.xilinx.sdk.utils 0 0 2021-11-18 15:09:05.513
+!MESSAGE XSCT Command: [jtag targets -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351AD67FBA" && level==1}], Thread: Worker-117: Launching Debugger_StarVIBE_soft-GDB
+
+!ENTRY com.xilinx.sdk.utils 0 0 2021-11-18 15:09:05.530
+!MESSAGE XSCT command with result: [jtag targets -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351AD67FBA" && level==1}], Result: [null,      2  arm_dap (idcode 4ba00477 irlen 4)
+     3  xc7z020 (idcode 23727093 irlen 6 fpga)]. Thread: Worker-117: Launching Debugger_StarVIBE_soft-GDB
+
+!ENTRY com.xilinx.sdk.utils 0 0 2021-11-18 15:09:05.531
+!MESSAGE XSCT Command: [jtag targets -filter {level == 0}], Thread: Worker-117: Launching Debugger_StarVIBE_soft-GDB
+
+!ENTRY com.xilinx.sdk.utils 0 0 2021-11-18 15:09:05.551
+!MESSAGE XSCT command with result: [jtag targets -filter {level == 0}], Result: [null,   1* Digilent Zybo Z7 210351AD67FBA]. Thread: Worker-117: Launching Debugger_StarVIBE_soft-GDB
+
+!ENTRY com.xilinx.sdk.utils 0 0 2021-11-18 15:09:05.552
+!MESSAGE XSCT Command: [jtag targets -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351AD67FBA" && level==1}], Thread: Worker-117: Launching Debugger_StarVIBE_soft-GDB
+
+!ENTRY com.xilinx.sdk.utils 0 0 2021-11-18 15:09:05.566
+!MESSAGE XSCT command with result: [jtag targets -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351AD67FBA" && level==1}], Result: [null,      2  arm_dap (idcode 4ba00477 irlen 4)
+     3  xc7z020 (idcode 23727093 irlen 6 fpga)]. Thread: Worker-117: Launching Debugger_StarVIBE_soft-GDB
+
+!ENTRY com.xilinx.sdk.utils 0 0 2021-11-18 15:09:05.567
+!MESSAGE XSCT Command: [jtag targets -filter {level == 0}], Thread: Worker-117: Launching Debugger_StarVIBE_soft-GDB
+
+!ENTRY com.xilinx.sdk.utils 0 0 2021-11-18 15:09:05.576
+!MESSAGE XSCT command with result: [jtag targets -filter {level == 0}], Result: [null,   1* Digilent Zybo Z7 210351AD67FBA]. Thread: Worker-117: Launching Debugger_StarVIBE_soft-GDB
+
+!ENTRY com.xilinx.sdk.utils 0 0 2021-11-18 15:09:05.577
+!MESSAGE XSCT Command: [jtag targets -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351AD67FBA" && level==1}], Thread: Worker-117: Launching Debugger_StarVIBE_soft-GDB
+
+!ENTRY com.xilinx.sdk.utils 0 0 2021-11-18 15:09:05.592
+!MESSAGE XSCT command with result: [jtag targets -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351AD67FBA" && level==1}], Result: [null,      2  arm_dap (idcode 4ba00477 irlen 4)
+     3  xc7z020 (idcode 23727093 irlen 6 fpga)]. Thread: Worker-117: Launching Debugger_StarVIBE_soft-GDB
+
+!ENTRY com.xilinx.sdk.utils 0 0 2021-11-18 15:09:05.593
+!MESSAGE XSCT Command: [jtag targets -filter {level == 0}], Thread: Worker-117: Launching Debugger_StarVIBE_soft-GDB
+
+!ENTRY com.xilinx.sdk.utils 0 0 2021-11-18 15:09:05.598
+!MESSAGE XSCT command with result: [jtag targets -filter {level == 0}], Result: [null,   1* Digilent Zybo Z7 210351AD67FBA]. Thread: Worker-117: Launching Debugger_StarVIBE_soft-GDB
+
+!ENTRY com.xilinx.sdk.utils 0 0 2021-11-18 15:09:05.598
+!MESSAGE XSCT Command: [jtag targets -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351AD67FBA" && level==1}], Thread: Worker-117: Launching Debugger_StarVIBE_soft-GDB
+
+!ENTRY com.xilinx.sdk.utils 0 0 2021-11-18 15:09:05.613
+!MESSAGE XSCT command with result: [jtag targets -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351AD67FBA" && level==1}], Result: [null,      2  arm_dap (idcode 4ba00477 irlen 4)
+     3  xc7z020 (idcode 23727093 irlen 6 fpga)]. Thread: Worker-117: Launching Debugger_StarVIBE_soft-GDB
+
+!ENTRY com.xilinx.sdk.utils 0 0 2021-11-18 15:09:05.613
+!MESSAGE XSCT Command: [jtag targets -filter {level == 0}], Thread: Worker-117: Launching Debugger_StarVIBE_soft-GDB
+
+!ENTRY com.xilinx.sdk.utils 0 0 2021-11-18 15:09:05.621
+!MESSAGE XSCT command with result: [jtag targets -filter {level == 0}], Result: [null,   1* Digilent Zybo Z7 210351AD67FBA]. Thread: Worker-117: Launching Debugger_StarVIBE_soft-GDB
+
+!ENTRY com.xilinx.sdk.utils 0 0 2021-11-18 15:09:05.622
+!MESSAGE XSCT Command: [jtag targets -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351AD67FBA" && level==1}], Thread: Worker-117: Launching Debugger_StarVIBE_soft-GDB
+
+!ENTRY com.xilinx.sdk.utils 0 0 2021-11-18 15:09:05.638
+!MESSAGE XSCT command with result: [jtag targets -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351AD67FBA" && level==1}], Result: [null,      2  arm_dap (idcode 4ba00477 irlen 4)
+     3  xc7z020 (idcode 23727093 irlen 6 fpga)]. Thread: Worker-117: Launching Debugger_StarVIBE_soft-GDB
+
+!ENTRY com.xilinx.sdk.utils 0 0 2021-11-18 15:09:05.638
+!MESSAGE XSCT Command: [jtag targets -filter {level == 0}], Thread: Worker-117: Launching Debugger_StarVIBE_soft-GDB
+
+!ENTRY com.xilinx.sdk.utils 0 0 2021-11-18 15:09:05.644
+!MESSAGE XSCT command with result: [jtag targets -filter {level == 0}], Result: [null,   1* Digilent Zybo Z7 210351AD67FBA]. Thread: Worker-117: Launching Debugger_StarVIBE_soft-GDB
+
+!ENTRY com.xilinx.sdk.utils 0 0 2021-11-18 15:09:05.644
+!MESSAGE XSCT Command: [jtag targets -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351AD67FBA" && level==1}], Thread: Worker-117: Launching Debugger_StarVIBE_soft-GDB
+
+!ENTRY com.xilinx.sdk.utils 0 0 2021-11-18 15:09:05.659
+!MESSAGE XSCT command with result: [jtag targets -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351AD67FBA" && level==1}], Result: [null,      2  arm_dap (idcode 4ba00477 irlen 4)
+     3  xc7z020 (idcode 23727093 irlen 6 fpga)]. Thread: Worker-117: Launching Debugger_StarVIBE_soft-GDB
+
+!ENTRY com.xilinx.sdk.utils 0 0 2021-11-18 15:09:05.659
+!MESSAGE XSCT Command: [jtag targets -set -filter {name =~ "Digilent Zybo Z7 210351AD67FBA" && level == 0}], Thread: Worker-117: Launching Debugger_StarVIBE_soft-GDB
+
+!ENTRY com.xilinx.sdk.utils 0 0 2021-11-18 15:09:05.675
+!MESSAGE XSCT command with result: [jtag targets -set -filter {name =~ "Digilent Zybo Z7 210351AD67FBA" && level == 0}], Result: [null, ]. Thread: Worker-117: Launching Debugger_StarVIBE_soft-GDB
+
+!ENTRY com.xilinx.sdk.utils 0 0 2021-11-18 15:09:05.676
+!MESSAGE XSCT Command: [jtag frequency], Thread: Worker-117: Launching Debugger_StarVIBE_soft-GDB
+
+!ENTRY com.xilinx.sdk.utils 0 0 2021-11-18 15:09:05.722
+!MESSAGE XSCT command with result: [jtag frequency], Result: [null, 15000000]. Thread: Worker-117: Launching Debugger_StarVIBE_soft-GDB
+
+!ENTRY com.xilinx.sdk.utils 0 0 2021-11-18 15:09:05.723
+!MESSAGE XSCT Command: [targets -set -nocase -filter {name =~"APU*"}], Thread: Worker-117: Launching Debugger_StarVIBE_soft-GDB
+
+!ENTRY com.xilinx.sdk.utils 0 0 2021-11-18 15:09:05.732
+!MESSAGE XSCT command with result: [targets -set -nocase -filter {name =~"APU*"}], Result: [null, ]. Thread: Worker-117: Launching Debugger_StarVIBE_soft-GDB
+
+!ENTRY com.xilinx.sdk.utils 0 0 2021-11-18 15:09:05.733
+!MESSAGE XSCT Command: [rst -system], Thread: Worker-117: Launching Debugger_StarVIBE_soft-GDB
+
+!ENTRY com.xilinx.sdk.utils 0 0 2021-11-18 15:09:05.826
+!MESSAGE XSCT command with result: [rst -system], Result: [null, ]. Thread: Worker-117: Launching Debugger_StarVIBE_soft-GDB
+
+!ENTRY com.xilinx.sdk.utils 0 0 2021-11-18 15:09:05.827
+!MESSAGE XSCT Command: [after 3000], Thread: Worker-117: Launching Debugger_StarVIBE_soft-GDB
+
+!ENTRY com.xilinx.sdk.utils 0 0 2021-11-18 15:09:08.838
+!MESSAGE XSCT command with result: [after 3000], Result: [null, ]. Thread: Worker-117: Launching Debugger_StarVIBE_soft-GDB
+
+!ENTRY com.xilinx.sdk.utils 0 0 2021-11-18 15:09:08.862
+!MESSAGE XSCT Command: [jtag targets -filter {level == 0}], Thread: ModalContext
+
+!ENTRY com.xilinx.sdk.utils 0 0 2021-11-18 15:09:08.869
+!MESSAGE XSCT command with result: [jtag targets -filter {level == 0}], Result: [null,   1* Digilent Zybo Z7 210351AD67FBA]. Thread: ModalContext
+
+!ENTRY com.xilinx.sdk.utils 0 0 2021-11-18 15:09:08.869
+!MESSAGE XSCT Command: [jtag targets -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351AD67FBA" && level==1}], Thread: ModalContext
+
+!ENTRY com.xilinx.sdk.utils 0 0 2021-11-18 15:09:08.882
+!MESSAGE XSCT command with result: [jtag targets -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351AD67FBA" && level==1}], Result: [null,      2  arm_dap (idcode 4ba00477 irlen 4)
+     3  xc7z020 (idcode 23727093 irlen 6 fpga)]. Thread: ModalContext
+
+!ENTRY com.xilinx.sdk.utils 0 0 2021-11-18 15:09:08.883
+!MESSAGE XSCT Command: [targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351AD67FBA" && level==0 && jtag_device_ctx=="jsn-Zybo Z7-210351AD67FBA-23727093-0"}], Thread: ModalContext
+
+!ENTRY com.xilinx.sdk.utils 0 0 2021-11-18 15:09:08.910
+!MESSAGE XSCT command with result: [targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351AD67FBA" && level==0 && jtag_device_ctx=="jsn-Zybo Z7-210351AD67FBA-23727093-0"}], Result: [null, ]. Thread: ModalContext
+
+!ENTRY com.xilinx.sdk.utils 0 0 2021-11-18 15:09:08.911
+!MESSAGE XSCT Command: [fpga -file C:/Scanway/Vivado/ScanEye_trigger/workspace/StarVIBE_soft/_ide/bitstream/scaneye_trigger_wrapper_32.bit], Thread: ModalContext
+
+!ENTRY com.xilinx.sdk.utils 0 0 2021-11-18 15:09:11.251
+!MESSAGE XSCT command with result: [fpga -file C:/Scanway/Vivado/ScanEye_trigger/workspace/StarVIBE_soft/_ide/bitstream/scaneye_trigger_wrapper_32.bit], Result: [null, ]. Thread: ModalContext
+
+!ENTRY com.xilinx.sdk.utils 0 0 2021-11-18 15:09:11.285
+!MESSAGE XSCT Command: [targets -set -nocase -filter {name =~"APU*"}], Thread: Worker-117: Launching Debugger_StarVIBE_soft-GDB
+
+!ENTRY com.xilinx.sdk.utils 0 0 2021-11-18 15:09:11.296
+!MESSAGE XSCT command with result: [targets -set -nocase -filter {name =~"APU*"}], Result: [null, ]. Thread: Worker-117: Launching Debugger_StarVIBE_soft-GDB
+
+!ENTRY com.xilinx.sdk.utils 0 0 2021-11-18 15:09:11.298
+!MESSAGE XSCT Command: [loadhw -hw C:/Scanway/Vivado/ScanEye_trigger/workspace/scaneye_trigger_wrapper_32/export/scaneye_trigger_wrapper_32/hw/scaneye_trigger_wrapper_32.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs], Thread: Worker-117: Launching Debugger_StarVIBE_soft-GDB
+
+!ENTRY com.xilinx.sdk.utils 0 0 2021-11-18 15:09:13.489
+!MESSAGE XSCT command with result: [loadhw -hw C:/Scanway/Vivado/ScanEye_trigger/workspace/scaneye_trigger_wrapper_32/export/scaneye_trigger_wrapper_32/hw/scaneye_trigger_wrapper_32.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs], Result: [null, scaneye_trigger_wrapper_31]. Thread: Worker-117: Launching Debugger_StarVIBE_soft-GDB
+
+!ENTRY com.xilinx.sdk.utils 0 0 2021-11-18 15:09:13.490
+!MESSAGE XSCT Command: [configparams force-mem-access 1], Thread: Worker-117: Launching Debugger_StarVIBE_soft-GDB
+
+!ENTRY com.xilinx.sdk.utils 0 0 2021-11-18 15:09:13.491
+!MESSAGE XSCT command with result: [configparams force-mem-access 1], Result: [null, ]. Thread: Worker-117: Launching Debugger_StarVIBE_soft-GDB
+
+!ENTRY com.xilinx.sdk.utils 0 0 2021-11-18 15:09:13.492
+!MESSAGE XSCT Command: [targets -set -nocase -filter {name =~"APU*"}], Thread: Worker-117: Launching Debugger_StarVIBE_soft-GDB
+
+!ENTRY com.xilinx.sdk.utils 0 0 2021-11-18 15:09:13.499
+!MESSAGE XSCT command with result: [targets -set -nocase -filter {name =~"APU*"}], Result: [null, ]. Thread: Worker-117: Launching Debugger_StarVIBE_soft-GDB
+
+!ENTRY com.xilinx.sdk.utils 0 0 2021-11-18 15:09:13.500
+!MESSAGE XSCT Command: [source C:/Scanway/Vivado/ScanEye_trigger/workspace/StarVIBE_soft/_ide/psinit/ps7_init.tcl], Thread: Worker-117: Launching Debugger_StarVIBE_soft-GDB
+
+!ENTRY com.xilinx.sdk.utils 0 0 2021-11-18 15:09:13.502
+!MESSAGE XSCT command with result: [source C:/Scanway/Vivado/ScanEye_trigger/workspace/StarVIBE_soft/_ide/psinit/ps7_init.tcl], Result: [null, ]. Thread: Worker-117: Launching Debugger_StarVIBE_soft-GDB
+
+!ENTRY com.xilinx.sdk.utils 0 0 2021-11-18 15:09:13.502
+!MESSAGE XSCT Command: [ps7_init], Thread: Worker-117: Launching Debugger_StarVIBE_soft-GDB
+
+!ENTRY com.xilinx.sdk.utils 0 0 2021-11-18 15:09:13.812
+!MESSAGE XSCT command with result: [ps7_init], Result: [null, ]. Thread: Worker-117: Launching Debugger_StarVIBE_soft-GDB
+
+!ENTRY com.xilinx.sdk.utils 0 0 2021-11-18 15:09:13.812
+!MESSAGE XSCT Command: [ps7_post_config], Thread: Worker-117: Launching Debugger_StarVIBE_soft-GDB
+
+!ENTRY com.xilinx.sdk.utils 0 0 2021-11-18 15:09:13.827
+!MESSAGE XSCT command with result: [ps7_post_config], Result: [null, ]. Thread: Worker-117: Launching Debugger_StarVIBE_soft-GDB
+
+!ENTRY com.xilinx.sdk.utils 0 0 2021-11-18 15:09:13.828
+!MESSAGE XSCT Command: [targets -set -nocase -filter {name =~ "*A9*#0"}], Thread: Worker-117: Launching Debugger_StarVIBE_soft-GDB
+
+!ENTRY com.xilinx.sdk.utils 0 0 2021-11-18 15:09:13.836
+!MESSAGE XSCT command with result: [targets -set -nocase -filter {name =~ "*A9*#0"}], Result: [null, ]. Thread: Worker-117: Launching Debugger_StarVIBE_soft-GDB
+
+!ENTRY com.xilinx.sdk.utils 0 0 2021-11-18 15:09:13.837
+!MESSAGE XSCT Command: [dow C:/Scanway/Vivado/ScanEye_trigger/workspace/StarVIBE_soft/Debug/StarVIBE_soft.elf], Thread: Worker-117: Launching Debugger_StarVIBE_soft-GDB
+
+!ENTRY com.xilinx.sdk.utils 0 0 2021-11-18 15:09:14.325
+!MESSAGE XSCT command with result: [dow C:/Scanway/Vivado/ScanEye_trigger/workspace/StarVIBE_soft/Debug/StarVIBE_soft.elf], Result: [null, ]. Thread: Worker-117: Launching Debugger_StarVIBE_soft-GDB
+
+!ENTRY com.xilinx.sdk.utils 0 0 2021-11-18 15:09:14.326
+!MESSAGE XSCT Command: [configparams force-mem-access 0], Thread: Worker-117: Launching Debugger_StarVIBE_soft-GDB
+
+!ENTRY com.xilinx.sdk.utils 0 0 2021-11-18 15:09:14.371
+!MESSAGE XSCT command with result: [configparams force-mem-access 0], Result: [null, ]. Thread: Worker-117: Launching Debugger_StarVIBE_soft-GDB
+
+!ENTRY com.xilinx.sdk.utils 0 0 2021-11-18 15:14:38.948
+!MESSAGE XSCT Command: [ ::hsi::utils::set_current_hw_sw C:/Scanway/Vivado/ScanEye_trigger/workspace/scaneye_trigger_wrapper_32/export/scaneye_trigger_wrapper_32/hw/scaneye_trigger_wrapper_32.xsa C:/Scanway/Vivado/ScanEye_trigger/workspace/scaneye_trigger_wrapper_32/export/scaneye_trigger_wrapper_32/sw/scaneye_trigger_wrapper_32/freertos10_xilinx_ps7_cortexa9_0/system.mss ], Thread: Worker-135: Build Project
+
+!ENTRY com.xilinx.sdk.utils 0 0 2021-11-18 15:14:38.954
+!MESSAGE XSCT command with result: [ ::hsi::utils::set_current_hw_sw C:/Scanway/Vivado/ScanEye_trigger/workspace/scaneye_trigger_wrapper_32/export/scaneye_trigger_wrapper_32/hw/scaneye_trigger_wrapper_32.xsa C:/Scanway/Vivado/ScanEye_trigger/workspace/scaneye_trigger_wrapper_32/export/scaneye_trigger_wrapper_32/sw/scaneye_trigger_wrapper_32/freertos10_xilinx_ps7_cortexa9_0/system.mss ], Result: [null, ]. Thread: Worker-135: Build Project
+
+!ENTRY com.xilinx.sdk.utils 0 0 2021-11-18 15:14:38.955
+!MESSAGE XSCT Command: [::hsi::utils::get_hw_sw_details -json C:/Scanway/Vivado/ScanEye_trigger/workspace/scaneye_trigger_wrapper_32/export/scaneye_trigger_wrapper_32/hw/scaneye_trigger_wrapper_32.xsa C:/Scanway/Vivado/ScanEye_trigger/workspace/scaneye_trigger_wrapper_32/export/scaneye_trigger_wrapper_32/sw/scaneye_trigger_wrapper_32/freertos10_xilinx_ps7_cortexa9_0/system.mss], Thread: Worker-135: Build Project
+
+!ENTRY com.xilinx.sdk.utils 0 0 2021-11-18 15:14:38.959
+!MESSAGE XSCT command with result: [::hsi::utils::get_hw_sw_details -json C:/Scanway/Vivado/ScanEye_trigger/workspace/scaneye_trigger_wrapper_32/export/scaneye_trigger_wrapper_32/hw/scaneye_trigger_wrapper_32.xsa C:/Scanway/Vivado/ScanEye_trigger/workspace/scaneye_trigger_wrapper_32/export/scaneye_trigger_wrapper_32/sw/scaneye_trigger_wrapper_32/freertos10_xilinx_ps7_cortexa9_0/system.mss], Result: [null, {"procname": "ps7_cortexa9_0",
+"osname": "freertos10_xilinx",
+"osver": "1.9",
+}]. Thread: Worker-135: Build Project
+
+!ENTRY com.xilinx.sdk.utils 1 0 2021-11-18 15:14:38.960
+!MESSAGE Generating MD5 hash for file: C:\Scanway\Vivado\ScanEye_trigger\workspace\scaneye_trigger_wrapper_32\export\scaneye_trigger_wrapper_32\sw\scaneye_trigger_wrapper_32\freertos10_xilinx_ps7_cortexa9_0\system.mss ...
+
+!ENTRY com.xilinx.sdk.utils 0 0 2021-11-18 15:14:38.961
+!MESSAGE XSCT Command: [::hsi::utils::closesw C:/Scanway/Vivado/ScanEye_trigger/workspace/scaneye_trigger_wrapper_32/export/scaneye_trigger_wrapper_32/sw/scaneye_trigger_wrapper_32/freertos10_xilinx_ps7_cortexa9_0/system.mss], Thread: Worker-135: Build Project
+
+!ENTRY com.xilinx.sdk.utils 0 0 2021-11-18 15:14:38.964
+!MESSAGE XSCT command with result: [::hsi::utils::closesw C:/Scanway/Vivado/ScanEye_trigger/workspace/scaneye_trigger_wrapper_32/export/scaneye_trigger_wrapper_32/sw/scaneye_trigger_wrapper_32/freertos10_xilinx_ps7_cortexa9_0/system.mss], Result: [null, ]. Thread: Worker-135: Build Project

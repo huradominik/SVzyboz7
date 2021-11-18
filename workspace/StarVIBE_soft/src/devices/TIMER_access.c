@@ -16,7 +16,6 @@ extern SemaphoreHandle_t xSemaphoreTimer;
 
 /************************** Variable Definitions ********************************/
 XTmrCtr TimerInstance;
-volatile int TimerExpired;
 
 
 /********************************************************************************/
