@@ -1,7 +1,7 @@
 --Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------
 --Tool Version: Vivado v.2021.1.1 (win64) Build 3286242 Wed Jul 28 13:10:47 MDT 2021
---Date        : Mon Nov 15 09:41:59 2021
+--Date        : Fri Nov 19 11:43:52 2021
 --Host        : DESKTOP-JATBKJM running 64-bit major release  (build 9200)
 --Command     : generate_target scaneye_trigger.bd
 --Design      : scaneye_trigger
@@ -2309,7 +2309,7 @@ architecture STRUCTURE of scaneye_trigger is
   attribute X_INTERFACE_INFO of DDR_dqs_n : signal is "xilinx.com:interface:ddrx:1.0 DDR DQS_N";
   attribute X_INTERFACE_INFO of DDR_dqs_p : signal is "xilinx.com:interface:ddrx:1.0 DDR DQS_P";
   attribute X_INTERFACE_INFO of FIXED_IO_mio : signal is "xilinx.com:display_processing_system7:fixedio:1.0 FIXED_IO MIO";
-  attribute X_INTERFACE_INFO of gpio_out_tri_o : signal is "xilinx.com:interface:gpio:1.0 gpio_out ";
+  attribute X_INTERFACE_INFO of gpio_out_tri_o : signal is "xilinx.com:interface:gpio:1.0 gpio_out TRI_O";
   attribute X_INTERFACE_INFO of gpio_sw_tri_i : signal is "xilinx.com:interface:gpio:1.0 gpio_sw TRI_I";
   attribute X_INTERFACE_INFO of spi_pmod_ss_i : signal is "xilinx.com:interface:spi:1.0 spi_pmod SS_I";
   attribute X_INTERFACE_INFO of spi_pmod_ss_o : signal is "xilinx.com:interface:spi:1.0 spi_pmod SS_O";

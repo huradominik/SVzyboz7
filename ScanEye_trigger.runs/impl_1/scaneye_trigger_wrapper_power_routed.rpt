@@ -1,7 +1,7 @@
 Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2021.1.1 (win64) Build 3286242 Wed Jul 28 13:10:47 MDT 2021
-| Date             : Mon Nov 15 09:47:15 2021
+| Date             : Fri Nov 19 11:46:53 2021
 | Host             : DESKTOP-JATBKJM running 64-bit major release  (build 9200)
 | Command          : report_power -file scaneye_trigger_wrapper_power_routed.rpt -pb scaneye_trigger_wrapper_power_summary_routed.pb -rpx scaneye_trigger_wrapper_power_routed.rpx
 | Design           : scaneye_trigger_wrapper
@@ -61,7 +61,7 @@ Table of Contents
 |   F7/F8 Muxes            |    <0.001 |      179 |     53200 |            0.34 |
 |   LUT as Shift Register  |    <0.001 |      155 |     17400 |            0.89 |
 |   Others                 |     0.000 |      602 |       --- |             --- |
-| Signals                  |     0.004 |     8588 |       --- |             --- |
+| Signals                  |     0.004 |     8603 |       --- |             --- |
 | Block RAM                |    <0.001 |      0.5 |       140 |            0.36 |
 | MMCM                     |     0.107 |        1 |         4 |           25.00 |
 | I/O                      |     0.030 |       19 |       125 |           15.20 |
@@ -172,8 +172,8 @@ Table of Contents
 |       inst               |     0.111 |
 |     ila_0                |     0.003 |
 |       U0                 |     0.003 |
-|     processing_system7_0 |     1.400 |
-|       inst               |     1.400 |
+|     processing_system7_0 |     1.399 |
+|       inst               |     1.399 |
 |     ps7_0_axi_periph     |     0.002 |
 |       s00_couplers       |     0.002 |
 +--------------------------+-----------+

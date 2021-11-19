@@ -20,12 +20,12 @@ set_property IOSTANDARD LVCMOS33    [get_ports "t_last_0"]
 #
 #
 #Buttons
-##IO_L12N_T1_MRCC_35 Sch=btn[0] BTN 0
-set_property PACKAGE_PIN K18        [get_ports "gpio_sw_tri_i[0]"]
+##IO_L12N_T1_MRCC_35 Sch=btn[0] POWER_GOOD
+set_property PACKAGE_PIN W13        [get_ports "gpio_sw_tri_i[0]"]
 set_property IOSTANDARD LVCMOS33    [get_ports "gpio_sw_tri_i[0]"]
 #
-#IO_L24N_T3_34 Sch=btn[1] BTN 1
-set_property PACKAGE_PIN P16        [get_ports "gpio_sw_tri_i[1]"]
+#IO_L24N_T3_34 Sch=btn[1] LAST_FRAME (t_last)
+set_property PACKAGE_PIN T16        [get_ports "gpio_sw_tri_i[1]"]
 set_property IOSTANDARD LVCMOS33    [get_ports "gpio_sw_tri_i[1]"]
 #
 #IO_L10P_T1_AD11P_35 Sch=btn[2] BTN 2

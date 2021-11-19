@@ -1,7 +1,7 @@
 --Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------
 --Tool Version: Vivado v.2021.1.1 (win64) Build 3286242 Wed Jul 28 13:10:47 MDT 2021
---Date        : Mon Nov 15 09:41:59 2021
+--Date        : Fri Nov 19 11:43:52 2021
 --Host        : DESKTOP-JATBKJM running 64-bit major release  (build 9200)
 --Command     : generate_target scaneye_trigger_wrapper.bd
 --Design      : scaneye_trigger_wrapper

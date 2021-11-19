@@ -27,3 +27,10 @@ bsp write
 bsp reload
 catch {bsp regenerate}
 platform generate -domains freertos10_xilinx_ps7_cortexa9_0 
+platform clean
+platform generate
+platform clean
+platform active {scaneye_trigger_wrapper_32}
+platform config -updatehw {C:/Scanway/Vivado/ScanEye_trigger/scaneye_trigger_wrapper_STAR_VIBE.xsa}
+platform generate
+platform write

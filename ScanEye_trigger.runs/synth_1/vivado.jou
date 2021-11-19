@@ -2,8 +2,8 @@
 # Vivado v2021.1.1 (64-bit)
 # SW Build 3286242 on Wed Jul 28 13:10:47 MDT 2021
 # IP Build 3279568 on Wed Jul 28 16:48:48 MDT 2021
-# Start of session at: Mon Nov 15 09:44:33 2021
-# Process ID: 21592
+# Start of session at: Fri Nov 19 11:44:01 2021
+# Process ID: 10216
 # Current directory: C:/Scanway/Vivado/ScanEye_trigger/ScanEye_trigger.runs/synth_1
 # Command line: vivado.exe -log scaneye_trigger_wrapper.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source scaneye_trigger_wrapper.tcl
 # Log file: C:/Scanway/Vivado/ScanEye_trigger/ScanEye_trigger.runs/synth_1/scaneye_trigger_wrapper.vds

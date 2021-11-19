@@ -1,137 +1,24 @@
-Nothing to build in platform 'scaneye_trigger_wrapper_32'
+Nothing to build in platform 'scaneye_trigger_wrapper_STAR_VIBE'
 
-08:46:54 **** Incremental Build of configuration Debug for project StarVIBE_soft ****
+13:31:34 **** Incremental Build of configuration Debug for project STAR_VIBE ****
 make all 
 make --no-print-directory pre-build
 a9-linaro-pre-build-step
 ' '
 make --no-print-directory main-build
-'Building file: ../src/main.c'
+'Building file: ../src/cmvsoft.c'
 'Invoking: ARM v7 gcc compiler'
-arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -IC:/Scanway/Vivado/ScanEye_trigger/workspace/scaneye_trigger_wrapper_32/export/scaneye_trigger_wrapper_32/sw/scaneye_trigger_wrapper_32/freertos10_xilinx_ps7_cortexa9_0/bspinclude/include -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
-In file included from ../src/main.c:29:
-../src/devices/spi_access.h:14: warning: "INTC_DEVICE_ID" redefined
-   14 | #define INTC_DEVICE_ID  XPAR_SCUGIC_0_DEVICE_ID
-      | 
-In file included from ../src/main.c:28:
-../src/devices/GPIO_access.h:13: note: this is the location of the previous definition
-   13 | #define INTC_DEVICE_ID   XPAR_PS7_SCUGIC_0_DEVICE_ID
-      | 
-In file included from ../src/main.c:33:
-../src/devices/TIMER_access.h:20: warning: "INTC_DEVICE_ID" redefined
-   20 | #define INTC_DEVICE_ID   XPAR_PS7_SCUGIC_0_DEVICE_ID
-      | 
-In file included from ../src/main.c:31:
-../src/devices/trigger_cmv_access.h:13: note: this is the location of the previous definition
-   13 | #define INTC_DEVICE_ID    XPAR_SCUGIC_0_DEVICE_ID
-      | 
-In file included from ../src/main.c:36:
-../src/cmvsoft.h:31:1: warning: data definition has no type or storage class
-   31 | init_cmvSoft();
-      | ^~~~~~~~~~~~
-../src/cmvsoft.h:31:1: warning: type defaults to 'int' in declaration of 'init_cmvSoft' [-Wimplicit-int]
-../src/main.c: In function 'vTaskCmvSoftTrigger':
-../src/main.c:206:13: warning: unused variable 'Status' [-Wunused-variable]
-  206 |  BaseType_t Status;
-      |             ^~~~~~
-../src/main.c: In function 'vTaskUserInterface':
-../src/main.c:605:5: warning: implicit declaration of function 'scanf' [-Wimplicit-function-declaration]
-  605 |     scanf(" %c",&submain);
-      |     ^~~~~
-../src/main.c:605:5: warning: incompatible implicit declaration of built-in function 'scanf'
-../src/main.c:37:1: note: include '<stdio.h>' or provide a declaration of 'scanf'
-   36 | #include "cmvsoft.h"
-  +++ |+#include <stdio.h>
-   37 | 
-../src/main.c:666:16: warning: format '%d' expects argument of type 'int *', but argument 2 has type 'u32 *' {aka 'long unsigned int *'} [-Wformat=]
-  666 |       scanf(" %d",&cmvConfigPtr->ExposureTimeTexp1Us);
-      |               ~^  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-      |                |  |
-      |                |  u32 * {aka long unsigned int *}
-      |                int *
-      |               %ld
-../src/main.c:673:16: warning: format '%d' expects argument of type 'int *', but argument 2 has type 'u32 *' {aka 'long unsigned int *'} [-Wformat=]
-  673 |       scanf(" %d",&cmvConfigPtr->ExposureTimeTexp2Us);
-      |               ~^  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-      |                |  |
-      |                |  u32 * {aka long unsigned int *}
-      |                int *
-      |               %ld
-../src/main.c:681:16: warning: format '%d' expects argument of type 'int *', but argument 2 has type 'u32 *' {aka 'long unsigned int *'} [-Wformat=]
-  681 |       scanf(" %d",&cmvConfigPtr->NumberOfFrame);
-      |               ~^  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-      |                |  |
-      |                |  u32 * {aka long unsigned int *}
-      |                int *
-      |               %ld
-../src/main.c:756:5: warning: incompatible implicit declaration of built-in function 'scanf'
-  756 |     scanf(" %c",&submain);
-      |     ^~~~~
-../src/main.c:756:5: note: include '<stdio.h>' or provide a declaration of 'scanf'
-../src/main.c:581:17: warning: unused variable 'xReceiveHk' [-Wunused-variable]
-  581 |  static Hk_data xReceiveHk[NUMBER_OF_CHANNELS];
-      |                 ^~~~~~~~~~
-../src/main.c:565:13: warning: unused variable 'Status' [-Wunused-variable]
-  565 |  BaseType_t Status;
-      |             ^~~~~~
-../src/main.c: In function 'vTaskHousekeeping':
-../src/main.c:785:6: warning: unused variable 'channel' [-Wunused-variable]
-  785 |  u32 channel;
-      |      ^~~~~~~
-../src/main.c:784:16: warning: unused variable 'thousands' [-Wunused-variable]
-  784 |  u32 whole[4], thousands[4];
-      |                ^~~~~~~~~
-../src/main.c:784:6: warning: unused variable 'whole' [-Wunused-variable]
-  784 |  u32 whole[4], thousands[4];
-      |      ^~~~~
-../src/main.c:779:13: warning: variable 'xStatus' set but not used [-Wunused-but-set-variable]
-  779 |  BaseType_t xStatus;
-      |             ^~~~~~~
-../src/main.c: In function 'vTaskCommunication':
-../src/main.c:838:7: warning: unused variable 'work' [-Wunused-variable]
-  838 |  UINT work[FF_MAX_SS];
-      |       ^~~~
-../src/main.c:837:9: warning: unused variable 'Path' [-Wunused-variable]
-  837 |  TCHAR *Path = "0:/";
-      |         ^~~~
-../src/main.c:835:14: warning: unused variable 'FileName' [-Wunused-variable]
-  835 |  static char FileName[32] = "pom.txt";
-      |              ^~~~~~~~
-../src/main.c:834:8: warning: unused variable 'fatfs' [-Wunused-variable]
-  834 |  FATFS fatfs;
-      |        ^~~~~
-../src/main.c:833:6: warning: unused variable 'fil' [-Wunused-variable]
-  833 |  FIL fil;
-      |      ^~~
-../src/main.c:832:10: warning: unused variable 'Res' [-Wunused-variable]
-  832 |  FRESULT Res;
-      |          ^~~
-At top level:
-../src/main.c:835:14: warning: 'FileName' defined but not used [-Wunused-variable]
-  835 |  static char FileName[32] = "pom.txt";
-      |              ^~~~~~~~
-../src/main.c:581:17: warning: 'xReceiveHk' defined but not used [-Wunused-variable]
-  581 |  static Hk_data xReceiveHk[NUMBER_OF_CHANNELS];
-      |                 ^~~~~~~~~~
-../src/main.c:953:13: warning: 'vTaskCmvTest' defined but not used [-Wunused-function]
-  953 | static void vTaskCmvTest(void *p)
-      |             ^~~~~~~~~~~~
-../src/main.c:828:13: warning: 'vTaskCommunication' defined but not used [-Wunused-function]
-  828 | static void vTaskCommunication(void *p)
-      |             ^~~~~~~~~~~~~~~~~~
-../src/main.c:776:13: warning: 'vTaskHousekeeping' defined but not used [-Wunused-function]
-  776 | static void vTaskHousekeeping(void *p)
-      |             ^~~~~~~~~~~~~~~~~
-'Finished building: ../src/main.c'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/cmvsoft.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -IC:/Scanway/Vivado/ScanEye_trigger/workspace/scaneye_trigger_wrapper_STAR_VIBE/export/scaneye_trigger_wrapper_STAR_VIBE/sw/scaneye_trigger_wrapper_STAR_VIBE/freertos10_xilinx_ps7_cortexa9_0/bspinclude/include -MMD -MP -MF"src/cmvsoft.d" -MT"src/cmvsoft.o" -o "src/cmvsoft.o" "../src/cmvsoft.c"
+'Finished building: ../src/cmvsoft.c'
 ' '
-'Building target: StarVIBE_soft.elf'
+'Building target: STAR_VIBE.elf'
 'Invoking: ARM v7 gcc linker'
-arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -LC:/Scanway/Vivado/ScanEye_trigger/workspace/scaneye_trigger_wrapper_32/export/scaneye_trigger_wrapper_32/sw/scaneye_trigger_wrapper_32/freertos10_xilinx_ps7_cortexa9_0/bsplib/lib -o "StarVIBE_soft.elf"  ./src/devices/GPIO_access.o ./src/devices/SPI_access.o ./src/devices/TIMER_access.o ./src/devices/XCMV.o ./src/devices/XCMV_selftest.o ./src/devices/clkwiz_access.o ./src/devices/trigger_cmv_access.o ./src/devices/uartps_access.o ./src/devices/xcmv_g.o ./src/devices/xcmv_sinit.o ./src/devices/xcmv_tests.o  ./src/cmvsoft.o ./src/main.o ./src/platform.o ./src/userinterface.o   -Wl,--start-group,-lxil,-lfreertos,-lgcc,-lc,--end-group -Wl,--start-group,-lxilffs,-lxil,-lgcc,-lc,--end-group
-'Finished building target: StarVIBE_soft.elf'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -LC:/Scanway/Vivado/ScanEye_trigger/workspace/scaneye_trigger_wrapper_STAR_VIBE/export/scaneye_trigger_wrapper_STAR_VIBE/sw/scaneye_trigger_wrapper_STAR_VIBE/freertos10_xilinx_ps7_cortexa9_0/bsplib/lib -o "STAR_VIBE.elf"  ./src/devices/GPIO_access.o ./src/devices/SPI_access.o ./src/devices/TIMER_access.o ./src/devices/XCMV.o ./src/devices/XCMV_selftest.o ./src/devices/clkwiz_access.o ./src/devices/trigger_cmv_access.o ./src/devices/uartps_access.o ./src/devices/xcmv_g.o ./src/devices/xcmv_sinit.o ./src/devices/xcmv_tests.o  ./src/cmvsoft.o ./src/main.o ./src/platform.o ./src/userinterface.o   -Wl,--start-group,-lxil,-lfreertos,-lgcc,-lc,--end-group -Wl,--start-group,-lxilffs,-lxil,-lgcc,-lc,--end-group
+'Finished building target: STAR_VIBE.elf'
 ' '
 'Invoking: ARM v7 Print Size'
-arm-none-eabi-size StarVIBE_soft.elf  |tee "StarVIBE_soft.elf.size"
+arm-none-eabi-size STAR_VIBE.elf  |tee "STAR_VIBE.elf.size"
    text	   data	    bss	    dec	    hex	filename
- 138280	   3568	 212448	 354296	  567f8	StarVIBE_soft.elf
-'Finished building: StarVIBE_soft.elf.size'
+ 138488	   3568	 212480	 354536	  568e8	STAR_VIBE.elf
+'Finished building: STAR_VIBE.elf.size'
 ' '

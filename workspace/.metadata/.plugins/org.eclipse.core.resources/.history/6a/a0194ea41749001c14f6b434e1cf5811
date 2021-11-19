@@ -1,0 +1,43 @@
+
+#include "cmvsoft.h"
+#include "devices/gpio_access.h"
+#include "devices/clkwiz_access.h"
+
+//cmvConfig *cmvConfigInstance;
+
+int init_cmvSoft(cmvConfig *cmvConfigInstance, XGpio GpioIntance)
+{
+	int Status = XST_FAILURE;
+	u32 GpioReg;
+
+	cmvConfig *cmvConfigPtr = (cmvConfig *)cmvConfigInstance;
+	XGpio *GpioPtr = (XGpio *)GpioInstance;
+
+
+	GpioReg = XGpio_DiscreteRead(InstancePtr, Channel)
+
+	/* Default settings */
+	cmvConfigPtr->ImageName = "pic.bmp";
+	cmvConfigPtr->ExposureMode = cmv_exp_external;
+	cmvConfigPtr->ExposureTimeTexp1Us = 1000;
+	cmvConfigPtr->ExposureTimeTexp2Us = 0;
+	cmvConfigPtr->NumberOfFrame = 1;
+	cmvConfigPtr->SensorMode = cmv_mode_normal;
+	cmvConfigPtr->ContinuousModeOn = 0;
+
+
+
+	/*
+	 * sprawdzenie flagi napiecia sensora -> odczekanie 5 us
+	 * zalaczenie zegara LVDS
+	 * odczekanie 2 us
+	 * zmiana SYS_RESET_N z 0 na 1 odczekanie 3 us
+	 * implementacja struktury danych i ich wypelnienie
+	 * zaprogramowanie sensora poprzez SPI (task?)
+	 */
+
+
+
+
+	return Status;
+}

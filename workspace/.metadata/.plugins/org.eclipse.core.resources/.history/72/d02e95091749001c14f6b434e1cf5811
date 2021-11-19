@@ -1,0 +1,29 @@
+
+#include "cmvsoft.h"
+#include "devices/gpio_access.h"
+#include "devices/clkwiz_access.h"
+
+//cmvConfig *cmvConfigInstance;
+
+init_cmvSoft(cmvConfig *cmvConfigInstance)
+{
+	int Status = XST_FAILURE;
+
+	cmvConfig *cmvConfigPtr = (cmvConfig *)cmvConfigInstance;
+
+
+
+	/*
+	 * sprawdzenie flagi napiecia sensora -> odczekanie 5 us
+	 * zalaczenie zegara LVDS
+	 * odczekanie 2 us
+	 * zmiana SYS_RESET_N z 0 na 1 odczekanie 3 us
+	 * implementacja struktury danych i ich wypelnienie
+	 * zaprogramowanie sensora poprzez SPI (task?)
+	 */
+
+
+
+
+	return Status;
+}

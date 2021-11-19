@@ -1,10 +1,10 @@
 // Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2021.1.1 (win64) Build 3286242 Wed Jul 28 13:10:47 MDT 2021
-// Date        : Mon Nov 15 09:44:26 2021
+// Date        : Mon Nov 15 09:44:25 2021
 // Host        : DESKTOP-JATBKJM running 64-bit major release  (build 9200)
-// Command     : write_verilog -force -mode synth_stub
-//               c:/Scanway/Vivado/ScanEye_trigger/ScanEye_trigger.gen/sources_1/bd/scaneye_trigger/ip/scaneye_trigger_auto_pc_0/scaneye_trigger_auto_pc_0_stub.v
+// Command     : write_verilog -force -mode synth_stub -rename_top scaneye_trigger_auto_pc_0 -prefix
+//               scaneye_trigger_auto_pc_0_ scaneye_trigger_auto_pc_0_stub.v
 // Design      : scaneye_trigger_auto_pc_0
 // Purpose     : Stub declaration of top-level module interface
 // Device      : xc7z020clg400-1

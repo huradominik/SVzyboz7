@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_1" LaunchPart="xc7z020clg400-1" LaunchTime="1636965740">
+<GenRun Id="synth_1" LaunchPart="xc7z020clg400-1" LaunchTime="1637318636">
   <File Type="PA-TCL" Name="scaneye_trigger_wrapper.tcl"/>
   <File Type="RDS-PROPCONSTRS" Name="scaneye_trigger_wrapper_drc_synth.rpt"/>
   <File Type="REPORTS-TCL" Name="scaneye_trigger_wrapper_reports.tcl"/>
@@ -85,5 +85,4 @@
   <BlockFileSet Type="BlockSrcs" Name="scaneye_trigger_ila_0_0"/>
   <BlockFileSet Type="BlockSrcs" Name="scaneye_trigger_clk_wiz_0_0"/>
   <BlockFileSet Type="BlockSrcs" Name="scaneye_trigger_XCMV_0_4"/>
-  <BlockFileSet Type="BlockSrcs" Name="scaneye_trigger_auto_pc_0"/>
 </GenRun>

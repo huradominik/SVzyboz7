@@ -20,29 +20,29 @@ set_property IOSTANDARD LVCMOS33    [get_ports "frame_req_0"]
 # RGB LEDS
 # LED 5
 #IO_L18N_T2_13 Sch=led5_r LED 5 RED
-set_property PACKAGE_PIN V8        [get_ports "gpio_led_tri_o[0]"]
-set_property IOSTANDARD LVCMOS33    [get_ports "gpio_led_tri_o[0]"]
+#set_property PACKAGE_PIN V8        [get_ports "gpio_led_tri_o[0]"]
+#set_property IOSTANDARD LVCMOS33    [get_ports "gpio_led_tri_o[0]"]
 #
 #IO_L19P_T3_13 Sch=led5_g LED 5 GREEN
-set_property PACKAGE_PIN T5        [get_ports "gpio_led_tri_o[1]"]
-set_property IOSTANDARD LVCMOS33    [get_ports "gpio_led_tri_o[1]"]
+#set_property PACKAGE_PIN T5        [get_ports "gpio_led_tri_o[1]"]
+#set_property IOSTANDARD LVCMOS33    [get_ports "gpio_led_tri_o[1]"]
 #
 #IO_L20P_T3_13 Sch=led5_b LED 5 BLUE
-set_property PACKAGE_PIN Y12        [get_ports "gpio_led_tri_o[2]"]
-set_property IOSTANDARD LVCMOS33    [get_ports "gpio_led_tri_o[2]"]
+#set_property PACKAGE_PIN Y12        [get_ports "gpio_led_tri_o[2]"]
+#set_property IOSTANDARD LVCMOS33    [get_ports "gpio_led_tri_o[2]"]
 #
 # LED 6
 #IO_L18P_T2_34 Sch=led6_r LED 6 RED
-set_property PACKAGE_PIN V16        [get_ports "gpio_led_tri_o[3]"]
-set_property IOSTANDARD LVCMOS33    [get_ports "gpio_led_tri_o[3]"]
+#set_property PACKAGE_PIN V16        [get_ports "gpio_led_tri_o[3]"]
+#set_property IOSTANDARD LVCMOS33    [get_ports "gpio_led_tri_o[3]"]
 #
 #IO_L6N_T0_VREF_35 Sch=led6_g LED 6 GREEN
-set_property PACKAGE_PIN F17        [get_ports "gpio_led_tri_o[4]"]
-set_property IOSTANDARD LVCMOS33    [get_ports "gpio_led_tri_o[4]"]
+#set_property PACKAGE_PIN F17        [get_ports "gpio_led_tri_o[4]"]
+#set_property IOSTANDARD LVCMOS33    [get_ports "gpio_led_tri_o[4]"]
 #
 #IO_L8P_T1_AD10P_35 Sch=led6_b LED 6 BLUE
-set_property PACKAGE_PIN M17        [get_ports "gpio_led_tri_o[5]"]
-set_property IOSTANDARD LVCMOS33    [get_ports "gpio_led_tri_o[5]"]
+#set_property PACKAGE_PIN M17        [get_ports "gpio_led_tri_o[5]"]
+#set_property IOSTANDARD LVCMOS33    [get_ports "gpio_led_tri_o[5]"]
 #
 #
 ##LEDs
