@@ -1,26 +1,9 @@
-15:14:38 **** Incremental Build of configuration Debug for project StarVIBE_soft ****
+08:46:54 **** Incremental Build of configuration Debug for project StarVIBE_soft ****
 make all 
 make --no-print-directory pre-build
 a9-linaro-pre-build-step
 ' '
 make --no-print-directory main-build
-'Building file: ../src/cmvsoft.c'
-'Invoking: ARM v7 gcc compiler'
-arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/cmvsoft.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -IC:/Scanway/Vivado/ScanEye_trigger/workspace/scaneye_trigger_wrapper_32/export/scaneye_trigger_wrapper_32/sw/scaneye_trigger_wrapper_32/freertos10_xilinx_ps7_cortexa9_0/bspinclude/include -MMD -MP -MF"src/cmvsoft.d" -MT"src/cmvsoft.o" -o "src/cmvsoft.o" "../src/cmvsoft.c"
-In file included from ../src/cmvsoft.c:2:
-../src/cmvsoft.h:31:1: warning: data definition has no type or storage class
-   31 | init_cmvSoft();
-      | ^~~~~~~~~~~~
-../src/cmvsoft.h:31:1: warning: type defaults to 'int' in declaration of 'init_cmvSoft' [-Wimplicit-int]
-../src/cmvsoft.c:4:1: warning: return type defaults to 'int' [-Wimplicit-int]
-    4 | init_cmvSoft()
-      | ^~~~~~~~~~~~
-../src/cmvsoft.c: In function 'init_cmvSoft':
-../src/cmvsoft.c:7:1: warning: control reaches end of non-void function [-Wreturn-type]
-    7 | }
-      | ^
-'Finished building: ../src/cmvsoft.c'
-' '
 'Building file: ../src/main.c'
 'Invoking: ARM v7 gcc compiler'
 arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -IC:/Scanway/Vivado/ScanEye_trigger/workspace/scaneye_trigger_wrapper_32/export/scaneye_trigger_wrapper_32/sw/scaneye_trigger_wrapper_32/freertos10_xilinx_ps7_cortexa9_0/bspinclude/include -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
@@ -50,92 +33,92 @@ In file included from ../src/main.c:36:
   206 |  BaseType_t Status;
       |             ^~~~~~
 ../src/main.c: In function 'vTaskUserInterface':
-../src/main.c:585:5: warning: implicit declaration of function 'scanf' [-Wimplicit-function-declaration]
-  585 |     scanf(" %c",&submain);
+../src/main.c:605:5: warning: implicit declaration of function 'scanf' [-Wimplicit-function-declaration]
+  605 |     scanf(" %c",&submain);
       |     ^~~~~
-../src/main.c:585:5: warning: incompatible implicit declaration of built-in function 'scanf'
+../src/main.c:605:5: warning: incompatible implicit declaration of built-in function 'scanf'
 ../src/main.c:37:1: note: include '<stdio.h>' or provide a declaration of 'scanf'
    36 | #include "cmvsoft.h"
   +++ |+#include <stdio.h>
    37 | 
-../src/main.c:646:16: warning: format '%d' expects argument of type 'int *', but argument 2 has type 'u32 *' {aka 'long unsigned int *'} [-Wformat=]
-  646 |       scanf(" %d",&cmvConfigPtr->ExposureTimeTexp1Us);
+../src/main.c:666:16: warning: format '%d' expects argument of type 'int *', but argument 2 has type 'u32 *' {aka 'long unsigned int *'} [-Wformat=]
+  666 |       scanf(" %d",&cmvConfigPtr->ExposureTimeTexp1Us);
       |               ~^  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
       |                |  |
       |                |  u32 * {aka long unsigned int *}
       |                int *
       |               %ld
-../src/main.c:653:16: warning: format '%d' expects argument of type 'int *', but argument 2 has type 'u32 *' {aka 'long unsigned int *'} [-Wformat=]
-  653 |       scanf(" %d",&cmvConfigPtr->ExposureTimeTexp2Us);
+../src/main.c:673:16: warning: format '%d' expects argument of type 'int *', but argument 2 has type 'u32 *' {aka 'long unsigned int *'} [-Wformat=]
+  673 |       scanf(" %d",&cmvConfigPtr->ExposureTimeTexp2Us);
       |               ~^  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
       |                |  |
       |                |  u32 * {aka long unsigned int *}
       |                int *
       |               %ld
-../src/main.c:661:16: warning: format '%d' expects argument of type 'int *', but argument 2 has type 'u32 *' {aka 'long unsigned int *'} [-Wformat=]
-  661 |       scanf(" %d",&cmvConfigPtr->NumberOfFrame);
+../src/main.c:681:16: warning: format '%d' expects argument of type 'int *', but argument 2 has type 'u32 *' {aka 'long unsigned int *'} [-Wformat=]
+  681 |       scanf(" %d",&cmvConfigPtr->NumberOfFrame);
       |               ~^  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
       |                |  |
       |                |  u32 * {aka long unsigned int *}
       |                int *
       |               %ld
-../src/main.c:736:5: warning: incompatible implicit declaration of built-in function 'scanf'
-  736 |     scanf(" %c",&submain);
+../src/main.c:756:5: warning: incompatible implicit declaration of built-in function 'scanf'
+  756 |     scanf(" %c",&submain);
       |     ^~~~~
-../src/main.c:736:5: note: include '<stdio.h>' or provide a declaration of 'scanf'
-../src/main.c:561:17: warning: unused variable 'xReceiveHk' [-Wunused-variable]
-  561 |  static Hk_data xReceiveHk[NUMBER_OF_CHANNELS];
+../src/main.c:756:5: note: include '<stdio.h>' or provide a declaration of 'scanf'
+../src/main.c:581:17: warning: unused variable 'xReceiveHk' [-Wunused-variable]
+  581 |  static Hk_data xReceiveHk[NUMBER_OF_CHANNELS];
       |                 ^~~~~~~~~~
-../src/main.c:545:13: warning: unused variable 'Status' [-Wunused-variable]
-  545 |  BaseType_t Status;
+../src/main.c:565:13: warning: unused variable 'Status' [-Wunused-variable]
+  565 |  BaseType_t Status;
       |             ^~~~~~
 ../src/main.c: In function 'vTaskHousekeeping':
-../src/main.c:765:6: warning: unused variable 'channel' [-Wunused-variable]
-  765 |  u32 channel;
+../src/main.c:785:6: warning: unused variable 'channel' [-Wunused-variable]
+  785 |  u32 channel;
       |      ^~~~~~~
-../src/main.c:764:16: warning: unused variable 'thousands' [-Wunused-variable]
-  764 |  u32 whole[4], thousands[4];
+../src/main.c:784:16: warning: unused variable 'thousands' [-Wunused-variable]
+  784 |  u32 whole[4], thousands[4];
       |                ^~~~~~~~~
-../src/main.c:764:6: warning: unused variable 'whole' [-Wunused-variable]
-  764 |  u32 whole[4], thousands[4];
+../src/main.c:784:6: warning: unused variable 'whole' [-Wunused-variable]
+  784 |  u32 whole[4], thousands[4];
       |      ^~~~~
-../src/main.c:759:13: warning: variable 'xStatus' set but not used [-Wunused-but-set-variable]
-  759 |  BaseType_t xStatus;
+../src/main.c:779:13: warning: variable 'xStatus' set but not used [-Wunused-but-set-variable]
+  779 |  BaseType_t xStatus;
       |             ^~~~~~~
 ../src/main.c: In function 'vTaskCommunication':
-../src/main.c:818:7: warning: unused variable 'work' [-Wunused-variable]
-  818 |  UINT work[FF_MAX_SS];
+../src/main.c:838:7: warning: unused variable 'work' [-Wunused-variable]
+  838 |  UINT work[FF_MAX_SS];
       |       ^~~~
-../src/main.c:817:9: warning: unused variable 'Path' [-Wunused-variable]
-  817 |  TCHAR *Path = "0:/";
+../src/main.c:837:9: warning: unused variable 'Path' [-Wunused-variable]
+  837 |  TCHAR *Path = "0:/";
       |         ^~~~
-../src/main.c:815:14: warning: unused variable 'FileName' [-Wunused-variable]
-  815 |  static char FileName[32] = "pom.txt";
+../src/main.c:835:14: warning: unused variable 'FileName' [-Wunused-variable]
+  835 |  static char FileName[32] = "pom.txt";
       |              ^~~~~~~~
-../src/main.c:814:8: warning: unused variable 'fatfs' [-Wunused-variable]
-  814 |  FATFS fatfs;
+../src/main.c:834:8: warning: unused variable 'fatfs' [-Wunused-variable]
+  834 |  FATFS fatfs;
       |        ^~~~~
-../src/main.c:813:6: warning: unused variable 'fil' [-Wunused-variable]
-  813 |  FIL fil;
+../src/main.c:833:6: warning: unused variable 'fil' [-Wunused-variable]
+  833 |  FIL fil;
       |      ^~~
-../src/main.c:812:10: warning: unused variable 'Res' [-Wunused-variable]
-  812 |  FRESULT Res;
+../src/main.c:832:10: warning: unused variable 'Res' [-Wunused-variable]
+  832 |  FRESULT Res;
       |          ^~~
 At top level:
-../src/main.c:815:14: warning: 'FileName' defined but not used [-Wunused-variable]
-  815 |  static char FileName[32] = "pom.txt";
+../src/main.c:835:14: warning: 'FileName' defined but not used [-Wunused-variable]
+  835 |  static char FileName[32] = "pom.txt";
       |              ^~~~~~~~
-../src/main.c:561:17: warning: 'xReceiveHk' defined but not used [-Wunused-variable]
-  561 |  static Hk_data xReceiveHk[NUMBER_OF_CHANNELS];
+../src/main.c:581:17: warning: 'xReceiveHk' defined but not used [-Wunused-variable]
+  581 |  static Hk_data xReceiveHk[NUMBER_OF_CHANNELS];
       |                 ^~~~~~~~~~
-../src/main.c:933:13: warning: 'vTaskCmvTest' defined but not used [-Wunused-function]
-  933 | static void vTaskCmvTest(void *p)
+../src/main.c:953:13: warning: 'vTaskCmvTest' defined but not used [-Wunused-function]
+  953 | static void vTaskCmvTest(void *p)
       |             ^~~~~~~~~~~~
-../src/main.c:808:13: warning: 'vTaskCommunication' defined but not used [-Wunused-function]
-  808 | static void vTaskCommunication(void *p)
+../src/main.c:828:13: warning: 'vTaskCommunication' defined but not used [-Wunused-function]
+  828 | static void vTaskCommunication(void *p)
       |             ^~~~~~~~~~~~~~~~~~
-../src/main.c:756:13: warning: 'vTaskHousekeeping' defined but not used [-Wunused-function]
-  756 | static void vTaskHousekeeping(void *p)
+../src/main.c:776:13: warning: 'vTaskHousekeeping' defined but not used [-Wunused-function]
+  776 | static void vTaskHousekeeping(void *p)
       |             ^~~~~~~~~~~~~~~~~
 'Finished building: ../src/main.c'
 ' '
@@ -147,9 +130,9 @@ arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=non
 'Invoking: ARM v7 Print Size'
 arm-none-eabi-size StarVIBE_soft.elf  |tee "StarVIBE_soft.elf.size"
    text	   data	    bss	    dec	    hex	filename
- 138384	   3568	 212448	 354400	  56860	StarVIBE_soft.elf
+ 138280	   3568	 212448	 354296	  567f8	StarVIBE_soft.elf
 'Finished building: StarVIBE_soft.elf.size'
 ' '
 
-15:14:40 Build Finished (took 1s.867ms)
+08:46:56 Build Finished (took 1s.775ms)
 
