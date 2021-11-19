@@ -1,24 +1,9 @@
 Nothing to build in platform 'scaneye_trigger_wrapper_STAR_VIBE'
 
-13:31:34 **** Incremental Build of configuration Debug for project STAR_VIBE ****
+14:59:56 **** Incremental Build of configuration Debug for project STAR_VIBE ****
 make all 
 make --no-print-directory pre-build
 a9-linaro-pre-build-step
 ' '
 make --no-print-directory main-build
-'Building file: ../src/cmvsoft.c'
-'Invoking: ARM v7 gcc compiler'
-arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/cmvsoft.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -IC:/Scanway/Vivado/ScanEye_trigger/workspace/scaneye_trigger_wrapper_STAR_VIBE/export/scaneye_trigger_wrapper_STAR_VIBE/sw/scaneye_trigger_wrapper_STAR_VIBE/freertos10_xilinx_ps7_cortexa9_0/bspinclude/include -MMD -MP -MF"src/cmvsoft.d" -MT"src/cmvsoft.o" -o "src/cmvsoft.o" "../src/cmvsoft.c"
-'Finished building: ../src/cmvsoft.c'
-' '
-'Building target: STAR_VIBE.elf'
-'Invoking: ARM v7 gcc linker'
-arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -LC:/Scanway/Vivado/ScanEye_trigger/workspace/scaneye_trigger_wrapper_STAR_VIBE/export/scaneye_trigger_wrapper_STAR_VIBE/sw/scaneye_trigger_wrapper_STAR_VIBE/freertos10_xilinx_ps7_cortexa9_0/bsplib/lib -o "STAR_VIBE.elf"  ./src/devices/GPIO_access.o ./src/devices/SPI_access.o ./src/devices/TIMER_access.o ./src/devices/XCMV.o ./src/devices/XCMV_selftest.o ./src/devices/clkwiz_access.o ./src/devices/trigger_cmv_access.o ./src/devices/uartps_access.o ./src/devices/xcmv_g.o ./src/devices/xcmv_sinit.o ./src/devices/xcmv_tests.o  ./src/cmvsoft.o ./src/main.o ./src/platform.o ./src/userinterface.o   -Wl,--start-group,-lxil,-lfreertos,-lgcc,-lc,--end-group -Wl,--start-group,-lxilffs,-lxil,-lgcc,-lc,--end-group
-'Finished building target: STAR_VIBE.elf'
-' '
-'Invoking: ARM v7 Print Size'
-arm-none-eabi-size STAR_VIBE.elf  |tee "STAR_VIBE.elf.size"
-   text	   data	    bss	    dec	    hex	filename
- 138488	   3568	 212480	 354536	  568e8	STAR_VIBE.elf
-'Finished building: STAR_VIBE.elf.size'
-' '
+make[1]: Nothing to be done for 'main-build'.

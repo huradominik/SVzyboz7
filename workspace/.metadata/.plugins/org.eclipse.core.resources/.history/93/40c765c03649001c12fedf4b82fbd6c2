@@ -1,0 +1,14 @@
+#ifndef TASK_DEFINES_H_
+#define TASK_DEFINES_H_
+
+static void vTaskInitialize( void *p);
+static void vTaskCmvTest(void *p);
+static void vTaskHousekeeping(void *p);
+static void vTaskCommunication(void *p);
+static void vTaskUserInterface(void *p);
+
+
+static void vTaskCmvSoftTrigger(void *p);
+
+
+#endif

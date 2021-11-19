@@ -98,10 +98,8 @@ typedef struct
 
 int main( void )
 {
-
     /* Initialize platform */
 	xil_printf("\x1B[H\x1B[J");    // clear screen
-
 	xil_printf( "Start programu \n\r");
 
 	xQueueHKcomm = xQueueCreate(4, sizeof(Hk_data));
@@ -110,27 +108,23 @@ int main( void )
 		xil_printf("Unable to create xQueueHKcomm");
 		return -1;
 	}
-
 	xSemaphoreUserInterface = xSemaphoreCreateBinary();
 	if (xSemaphoreUserInterface == NULL)
 	{
 		xil_printf("Unable to create xSemaphoreUserInterface\n\r");
 		return -1;
 	}
-
 	xSemaphoreTimer = xSemaphoreCreateBinary();
 	if (xSemaphoreTimer == NULL)
 	{
 		xil_printf("Unable to create xSemaphoreTimer\n\r");
 	}
-
 	xTaskCreate( vTaskInitialize,
 				( const char *) "Initialization",
 				configMINIMAL_STACK_SIZE,
 				NULL,
 				tskIDLE_PRIORITY,
 				NULL);
-
 
 	/* Start the tasks and timer running. */
 	vTaskStartScheduler();
@@ -583,20 +577,7 @@ static void vTaskUserInterface(void *p)
 
 	cmvConfig *cmvConfigPtr = (cmvConfig *) p;
 
-
 	char main, submain, sub, subsub;
-
-	/* Temporary initialization */
-//	cmvConfigPtr->ExposureMode = cmv_exp_external;
-//	cmvConfigPtr->ExposureTimeTexp1Us = 3000000;
-//	cmvConfigPtr->ExposureTimeTexp2Us = 4000000;
-//	cmvConfigPtr->NumberOfFrame = 4;
-//	cmvConfigPtr->SensorMode = cmv_mode_normal;
-//	cmvConfigPtr->ContinuousModeOn = FALSE;
-	/*****************************/
-
-	static Hk_data xReceiveHk[NUMBER_OF_CHANNELS];
-	//value = malloc(sizeof(value));
 
 	while(1)
 	{
