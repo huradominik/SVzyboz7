@@ -10969,3 +10969,88 @@ configparams force-mem-access 0
 ----------------End of Script----------------
 
 14:59:56 INFO  : Checking for BSP changes to sync application flags for project 'STAR_VIBE'...
+15:00:03 INFO  : Disconnected from the channel tcfchan#20.
+15:00:06 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+15:00:07 INFO  : Jtag cable 'Digilent Zybo Z7 210351AD67FBA' is selected.
+15:00:07 INFO  : 'jtag frequency' command is executed.
+15:00:07 INFO  : Context for 'APU' is selected.
+15:00:07 INFO  : System reset is completed.
+15:00:10 INFO  : 'after 3000' command is executed.
+15:00:10 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351AD67FBA" && level==0 && jtag_device_ctx=="jsn-Zybo Z7-210351AD67FBA-23727093-0"}' command is executed.
+15:00:12 INFO  : Device configured successfully with "C:/Scanway/Vivado/ScanEye_trigger/workspace/STAR_VIBE/_ide/bitstream/scaneye_trigger_wrapper_STAR_VIBE.bit"
+15:00:12 INFO  : Context for 'APU' is selected.
+15:00:12 INFO  : Hardware design and registers information is loaded from 'C:/Scanway/Vivado/ScanEye_trigger/workspace/scaneye_trigger_wrapper_STAR_VIBE/export/scaneye_trigger_wrapper_STAR_VIBE/hw/scaneye_trigger_wrapper_STAR_VIBE.xsa'.
+15:00:12 INFO  : 'configparams force-mem-access 1' command is executed.
+15:00:12 INFO  : Context for 'APU' is selected.
+15:00:12 INFO  : Sourcing of 'C:/Scanway/Vivado/ScanEye_trigger/workspace/STAR_VIBE/_ide/psinit/ps7_init.tcl' is done.
+15:00:12 INFO  : 'ps7_init' command is executed.
+15:00:12 INFO  : 'ps7_post_config' command is executed.
+15:00:12 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+15:00:13 INFO  : The application 'C:/Scanway/Vivado/ScanEye_trigger/workspace/STAR_VIBE/Debug/STAR_VIBE.elf' is downloaded to processor 'ps7_cortexa9_0'.
+15:00:13 INFO  : 'configparams force-mem-access 0' command is executed.
+15:00:13 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351AD67FBA" && level==0 && jtag_device_ctx=="jsn-Zybo Z7-210351AD67FBA-23727093-0"}
+fpga -file C:/Scanway/Vivado/ScanEye_trigger/workspace/STAR_VIBE/_ide/bitstream/scaneye_trigger_wrapper_STAR_VIBE.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw C:/Scanway/Vivado/ScanEye_trigger/workspace/scaneye_trigger_wrapper_STAR_VIBE/export/scaneye_trigger_wrapper_STAR_VIBE/hw/scaneye_trigger_wrapper_STAR_VIBE.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source C:/Scanway/Vivado/ScanEye_trigger/workspace/STAR_VIBE/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow C:/Scanway/Vivado/ScanEye_trigger/workspace/STAR_VIBE/Debug/STAR_VIBE.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+15:03:45 INFO  : Disconnected from the channel tcfchan#21.
+15:03:48 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+15:03:48 INFO  : Jtag cable 'Digilent Zybo Z7 210351AD67FBA' is selected.
+15:03:48 INFO  : 'jtag frequency' command is executed.
+15:03:48 INFO  : Context for 'APU' is selected.
+15:03:48 INFO  : System reset is completed.
+15:03:51 INFO  : 'after 3000' command is executed.
+15:03:52 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351AD67FBA" && level==0 && jtag_device_ctx=="jsn-Zybo Z7-210351AD67FBA-23727093-0"}' command is executed.
+15:03:54 INFO  : Device configured successfully with "C:/Scanway/Vivado/ScanEye_trigger/workspace/STAR_VIBE/_ide/bitstream/scaneye_trigger_wrapper_STAR_VIBE.bit"
+15:03:54 INFO  : Context for 'APU' is selected.
+15:03:54 INFO  : Hardware design and registers information is loaded from 'C:/Scanway/Vivado/ScanEye_trigger/workspace/scaneye_trigger_wrapper_STAR_VIBE/export/scaneye_trigger_wrapper_STAR_VIBE/hw/scaneye_trigger_wrapper_STAR_VIBE.xsa'.
+15:03:54 INFO  : 'configparams force-mem-access 1' command is executed.
+15:03:54 INFO  : Context for 'APU' is selected.
+15:03:54 INFO  : Sourcing of 'C:/Scanway/Vivado/ScanEye_trigger/workspace/STAR_VIBE/_ide/psinit/ps7_init.tcl' is done.
+15:03:54 INFO  : 'ps7_init' command is executed.
+15:03:54 INFO  : 'ps7_post_config' command is executed.
+15:03:54 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+15:03:55 INFO  : The application 'C:/Scanway/Vivado/ScanEye_trigger/workspace/STAR_VIBE/Debug/STAR_VIBE.elf' is downloaded to processor 'ps7_cortexa9_0'.
+15:03:55 INFO  : 'configparams force-mem-access 0' command is executed.
+15:03:55 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351AD67FBA" && level==0 && jtag_device_ctx=="jsn-Zybo Z7-210351AD67FBA-23727093-0"}
+fpga -file C:/Scanway/Vivado/ScanEye_trigger/workspace/STAR_VIBE/_ide/bitstream/scaneye_trigger_wrapper_STAR_VIBE.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw C:/Scanway/Vivado/ScanEye_trigger/workspace/scaneye_trigger_wrapper_STAR_VIBE/export/scaneye_trigger_wrapper_STAR_VIBE/hw/scaneye_trigger_wrapper_STAR_VIBE.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source C:/Scanway/Vivado/ScanEye_trigger/workspace/STAR_VIBE/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow C:/Scanway/Vivado/ScanEye_trigger/workspace/STAR_VIBE/Debug/STAR_VIBE.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+15:12:31 INFO  : Disconnected from the channel tcfchan#22.
+08:32:17 INFO  : Launching XSCT server: xsct.bat -n  -interactive C:\Scanway\Vivado\ScanEye_trigger\workspace\temp_xsdb_launch_script.tcl
+08:32:22 INFO  : XSCT server has started successfully.
+08:32:22 INFO  : Successfully done setting XSCT server connection channel  
+08:32:22 INFO  : plnx-install-location is set to ''
+08:32:22 INFO  : Successfully done setting workspace for the tool. 
+08:32:24 INFO  : Platform repository initialization has completed.
+08:32:24 INFO  : Registering command handlers for Vitis TCF services
+08:32:24 INFO  : Successfully done query RDI_DATADIR 

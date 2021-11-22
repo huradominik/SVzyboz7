@@ -26,22 +26,15 @@
 #define ADC_CH3 0x18U
 
 #define SPI_ADC128S102_BYTECOUNT	0x2
-#define SPI_CMV12000_BYTECOUNT		0x3
 
 #define NUMBER_OF_CHANNELS 4
-
-
-
-
-
 
 /*********************** Function Prototyping *********************************/
 
 int init_spi();
 int adcTransfer(XSpi *InstancePtr, u8 *wBuffer, u8 *rBuffer,  u32 ByteToTransfer);
 int adcTransferDummy();
-int SpiRead(XSpi *InstancePtr, u32 *DataWrite, u32 *DataRead, u32 NumberByte);
-int SpiWrite(XSpi *InstancePtr, u32	*DataWrite, u32 *DataRead, u32 NumberByte);
+int SpiRead(XSpi *InstancePtr, u16 *DataWrite, u16 *DataRead, u32 NumberByte);
 int spiTEST11(XSpi *InstancePtr);
 
 /******************************************************************************/

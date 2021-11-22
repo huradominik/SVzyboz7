@@ -53,14 +53,12 @@
 /************************ Instances *************************/
 extern XGpio GpioInstance;
 extern XSpi	SpiInstance;
-//extern XTmrCtr TimerInstance;
 extern XCmv TriggerCmvInstance;
 extern XUartPs UartPsInstance;
 extern XTmrCtr TimerInstance;
 
 extern cmvConfig cmvConfigInstance;
 
-//cmvConfig *cmvConfigInstance = &cmvConfigPtr;
 
 XClk_Wiz_Config CfgPtr_Dynamic;
 
@@ -205,367 +203,6 @@ static void vTaskInitialize(void *p)
 //	xTaskCreate(vTaskHousekeeping, "HK",THREAD_STACKSIZE, NULL, DEFAULT_THREAD_PRIO+2, NULL);
 //	xTaskCreate(vTaskCommunication, "Comm", THREAD_STACKSIZE, NULL, DEFAULT_THREAD_PRIO+1, NULL);
 	xTaskCreate(vTaskUserInterface, "User", THREAD_STACKSIZE, (void*)cmvConfigPointer, DEFAULT_THREAD_PRIO+1, NULL);
-
-	vTaskDelete(NULL);
-}
-
-static void vTaskCmvSoftTrigger(void *p) // parametry jako struktura
-{
-	BaseType_t Status;
-	u32 GpioReg;
-	cmvConfig *cmvConfigInst =  (cmvConfig* ) p;
-
-	u32 cpu_tick = 0;
-	u8 bit_mode = 12;
-	u32 cmv_freq = 250000000; // -> napisaæ funkcje do odczytu wartosci zegara z clk_wiz
-
-	/*
-	 * Pulse signals T_EXP1, TEXP2, FRAME_REQ should be at least 8, 10, 12 * LVDS
-	 * input clock period wide depend on the used bit mode
-	 *
-	 * cpu_tick = (cpu_freq[MHz] * bit_mode / cmv_input_freq[MHz]) + 1
-	 */
-	cpu_tick = (CPU_CLK_FREQ_HZ * bit_mode / cmv_freq) + 1;
-
-	/* Set AXI Timer option */
-	XTmrCtr_SetOptions(&TimerInstance, TIMER_CNTR_0, XTC_INT_MODE_OPTION | XTC_DOWN_COUNT_OPTION);
-
-	if(cmvConfigInst->SensorMode == cmv_mode_normal)
-	{
-		/* protect against change settings of sensor mode */
-		GpioReg = XGpio_DiscreteRead(&GpioInstance, GPIO_CHANNEL);
-		GpioReg &= ~CMV_FRAME_REQ;	//
-		XGpio_DiscreteWrite(&GpioInstance, GPIO_CHANNEL, GpioReg);
-
-		if(cmvConfigInst->ExposureMode == cmv_exp_external)
-		{
-			for(int i=0; i<cmvConfigInst->NumberOfFrame; i++)
-			{
-
-			/* Assert T_EXP1 signal */
-			GpioReg = XGpio_DiscreteRead(&GpioInstance, GPIO_CHANNEL);
-			GpioReg |= CMV_TEXP1;	//
-			XGpio_DiscreteWrite(&GpioInstance, GPIO_CHANNEL, GpioReg);
-
-			/*
-			 * Timer for count exposure time between T_EXP1 and FRAME_REQ
-			 */
-			XTmrCtr_SetResetValue(&TimerInstance, TIMER_CNTR_0, cmvConfigInst->ExposureTimeTexp1Us * TIMER_1_US);
-			XTmrCtr_Start(&TimerInstance, TIMER_CNTR_0);  /* Start counting   */
-
-			/*
-			 * Pulse signals T_EXP1, TEXP2, FRAME_REQ should be at least 8, 10, 12 * LVDS
-			 * input clock period wide depend on the used bit mode
-			 *
-			 * cpu_tick = (cpu_freq[MHz] * bit_mode / cmv_input_freq[MHz]) + 1
-			 */
-			for(int i=0; i<cpu_tick; i++) {}
-
-			/* Deassert T_EXP1 signal */
-			GpioReg = XGpio_DiscreteRead(&GpioInstance, GPIO_CHANNEL);
-			GpioReg &= ~CMV_TEXP1;
-			XGpio_DiscreteWrite(&GpioInstance, GPIO_CHANNEL, GpioReg);
-
-			/* Wait for count appropriate exposure time */
-			xSemaphoreTake(xSemaphoreTimer, portMAX_DELAY);
-
-			/* Stop Timer	*/
-			XTmrCtr_Stop(&TimerInstance, TIMER_CNTR_0);
-
-			/* Assert FRAME_REQ signal */
-			GpioReg = XGpio_DiscreteRead(&GpioInstance, GPIO_CHANNEL);
-			GpioReg |= CMV_FRAME_REQ;
-			XGpio_DiscreteWrite(&GpioInstance, GPIO_CHANNEL, GpioReg);
-
-			for(int i=0; i<cpu_tick; i++) {} // Signal pulse
-
-			/* Deassert FRAME_REQ signal */
-			GpioReg = XGpio_DiscreteRead(&GpioInstance, GPIO_CHANNEL);
-			GpioReg &= ~CMV_FRAME_REQ;
-			XGpio_DiscreteWrite(&GpioInstance, GPIO_CHANNEL, GpioReg);
-
-			/************************************************/
-			/*  SEMAFOR -> przerwanie od odebranego zdjêcia */
-			/************************************************/
-
-			xil_printf("zdjêcie zrobione [NORMAL] nr: %d\n\r",i+1);
-			}
-			xil_printf("IMAGE ACQUISITION NORMAL(EXTERNAL) DONE \n\r");
-		} else // internal
-		{
-			for (int i=0; i<cmvConfigInst->NumberOfFrame; i++)
-			{
-				/* Assert FRAME_REQ signal */
-				GpioReg = XGpio_DiscreteRead(&GpioInstance, GPIO_CHANNEL);
-				GpioReg |= CMV_FRAME_REQ;
-				XGpio_DiscreteWrite(&GpioInstance, GPIO_CHANNEL, GpioReg);
-
-				for(int i=0; i<cpu_tick; i++) {} // pulse
-
-				GpioReg = XGpio_DiscreteRead(&GpioInstance, GPIO_CHANNEL);
-				GpioReg &= ~CMV_FRAME_REQ;
-				XGpio_DiscreteWrite(&GpioInstance, GPIO_CHANNEL, GpioReg);
-
-				vTaskDelay(pdMS_TO_TICKS(1000));
-				xil_printf("zdjêcie zrobione [NORMAL] nr: %d\n\r",i+1);
-			}
-
-			/************************************************/
-			/*  SEMAFOR -> przerwanie od odebranego zdjêcia */
-			/************************************************/
-			xil_printf("IMAGE ACQUISITION NORMAL(INTERNAL) DONE \n\r");
-		}
-	}
-	else if(cmvConfigInst->SensorMode == cmv_mode_continuous)
-	{
-		/* Continuous mode possible only in Internal exposure */
-		cmvConfigInst->ExposureMode = cmv_exp_internal;
-
-		/*
-		 * Check status of FRAME_REQ,
-		 * if 1 then acquision is running, then stop grab images,
-		 * if 0 then acquisition is not running, then start grab images
-		 */
-		GpioReg = XGpio_DiscreteRead(&GpioInstance, GPIO_CHANNEL);
-		if((GpioReg & 0x1) == 0x1)
-		{
-			/* Deassert FRAME_REQ signal */
-			cmvConfigInst->ContinuousModeOn = FALSE;
-			GpioReg = XGpio_DiscreteRead(&GpioInstance, GPIO_CHANNEL);
-			GpioReg &= ~CMV_FRAME_REQ;
-			XGpio_DiscreteWrite(&GpioInstance, GPIO_CHANNEL, GpioReg);
-		} else
-		{
-			/* Assert FRAME_REQ signal */
-			cmvConfigInst->ContinuousModeOn = TRUE;
-			GpioReg = XGpio_DiscreteRead(&GpioInstance, GPIO_CHANNEL);
-			GpioReg |= CMV_FRAME_REQ;
-			XGpio_DiscreteWrite(&GpioInstance, GPIO_CHANNEL, GpioReg);
-		}
-	}
-	else if(cmvConfigInst->SensorMode == cmv_mode_hdr)
-	{
-		u32 deltaTime;
-		u32 texpValue;
-
-		/* protect against change settings of sensor mode */
-		GpioReg = XGpio_DiscreteRead(&GpioInstance, GPIO_CHANNEL); // odczyt wartosci z gpio
-		GpioReg &= ~CMV_FRAME_REQ;	//
-		XGpio_DiscreteWrite(&GpioInstance, GPIO_CHANNEL, GpioReg);
-
-		/* Check value of differenct between T_EXP1 and T_EXP2 */
-		if(cmvConfigInst->ExposureTimeTexp1Us > cmvConfigInst->ExposureTimeTexp2Us)
-		{
-			deltaTime = cmvConfigInst->ExposureTimeTexp1Us-cmvConfigInst->ExposureTimeTexp2Us;
-			texpValue = 0;
-		}
-		else if(cmvConfigInst->ExposureTimeTexp1Us < cmvConfigInst->ExposureTimeTexp2Us)
-		{
-			deltaTime = cmvConfigInst->ExposureTimeTexp2Us-cmvConfigInst->ExposureTimeTexp1Us;
-			texpValue = 1;
-		}
-		else
-		{
-			deltaTime = 0;
-			texpValue = 2;
-		}
-
-		if(cmvConfigInst->ExposureMode == cmv_exp_external)
-		{
-			for(int i=0; i<cmvConfigInst->NumberOfFrame; i++)
-			{
-				if(texpValue == 0)
-				{
-					/* Assert T_EXP1 signal */
-					GpioReg = XGpio_DiscreteRead(&GpioInstance, GPIO_CHANNEL);
-					GpioReg |= CMV_TEXP1;	//
-					XGpio_DiscreteWrite(&GpioInstance, GPIO_CHANNEL, GpioReg);
-					/*
-					 * Timer for count exposure time between T_EXP1 and T_EXP2
-					 */
-					XTmrCtr_SetResetValue(&TimerInstance, TIMER_CNTR_0, deltaTime * TIMER_1_US);
-					XTmrCtr_Start(&TimerInstance, TIMER_CNTR_0);  /* Start counting   */
-
-					for(int i=0; i<cpu_tick; i++) {} // pulse
-
-					/* Deassert T_EXP1 signal */
-					GpioReg = XGpio_DiscreteRead(&GpioInstance, GPIO_CHANNEL);
-					GpioReg &= ~CMV_TEXP1;
-					XGpio_DiscreteWrite(&GpioInstance, GPIO_CHANNEL, GpioReg);
-
-					xSemaphoreTake(xSemaphoreTimer, portMAX_DELAY);
-					XTmrCtr_Stop(&TimerInstance, TIMER_CNTR_0);
-
-					/* Assert T_EXP2 signal */
-					GpioReg = XGpio_DiscreteRead(&GpioInstance, GPIO_CHANNEL);
-					GpioReg |= CMV_TEXP2;	//
-					XGpio_DiscreteWrite(&GpioInstance, GPIO_CHANNEL, GpioReg);
-
-					/*
-					 * Timer for count exposure time between T_EXP2 and FRAME_REQ
-					 */
-					XTmrCtr_SetResetValue(&TimerInstance, TIMER_CNTR_0, cmvConfigInst->ExposureTimeTexp2Us * TIMER_1_US);
-					XTmrCtr_Start(&TimerInstance, TIMER_CNTR_0);  /* Start counting   */
-
-					for(int i=0; i<cpu_tick; i++) {}
-
-					/* Deassert T_EXP2 signal */
-					GpioReg = XGpio_DiscreteRead(&GpioInstance, GPIO_CHANNEL);
-					GpioReg &= ~CMV_TEXP2;
-					XGpio_DiscreteWrite(&GpioInstance, GPIO_CHANNEL, GpioReg);
-
-					xSemaphoreTake(xSemaphoreTimer, portMAX_DELAY);
-
-					XTmrCtr_Stop(&TimerInstance, TIMER_CNTR_0);
-
-					/* Assert FRAME_REQ signal */
-					GpioReg = XGpio_DiscreteRead(&GpioInstance, GPIO_CHANNEL);
-					GpioReg |= CMV_FRAME_REQ;
-					XGpio_DiscreteWrite(&GpioInstance, GPIO_CHANNEL, GpioReg);
-
-					for(int i=0; i<cpu_tick; i++) {} // Signal pulse
-
-					/* Deassert FRAME_REQ signal */
-					GpioReg = XGpio_DiscreteRead(&GpioInstance, GPIO_CHANNEL);
-					GpioReg &= ~CMV_FRAME_REQ;
-					XGpio_DiscreteWrite(&GpioInstance, GPIO_CHANNEL, GpioReg);
-
-					/************************************************/
-					/*  SEMAFOR -> przerwanie od odebranego zdjêcia */
-					/************************************************/
-
-					xil_printf("zdjêcie zrobione [HDR] T_EXP1 > T_EXP2 nr: %d\n\r",i+1);
-				}
-				if(texpValue == 1)
-				{
-					/* Assert T_EXP2 signal */
-					GpioReg = XGpio_DiscreteRead(&GpioInstance, GPIO_CHANNEL);
-					GpioReg |= CMV_TEXP2;	//
-					XGpio_DiscreteWrite(&GpioInstance, GPIO_CHANNEL, GpioReg);
-
-					/*
-					 * Timer for count exposure time between T_EXP2 and FRAME_REQ
-					 */
-					XTmrCtr_SetResetValue(&TimerInstance, TIMER_CNTR_0, deltaTime * TIMER_1_US);
-					XTmrCtr_Start(&TimerInstance, TIMER_CNTR_0);  /* Start counting   */
-
-					for(int i=0; i<cpu_tick; i++) {}
-
-					/* Deassert T_EXP2 signal */
-					GpioReg = XGpio_DiscreteRead(&GpioInstance, GPIO_CHANNEL);
-					GpioReg &= ~CMV_TEXP2;
-					XGpio_DiscreteWrite(&GpioInstance, GPIO_CHANNEL, GpioReg);
-
-					xSemaphoreTake(xSemaphoreTimer, portMAX_DELAY);
-
-					XTmrCtr_Stop(&TimerInstance, TIMER_CNTR_0);
-
-					/* Assert T_EXP1 signal */
-					GpioReg = XGpio_DiscreteRead(&GpioInstance, GPIO_CHANNEL);
-					GpioReg |= CMV_TEXP1;	//
-					XGpio_DiscreteWrite(&GpioInstance, GPIO_CHANNEL, GpioReg);
-
-					/*
-					 * Timer for count exposure time between T_EXP1 and T_EXP2
-					 */
-					XTmrCtr_SetResetValue(&TimerInstance, TIMER_CNTR_0, cmvConfigInst->ExposureTimeTexp1Us * TIMER_1_US);
-					XTmrCtr_Start(&TimerInstance, TIMER_CNTR_0);  /* Start counting   */
-
-					for(int i=0; i<cpu_tick; i++) {} // pulse
-
-					/* Deassert T_EXP1 signal */
-					GpioReg = XGpio_DiscreteRead(&GpioInstance, GPIO_CHANNEL);
-					GpioReg &= ~CMV_TEXP1;
-					XGpio_DiscreteWrite(&GpioInstance, GPIO_CHANNEL, GpioReg);
-
-					xSemaphoreTake(xSemaphoreTimer, portMAX_DELAY);
-					XTmrCtr_Stop(&TimerInstance, TIMER_CNTR_0);
-
-					/* Assert FRAME_REQ signal */
-					GpioReg = XGpio_DiscreteRead(&GpioInstance, GPIO_CHANNEL);
-					GpioReg |= CMV_FRAME_REQ;
-					XGpio_DiscreteWrite(&GpioInstance, GPIO_CHANNEL, GpioReg);
-
-					for(int i=0; i<cpu_tick; i++) {} // Signal pulse
-
-					/* Deassert FRAME_REQ signal */
-					GpioReg = XGpio_DiscreteRead(&GpioInstance, GPIO_CHANNEL);
-					GpioReg &= ~CMV_FRAME_REQ;
-					XGpio_DiscreteWrite(&GpioInstance, GPIO_CHANNEL, GpioReg);
-
-					/************************************************/
-					/*  SEMAFOR -> przerwanie od odebranego zdjêcia */
-					/************************************************/
-
-					xil_printf("zdjêcie zrobione [HDR] T_EXP2 > T_EXP1 nr: %d\n\r",i+1);
-				}
-				else if(texpValue == 2)
-				{
-					/* Assert T_EXP1 & T_EXP2 signals */
-					GpioReg = XGpio_DiscreteRead(&GpioInstance, GPIO_CHANNEL);
-					GpioReg |= CMV_TEXP1 | CMV_TEXP2;
-					XGpio_DiscreteWrite(&GpioInstance, GPIO_CHANNEL, GpioReg);
-
-					/*
-					 * Timer for count exposure time between T_EXP1, T_EXP2 and FRAME_REQ
-					 */
-					XTmrCtr_SetResetValue(&TimerInstance, TIMER_CNTR_0, cmvConfigInst->ExposureTimeTexp1Us * TIMER_1_US);
-					XTmrCtr_Start(&TimerInstance, TIMER_CNTR_0);  /* Start counting   */
-
-					for(int i=0; i<cpu_tick; i++) {} // pulse
-
-					/* Deassert T_EXP1 & T_EXP2 signals */
-					GpioReg = XGpio_DiscreteRead(&GpioInstance, GPIO_CHANNEL);
-					GpioReg &= ~(CMV_TEXP1 | CMV_TEXP2);
-					XGpio_DiscreteWrite(&GpioInstance, GPIO_CHANNEL, GpioReg);
-
-					xSemaphoreTake(xSemaphoreTimer, portMAX_DELAY);
-
-					XTmrCtr_Stop(&TimerInstance, TIMER_CNTR_0);
-
-					/* Assert FRAME_REQ signal */
-					GpioReg = XGpio_DiscreteRead(&GpioInstance, GPIO_CHANNEL);
-					GpioReg |= CMV_FRAME_REQ;
-					XGpio_DiscreteWrite(&GpioInstance, GPIO_CHANNEL, GpioReg);
-
-					for(int i=0; i<cpu_tick; i++) {} // Signal pulse
-
-					/* Deassert FRAME_REQ signal */
-					GpioReg = XGpio_DiscreteRead(&GpioInstance, GPIO_CHANNEL);
-					GpioReg &= ~CMV_FRAME_REQ;
-					XGpio_DiscreteWrite(&GpioInstance, GPIO_CHANNEL, GpioReg);
-
-					/************************************************/
-					/*  SEMAFOR -> przerwanie od odebranego zdjêcia */
-					/************************************************/
-
-					xil_printf("zdjêcie zrobione [HDR] T_EXP1 = T_EXP2 nr: %d\n\r",i+1);
-				}
-			}
-		}
-		if(cmvConfigInst->ExposureMode == cmv_exp_internal)
-		{
-			for (int i=0; i<cmvConfigInst->NumberOfFrame; i++)
-			{
-				/* Assert FRAME_REQ signal */
-				GpioReg = XGpio_DiscreteRead(&GpioInstance, GPIO_CHANNEL);
-				GpioReg |= CMV_FRAME_REQ;
-				XGpio_DiscreteWrite(&GpioInstance, GPIO_CHANNEL, GpioReg);
-
-				for(int i=0; i<cpu_tick; i++) {} // pulse
-
-				GpioReg = XGpio_DiscreteRead(&GpioInstance, GPIO_CHANNEL);
-				GpioReg &= ~CMV_FRAME_REQ;
-				XGpio_DiscreteWrite(&GpioInstance, GPIO_CHANNEL, GpioReg);
-
-				vTaskDelay(pdMS_TO_TICKS(1000));
-				xil_printf("zdjêcie zrobione [HDR - INTERNAL] nr: %d\n\r",i+1);
-			}
-		}
-
-	}
-
-	xSemaphoreGive(xSemaphoreUserInterface);
 
 	vTaskDelete(NULL);
 }
@@ -948,6 +585,369 @@ static void vTaskCommunication(void *p)
 
 
 }
+
+static void vTaskCmvSoftTrigger(void *p) // parametry jako struktura
+{
+	BaseType_t Status;
+	u32 GpioReg;
+	cmvConfig *cmvConfigInst =  (cmvConfig* ) p;
+
+	u32 cpu_tick = 0;
+	u8 bit_mode = 12;
+	u32 cmv_freq = 250000000; // -> napisaæ funkcje do odczytu wartosci zegara z clk_wiz
+
+	/*
+	 * Pulse signals T_EXP1, TEXP2, FRAME_REQ should be at least 8, 10, 12 * LVDS
+	 * input clock period wide depend on the used bit mode
+	 *
+	 * cpu_tick = (cpu_freq[MHz] * bit_mode / cmv_input_freq[MHz]) + 1
+	 */
+	cpu_tick = (CPU_CLK_FREQ_HZ * bit_mode / cmv_freq) + 1;
+
+	/* Set AXI Timer option */
+	XTmrCtr_SetOptions(&TimerInstance, TIMER_CNTR_0, XTC_INT_MODE_OPTION | XTC_DOWN_COUNT_OPTION);
+
+	if(cmvConfigInst->SensorMode == cmv_mode_normal)
+	{
+		/* protect against change settings of sensor mode */
+		GpioReg = XGpio_DiscreteRead(&GpioInstance, GPIO_CHANNEL);
+		GpioReg &= ~CMV_FRAME_REQ;	//
+		XGpio_DiscreteWrite(&GpioInstance, GPIO_CHANNEL, GpioReg);
+
+		if(cmvConfigInst->ExposureMode == cmv_exp_external)
+		{
+			for(int i=0; i<cmvConfigInst->NumberOfFrame; i++)
+			{
+
+			/* Assert T_EXP1 signal */
+			GpioReg = XGpio_DiscreteRead(&GpioInstance, GPIO_CHANNEL);
+			GpioReg |= CMV_TEXP1;	//
+			XGpio_DiscreteWrite(&GpioInstance, GPIO_CHANNEL, GpioReg);
+
+			/*
+			 * Timer for count exposure time between T_EXP1 and FRAME_REQ
+			 */
+			XTmrCtr_SetResetValue(&TimerInstance, TIMER_CNTR_0, cmvConfigInst->ExposureTimeTexp1Us * TIMER_1_US);
+			XTmrCtr_Start(&TimerInstance, TIMER_CNTR_0);  /* Start counting   */
+
+			/*
+			 * Pulse signals T_EXP1, TEXP2, FRAME_REQ should be at least 8, 10, 12 * LVDS
+			 * input clock period wide depend on the used bit mode
+			 *
+			 * cpu_tick = (cpu_freq[MHz] * bit_mode / cmv_input_freq[MHz]) + 1
+			 */
+			for(int i=0; i<cpu_tick; i++) {}
+
+			/* Deassert T_EXP1 signal */
+			GpioReg = XGpio_DiscreteRead(&GpioInstance, GPIO_CHANNEL);
+			GpioReg &= ~CMV_TEXP1;
+			XGpio_DiscreteWrite(&GpioInstance, GPIO_CHANNEL, GpioReg);
+
+			/* Wait for count appropriate exposure time */
+			xSemaphoreTake(xSemaphoreTimer, portMAX_DELAY);
+
+			/* Stop Timer	*/
+			XTmrCtr_Stop(&TimerInstance, TIMER_CNTR_0);
+
+			/* Assert FRAME_REQ signal */
+			GpioReg = XGpio_DiscreteRead(&GpioInstance, GPIO_CHANNEL);
+			GpioReg |= CMV_FRAME_REQ;
+			XGpio_DiscreteWrite(&GpioInstance, GPIO_CHANNEL, GpioReg);
+
+			for(int i=0; i<cpu_tick; i++) {} // Signal pulse
+
+			/* Deassert FRAME_REQ signal */
+			GpioReg = XGpio_DiscreteRead(&GpioInstance, GPIO_CHANNEL);
+			GpioReg &= ~CMV_FRAME_REQ;
+			XGpio_DiscreteWrite(&GpioInstance, GPIO_CHANNEL, GpioReg);
+
+			/************************************************/
+			/*  SEMAFOR -> przerwanie od odebranego zdjêcia */
+			/************************************************/
+
+			xil_printf("zdjêcie zrobione [NORMAL] nr: %d\n\r",i+1);
+			}
+			xil_printf("IMAGE ACQUISITION NORMAL(EXTERNAL) DONE \n\r");
+		} else // internal
+		{
+			for (int i=0; i<cmvConfigInst->NumberOfFrame; i++)
+			{
+				/* Assert FRAME_REQ signal */
+				GpioReg = XGpio_DiscreteRead(&GpioInstance, GPIO_CHANNEL);
+				GpioReg |= CMV_FRAME_REQ;
+				XGpio_DiscreteWrite(&GpioInstance, GPIO_CHANNEL, GpioReg);
+
+				for(int i=0; i<cpu_tick; i++) {} // pulse
+
+				GpioReg = XGpio_DiscreteRead(&GpioInstance, GPIO_CHANNEL);
+				GpioReg &= ~CMV_FRAME_REQ;
+				XGpio_DiscreteWrite(&GpioInstance, GPIO_CHANNEL, GpioReg);
+
+				vTaskDelay(pdMS_TO_TICKS(1000));
+				xil_printf("zdjêcie zrobione [NORMAL] nr: %d\n\r",i+1);
+			}
+
+			/************************************************/
+			/*  SEMAFOR -> przerwanie od odebranego zdjêcia */
+			/************************************************/
+			xil_printf("IMAGE ACQUISITION NORMAL(INTERNAL) DONE \n\r");
+		}
+	}
+	else if(cmvConfigInst->SensorMode == cmv_mode_continuous)
+	{
+		/* Continuous mode possible only in Internal exposure */
+		cmvConfigInst->ExposureMode = cmv_exp_internal;
+
+		/*
+		 * Check status of FRAME_REQ,
+		 * if 1 then acquision is running, then stop grab images,
+		 * if 0 then acquisition is not running, then start grab images
+		 */
+		GpioReg = XGpio_DiscreteRead(&GpioInstance, GPIO_CHANNEL);
+		if((GpioReg & 0x1) == 0x1)
+		{
+			/* Deassert FRAME_REQ signal */
+			cmvConfigInst->ContinuousModeOn = FALSE;
+			GpioReg = XGpio_DiscreteRead(&GpioInstance, GPIO_CHANNEL);
+			GpioReg &= ~CMV_FRAME_REQ;
+			XGpio_DiscreteWrite(&GpioInstance, GPIO_CHANNEL, GpioReg);
+		} else
+		{
+			/* Assert FRAME_REQ signal */
+			cmvConfigInst->ContinuousModeOn = TRUE;
+			GpioReg = XGpio_DiscreteRead(&GpioInstance, GPIO_CHANNEL);
+			GpioReg |= CMV_FRAME_REQ;
+			XGpio_DiscreteWrite(&GpioInstance, GPIO_CHANNEL, GpioReg);
+		}
+	}
+	else if(cmvConfigInst->SensorMode == cmv_mode_hdr)
+	{
+		u32 deltaTime;
+		u32 texpValue;
+
+		/* protect against change settings of sensor mode */
+		GpioReg = XGpio_DiscreteRead(&GpioInstance, GPIO_CHANNEL); // odczyt wartosci z gpio
+		GpioReg &= ~CMV_FRAME_REQ;	//
+		XGpio_DiscreteWrite(&GpioInstance, GPIO_CHANNEL, GpioReg);
+
+		/* Check value of differenct between T_EXP1 and T_EXP2 */
+		if(cmvConfigInst->ExposureTimeTexp1Us > cmvConfigInst->ExposureTimeTexp2Us)
+		{
+			deltaTime = cmvConfigInst->ExposureTimeTexp1Us-cmvConfigInst->ExposureTimeTexp2Us;
+			texpValue = 0;
+		}
+		else if(cmvConfigInst->ExposureTimeTexp1Us < cmvConfigInst->ExposureTimeTexp2Us)
+		{
+			deltaTime = cmvConfigInst->ExposureTimeTexp2Us-cmvConfigInst->ExposureTimeTexp1Us;
+			texpValue = 1;
+		}
+		else
+		{
+			deltaTime = 0;
+			texpValue = 2;
+		}
+
+		if(cmvConfigInst->ExposureMode == cmv_exp_external)
+		{
+			for(int i=0; i<cmvConfigInst->NumberOfFrame; i++)
+			{
+				if(texpValue == 0)
+				{
+					/* Assert T_EXP1 signal */
+					GpioReg = XGpio_DiscreteRead(&GpioInstance, GPIO_CHANNEL);
+					GpioReg |= CMV_TEXP1;	//
+					XGpio_DiscreteWrite(&GpioInstance, GPIO_CHANNEL, GpioReg);
+					/*
+					 * Timer for count exposure time between T_EXP1 and T_EXP2
+					 */
+					XTmrCtr_SetResetValue(&TimerInstance, TIMER_CNTR_0, deltaTime * TIMER_1_US);
+					XTmrCtr_Start(&TimerInstance, TIMER_CNTR_0);  /* Start counting   */
+
+					for(int i=0; i<cpu_tick; i++) {} // pulse
+
+					/* Deassert T_EXP1 signal */
+					GpioReg = XGpio_DiscreteRead(&GpioInstance, GPIO_CHANNEL);
+					GpioReg &= ~CMV_TEXP1;
+					XGpio_DiscreteWrite(&GpioInstance, GPIO_CHANNEL, GpioReg);
+
+					xSemaphoreTake(xSemaphoreTimer, portMAX_DELAY);
+					XTmrCtr_Stop(&TimerInstance, TIMER_CNTR_0);
+
+					/* Assert T_EXP2 signal */
+					GpioReg = XGpio_DiscreteRead(&GpioInstance, GPIO_CHANNEL);
+					GpioReg |= CMV_TEXP2;	//
+					XGpio_DiscreteWrite(&GpioInstance, GPIO_CHANNEL, GpioReg);
+
+					/*
+					 * Timer for count exposure time between T_EXP2 and FRAME_REQ
+					 */
+					XTmrCtr_SetResetValue(&TimerInstance, TIMER_CNTR_0, cmvConfigInst->ExposureTimeTexp2Us * TIMER_1_US);
+					XTmrCtr_Start(&TimerInstance, TIMER_CNTR_0);  /* Start counting   */
+
+					for(int i=0; i<cpu_tick; i++) {}
+
+					/* Deassert T_EXP2 signal */
+					GpioReg = XGpio_DiscreteRead(&GpioInstance, GPIO_CHANNEL);
+					GpioReg &= ~CMV_TEXP2;
+					XGpio_DiscreteWrite(&GpioInstance, GPIO_CHANNEL, GpioReg);
+
+					xSemaphoreTake(xSemaphoreTimer, portMAX_DELAY);
+
+					XTmrCtr_Stop(&TimerInstance, TIMER_CNTR_0);
+
+					/* Assert FRAME_REQ signal */
+					GpioReg = XGpio_DiscreteRead(&GpioInstance, GPIO_CHANNEL);
+					GpioReg |= CMV_FRAME_REQ;
+					XGpio_DiscreteWrite(&GpioInstance, GPIO_CHANNEL, GpioReg);
+
+					for(int i=0; i<cpu_tick; i++) {} // Signal pulse
+
+					/* Deassert FRAME_REQ signal */
+					GpioReg = XGpio_DiscreteRead(&GpioInstance, GPIO_CHANNEL);
+					GpioReg &= ~CMV_FRAME_REQ;
+					XGpio_DiscreteWrite(&GpioInstance, GPIO_CHANNEL, GpioReg);
+
+					/************************************************/
+					/*  SEMAFOR -> przerwanie od odebranego zdjêcia */
+					/************************************************/
+
+					xil_printf("zdjêcie zrobione [HDR] T_EXP1 > T_EXP2 nr: %d\n\r",i+1);
+				}
+				if(texpValue == 1)
+				{
+					/* Assert T_EXP2 signal */
+					GpioReg = XGpio_DiscreteRead(&GpioInstance, GPIO_CHANNEL);
+					GpioReg |= CMV_TEXP2;	//
+					XGpio_DiscreteWrite(&GpioInstance, GPIO_CHANNEL, GpioReg);
+
+					/*
+					 * Timer for count exposure time between T_EXP2 and FRAME_REQ
+					 */
+					XTmrCtr_SetResetValue(&TimerInstance, TIMER_CNTR_0, deltaTime * TIMER_1_US);
+					XTmrCtr_Start(&TimerInstance, TIMER_CNTR_0);  /* Start counting   */
+
+					for(int i=0; i<cpu_tick; i++) {}
+
+					/* Deassert T_EXP2 signal */
+					GpioReg = XGpio_DiscreteRead(&GpioInstance, GPIO_CHANNEL);
+					GpioReg &= ~CMV_TEXP2;
+					XGpio_DiscreteWrite(&GpioInstance, GPIO_CHANNEL, GpioReg);
+
+					xSemaphoreTake(xSemaphoreTimer, portMAX_DELAY);
+
+					XTmrCtr_Stop(&TimerInstance, TIMER_CNTR_0);
+
+					/* Assert T_EXP1 signal */
+					GpioReg = XGpio_DiscreteRead(&GpioInstance, GPIO_CHANNEL);
+					GpioReg |= CMV_TEXP1;	//
+					XGpio_DiscreteWrite(&GpioInstance, GPIO_CHANNEL, GpioReg);
+
+					/*
+					 * Timer for count exposure time between T_EXP1 and T_EXP2
+					 */
+					XTmrCtr_SetResetValue(&TimerInstance, TIMER_CNTR_0, cmvConfigInst->ExposureTimeTexp1Us * TIMER_1_US);
+					XTmrCtr_Start(&TimerInstance, TIMER_CNTR_0);  /* Start counting   */
+
+					for(int i=0; i<cpu_tick; i++) {} // pulse
+
+					/* Deassert T_EXP1 signal */
+					GpioReg = XGpio_DiscreteRead(&GpioInstance, GPIO_CHANNEL);
+					GpioReg &= ~CMV_TEXP1;
+					XGpio_DiscreteWrite(&GpioInstance, GPIO_CHANNEL, GpioReg);
+
+					xSemaphoreTake(xSemaphoreTimer, portMAX_DELAY);
+					XTmrCtr_Stop(&TimerInstance, TIMER_CNTR_0);
+
+					/* Assert FRAME_REQ signal */
+					GpioReg = XGpio_DiscreteRead(&GpioInstance, GPIO_CHANNEL);
+					GpioReg |= CMV_FRAME_REQ;
+					XGpio_DiscreteWrite(&GpioInstance, GPIO_CHANNEL, GpioReg);
+
+					for(int i=0; i<cpu_tick; i++) {} // Signal pulse
+
+					/* Deassert FRAME_REQ signal */
+					GpioReg = XGpio_DiscreteRead(&GpioInstance, GPIO_CHANNEL);
+					GpioReg &= ~CMV_FRAME_REQ;
+					XGpio_DiscreteWrite(&GpioInstance, GPIO_CHANNEL, GpioReg);
+
+					/************************************************/
+					/*  SEMAFOR -> przerwanie od odebranego zdjêcia */
+					/************************************************/
+
+					xil_printf("zdjêcie zrobione [HDR] T_EXP2 > T_EXP1 nr: %d\n\r",i+1);
+				}
+				else if(texpValue == 2)
+				{
+					/* Assert T_EXP1 & T_EXP2 signals */
+					GpioReg = XGpio_DiscreteRead(&GpioInstance, GPIO_CHANNEL);
+					GpioReg |= CMV_TEXP1 | CMV_TEXP2;
+					XGpio_DiscreteWrite(&GpioInstance, GPIO_CHANNEL, GpioReg);
+
+					/*
+					 * Timer for count exposure time between T_EXP1, T_EXP2 and FRAME_REQ
+					 */
+					XTmrCtr_SetResetValue(&TimerInstance, TIMER_CNTR_0, cmvConfigInst->ExposureTimeTexp1Us * TIMER_1_US);
+					XTmrCtr_Start(&TimerInstance, TIMER_CNTR_0);  /* Start counting   */
+
+					for(int i=0; i<cpu_tick; i++) {} // pulse
+
+					/* Deassert T_EXP1 & T_EXP2 signals */
+					GpioReg = XGpio_DiscreteRead(&GpioInstance, GPIO_CHANNEL);
+					GpioReg &= ~(CMV_TEXP1 | CMV_TEXP2);
+					XGpio_DiscreteWrite(&GpioInstance, GPIO_CHANNEL, GpioReg);
+
+					xSemaphoreTake(xSemaphoreTimer, portMAX_DELAY);
+
+					XTmrCtr_Stop(&TimerInstance, TIMER_CNTR_0);
+
+					/* Assert FRAME_REQ signal */
+					GpioReg = XGpio_DiscreteRead(&GpioInstance, GPIO_CHANNEL);
+					GpioReg |= CMV_FRAME_REQ;
+					XGpio_DiscreteWrite(&GpioInstance, GPIO_CHANNEL, GpioReg);
+
+					for(int i=0; i<cpu_tick; i++) {} // Signal pulse
+
+					/* Deassert FRAME_REQ signal */
+					GpioReg = XGpio_DiscreteRead(&GpioInstance, GPIO_CHANNEL);
+					GpioReg &= ~CMV_FRAME_REQ;
+					XGpio_DiscreteWrite(&GpioInstance, GPIO_CHANNEL, GpioReg);
+
+					/************************************************/
+					/*  SEMAFOR -> przerwanie od odebranego zdjêcia */
+					/************************************************/
+
+					xil_printf("zdjêcie zrobione [HDR] T_EXP1 = T_EXP2 nr: %d\n\r",i+1);
+				}
+			}
+		}
+		if(cmvConfigInst->ExposureMode == cmv_exp_internal)
+		{
+			for (int i=0; i<cmvConfigInst->NumberOfFrame; i++)
+			{
+				/* Assert FRAME_REQ signal */
+				GpioReg = XGpio_DiscreteRead(&GpioInstance, GPIO_CHANNEL);
+				GpioReg |= CMV_FRAME_REQ;
+				XGpio_DiscreteWrite(&GpioInstance, GPIO_CHANNEL, GpioReg);
+
+				for(int i=0; i<cpu_tick; i++) {} // pulse
+
+				GpioReg = XGpio_DiscreteRead(&GpioInstance, GPIO_CHANNEL);
+				GpioReg &= ~CMV_FRAME_REQ;
+				XGpio_DiscreteWrite(&GpioInstance, GPIO_CHANNEL, GpioReg);
+
+				vTaskDelay(pdMS_TO_TICKS(1000));
+				xil_printf("zdjêcie zrobione [HDR - INTERNAL] nr: %d\n\r",i+1);
+			}
+		}
+
+	}
+
+	xSemaphoreGive(xSemaphoreUserInterface);
+
+	vTaskDelete(NULL);
+}
+
+
 static void vTaskCmvTest(void *p)
 {
 	int Status;
