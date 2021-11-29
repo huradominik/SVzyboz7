@@ -3,7 +3,6 @@
 	<name>STAR_VIBE</name>
 	<comment>Created by Vitis v2021.1</comment>
 	<projects>
-		<project>scaneye_trigger_wrapper_STAR_VIBE</project>
 	</projects>
 	<buildSpec>
 		<buildCommand>

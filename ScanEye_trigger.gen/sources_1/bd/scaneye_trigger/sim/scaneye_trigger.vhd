@@ -1,7 +1,7 @@
 --Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------
 --Tool Version: Vivado v.2021.1.1 (win64) Build 3286242 Wed Jul 28 13:10:47 MDT 2021
---Date        : Fri Nov 19 11:43:52 2021
+--Date        : Mon Nov 29 12:22:08 2021
 --Host        : DESKTOP-JATBKJM running 64-bit major release  (build 9200)
 --Command     : generate_target scaneye_trigger.bd
 --Design      : scaneye_trigger
@@ -1812,8 +1812,8 @@ entity scaneye_trigger is
     FIXED_IO_ps_porb : inout STD_LOGIC;
     FIXED_IO_ps_srstb : inout STD_LOGIC;
     frame_req_0 : inout STD_LOGIC;
-    gpio_out_tri_o : out STD_LOGIC_VECTOR ( 5 downto 0 );
-    gpio_sw_tri_i : in STD_LOGIC_VECTOR ( 3 downto 0 );
+    gpio_out_tri_o : out STD_LOGIC_VECTOR ( 7 downto 0 );
+    gpio_sw_tri_i : in STD_LOGIC_VECTOR ( 4 downto 0 );
     power_good_0 : in STD_LOGIC;
     spi_pmod_io0_i : in STD_LOGIC;
     spi_pmod_io0_o : out STD_LOGIC;
@@ -1957,8 +1957,8 @@ architecture STRUCTURE of scaneye_trigger is
     s_axi_rvalid : out STD_LOGIC;
     s_axi_rready : in STD_LOGIC;
     ip2intc_irpt : out STD_LOGIC;
-    gpio_io_i : in STD_LOGIC_VECTOR ( 3 downto 0 );
-    gpio2_io_o : out STD_LOGIC_VECTOR ( 5 downto 0 )
+    gpio_io_i : in STD_LOGIC_VECTOR ( 4 downto 0 );
+    gpio2_io_o : out STD_LOGIC_VECTOR ( 7 downto 0 )
   );
   end component scaneye_trigger_axi_gpio_0_0;
   component scaneye_trigger_axi_quad_spi_0_0 is
@@ -2104,8 +2104,8 @@ architecture STRUCTURE of scaneye_trigger is
   signal XCMV_0_sys_res_n : STD_LOGIC;
   signal XCMV_0_t_exp1 : STD_LOGIC;
   signal XCMV_0_t_exp2 : STD_LOGIC;
-  signal axi_gpio_0_GPIO2_TRI_O : STD_LOGIC_VECTOR ( 5 downto 0 );
-  signal axi_gpio_0_GPIO_TRI_I : STD_LOGIC_VECTOR ( 3 downto 0 );
+  signal axi_gpio_0_GPIO2_TRI_O : STD_LOGIC_VECTOR ( 7 downto 0 );
+  signal axi_gpio_0_GPIO_TRI_I : STD_LOGIC_VECTOR ( 4 downto 0 );
   signal axi_gpio_0_ip2intc_irpt : STD_LOGIC;
   signal axi_timer_0_interrupt : STD_LOGIC;
   signal clk_wiz_0_clk_out1 : STD_LOGIC;
@@ -2319,8 +2319,8 @@ begin
   SPI_SPI_0_IO1_I <= spi_pmod_io1_i;
   SPI_SPI_0_SCK_I <= spi_pmod_sck_i;
   SPI_SPI_0_SS_I(0) <= spi_pmod_ss_i(0);
-  axi_gpio_0_GPIO_TRI_I(3 downto 0) <= gpio_sw_tri_i(3 downto 0);
-  gpio_out_tri_o(5 downto 0) <= axi_gpio_0_GPIO2_TRI_O(5 downto 0);
+  axi_gpio_0_GPIO_TRI_I(4 downto 0) <= gpio_sw_tri_i(4 downto 0);
+  gpio_out_tri_o(7 downto 0) <= axi_gpio_0_GPIO2_TRI_O(7 downto 0);
   power_good_0_1 <= power_good_0;
   spi_pmod_io0_o <= SPI_SPI_0_IO0_O;
   spi_pmod_io0_t <= SPI_SPI_0_IO0_T;
@@ -2401,8 +2401,8 @@ XCMV_0: component scaneye_trigger_XCMV_0_4
     );
 axi_gpio_0: component scaneye_trigger_axi_gpio_0_0
      port map (
-      gpio2_io_o(5 downto 0) => axi_gpio_0_GPIO2_TRI_O(5 downto 0),
-      gpio_io_i(3 downto 0) => axi_gpio_0_GPIO_TRI_I(3 downto 0),
+      gpio2_io_o(7 downto 0) => axi_gpio_0_GPIO2_TRI_O(7 downto 0),
+      gpio_io_i(4 downto 0) => axi_gpio_0_GPIO_TRI_I(4 downto 0),
       ip2intc_irpt => axi_gpio_0_ip2intc_irpt,
       s_axi_aclk => processing_system7_0_FCLK_CLK0,
       s_axi_araddr(8 downto 0) => ps7_0_axi_periph_M00_AXI_ARADDR(8 downto 0),

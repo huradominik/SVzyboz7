@@ -5,7 +5,7 @@
 #set_property IOSTANDARD LVCMOS33    [get_ports "sys_res_n_0"]
 #
 #IO_L23N_T3_35 Sch=led[1] LED 1
-set_property PACKAGE_PIN M15        [get_ports "frame_req_0"]
+set_property PACKAGE_PIN M17        [get_ports "frame_req_0"]
 set_property IOSTANDARD LVCMOS33    [get_ports "frame_req_0"]
 #
 #IO_0_35 Sch=led[2] LED 2

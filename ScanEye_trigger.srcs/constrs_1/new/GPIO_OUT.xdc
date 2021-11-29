@@ -1,29 +1,37 @@
 # RGB LEDS
 # LED 5
-#IO_L18N_T2_13 Sch=led5_r FRAME_REQ
-set_property PACKAGE_PIN T14        [get_ports "gpio_out_tri_o[0]"]
+#IO_L18N_T2_13 Sch=led5_r SYS_RES_N
+set_property PACKAGE_PIN D18        [get_ports "gpio_out_tri_o[0]"]
 set_property IOSTANDARD LVCMOS33    [get_ports "gpio_out_tri_o[0]"]
 #
-#IO_L19P_T3_13 Sch=led5_g T_EXP1
-set_property PACKAGE_PIN P14        [get_ports "gpio_out_tri_o[1]"]
+#IO_L19P_T3_13 Sch=led5_g FRAME_REQ
+set_property PACKAGE_PIN G14        [get_ports "gpio_out_tri_o[1]"]
 set_property IOSTANDARD LVCMOS33    [get_ports "gpio_out_tri_o[1]"]
 #
-#IO_L20P_T3_13 Sch=led5_b T_EXP2
-set_property PACKAGE_PIN U14        [get_ports "gpio_out_tri_o[2]"]
+#IO_L20P_T3_13 Sch=led5_b T_EXP1
+set_property PACKAGE_PIN M15        [get_ports "gpio_out_tri_o[2]"]
 set_property IOSTANDARD LVCMOS33    [get_ports "gpio_out_tri_o[2]"]
 #
 # LED 6
-#IO_L18P_T2_34 Sch=led6_r RESET_N
-set_property PACKAGE_PIN V17        [get_ports "gpio_out_tri_o[3]"]
+#IO_L18P_T2_34 Sch=led6_r T_EXP2
+set_property PACKAGE_PIN M14        [get_ports "gpio_out_tri_o[3]"]
 set_property IOSTANDARD LVCMOS33    [get_ports "gpio_out_tri_o[3]"]
 #
-#IO_L6N_T0_VREF_35 Sch=led6_g LED 6 GREEN
-set_property PACKAGE_PIN F17        [get_ports "gpio_out_tri_o[4]"]
+#IO_L6N_T0_VREF_35 Sch=led6_g SPI_CS_SENR
+set_property PACKAGE_PIN Y11        [get_ports "gpio_out_tri_o[4]"]
 set_property IOSTANDARD LVCMOS33    [get_ports "gpio_out_tri_o[4]"]
 #
-#IO_L8P_T1_AD10P_35 Sch=led6_b LED 6 BLUE
-set_property PACKAGE_PIN M17        [get_ports "gpio_out_tri_o[5]"]
+#IO_L8P_T1_AD10P_35 Sch=led6_b SPI_CS_ADC
+set_property PACKAGE_PIN T5        [get_ports "gpio_out_tri_o[5]"]
 set_property IOSTANDARD LVCMOS33    [get_ports "gpio_out_tri_o[5]"]
+#
+#IO_L8P_T1_AD10P_35 Sch=led6_b DIG_SENR_PWR_EN - LDO_EN
+set_property PACKAGE_PIN V16        [get_ports "gpio_out_tri_o[6]"]
+set_property IOSTANDARD LVCMOS33    [get_ports "gpio_out_tri_o[6]"]
+#
+#IO_L8P_T1_AD10P_35 Sch=led6_b DIG_SEQ_EN
+set_property PACKAGE_PIN F17        [get_ports "gpio_out_tri_o[7]"]
+set_property IOSTANDARD LVCMOS33    [get_ports "gpio_out_tri_o[7]"]
 #
 #
 

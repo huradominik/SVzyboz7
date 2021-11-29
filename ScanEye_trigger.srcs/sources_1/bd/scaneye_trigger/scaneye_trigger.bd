@@ -1,7 +1,7 @@
 {
   "design": {
     "design_info": {
-      "boundary_crc": "0xC90952B177EFDE02",
+      "boundary_crc": "0x5201589796EC3819",
       "device": "xc7z020clg400-1",
       "gen_directory": "../../../../ScanEye_trigger.gen/sources_1/bd/scaneye_trigger",
       "name": "scaneye_trigger",
@@ -1405,10 +1405,10 @@
             "value": "1"
           },
           "C_GPIO2_WIDTH": {
-            "value": "6"
+            "value": "8"
           },
           "C_GPIO_WIDTH": {
-            "value": "4"
+            "value": "5"
           },
           "C_INTERRUPT_PRESENT": {
             "value": "1"

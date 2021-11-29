@@ -28,3 +28,6 @@ bsp write
 bsp reload
 catch {bsp regenerate}
 platform generate
+platform active {scaneye_trigger_wrapper_STAR_VIBE}
+platform generate
+platform generate

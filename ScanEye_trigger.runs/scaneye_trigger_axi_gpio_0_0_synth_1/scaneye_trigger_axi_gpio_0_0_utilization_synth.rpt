@@ -1,7 +1,7 @@
 Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2021.1.1 (win64) Build 3286242 Wed Jul 28 13:10:47 MDT 2021
-| Date         : Mon Nov 15 09:43:22 2021
+| Date         : Mon Nov 29 12:22:53 2021
 | Host         : DESKTOP-JATBKJM running 64-bit major release  (build 9200)
 | Command      : report_utilization -file scaneye_trigger_axi_gpio_0_0_utilization_synth.rpt -pb scaneye_trigger_axi_gpio_0_0_utilization_synth.pb
 | Design       : scaneye_trigger_axi_gpio_0_0
@@ -30,11 +30,11 @@ Table of Contents
 +-------------------------+------+-------+------------+-----------+-------+
 |        Site Type        | Used | Fixed | Prohibited | Available | Util% |
 +-------------------------+------+-------+------------+-----------+-------+
-| Slice LUTs*             |   84 |     0 |          0 |     53200 |  0.16 |
-|   LUT as Logic          |   84 |     0 |          0 |     53200 |  0.16 |
+| Slice LUTs*             |   86 |     0 |          0 |     53200 |  0.16 |
+|   LUT as Logic          |   86 |     0 |          0 |     53200 |  0.16 |
 |   LUT as Memory         |    0 |     0 |          0 |     17400 |  0.00 |
-| Slice Registers         |  129 |     0 |          0 |    106400 |  0.12 |
-|   Register as Flip Flop |  129 |     0 |          0 |    106400 |  0.12 |
+| Slice Registers         |  145 |     0 |          0 |    106400 |  0.14 |
+|   Register as Flip Flop |  145 |     0 |          0 |    106400 |  0.14 |
 |   Register as Latch     |    0 |     0 |          0 |    106400 |  0.00 |
 | F7 Muxes                |    0 |     0 |          0 |     26600 |  0.00 |
 | F8 Muxes                |    0 |     0 |          0 |     13300 |  0.00 |
@@ -56,8 +56,8 @@ Table of Contents
 | 0     |          Yes |           - |            - |
 | 0     |          Yes |           - |          Set |
 | 0     |          Yes |           - |        Reset |
-| 9     |          Yes |         Set |            - |
-| 120   |          Yes |       Reset |            - |
+| 10    |          Yes |         Set |            - |
+| 135   |          Yes |       Reset |            - |
 +-------+--------------+-------------+--------------+
 
 
@@ -146,13 +146,13 @@ Table of Contents
 +----------+------+---------------------+
 | Ref Name | Used | Functional Category |
 +----------+------+---------------------+
-| FDRE     |  120 |        Flop & Latch |
-| LUT5     |   40 |                 LUT |
-| LUT6     |   21 |                 LUT |
-| LUT3     |   19 |                 LUT |
-| LUT4     |   18 |                 LUT |
-| FDSE     |    9 |        Flop & Latch |
-| LUT2     |    7 |                 LUT |
+| FDRE     |  135 |        Flop & Latch |
+| LUT5     |   45 |                 LUT |
+| LUT3     |   20 |                 LUT |
+| LUT6     |   18 |                 LUT |
+| LUT4     |   17 |                 LUT |
+| FDSE     |   10 |        Flop & Latch |
+| LUT2     |    8 |                 LUT |
 | LUT1     |    2 |                 LUT |
 +----------+------+---------------------+
 

@@ -1,6 +1,6 @@
-Nothing to build in platform 'scaneye_trigger_wrapper_STAR_VIBE'
+Nothing to build in platform 'scaneye_trigger_wrapper_STAR_VIBE_1'
 
-14:59:56 **** Incremental Build of configuration Debug for project STAR_VIBE ****
+15:39:57 **** Incremental Build of configuration Debug for project STAR_VIBE2 ****
 make all 
 make --no-print-directory pre-build
 a9-linaro-pre-build-step

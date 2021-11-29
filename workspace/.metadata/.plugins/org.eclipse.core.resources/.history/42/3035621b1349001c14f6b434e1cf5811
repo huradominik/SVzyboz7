@@ -1,9 +1,0 @@
-
-#include "cmvsoft.h"
-#include "devices/gpio_access.h"
-#include "devices/clkwiz_access.h"
-
-init_cmvSoft()
-{
-
-}

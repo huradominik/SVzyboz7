@@ -1,7 +1,7 @@
 --Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------
 --Tool Version: Vivado v.2021.1.1 (win64) Build 3286242 Wed Jul 28 13:10:47 MDT 2021
---Date        : Fri Nov 19 11:43:52 2021
+--Date        : Mon Nov 29 12:22:08 2021
 --Host        : DESKTOP-JATBKJM running 64-bit major release  (build 9200)
 --Command     : generate_target scaneye_trigger_wrapper.bd
 --Design      : scaneye_trigger_wrapper
@@ -36,8 +36,8 @@ entity scaneye_trigger_wrapper is
     FIXED_IO_ps_porb : inout STD_LOGIC;
     FIXED_IO_ps_srstb : inout STD_LOGIC;
     frame_req_0 : inout STD_LOGIC;
-    gpio_out_tri_o : out STD_LOGIC_VECTOR ( 5 downto 0 );
-    gpio_sw_tri_i : in STD_LOGIC_VECTOR ( 3 downto 0 );
+    gpio_out_tri_o : out STD_LOGIC_VECTOR ( 7 downto 0 );
+    gpio_sw_tri_i : in STD_LOGIC_VECTOR ( 4 downto 0 );
     power_good_0 : in STD_LOGIC;
     spi_pmod_io0_io : inout STD_LOGIC;
     spi_pmod_io1_io : inout STD_LOGIC;
@@ -68,8 +68,8 @@ architecture STRUCTURE of scaneye_trigger_wrapper is
     spi_pmod_ss_i : in STD_LOGIC_VECTOR ( 0 to 0 );
     spi_pmod_ss_o : out STD_LOGIC_VECTOR ( 0 to 0 );
     spi_pmod_ss_t : out STD_LOGIC;
-    gpio_sw_tri_i : in STD_LOGIC_VECTOR ( 3 downto 0 );
-    gpio_out_tri_o : out STD_LOGIC_VECTOR ( 5 downto 0 );
+    gpio_sw_tri_i : in STD_LOGIC_VECTOR ( 4 downto 0 );
+    gpio_out_tri_o : out STD_LOGIC_VECTOR ( 7 downto 0 );
     DDR_cas_n : inout STD_LOGIC;
     DDR_cke : inout STD_LOGIC;
     DDR_ck_n : inout STD_LOGIC;
@@ -140,8 +140,8 @@ scaneye_trigger_i: component scaneye_trigger
       FIXED_IO_ps_porb => FIXED_IO_ps_porb,
       FIXED_IO_ps_srstb => FIXED_IO_ps_srstb,
       frame_req_0 => frame_req_0,
-      gpio_out_tri_o(5 downto 0) => gpio_out_tri_o(5 downto 0),
-      gpio_sw_tri_i(3 downto 0) => gpio_sw_tri_i(3 downto 0),
+      gpio_out_tri_o(7 downto 0) => gpio_out_tri_o(7 downto 0),
+      gpio_sw_tri_i(4 downto 0) => gpio_sw_tri_i(4 downto 0),
       power_good_0 => power_good_0,
       spi_pmod_io0_i => spi_pmod_io0_i,
       spi_pmod_io0_o => spi_pmod_io0_o,

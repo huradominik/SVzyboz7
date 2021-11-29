@@ -27,27 +27,27 @@ INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z020
 INFO: [Device 21-403] Loading part xc7z020clg400-1
 INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
 INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
-INFO: [Synth 8-7075] Helper process launched with PID 10768
+INFO: [Synth 8-7075] Helper process launched with PID 17948
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:04 . Memory (MB): peak = 1352.641 ; gain = 0.000
+Starting RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 1529.922 ; gain = 153.094
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-638] synthesizing module 'scaneye_trigger_wrapper' [C:/Scanway/Vivado/ScanEye_trigger/ScanEye_trigger.gen/sources_1/bd/scaneye_trigger/hdl/scaneye_trigger_wrapper.vhd:51]
 INFO: [Synth 8-3491] module 'scaneye_trigger' declared at 'c:/Scanway/Vivado/ScanEye_trigger/ScanEye_trigger.gen/sources_1/bd/scaneye_trigger/synth/scaneye_trigger.vhd:1790' bound to instance 'scaneye_trigger_i' of component 'scaneye_trigger' [C:/Scanway/Vivado/ScanEye_trigger/ScanEye_trigger.gen/sources_1/bd/scaneye_trigger/hdl/scaneye_trigger_wrapper.vhd:118]
 INFO: [Synth 8-638] synthesizing module 'scaneye_trigger' [c:/Scanway/Vivado/ScanEye_trigger/ScanEye_trigger.gen/sources_1/bd/scaneye_trigger/synth/scaneye_trigger.vhd:1839]
-INFO: [Synth 8-3491] module 'scaneye_trigger_axi_quad_spi_0_0' declared at 'C:/Scanway/Vivado/ScanEye_trigger/ScanEye_trigger.runs/synth_1/.Xil/Vivado-10216-DESKTOP-JATBKJM/realtime/scaneye_trigger_axi_quad_spi_0_0_stub.vhdl:5' bound to instance 'SPI' of component 'scaneye_trigger_axi_quad_spi_0_0' [c:/Scanway/Vivado/ScanEye_trigger/ScanEye_trigger.gen/sources_1/bd/scaneye_trigger/synth/scaneye_trigger.vhd:2335]
-INFO: [Synth 8-638] synthesizing module 'scaneye_trigger_axi_quad_spi_0_0' [C:/Scanway/Vivado/ScanEye_trigger/ScanEye_trigger.runs/synth_1/.Xil/Vivado-10216-DESKTOP-JATBKJM/realtime/scaneye_trigger_axi_quad_spi_0_0_stub.vhdl:44]
-INFO: [Synth 8-3491] module 'scaneye_trigger_XCMV_0_4' declared at 'C:/Scanway/Vivado/ScanEye_trigger/ScanEye_trigger.runs/synth_1/.Xil/Vivado-10216-DESKTOP-JATBKJM/realtime/scaneye_trigger_XCMV_0_4_stub.vhdl:5' bound to instance 'XCMV_0' of component 'scaneye_trigger_XCMV_0_4' [c:/Scanway/Vivado/ScanEye_trigger/ScanEye_trigger.gen/sources_1/bd/scaneye_trigger/synth/scaneye_trigger.vhd:2371]
-INFO: [Synth 8-638] synthesizing module 'scaneye_trigger_XCMV_0_4' [C:/Scanway/Vivado/ScanEye_trigger/ScanEye_trigger.runs/synth_1/.Xil/Vivado-10216-DESKTOP-JATBKJM/realtime/scaneye_trigger_XCMV_0_4_stub.vhdl:39]
-INFO: [Synth 8-3491] module 'scaneye_trigger_axi_gpio_0_0' declared at 'C:/Scanway/Vivado/ScanEye_trigger/ScanEye_trigger.runs/synth_1/.Xil/Vivado-10216-DESKTOP-JATBKJM/realtime/scaneye_trigger_axi_gpio_0_0_stub.vhdl:5' bound to instance 'axi_gpio_0' of component 'scaneye_trigger_axi_gpio_0_0' [c:/Scanway/Vivado/ScanEye_trigger/ScanEye_trigger.gen/sources_1/bd/scaneye_trigger/synth/scaneye_trigger.vhd:2402]
-INFO: [Synth 8-638] synthesizing module 'scaneye_trigger_axi_gpio_0_0' [C:/Scanway/Vivado/ScanEye_trigger/ScanEye_trigger.runs/synth_1/.Xil/Vivado-10216-DESKTOP-JATBKJM/realtime/scaneye_trigger_axi_gpio_0_0_stub.vhdl:33]
-INFO: [Synth 8-3491] module 'scaneye_trigger_axi_timer_0_0' declared at 'C:/Scanway/Vivado/ScanEye_trigger/ScanEye_trigger.runs/synth_1/.Xil/Vivado-10216-DESKTOP-JATBKJM/realtime/scaneye_trigger_axi_timer_0_0_stub.vhdl:5' bound to instance 'axi_timer_0' of component 'scaneye_trigger_axi_timer_0_0' [c:/Scanway/Vivado/ScanEye_trigger/ScanEye_trigger.gen/sources_1/bd/scaneye_trigger/synth/scaneye_trigger.vhd:2427]
-INFO: [Synth 8-638] synthesizing module 'scaneye_trigger_axi_timer_0_0' [C:/Scanway/Vivado/ScanEye_trigger/ScanEye_trigger.runs/synth_1/.Xil/Vivado-10216-DESKTOP-JATBKJM/realtime/scaneye_trigger_axi_timer_0_0_stub.vhdl:37]
-INFO: [Synth 8-3491] module 'scaneye_trigger_clk_wiz_0_0' declared at 'C:/Scanway/Vivado/ScanEye_trigger/ScanEye_trigger.runs/synth_1/.Xil/Vivado-10216-DESKTOP-JATBKJM/realtime/scaneye_trigger_clk_wiz_0_0_stub.vhdl:5' bound to instance 'clk_wiz_0' of component 'scaneye_trigger_clk_wiz_0_0' [c:/Scanway/Vivado/ScanEye_trigger/ScanEye_trigger.gen/sources_1/bd/scaneye_trigger/synth/scaneye_trigger.vhd:2456]
-INFO: [Synth 8-638] synthesizing module 'scaneye_trigger_clk_wiz_0_0' [C:/Scanway/Vivado/ScanEye_trigger/ScanEye_trigger.runs/synth_1/.Xil/Vivado-10216-DESKTOP-JATBKJM/realtime/scaneye_trigger_clk_wiz_0_0_stub.vhdl:33]
-INFO: [Synth 8-3491] module 'scaneye_trigger_ila_0_0' declared at 'C:/Scanway/Vivado/ScanEye_trigger/ScanEye_trigger.runs/synth_1/.Xil/Vivado-10216-DESKTOP-JATBKJM/realtime/scaneye_trigger_ila_0_0_stub.vhdl:5' bound to instance 'ila_0' of component 'scaneye_trigger_ila_0_0' [c:/Scanway/Vivado/ScanEye_trigger/ScanEye_trigger.gen/sources_1/bd/scaneye_trigger/synth/scaneye_trigger.vhd:2481]
-INFO: [Synth 8-638] synthesizing module 'scaneye_trigger_ila_0_0' [C:/Scanway/Vivado/ScanEye_trigger/ScanEye_trigger.runs/synth_1/.Xil/Vivado-10216-DESKTOP-JATBKJM/realtime/scaneye_trigger_ila_0_0_stub.vhdl:15]
-INFO: [Synth 8-3491] module 'scaneye_trigger_processing_system7_0_0' declared at 'C:/Scanway/Vivado/ScanEye_trigger/ScanEye_trigger.runs/synth_1/.Xil/Vivado-10216-DESKTOP-JATBKJM/realtime/scaneye_trigger_processing_system7_0_0_stub.vhdl:5' bound to instance 'processing_system7_0' of component 'scaneye_trigger_processing_system7_0_0' [c:/Scanway/Vivado/ScanEye_trigger/ScanEye_trigger.gen/sources_1/bd/scaneye_trigger/synth/scaneye_trigger.vhd:2488]
-INFO: [Synth 8-638] synthesizing module 'scaneye_trigger_processing_system7_0_0' [C:/Scanway/Vivado/ScanEye_trigger/ScanEye_trigger.runs/synth_1/.Xil/Vivado-10216-DESKTOP-JATBKJM/realtime/scaneye_trigger_processing_system7_0_0_stub.vhdl:74]
+INFO: [Synth 8-3491] module 'scaneye_trigger_axi_quad_spi_0_0' declared at 'C:/Scanway/Vivado/ScanEye_trigger/ScanEye_trigger.runs/synth_1/.Xil/Vivado-31244-DESKTOP-JATBKJM/realtime/scaneye_trigger_axi_quad_spi_0_0_stub.vhdl:5' bound to instance 'SPI' of component 'scaneye_trigger_axi_quad_spi_0_0' [c:/Scanway/Vivado/ScanEye_trigger/ScanEye_trigger.gen/sources_1/bd/scaneye_trigger/synth/scaneye_trigger.vhd:2335]
+INFO: [Synth 8-638] synthesizing module 'scaneye_trigger_axi_quad_spi_0_0' [C:/Scanway/Vivado/ScanEye_trigger/ScanEye_trigger.runs/synth_1/.Xil/Vivado-31244-DESKTOP-JATBKJM/realtime/scaneye_trigger_axi_quad_spi_0_0_stub.vhdl:44]
+INFO: [Synth 8-3491] module 'scaneye_trigger_XCMV_0_4' declared at 'C:/Scanway/Vivado/ScanEye_trigger/ScanEye_trigger.runs/synth_1/.Xil/Vivado-31244-DESKTOP-JATBKJM/realtime/scaneye_trigger_XCMV_0_4_stub.vhdl:5' bound to instance 'XCMV_0' of component 'scaneye_trigger_XCMV_0_4' [c:/Scanway/Vivado/ScanEye_trigger/ScanEye_trigger.gen/sources_1/bd/scaneye_trigger/synth/scaneye_trigger.vhd:2371]
+INFO: [Synth 8-638] synthesizing module 'scaneye_trigger_XCMV_0_4' [C:/Scanway/Vivado/ScanEye_trigger/ScanEye_trigger.runs/synth_1/.Xil/Vivado-31244-DESKTOP-JATBKJM/realtime/scaneye_trigger_XCMV_0_4_stub.vhdl:39]
+INFO: [Synth 8-3491] module 'scaneye_trigger_axi_gpio_0_0' declared at 'C:/Scanway/Vivado/ScanEye_trigger/ScanEye_trigger.runs/synth_1/.Xil/Vivado-31244-DESKTOP-JATBKJM/realtime/scaneye_trigger_axi_gpio_0_0_stub.vhdl:5' bound to instance 'axi_gpio_0' of component 'scaneye_trigger_axi_gpio_0_0' [c:/Scanway/Vivado/ScanEye_trigger/ScanEye_trigger.gen/sources_1/bd/scaneye_trigger/synth/scaneye_trigger.vhd:2402]
+INFO: [Synth 8-638] synthesizing module 'scaneye_trigger_axi_gpio_0_0' [C:/Scanway/Vivado/ScanEye_trigger/ScanEye_trigger.runs/synth_1/.Xil/Vivado-31244-DESKTOP-JATBKJM/realtime/scaneye_trigger_axi_gpio_0_0_stub.vhdl:33]
+INFO: [Synth 8-3491] module 'scaneye_trigger_axi_timer_0_0' declared at 'C:/Scanway/Vivado/ScanEye_trigger/ScanEye_trigger.runs/synth_1/.Xil/Vivado-31244-DESKTOP-JATBKJM/realtime/scaneye_trigger_axi_timer_0_0_stub.vhdl:5' bound to instance 'axi_timer_0' of component 'scaneye_trigger_axi_timer_0_0' [c:/Scanway/Vivado/ScanEye_trigger/ScanEye_trigger.gen/sources_1/bd/scaneye_trigger/synth/scaneye_trigger.vhd:2427]
+INFO: [Synth 8-638] synthesizing module 'scaneye_trigger_axi_timer_0_0' [C:/Scanway/Vivado/ScanEye_trigger/ScanEye_trigger.runs/synth_1/.Xil/Vivado-31244-DESKTOP-JATBKJM/realtime/scaneye_trigger_axi_timer_0_0_stub.vhdl:37]
+INFO: [Synth 8-3491] module 'scaneye_trigger_clk_wiz_0_0' declared at 'C:/Scanway/Vivado/ScanEye_trigger/ScanEye_trigger.runs/synth_1/.Xil/Vivado-31244-DESKTOP-JATBKJM/realtime/scaneye_trigger_clk_wiz_0_0_stub.vhdl:5' bound to instance 'clk_wiz_0' of component 'scaneye_trigger_clk_wiz_0_0' [c:/Scanway/Vivado/ScanEye_trigger/ScanEye_trigger.gen/sources_1/bd/scaneye_trigger/synth/scaneye_trigger.vhd:2456]
+INFO: [Synth 8-638] synthesizing module 'scaneye_trigger_clk_wiz_0_0' [C:/Scanway/Vivado/ScanEye_trigger/ScanEye_trigger.runs/synth_1/.Xil/Vivado-31244-DESKTOP-JATBKJM/realtime/scaneye_trigger_clk_wiz_0_0_stub.vhdl:33]
+INFO: [Synth 8-3491] module 'scaneye_trigger_ila_0_0' declared at 'C:/Scanway/Vivado/ScanEye_trigger/ScanEye_trigger.runs/synth_1/.Xil/Vivado-31244-DESKTOP-JATBKJM/realtime/scaneye_trigger_ila_0_0_stub.vhdl:5' bound to instance 'ila_0' of component 'scaneye_trigger_ila_0_0' [c:/Scanway/Vivado/ScanEye_trigger/ScanEye_trigger.gen/sources_1/bd/scaneye_trigger/synth/scaneye_trigger.vhd:2481]
+INFO: [Synth 8-638] synthesizing module 'scaneye_trigger_ila_0_0' [C:/Scanway/Vivado/ScanEye_trigger/ScanEye_trigger.runs/synth_1/.Xil/Vivado-31244-DESKTOP-JATBKJM/realtime/scaneye_trigger_ila_0_0_stub.vhdl:15]
+INFO: [Synth 8-3491] module 'scaneye_trigger_processing_system7_0_0' declared at 'C:/Scanway/Vivado/ScanEye_trigger/ScanEye_trigger.runs/synth_1/.Xil/Vivado-31244-DESKTOP-JATBKJM/realtime/scaneye_trigger_processing_system7_0_0_stub.vhdl:5' bound to instance 'processing_system7_0' of component 'scaneye_trigger_processing_system7_0_0' [c:/Scanway/Vivado/ScanEye_trigger/ScanEye_trigger.gen/sources_1/bd/scaneye_trigger/synth/scaneye_trigger.vhd:2488]
+INFO: [Synth 8-638] synthesizing module 'scaneye_trigger_processing_system7_0_0' [C:/Scanway/Vivado/ScanEye_trigger/ScanEye_trigger.runs/synth_1/.Xil/Vivado-31244-DESKTOP-JATBKJM/realtime/scaneye_trigger_processing_system7_0_0_stub.vhdl:74]
 INFO: [Synth 8-638] synthesizing module 'scaneye_trigger_ps7_0_axi_periph_0' [c:/Scanway/Vivado/ScanEye_trigger/ScanEye_trigger.gen/sources_1/bd/scaneye_trigger/synth/scaneye_trigger.vhd:989]
 INFO: [Synth 8-638] synthesizing module 'm00_couplers_imp_1FZ7HTH' [c:/Scanway/Vivado/ScanEye_trigger/ScanEye_trigger.gen/sources_1/bd/scaneye_trigger/synth/scaneye_trigger.vhd:57]
 INFO: [Synth 8-256] done synthesizing module 'm00_couplers_imp_1FZ7HTH' (1#1) [c:/Scanway/Vivado/ScanEye_trigger/ScanEye_trigger.gen/sources_1/bd/scaneye_trigger/synth/scaneye_trigger.vhd:57]
@@ -60,14 +60,14 @@ INFO: [Synth 8-256] done synthesizing module 'm03_couplers_imp_13LLS4M' (4#1) [c
 INFO: [Synth 8-638] synthesizing module 'm04_couplers_imp_I0CBNY' [c:/Scanway/Vivado/ScanEye_trigger/ScanEye_trigger.gen/sources_1/bd/scaneye_trigger/synth/scaneye_trigger.vhd:471]
 INFO: [Synth 8-256] done synthesizing module 'm04_couplers_imp_I0CBNY' (5#1) [c:/Scanway/Vivado/ScanEye_trigger/ScanEye_trigger.gen/sources_1/bd/scaneye_trigger/synth/scaneye_trigger.vhd:471]
 INFO: [Synth 8-638] synthesizing module 's00_couplers_imp_17A0FL9' [c:/Scanway/Vivado/ScanEye_trigger/ScanEye_trigger.gen/sources_1/bd/scaneye_trigger/synth/scaneye_trigger.vhd:595]
-INFO: [Synth 8-3491] module 'scaneye_trigger_auto_pc_0' declared at 'C:/Scanway/Vivado/ScanEye_trigger/ScanEye_trigger.runs/synth_1/.Xil/Vivado-10216-DESKTOP-JATBKJM/realtime/scaneye_trigger_auto_pc_0_stub.vhdl:5' bound to instance 'auto_pc' of component 'scaneye_trigger_auto_pc_0' [c:/Scanway/Vivado/ScanEye_trigger/ScanEye_trigger.gen/sources_1/bd/scaneye_trigger/synth/scaneye_trigger.vhd:778]
-INFO: [Synth 8-638] synthesizing module 'scaneye_trigger_auto_pc_0' [C:/Scanway/Vivado/ScanEye_trigger/ScanEye_trigger.runs/synth_1/.Xil/Vivado-10216-DESKTOP-JATBKJM/realtime/scaneye_trigger_auto_pc_0_stub.vhdl:70]
+INFO: [Synth 8-3491] module 'scaneye_trigger_auto_pc_0' declared at 'C:/Scanway/Vivado/ScanEye_trigger/ScanEye_trigger.runs/synth_1/.Xil/Vivado-31244-DESKTOP-JATBKJM/realtime/scaneye_trigger_auto_pc_0_stub.vhdl:5' bound to instance 'auto_pc' of component 'scaneye_trigger_auto_pc_0' [c:/Scanway/Vivado/ScanEye_trigger/ScanEye_trigger.gen/sources_1/bd/scaneye_trigger/synth/scaneye_trigger.vhd:778]
+INFO: [Synth 8-638] synthesizing module 'scaneye_trigger_auto_pc_0' [C:/Scanway/Vivado/ScanEye_trigger/ScanEye_trigger.runs/synth_1/.Xil/Vivado-31244-DESKTOP-JATBKJM/realtime/scaneye_trigger_auto_pc_0_stub.vhdl:70]
 INFO: [Synth 8-256] done synthesizing module 's00_couplers_imp_17A0FL9' (6#1) [c:/Scanway/Vivado/ScanEye_trigger/ScanEye_trigger.gen/sources_1/bd/scaneye_trigger/synth/scaneye_trigger.vhd:595]
-INFO: [Synth 8-3491] module 'scaneye_trigger_xbar_0' declared at 'C:/Scanway/Vivado/ScanEye_trigger/ScanEye_trigger.runs/synth_1/.Xil/Vivado-10216-DESKTOP-JATBKJM/realtime/scaneye_trigger_xbar_0_stub.vhdl:5' bound to instance 'xbar' of component 'scaneye_trigger_xbar_0' [c:/Scanway/Vivado/ScanEye_trigger/ScanEye_trigger.gen/sources_1/bd/scaneye_trigger/synth/scaneye_trigger.vhd:1670]
-INFO: [Synth 8-638] synthesizing module 'scaneye_trigger_xbar_0' [C:/Scanway/Vivado/ScanEye_trigger/ScanEye_trigger.runs/synth_1/.Xil/Vivado-10216-DESKTOP-JATBKJM/realtime/scaneye_trigger_xbar_0_stub.vhdl:51]
+INFO: [Synth 8-3491] module 'scaneye_trigger_xbar_0' declared at 'C:/Scanway/Vivado/ScanEye_trigger/ScanEye_trigger.runs/synth_1/.Xil/Vivado-31244-DESKTOP-JATBKJM/realtime/scaneye_trigger_xbar_0_stub.vhdl:5' bound to instance 'xbar' of component 'scaneye_trigger_xbar_0' [c:/Scanway/Vivado/ScanEye_trigger/ScanEye_trigger.gen/sources_1/bd/scaneye_trigger/synth/scaneye_trigger.vhd:1670]
+INFO: [Synth 8-638] synthesizing module 'scaneye_trigger_xbar_0' [C:/Scanway/Vivado/ScanEye_trigger/ScanEye_trigger.runs/synth_1/.Xil/Vivado-31244-DESKTOP-JATBKJM/realtime/scaneye_trigger_xbar_0_stub.vhdl:51]
 INFO: [Synth 8-256] done synthesizing module 'scaneye_trigger_ps7_0_axi_periph_0' (7#1) [c:/Scanway/Vivado/ScanEye_trigger/ScanEye_trigger.gen/sources_1/bd/scaneye_trigger/synth/scaneye_trigger.vhd:989]
-INFO: [Synth 8-3491] module 'scaneye_trigger_rst_ps7_0_100M_0' declared at 'C:/Scanway/Vivado/ScanEye_trigger/ScanEye_trigger.runs/synth_1/.Xil/Vivado-10216-DESKTOP-JATBKJM/realtime/scaneye_trigger_rst_ps7_0_100M_0_stub.vhdl:5' bound to instance 'rst_ps7_0_100M' of component 'scaneye_trigger_rst_ps7_0_100M_0' [c:/Scanway/Vivado/ScanEye_trigger/ScanEye_trigger.gen/sources_1/bd/scaneye_trigger/synth/scaneye_trigger.vhd:2696]
-INFO: [Synth 8-638] synthesizing module 'scaneye_trigger_rst_ps7_0_100M_0' [C:/Scanway/Vivado/ScanEye_trigger/ScanEye_trigger.runs/synth_1/.Xil/Vivado-10216-DESKTOP-JATBKJM/realtime/scaneye_trigger_rst_ps7_0_100M_0_stub.vhdl:21]
+INFO: [Synth 8-3491] module 'scaneye_trigger_rst_ps7_0_100M_0' declared at 'C:/Scanway/Vivado/ScanEye_trigger/ScanEye_trigger.runs/synth_1/.Xil/Vivado-31244-DESKTOP-JATBKJM/realtime/scaneye_trigger_rst_ps7_0_100M_0_stub.vhdl:5' bound to instance 'rst_ps7_0_100M' of component 'scaneye_trigger_rst_ps7_0_100M_0' [c:/Scanway/Vivado/ScanEye_trigger/ScanEye_trigger.gen/sources_1/bd/scaneye_trigger/synth/scaneye_trigger.vhd:2696]
+INFO: [Synth 8-638] synthesizing module 'scaneye_trigger_rst_ps7_0_100M_0' [C:/Scanway/Vivado/ScanEye_trigger/ScanEye_trigger.runs/synth_1/.Xil/Vivado-31244-DESKTOP-JATBKJM/realtime/scaneye_trigger_rst_ps7_0_100M_0_stub.vhdl:21]
 INFO: [Synth 8-3491] module 'scaneye_trigger_xlconcat_0_0' declared at 'c:/Scanway/Vivado/ScanEye_trigger/ScanEye_trigger.gen/sources_1/bd/scaneye_trigger/ip/scaneye_trigger_xlconcat_0_0/synth/scaneye_trigger_xlconcat_0_0.v:60' bound to instance 'xlconcat_0' of component 'scaneye_trigger_xlconcat_0_0' [c:/Scanway/Vivado/ScanEye_trigger/ScanEye_trigger.gen/sources_1/bd/scaneye_trigger/synth/scaneye_trigger.vhd:2709]
 INFO: [Synth 8-6157] synthesizing module 'scaneye_trigger_xlconcat_0_0' [c:/Scanway/Vivado/ScanEye_trigger/ScanEye_trigger.gen/sources_1/bd/scaneye_trigger/ip/scaneye_trigger_xlconcat_0_0/synth/scaneye_trigger_xlconcat_0_0.v:60]
 INFO: [Synth 8-6157] synthesizing module 'xlconcat_v2_1_4_xlconcat' [c:/Scanway/Vivado/ScanEye_trigger/ScanEye_trigger.gen/sources_1/bd/scaneye_trigger/ipshared/4b67/hdl/xlconcat_v2_1_vl_rfs.v:14]
@@ -82,18 +82,18 @@ INFO: [Synth 8-3491] module 'IOBUF' declared at 'C:/Xilinx/Vivado/2021.1/scripts
 INFO: [Synth 8-3491] module 'IOBUF' declared at 'C:/Xilinx/Vivado/2021.1/scripts/rt/data/unisim_comp.v:56188' bound to instance 'spi_pmod_ss_iobuf_0' of component 'IOBUF' [C:/Scanway/Vivado/ScanEye_trigger/ScanEye_trigger.gen/sources_1/bd/scaneye_trigger/hdl/scaneye_trigger_wrapper.vhd:182]
 INFO: [Synth 8-256] done synthesizing module 'scaneye_trigger_wrapper' (12#1) [C:/Scanway/Vivado/ScanEye_trigger/ScanEye_trigger.gen/sources_1/bd/scaneye_trigger/hdl/scaneye_trigger_wrapper.vhd:51]
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 1352.641 ; gain = 0.000
+Finished RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 1591.051 ; gain = 214.223
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 1352.641 ; gain = 0.000
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 1608.977 ; gain = 232.148
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 1352.641 ; gain = 0.000
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 1608.977 ; gain = 232.148
 ---------------------------------------------------------------------------------
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.028 . Memory (MB): peak = 1352.641 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.032 . Memory (MB): peak = 1621.004 ; gain = 0.000
 INFO: [Netlist 29-17] Analyzing 4 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
@@ -144,21 +144,21 @@ Parsing XDC File [C:/Scanway/Vivado/ScanEye_trigger/ScanEye_trigger.runs/synth_1
 Finished Parsing XDC File [C:/Scanway/Vivado/ScanEye_trigger/ScanEye_trigger.runs/synth_1/dont_touch.xdc]
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1370.828 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1655.016 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
   A total of 4 instances were transformed.
   IOBUF => IOBUF (IBUF, OBUFT): 4 instances
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.008 . Memory (MB): peak = 1370.828 ; gain = 0.000
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.007 . Memory (MB): peak = 1655.016 ; gain = 0.000
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:11 ; elapsed = 00:00:13 . Memory (MB): peak = 1370.828 ; gain = 18.188
+Finished Constraint Validation : Time (s): cpu = 00:00:13 ; elapsed = 00:00:14 . Memory (MB): peak = 1655.016 ; gain = 278.188
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7z020clg400-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:11 ; elapsed = 00:00:13 . Memory (MB): peak = 1370.828 ; gain = 18.188
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:13 ; elapsed = 00:00:14 . Memory (MB): peak = 1655.016 ; gain = 278.188
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
@@ -439,10 +439,10 @@ Applied set_property KEEP_HIERARCHY = SOFT for scaneye_trigger_i/ps7_0_axi_perip
 Applied set_property KEEP_HIERARCHY = SOFT for scaneye_trigger_i/ps7_0_axi_periph. (constraint file  auto generated constraint).
 Applied set_property KEEP_HIERARCHY = SOFT for scaneye_trigger_i/XCMV_0. (constraint file  auto generated constraint).
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:12 ; elapsed = 00:00:13 . Memory (MB): peak = 1370.828 ; gain = 18.188
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:13 ; elapsed = 00:00:14 . Memory (MB): peak = 1655.016 ; gain = 278.188
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:12 ; elapsed = 00:00:13 . Memory (MB): peak = 1370.828 ; gain = 18.188
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:14 ; elapsed = 00:00:14 . Memory (MB): peak = 1655.016 ; gain = 278.188
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start RTL Component Statistics 
@@ -464,25 +464,25 @@ Finished Part Resource Summary
 Start Cross Boundary and Area Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:13 ; elapsed = 00:00:15 . Memory (MB): peak = 1370.828 ; gain = 18.188
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:15 ; elapsed = 00:00:16 . Memory (MB): peak = 1655.016 ; gain = 278.188
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:20 ; elapsed = 00:00:21 . Memory (MB): peak = 1384.926 ; gain = 32.285
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:21 ; elapsed = 00:00:22 . Memory (MB): peak = 1656.199 ; gain = 279.371
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:20 ; elapsed = 00:00:21 . Memory (MB): peak = 1385.371 ; gain = 32.730
+Finished Timing Optimization : Time (s): cpu = 00:00:21 ; elapsed = 00:00:22 . Memory (MB): peak = 1656.570 ; gain = 279.742
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:20 ; elapsed = 00:00:21 . Memory (MB): peak = 1404.496 ; gain = 51.855
+Finished Technology Mapping : Time (s): cpu = 00:00:21 ; elapsed = 00:00:22 . Memory (MB): peak = 1675.699 ; gain = 298.871
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start IO Insertion
@@ -500,37 +500,37 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:23 ; elapsed = 00:00:24 . Memory (MB): peak = 1411.223 ; gain = 58.582
+Finished IO Insertion : Time (s): cpu = 00:00:25 ; elapsed = 00:00:26 . Memory (MB): peak = 1682.426 ; gain = 305.598
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:23 ; elapsed = 00:00:24 . Memory (MB): peak = 1411.223 ; gain = 58.582
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:25 ; elapsed = 00:00:26 . Memory (MB): peak = 1682.426 ; gain = 305.598
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:23 ; elapsed = 00:00:24 . Memory (MB): peak = 1411.223 ; gain = 58.582
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:25 ; elapsed = 00:00:26 . Memory (MB): peak = 1682.426 ; gain = 305.598
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:23 ; elapsed = 00:00:24 . Memory (MB): peak = 1411.223 ; gain = 58.582
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:25 ; elapsed = 00:00:26 . Memory (MB): peak = 1682.426 ; gain = 305.598
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:23 ; elapsed = 00:00:24 . Memory (MB): peak = 1411.223 ; gain = 58.582
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:25 ; elapsed = 00:00:26 . Memory (MB): peak = 1682.426 ; gain = 305.598
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:23 ; elapsed = 00:00:24 . Memory (MB): peak = 1411.223 ; gain = 58.582
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:25 ; elapsed = 00:00:26 . Memory (MB): peak = 1682.426 ; gain = 305.598
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -566,32 +566,32 @@ Report Cell Usage:
 |8     |scaneye_trigger_processing_system7_0_0_bbox |     1|
 |9     |scaneye_trigger_rst_ps7_0_100M_0_bbox       |     1|
 |10    |scaneye_trigger_xbar_0_bbox                 |     1|
-|11    |IBUF                                        |     6|
+|11    |IBUF                                        |     7|
 |12    |IOBUF                                       |     4|
-|13    |OBUF                                        |     7|
+|13    |OBUF                                        |     9|
 +------+--------------------------------------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:23 ; elapsed = 00:00:24 . Memory (MB): peak = 1411.223 ; gain = 58.582
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:25 ; elapsed = 00:00:26 . Memory (MB): peak = 1682.426 ; gain = 305.598
 ---------------------------------------------------------------------------------
 Synthesis finished with 0 errors, 0 critical warnings and 0 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:16 ; elapsed = 00:00:22 . Memory (MB): peak = 1411.223 ; gain = 40.395
-Synthesis Optimization Complete : Time (s): cpu = 00:00:23 ; elapsed = 00:00:25 . Memory (MB): peak = 1411.223 ; gain = 58.582
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:17 ; elapsed = 00:00:23 . Memory (MB): peak = 1682.426 ; gain = 259.559
+Synthesis Optimization Complete : Time (s): cpu = 00:00:25 ; elapsed = 00:00:26 . Memory (MB): peak = 1682.426 ; gain = 305.598
 INFO: [Project 1-571] Translating synthesized netlist
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.025 . Memory (MB): peak = 1411.223 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.030 . Memory (MB): peak = 1682.426 ; gain = 0.000
 INFO: [Netlist 29-17] Analyzing 4 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1436.512 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1711.211 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
   A total of 4 instances were transformed.
   IOBUF => IOBUF (IBUF, OBUFT): 4 instances
 
-Synth Design complete, checksum: 608b005f
+Synth Design complete, checksum: dd7b9a35
 INFO: [Common 17-83] Releasing license: Synthesis
 74 Infos, 3 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:28 ; elapsed = 00:00:29 . Memory (MB): peak = 1436.512 ; gain = 83.871
+synth_design: Time (s): cpu = 00:00:29 ; elapsed = 00:00:31 . Memory (MB): peak = 1711.211 ; gain = 334.383
 INFO: [Common 17-1381] The checkpoint 'C:/Scanway/Vivado/ScanEye_trigger/ScanEye_trigger.runs/synth_1/scaneye_trigger_wrapper.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file scaneye_trigger_wrapper_utilization_synth.rpt -pb scaneye_trigger_wrapper_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Fri Nov 19 11:44:41 2021...
+INFO: [Common 17-206] Exiting Vivado at Mon Nov 29 12:41:48 2021...

@@ -1,10 +1,52 @@
-14:59:56 **** Incremental Build of configuration Debug for project STAR_VIBE ****
+12:20:37 **** Incremental Build of configuration Debug for project STAR_VIBE ****
 make all 
 make --no-print-directory pre-build
 a9-linaro-pre-build-step
 ' '
 make --no-print-directory main-build
-make[1]: Nothing to be done for 'main-build'.
+'Building file: ../src/devices/GPIO_access.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/devices/GPIO_access.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -IC:/Scanway/Vivado/ScanEye_trigger/workspace/scaneye_trigger_wrapper_STAR_VIBE/export/scaneye_trigger_wrapper_STAR_VIBE/sw/scaneye_trigger_wrapper_STAR_VIBE/freertos10_xilinx_ps7_cortexa9_0/bspinclude/include -MMD -MP -MF"src/devices/GPIO_access.d" -MT"src/devices/GPIO_access.o" -o "src/devices/GPIO_access.o" "../src/devices/GPIO_access.c"
+In file included from ../src/devices/GPIO_access.c:6:
+../src/devices/gpio_access.h:28:1: warning: multi-line comment [-Wcomment]
+   28 | //#define INTR_SW_MASK (BTN_0_MASK | BTN_1_MASK | BTN_2_MASK | BTN_3_MASK | \
+      | ^
+'Finished building: ../src/devices/GPIO_access.c'
+' '
+'Building file: ../src/devices/spi_cmv12000.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/devices/spi_cmv12000.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -IC:/Scanway/Vivado/ScanEye_trigger/workspace/scaneye_trigger_wrapper_STAR_VIBE/export/scaneye_trigger_wrapper_STAR_VIBE/sw/scaneye_trigger_wrapper_STAR_VIBE/freertos10_xilinx_ps7_cortexa9_0/bspinclude/include -MMD -MP -MF"src/devices/spi_cmv12000.d" -MT"src/devices/spi_cmv12000.o" -o "src/devices/spi_cmv12000.o" "../src/devices/spi_cmv12000.c"
+In file included from ../src/devices/spi_cmv12000.h:11,
+                 from ../src/devices/spi_cmv12000.c:2:
+../src/devices/GPIO_access.h:28:1: warning: multi-line comment [-Wcomment]
+   28 | //#define INTR_SW_MASK (BTN_0_MASK | BTN_1_MASK | BTN_2_MASK | BTN_3_MASK | \
+      | ^
+In file included from ../src/devices/spi_cmv12000.c:2:
+../src/devices/spi_cmv12000.h:16: warning: "INTC_DEVICE_ID" redefined
+   16 | #define INTC_DEVICE_ID   XPAR_SCUGIC_0_DEVICE_ID
+      | 
+In file included from ../src/devices/spi_cmv12000.h:11,
+                 from ../src/devices/spi_cmv12000.c:2:
+../src/devices/GPIO_access.h:13: note: this is the location of the previous definition
+   13 | #define INTC_DEVICE_ID   XPAR_PS7_SCUGIC_0_DEVICE_ID
+      | 
+../src/devices/spi_cmv12000.c: In function 'SpiRead_cmv12000':
+../src/devices/spi_cmv12000.c:160:48: error: 'GPIO_CHANNEL' undeclared (first use in this function)
+  160 |  GpioReg = XGpio_DiscreteRead(InstanceGpioPtr, GPIO_CHANNEL);
+      |                                                ^~~~~~~~~~~~
+../src/devices/spi_cmv12000.c:160:48: note: each undeclared identifier is reported only once for each function it appears in
+../src/devices/spi_cmv12000.c:161:13: error: 'CMV_SPI_SELECT' undeclared (first use in this function)
+  161 |  GpioReg |= CMV_SPI_SELECT;
+      |             ^~~~~~~~~~~~~~
+../src/devices/spi_cmv12000.c: In function 'SpiWrite_cmv12000':
+../src/devices/spi_cmv12000.c:207:48: error: 'GPIO_CHANNEL' undeclared (first use in this function)
+  207 |  GpioReg = XGpio_DiscreteRead(InstanceGpioPtr, GPIO_CHANNEL);
+      |                                                ^~~~~~~~~~~~
+../src/devices/spi_cmv12000.c:208:13: error: 'CMV_SPI_SELECT' undeclared (first use in this function)
+  208 |  GpioReg |= CMV_SPI_SELECT;
+      |             ^~~~~~~~~~~~~~
+make[1]: *** [src/devices/subdir.mk:53: src/devices/spi_cmv12000.o] Error 1
+make: *** [makefile:35: all] Error 2
 
-14:59:57 Build Finished (took 554ms)
+12:20:38 Build Finished (took 668ms)
 
