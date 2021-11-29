@@ -36,11 +36,15 @@ typedef struct{
 #define CPU_CLK_FREQ_HZ  XPAR_PS7_CORTEXA9_0_CPU_CLK_FREQ_HZ
 
 
-int cmvLdoStart();
-int cmvLdoStop();
-int cmvSequencerStart();
-int cmvSequencerStop();
+int init_ldo();
+int init_sequencer();
 int init_cmvSoft(cmvConfig *cmvConfigInst);
+
+int ldoStop();
+void ldoStart();
+
+void sequencerStop();
+void sequencerStart();
 
 void sensorStart();
 void sensorStop();

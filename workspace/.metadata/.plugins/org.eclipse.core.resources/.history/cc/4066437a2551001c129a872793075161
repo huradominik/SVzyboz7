@@ -16,7 +16,7 @@ extern XClk_Wiz ClkWiz_Dynamic;
 cmvConfig cmvConfigInstance;
 cmvStatus cmvStatusInstance;
 
-int cmvLdoStart()
+int init_ldo()
 {
 	/* stworzyc ustawienie statusu  */
 	u32 GpioReg;
@@ -50,11 +50,12 @@ int cmvLdoStart()
 		}
 	}
 
+	cmvStatusInstance.ldo = 1;
 	return XST_SUCCESS;
 	//odpalenie ldo i zwrócenie wartoœci power_good
 }
 
-int cmvSequencerStart()
+int init_sequencer()
 {
 	u32 GpioReg = 0;
 	u32 CntValue = 0;
@@ -97,19 +98,18 @@ int init_cmvSoft(cmvConfig *cmvConfigInst)
 	cmvConfigInst->SensorMode = cmv_mode_normal;
 	cmvConfigInst->ContinuousModeOn = 0;
 	/* Default sensor status */
-	cmvStatusInstance.ldo22 = 0;
-	cmvStatusInstance.ldo36 = 0;
+	cmvStatusInstance.ldo = 0;
 	cmvStatusInstance.Sequencer = 0;
 	cmvStatusInstance.ContinuousMode = 0;
 
-	Status = cmvLdoStart();
+	Status = init_ldo();
 	if( Status == XST_FAILURE)
 	{
 		xil_printf("Initialization LDO FAILURE");
 		// powtorzyc inicjalziacje
 	}
 
-	Status = cmvSequencerStart();
+	Status = init_sequencer();
 	if (Status == XST_FAILURE)
 	{
 		xil_printf("Initialization Sequencer FAILURE");
@@ -164,40 +164,11 @@ int init_cmvSoft(cmvConfig *cmvConfigInst)
 	return Status;
 }
 
-int cmvLdoStop()
+int ldoStop()
 {
 	u32 GpioReg;
 
-	if((cmvStatusInstance.ldo22 == 0) && (cmvStatusInstance.ldo36 == 0))
-	{
-		return XST_FAILURE;
-	}
+	cmvStatusInstance.ldo
 
-	GpioReg = XGpio_DiscreteRead(&GpioInstance, CMV_CHANNEL_OUTPUT);
-	GpioReg &= ~CMV_LDO_EN;
-	XGpio_DiscreteWrite(&GpioInstance, CMV_CHANNEL_OUTPUT, GpioReg);
-
-	cmvStatusInstance.ldo22 = 0;
-	cmvStatusInstance.ldo36 = 0;
-
-	return XST_SUCCESS;
-}
-
-int cmvSequencerStop()
-{
-	u32 GpioReg;
-
-	if((cmvStatusInstance.ldo22 == 0) && (cmvStatusInstance.ldo36 == 0))
-	{
-		return XST_FAILURE;
-	}
-
-	GpioReg = XGpio_DiscreteRead(&GpioInstance, CMV_CHANNEL_OUTPUT);
-	GpioReg &= ~CMV_DIG_SEQ_EN;
-	XGpio_DiscreteWrite(&GpioInstance, CMV_CHANNEL_OUTPUT, GpioReg);
-
-	cmvStatusInstance.Sequencer = 0;
-
-	return XST_SUCCESS;
-
+	GpioReg = XGpio_DiscreteRead(&GpioInstance, CMV_CHANNEL_OUTPUT)
 }

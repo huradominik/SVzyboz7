@@ -54,7 +54,7 @@ int cmvLdoStart()
 	//odpalenie ldo i zwrócenie wartoœci power_good
 }
 
-int cmvSequencerStart()
+int init_sequencer()
 {
 	u32 GpioReg = 0;
 	u32 CntValue = 0;
@@ -102,14 +102,14 @@ int init_cmvSoft(cmvConfig *cmvConfigInst)
 	cmvStatusInstance.Sequencer = 0;
 	cmvStatusInstance.ContinuousMode = 0;
 
-	Status = cmvLdoStart();
+	Status = init_ldo();
 	if( Status == XST_FAILURE)
 	{
 		xil_printf("Initialization LDO FAILURE");
 		// powtorzyc inicjalziacje
 	}
 
-	Status = cmvSequencerStart();
+	Status = init_sequencer();
 	if (Status == XST_FAILURE)
 	{
 		xil_printf("Initialization Sequencer FAILURE");
@@ -181,23 +181,4 @@ int cmvLdoStop()
 	cmvStatusInstance.ldo36 = 0;
 
 	return XST_SUCCESS;
-}
-
-int cmvSequencerStop()
-{
-	u32 GpioReg;
-
-	if((cmvStatusInstance.ldo22 == 0) && (cmvStatusInstance.ldo36 == 0))
-	{
-		return XST_FAILURE;
-	}
-
-	GpioReg = XGpio_DiscreteRead(&GpioInstance, CMV_CHANNEL_OUTPUT);
-	GpioReg &= ~CMV_DIG_SEQ_EN;
-	XGpio_DiscreteWrite(&GpioInstance, CMV_CHANNEL_OUTPUT, GpioReg);
-
-	cmvStatusInstance.Sequencer = 0;
-
-	return XST_SUCCESS;
-
 }

@@ -14222,3 +14222,246 @@ Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.]. Thread: Worker-43: Launc
 
 !ENTRY com.xilinx.sdk.utils 0 0 2021-11-29 15:40:08.573
 !MESSAGE XSCT command with result: [configparams force-mem-access 0], Result: [null, ]. Thread: Worker-43: Launching Debugger_STAR_VIBE2-GDB
+
+!ENTRY com.xilinx.sdk.utils 0 0 2021-11-29 16:01:41.602
+!MESSAGE XSCT Command: [ ::hsi::utils::set_current_hw_sw C:/Scanway/Vivado/ScanEye_trigger/workspace/scaneye_trigger_wrapper_STAR_VIBE_1/export/scaneye_trigger_wrapper_STAR_VIBE_1/hw/scaneye_trigger_wrapper_STAR_VIBE.xsa C:/Scanway/Vivado/ScanEye_trigger/workspace/scaneye_trigger_wrapper_STAR_VIBE_1/export/scaneye_trigger_wrapper_STAR_VIBE_1/sw/scaneye_trigger_wrapper_STAR_VIBE_1/freertos10_xilinx_ps7_cortexa9_0/system.mss ], Thread: Worker-66: Build Project
+
+!ENTRY com.xilinx.sdk.utils 0 0 2021-11-29 16:01:41.606
+!MESSAGE XSCT command with result: [ ::hsi::utils::set_current_hw_sw C:/Scanway/Vivado/ScanEye_trigger/workspace/scaneye_trigger_wrapper_STAR_VIBE_1/export/scaneye_trigger_wrapper_STAR_VIBE_1/hw/scaneye_trigger_wrapper_STAR_VIBE.xsa C:/Scanway/Vivado/ScanEye_trigger/workspace/scaneye_trigger_wrapper_STAR_VIBE_1/export/scaneye_trigger_wrapper_STAR_VIBE_1/sw/scaneye_trigger_wrapper_STAR_VIBE_1/freertos10_xilinx_ps7_cortexa9_0/system.mss ], Result: [null, ]. Thread: Worker-66: Build Project
+
+!ENTRY com.xilinx.sdk.utils 0 0 2021-11-29 16:01:41.607
+!MESSAGE XSCT Command: [::hsi::utils::get_hw_sw_details -json C:/Scanway/Vivado/ScanEye_trigger/workspace/scaneye_trigger_wrapper_STAR_VIBE_1/export/scaneye_trigger_wrapper_STAR_VIBE_1/hw/scaneye_trigger_wrapper_STAR_VIBE.xsa C:/Scanway/Vivado/ScanEye_trigger/workspace/scaneye_trigger_wrapper_STAR_VIBE_1/export/scaneye_trigger_wrapper_STAR_VIBE_1/sw/scaneye_trigger_wrapper_STAR_VIBE_1/freertos10_xilinx_ps7_cortexa9_0/system.mss], Thread: Worker-66: Build Project
+
+!ENTRY com.xilinx.sdk.utils 0 0 2021-11-29 16:01:41.610
+!MESSAGE XSCT command with result: [::hsi::utils::get_hw_sw_details -json C:/Scanway/Vivado/ScanEye_trigger/workspace/scaneye_trigger_wrapper_STAR_VIBE_1/export/scaneye_trigger_wrapper_STAR_VIBE_1/hw/scaneye_trigger_wrapper_STAR_VIBE.xsa C:/Scanway/Vivado/ScanEye_trigger/workspace/scaneye_trigger_wrapper_STAR_VIBE_1/export/scaneye_trigger_wrapper_STAR_VIBE_1/sw/scaneye_trigger_wrapper_STAR_VIBE_1/freertos10_xilinx_ps7_cortexa9_0/system.mss], Result: [null, {"procname": "ps7_cortexa9_0",
+"osname": "freertos10_xilinx",
+"osver": "1.9",
+}]. Thread: Worker-66: Build Project
+
+!ENTRY com.xilinx.sdk.utils 1 0 2021-11-29 16:01:41.610
+!MESSAGE Generating MD5 hash for file: C:\Scanway\Vivado\ScanEye_trigger\workspace\scaneye_trigger_wrapper_STAR_VIBE_1\export\scaneye_trigger_wrapper_STAR_VIBE_1\sw\scaneye_trigger_wrapper_STAR_VIBE_1\freertos10_xilinx_ps7_cortexa9_0\system.mss ...
+
+!ENTRY com.xilinx.sdk.utils 0 0 2021-11-29 16:01:41.611
+!MESSAGE XSCT Command: [::hsi::utils::closesw C:/Scanway/Vivado/ScanEye_trigger/workspace/scaneye_trigger_wrapper_STAR_VIBE_1/export/scaneye_trigger_wrapper_STAR_VIBE_1/sw/scaneye_trigger_wrapper_STAR_VIBE_1/freertos10_xilinx_ps7_cortexa9_0/system.mss], Thread: Worker-66: Build Project
+
+!ENTRY com.xilinx.sdk.utils 0 0 2021-11-29 16:01:41.614
+!MESSAGE XSCT command with result: [::hsi::utils::closesw C:/Scanway/Vivado/ScanEye_trigger/workspace/scaneye_trigger_wrapper_STAR_VIBE_1/export/scaneye_trigger_wrapper_STAR_VIBE_1/sw/scaneye_trigger_wrapper_STAR_VIBE_1/freertos10_xilinx_ps7_cortexa9_0/system.mss], Result: [null, ]. Thread: Worker-66: Build Project
+
+!ENTRY com.xilinx.sdx.core 1 0 2021-11-29 16:01:42.117
+!MESSAGE Build step failed, canceling full build chain.
+
+!ENTRY com.xilinx.sdk.utils 0 0 2021-11-29 16:01:56.744
+!MESSAGE XSCT Command: [ ::hsi::utils::set_current_hw_sw C:/Scanway/Vivado/ScanEye_trigger/workspace/scaneye_trigger_wrapper_STAR_VIBE_1/export/scaneye_trigger_wrapper_STAR_VIBE_1/hw/scaneye_trigger_wrapper_STAR_VIBE.xsa C:/Scanway/Vivado/ScanEye_trigger/workspace/scaneye_trigger_wrapper_STAR_VIBE_1/export/scaneye_trigger_wrapper_STAR_VIBE_1/sw/scaneye_trigger_wrapper_STAR_VIBE_1/freertos10_xilinx_ps7_cortexa9_0/system.mss ], Thread: Worker-47: Build Project
+
+!ENTRY com.xilinx.sdk.utils 0 0 2021-11-29 16:01:56.750
+!MESSAGE XSCT command with result: [ ::hsi::utils::set_current_hw_sw C:/Scanway/Vivado/ScanEye_trigger/workspace/scaneye_trigger_wrapper_STAR_VIBE_1/export/scaneye_trigger_wrapper_STAR_VIBE_1/hw/scaneye_trigger_wrapper_STAR_VIBE.xsa C:/Scanway/Vivado/ScanEye_trigger/workspace/scaneye_trigger_wrapper_STAR_VIBE_1/export/scaneye_trigger_wrapper_STAR_VIBE_1/sw/scaneye_trigger_wrapper_STAR_VIBE_1/freertos10_xilinx_ps7_cortexa9_0/system.mss ], Result: [null, ]. Thread: Worker-47: Build Project
+
+!ENTRY com.xilinx.sdk.utils 0 0 2021-11-29 16:01:56.750
+!MESSAGE XSCT Command: [::hsi::utils::get_hw_sw_details -json C:/Scanway/Vivado/ScanEye_trigger/workspace/scaneye_trigger_wrapper_STAR_VIBE_1/export/scaneye_trigger_wrapper_STAR_VIBE_1/hw/scaneye_trigger_wrapper_STAR_VIBE.xsa C:/Scanway/Vivado/ScanEye_trigger/workspace/scaneye_trigger_wrapper_STAR_VIBE_1/export/scaneye_trigger_wrapper_STAR_VIBE_1/sw/scaneye_trigger_wrapper_STAR_VIBE_1/freertos10_xilinx_ps7_cortexa9_0/system.mss], Thread: Worker-47: Build Project
+
+!ENTRY com.xilinx.sdk.utils 0 0 2021-11-29 16:01:56.754
+!MESSAGE XSCT command with result: [::hsi::utils::get_hw_sw_details -json C:/Scanway/Vivado/ScanEye_trigger/workspace/scaneye_trigger_wrapper_STAR_VIBE_1/export/scaneye_trigger_wrapper_STAR_VIBE_1/hw/scaneye_trigger_wrapper_STAR_VIBE.xsa C:/Scanway/Vivado/ScanEye_trigger/workspace/scaneye_trigger_wrapper_STAR_VIBE_1/export/scaneye_trigger_wrapper_STAR_VIBE_1/sw/scaneye_trigger_wrapper_STAR_VIBE_1/freertos10_xilinx_ps7_cortexa9_0/system.mss], Result: [null, {"procname": "ps7_cortexa9_0",
+"osname": "freertos10_xilinx",
+"osver": "1.9",
+}]. Thread: Worker-47: Build Project
+
+!ENTRY com.xilinx.sdk.utils 1 0 2021-11-29 16:01:56.754
+!MESSAGE Generating MD5 hash for file: C:\Scanway\Vivado\ScanEye_trigger\workspace\scaneye_trigger_wrapper_STAR_VIBE_1\export\scaneye_trigger_wrapper_STAR_VIBE_1\sw\scaneye_trigger_wrapper_STAR_VIBE_1\freertos10_xilinx_ps7_cortexa9_0\system.mss ...
+
+!ENTRY com.xilinx.sdk.utils 0 0 2021-11-29 16:01:56.755
+!MESSAGE XSCT Command: [::hsi::utils::closesw C:/Scanway/Vivado/ScanEye_trigger/workspace/scaneye_trigger_wrapper_STAR_VIBE_1/export/scaneye_trigger_wrapper_STAR_VIBE_1/sw/scaneye_trigger_wrapper_STAR_VIBE_1/freertos10_xilinx_ps7_cortexa9_0/system.mss], Thread: Worker-47: Build Project
+
+!ENTRY com.xilinx.sdk.utils 0 0 2021-11-29 16:01:56.757
+!MESSAGE XSCT command with result: [::hsi::utils::closesw C:/Scanway/Vivado/ScanEye_trigger/workspace/scaneye_trigger_wrapper_STAR_VIBE_1/export/scaneye_trigger_wrapper_STAR_VIBE_1/sw/scaneye_trigger_wrapper_STAR_VIBE_1/freertos10_xilinx_ps7_cortexa9_0/system.mss], Result: [null, ]. Thread: Worker-47: Build Project
+
+!ENTRY com.xilinx.sdx.core 1 0 2021-11-29 16:01:57.257
+!MESSAGE Build step failed, canceling full build chain.
+
+!ENTRY com.xilinx.sdk.utils 0 0 2021-11-29 16:02:43.212
+!MESSAGE XSCT Command: [ ::hsi::utils::set_current_hw_sw C:/Scanway/Vivado/ScanEye_trigger/workspace/scaneye_trigger_wrapper_STAR_VIBE_1/export/scaneye_trigger_wrapper_STAR_VIBE_1/hw/scaneye_trigger_wrapper_STAR_VIBE.xsa C:/Scanway/Vivado/ScanEye_trigger/workspace/scaneye_trigger_wrapper_STAR_VIBE_1/export/scaneye_trigger_wrapper_STAR_VIBE_1/sw/scaneye_trigger_wrapper_STAR_VIBE_1/freertos10_xilinx_ps7_cortexa9_0/system.mss ], Thread: Worker-47: Build Project
+
+!ENTRY com.xilinx.sdk.utils 0 0 2021-11-29 16:02:43.217
+!MESSAGE XSCT command with result: [ ::hsi::utils::set_current_hw_sw C:/Scanway/Vivado/ScanEye_trigger/workspace/scaneye_trigger_wrapper_STAR_VIBE_1/export/scaneye_trigger_wrapper_STAR_VIBE_1/hw/scaneye_trigger_wrapper_STAR_VIBE.xsa C:/Scanway/Vivado/ScanEye_trigger/workspace/scaneye_trigger_wrapper_STAR_VIBE_1/export/scaneye_trigger_wrapper_STAR_VIBE_1/sw/scaneye_trigger_wrapper_STAR_VIBE_1/freertos10_xilinx_ps7_cortexa9_0/system.mss ], Result: [null, ]. Thread: Worker-47: Build Project
+
+!ENTRY com.xilinx.sdk.utils 0 0 2021-11-29 16:02:43.217
+!MESSAGE XSCT Command: [::hsi::utils::get_hw_sw_details -json C:/Scanway/Vivado/ScanEye_trigger/workspace/scaneye_trigger_wrapper_STAR_VIBE_1/export/scaneye_trigger_wrapper_STAR_VIBE_1/hw/scaneye_trigger_wrapper_STAR_VIBE.xsa C:/Scanway/Vivado/ScanEye_trigger/workspace/scaneye_trigger_wrapper_STAR_VIBE_1/export/scaneye_trigger_wrapper_STAR_VIBE_1/sw/scaneye_trigger_wrapper_STAR_VIBE_1/freertos10_xilinx_ps7_cortexa9_0/system.mss], Thread: Worker-47: Build Project
+
+!ENTRY com.xilinx.sdk.utils 0 0 2021-11-29 16:02:43.220
+!MESSAGE XSCT command with result: [::hsi::utils::get_hw_sw_details -json C:/Scanway/Vivado/ScanEye_trigger/workspace/scaneye_trigger_wrapper_STAR_VIBE_1/export/scaneye_trigger_wrapper_STAR_VIBE_1/hw/scaneye_trigger_wrapper_STAR_VIBE.xsa C:/Scanway/Vivado/ScanEye_trigger/workspace/scaneye_trigger_wrapper_STAR_VIBE_1/export/scaneye_trigger_wrapper_STAR_VIBE_1/sw/scaneye_trigger_wrapper_STAR_VIBE_1/freertos10_xilinx_ps7_cortexa9_0/system.mss], Result: [null, {"procname": "ps7_cortexa9_0",
+"osname": "freertos10_xilinx",
+"osver": "1.9",
+}]. Thread: Worker-47: Build Project
+
+!ENTRY com.xilinx.sdk.utils 1 0 2021-11-29 16:02:43.221
+!MESSAGE Generating MD5 hash for file: C:\Scanway\Vivado\ScanEye_trigger\workspace\scaneye_trigger_wrapper_STAR_VIBE_1\export\scaneye_trigger_wrapper_STAR_VIBE_1\sw\scaneye_trigger_wrapper_STAR_VIBE_1\freertos10_xilinx_ps7_cortexa9_0\system.mss ...
+
+!ENTRY com.xilinx.sdk.utils 0 0 2021-11-29 16:02:43.222
+!MESSAGE XSCT Command: [::hsi::utils::closesw C:/Scanway/Vivado/ScanEye_trigger/workspace/scaneye_trigger_wrapper_STAR_VIBE_1/export/scaneye_trigger_wrapper_STAR_VIBE_1/sw/scaneye_trigger_wrapper_STAR_VIBE_1/freertos10_xilinx_ps7_cortexa9_0/system.mss], Thread: Worker-47: Build Project
+
+!ENTRY com.xilinx.sdk.utils 0 0 2021-11-29 16:02:43.224
+!MESSAGE XSCT command with result: [::hsi::utils::closesw C:/Scanway/Vivado/ScanEye_trigger/workspace/scaneye_trigger_wrapper_STAR_VIBE_1/export/scaneye_trigger_wrapper_STAR_VIBE_1/sw/scaneye_trigger_wrapper_STAR_VIBE_1/freertos10_xilinx_ps7_cortexa9_0/system.mss], Result: [null, ]. Thread: Worker-47: Build Project
+
+!ENTRY com.xilinx.sdx.core 1 0 2021-11-29 16:02:43.717
+!MESSAGE Build step failed, canceling full build chain.
+
+!ENTRY com.xilinx.sdk.utils 0 0 2021-11-29 16:03:16.922
+!MESSAGE XSCT Command: [ ::hsi::utils::set_current_hw_sw C:/Scanway/Vivado/ScanEye_trigger/workspace/scaneye_trigger_wrapper_STAR_VIBE_1/export/scaneye_trigger_wrapper_STAR_VIBE_1/hw/scaneye_trigger_wrapper_STAR_VIBE.xsa C:/Scanway/Vivado/ScanEye_trigger/workspace/scaneye_trigger_wrapper_STAR_VIBE_1/export/scaneye_trigger_wrapper_STAR_VIBE_1/sw/scaneye_trigger_wrapper_STAR_VIBE_1/freertos10_xilinx_ps7_cortexa9_0/system.mss ], Thread: Worker-64: Build Project
+
+!ENTRY com.xilinx.sdk.utils 0 0 2021-11-29 16:03:16.926
+!MESSAGE XSCT command with result: [ ::hsi::utils::set_current_hw_sw C:/Scanway/Vivado/ScanEye_trigger/workspace/scaneye_trigger_wrapper_STAR_VIBE_1/export/scaneye_trigger_wrapper_STAR_VIBE_1/hw/scaneye_trigger_wrapper_STAR_VIBE.xsa C:/Scanway/Vivado/ScanEye_trigger/workspace/scaneye_trigger_wrapper_STAR_VIBE_1/export/scaneye_trigger_wrapper_STAR_VIBE_1/sw/scaneye_trigger_wrapper_STAR_VIBE_1/freertos10_xilinx_ps7_cortexa9_0/system.mss ], Result: [null, ]. Thread: Worker-64: Build Project
+
+!ENTRY com.xilinx.sdk.utils 0 0 2021-11-29 16:03:16.928
+!MESSAGE XSCT Command: [::hsi::utils::get_hw_sw_details -json C:/Scanway/Vivado/ScanEye_trigger/workspace/scaneye_trigger_wrapper_STAR_VIBE_1/export/scaneye_trigger_wrapper_STAR_VIBE_1/hw/scaneye_trigger_wrapper_STAR_VIBE.xsa C:/Scanway/Vivado/ScanEye_trigger/workspace/scaneye_trigger_wrapper_STAR_VIBE_1/export/scaneye_trigger_wrapper_STAR_VIBE_1/sw/scaneye_trigger_wrapper_STAR_VIBE_1/freertos10_xilinx_ps7_cortexa9_0/system.mss], Thread: Worker-64: Build Project
+
+!ENTRY com.xilinx.sdk.utils 0 0 2021-11-29 16:03:16.933
+!MESSAGE XSCT command with result: [::hsi::utils::get_hw_sw_details -json C:/Scanway/Vivado/ScanEye_trigger/workspace/scaneye_trigger_wrapper_STAR_VIBE_1/export/scaneye_trigger_wrapper_STAR_VIBE_1/hw/scaneye_trigger_wrapper_STAR_VIBE.xsa C:/Scanway/Vivado/ScanEye_trigger/workspace/scaneye_trigger_wrapper_STAR_VIBE_1/export/scaneye_trigger_wrapper_STAR_VIBE_1/sw/scaneye_trigger_wrapper_STAR_VIBE_1/freertos10_xilinx_ps7_cortexa9_0/system.mss], Result: [null, {"procname": "ps7_cortexa9_0",
+"osname": "freertos10_xilinx",
+"osver": "1.9",
+}]. Thread: Worker-64: Build Project
+
+!ENTRY com.xilinx.sdk.utils 1 0 2021-11-29 16:03:16.933
+!MESSAGE Generating MD5 hash for file: C:\Scanway\Vivado\ScanEye_trigger\workspace\scaneye_trigger_wrapper_STAR_VIBE_1\export\scaneye_trigger_wrapper_STAR_VIBE_1\sw\scaneye_trigger_wrapper_STAR_VIBE_1\freertos10_xilinx_ps7_cortexa9_0\system.mss ...
+
+!ENTRY com.xilinx.sdk.utils 0 0 2021-11-29 16:03:16.934
+!MESSAGE XSCT Command: [::hsi::utils::closesw C:/Scanway/Vivado/ScanEye_trigger/workspace/scaneye_trigger_wrapper_STAR_VIBE_1/export/scaneye_trigger_wrapper_STAR_VIBE_1/sw/scaneye_trigger_wrapper_STAR_VIBE_1/freertos10_xilinx_ps7_cortexa9_0/system.mss], Thread: Worker-64: Build Project
+
+!ENTRY com.xilinx.sdk.utils 0 0 2021-11-29 16:03:16.936
+!MESSAGE XSCT command with result: [::hsi::utils::closesw C:/Scanway/Vivado/ScanEye_trigger/workspace/scaneye_trigger_wrapper_STAR_VIBE_1/export/scaneye_trigger_wrapper_STAR_VIBE_1/sw/scaneye_trigger_wrapper_STAR_VIBE_1/freertos10_xilinx_ps7_cortexa9_0/system.mss], Result: [null, ]. Thread: Worker-64: Build Project
+
+!ENTRY com.xilinx.sdx.core 1 0 2021-11-29 16:03:17.434
+!MESSAGE Build step failed, canceling full build chain.
+
+!ENTRY com.xilinx.sdk.utils 0 0 2021-11-29 16:03:35.224
+!MESSAGE XSCT Command: [ ::hsi::utils::set_current_hw_sw C:/Scanway/Vivado/ScanEye_trigger/workspace/scaneye_trigger_wrapper_STAR_VIBE_1/export/scaneye_trigger_wrapper_STAR_VIBE_1/hw/scaneye_trigger_wrapper_STAR_VIBE.xsa C:/Scanway/Vivado/ScanEye_trigger/workspace/scaneye_trigger_wrapper_STAR_VIBE_1/export/scaneye_trigger_wrapper_STAR_VIBE_1/sw/scaneye_trigger_wrapper_STAR_VIBE_1/freertos10_xilinx_ps7_cortexa9_0/system.mss ], Thread: Worker-62: Build Project
+
+!ENTRY com.xilinx.sdk.utils 0 0 2021-11-29 16:03:35.228
+!MESSAGE XSCT command with result: [ ::hsi::utils::set_current_hw_sw C:/Scanway/Vivado/ScanEye_trigger/workspace/scaneye_trigger_wrapper_STAR_VIBE_1/export/scaneye_trigger_wrapper_STAR_VIBE_1/hw/scaneye_trigger_wrapper_STAR_VIBE.xsa C:/Scanway/Vivado/ScanEye_trigger/workspace/scaneye_trigger_wrapper_STAR_VIBE_1/export/scaneye_trigger_wrapper_STAR_VIBE_1/sw/scaneye_trigger_wrapper_STAR_VIBE_1/freertos10_xilinx_ps7_cortexa9_0/system.mss ], Result: [null, ]. Thread: Worker-62: Build Project
+
+!ENTRY com.xilinx.sdk.utils 0 0 2021-11-29 16:03:35.229
+!MESSAGE XSCT Command: [::hsi::utils::get_hw_sw_details -json C:/Scanway/Vivado/ScanEye_trigger/workspace/scaneye_trigger_wrapper_STAR_VIBE_1/export/scaneye_trigger_wrapper_STAR_VIBE_1/hw/scaneye_trigger_wrapper_STAR_VIBE.xsa C:/Scanway/Vivado/ScanEye_trigger/workspace/scaneye_trigger_wrapper_STAR_VIBE_1/export/scaneye_trigger_wrapper_STAR_VIBE_1/sw/scaneye_trigger_wrapper_STAR_VIBE_1/freertos10_xilinx_ps7_cortexa9_0/system.mss], Thread: Worker-62: Build Project
+
+!ENTRY com.xilinx.sdk.utils 0 0 2021-11-29 16:03:35.232
+!MESSAGE XSCT command with result: [::hsi::utils::get_hw_sw_details -json C:/Scanway/Vivado/ScanEye_trigger/workspace/scaneye_trigger_wrapper_STAR_VIBE_1/export/scaneye_trigger_wrapper_STAR_VIBE_1/hw/scaneye_trigger_wrapper_STAR_VIBE.xsa C:/Scanway/Vivado/ScanEye_trigger/workspace/scaneye_trigger_wrapper_STAR_VIBE_1/export/scaneye_trigger_wrapper_STAR_VIBE_1/sw/scaneye_trigger_wrapper_STAR_VIBE_1/freertos10_xilinx_ps7_cortexa9_0/system.mss], Result: [null, {"procname": "ps7_cortexa9_0",
+"osname": "freertos10_xilinx",
+"osver": "1.9",
+}]. Thread: Worker-62: Build Project
+
+!ENTRY com.xilinx.sdk.utils 1 0 2021-11-29 16:03:35.233
+!MESSAGE Generating MD5 hash for file: C:\Scanway\Vivado\ScanEye_trigger\workspace\scaneye_trigger_wrapper_STAR_VIBE_1\export\scaneye_trigger_wrapper_STAR_VIBE_1\sw\scaneye_trigger_wrapper_STAR_VIBE_1\freertos10_xilinx_ps7_cortexa9_0\system.mss ...
+
+!ENTRY com.xilinx.sdk.utils 0 0 2021-11-29 16:03:35.234
+!MESSAGE XSCT Command: [::hsi::utils::closesw C:/Scanway/Vivado/ScanEye_trigger/workspace/scaneye_trigger_wrapper_STAR_VIBE_1/export/scaneye_trigger_wrapper_STAR_VIBE_1/sw/scaneye_trigger_wrapper_STAR_VIBE_1/freertos10_xilinx_ps7_cortexa9_0/system.mss], Thread: Worker-62: Build Project
+
+!ENTRY com.xilinx.sdk.utils 0 0 2021-11-29 16:03:35.236
+!MESSAGE XSCT command with result: [::hsi::utils::closesw C:/Scanway/Vivado/ScanEye_trigger/workspace/scaneye_trigger_wrapper_STAR_VIBE_1/export/scaneye_trigger_wrapper_STAR_VIBE_1/sw/scaneye_trigger_wrapper_STAR_VIBE_1/freertos10_xilinx_ps7_cortexa9_0/system.mss], Result: [null, ]. Thread: Worker-62: Build Project
+
+!ENTRY com.xilinx.sdx.core 1 0 2021-11-29 16:03:35.728
+!MESSAGE Build step failed, canceling full build chain.
+
+!ENTRY com.xilinx.sdk.utils 0 0 2021-11-29 16:04:28.819
+!MESSAGE XSCT Command: [ ::hsi::utils::set_current_hw_sw C:/Scanway/Vivado/ScanEye_trigger/workspace/scaneye_trigger_wrapper_STAR_VIBE_1/export/scaneye_trigger_wrapper_STAR_VIBE_1/hw/scaneye_trigger_wrapper_STAR_VIBE.xsa C:/Scanway/Vivado/ScanEye_trigger/workspace/scaneye_trigger_wrapper_STAR_VIBE_1/export/scaneye_trigger_wrapper_STAR_VIBE_1/sw/scaneye_trigger_wrapper_STAR_VIBE_1/freertos10_xilinx_ps7_cortexa9_0/system.mss ], Thread: Worker-68: Build Project
+
+!ENTRY com.xilinx.sdk.utils 0 0 2021-11-29 16:04:28.824
+!MESSAGE XSCT command with result: [ ::hsi::utils::set_current_hw_sw C:/Scanway/Vivado/ScanEye_trigger/workspace/scaneye_trigger_wrapper_STAR_VIBE_1/export/scaneye_trigger_wrapper_STAR_VIBE_1/hw/scaneye_trigger_wrapper_STAR_VIBE.xsa C:/Scanway/Vivado/ScanEye_trigger/workspace/scaneye_trigger_wrapper_STAR_VIBE_1/export/scaneye_trigger_wrapper_STAR_VIBE_1/sw/scaneye_trigger_wrapper_STAR_VIBE_1/freertos10_xilinx_ps7_cortexa9_0/system.mss ], Result: [null, ]. Thread: Worker-68: Build Project
+
+!ENTRY com.xilinx.sdk.utils 0 0 2021-11-29 16:04:28.824
+!MESSAGE XSCT Command: [::hsi::utils::get_hw_sw_details -json C:/Scanway/Vivado/ScanEye_trigger/workspace/scaneye_trigger_wrapper_STAR_VIBE_1/export/scaneye_trigger_wrapper_STAR_VIBE_1/hw/scaneye_trigger_wrapper_STAR_VIBE.xsa C:/Scanway/Vivado/ScanEye_trigger/workspace/scaneye_trigger_wrapper_STAR_VIBE_1/export/scaneye_trigger_wrapper_STAR_VIBE_1/sw/scaneye_trigger_wrapper_STAR_VIBE_1/freertos10_xilinx_ps7_cortexa9_0/system.mss], Thread: Worker-68: Build Project
+
+!ENTRY com.xilinx.sdk.utils 0 0 2021-11-29 16:04:28.827
+!MESSAGE XSCT command with result: [::hsi::utils::get_hw_sw_details -json C:/Scanway/Vivado/ScanEye_trigger/workspace/scaneye_trigger_wrapper_STAR_VIBE_1/export/scaneye_trigger_wrapper_STAR_VIBE_1/hw/scaneye_trigger_wrapper_STAR_VIBE.xsa C:/Scanway/Vivado/ScanEye_trigger/workspace/scaneye_trigger_wrapper_STAR_VIBE_1/export/scaneye_trigger_wrapper_STAR_VIBE_1/sw/scaneye_trigger_wrapper_STAR_VIBE_1/freertos10_xilinx_ps7_cortexa9_0/system.mss], Result: [null, {"procname": "ps7_cortexa9_0",
+"osname": "freertos10_xilinx",
+"osver": "1.9",
+}]. Thread: Worker-68: Build Project
+
+!ENTRY com.xilinx.sdk.utils 1 0 2021-11-29 16:04:28.828
+!MESSAGE Generating MD5 hash for file: C:\Scanway\Vivado\ScanEye_trigger\workspace\scaneye_trigger_wrapper_STAR_VIBE_1\export\scaneye_trigger_wrapper_STAR_VIBE_1\sw\scaneye_trigger_wrapper_STAR_VIBE_1\freertos10_xilinx_ps7_cortexa9_0\system.mss ...
+
+!ENTRY com.xilinx.sdk.utils 0 0 2021-11-29 16:04:28.829
+!MESSAGE XSCT Command: [::hsi::utils::closesw C:/Scanway/Vivado/ScanEye_trigger/workspace/scaneye_trigger_wrapper_STAR_VIBE_1/export/scaneye_trigger_wrapper_STAR_VIBE_1/sw/scaneye_trigger_wrapper_STAR_VIBE_1/freertos10_xilinx_ps7_cortexa9_0/system.mss], Thread: Worker-68: Build Project
+
+!ENTRY com.xilinx.sdk.utils 0 0 2021-11-29 16:04:28.831
+!MESSAGE XSCT command with result: [::hsi::utils::closesw C:/Scanway/Vivado/ScanEye_trigger/workspace/scaneye_trigger_wrapper_STAR_VIBE_1/export/scaneye_trigger_wrapper_STAR_VIBE_1/sw/scaneye_trigger_wrapper_STAR_VIBE_1/freertos10_xilinx_ps7_cortexa9_0/system.mss], Result: [null, ]. Thread: Worker-68: Build Project
+
+!ENTRY com.xilinx.sdx.core 1 0 2021-11-29 16:04:29.324
+!MESSAGE Build step failed, canceling full build chain.
+
+!ENTRY com.xilinx.sdk.utils 0 0 2021-11-29 16:06:33.683
+!MESSAGE XSCT Command: [ ::hsi::utils::set_current_hw_sw C:/Scanway/Vivado/ScanEye_trigger/workspace/scaneye_trigger_wrapper_STAR_VIBE_1/export/scaneye_trigger_wrapper_STAR_VIBE_1/hw/scaneye_trigger_wrapper_STAR_VIBE.xsa C:/Scanway/Vivado/ScanEye_trigger/workspace/scaneye_trigger_wrapper_STAR_VIBE_1/export/scaneye_trigger_wrapper_STAR_VIBE_1/sw/scaneye_trigger_wrapper_STAR_VIBE_1/freertos10_xilinx_ps7_cortexa9_0/system.mss ], Thread: Worker-67: Build Project
+
+!ENTRY com.xilinx.sdk.utils 0 0 2021-11-29 16:06:33.687
+!MESSAGE XSCT command with result: [ ::hsi::utils::set_current_hw_sw C:/Scanway/Vivado/ScanEye_trigger/workspace/scaneye_trigger_wrapper_STAR_VIBE_1/export/scaneye_trigger_wrapper_STAR_VIBE_1/hw/scaneye_trigger_wrapper_STAR_VIBE.xsa C:/Scanway/Vivado/ScanEye_trigger/workspace/scaneye_trigger_wrapper_STAR_VIBE_1/export/scaneye_trigger_wrapper_STAR_VIBE_1/sw/scaneye_trigger_wrapper_STAR_VIBE_1/freertos10_xilinx_ps7_cortexa9_0/system.mss ], Result: [null, ]. Thread: Worker-67: Build Project
+
+!ENTRY com.xilinx.sdk.utils 0 0 2021-11-29 16:06:33.688
+!MESSAGE XSCT Command: [::hsi::utils::get_hw_sw_details -json C:/Scanway/Vivado/ScanEye_trigger/workspace/scaneye_trigger_wrapper_STAR_VIBE_1/export/scaneye_trigger_wrapper_STAR_VIBE_1/hw/scaneye_trigger_wrapper_STAR_VIBE.xsa C:/Scanway/Vivado/ScanEye_trigger/workspace/scaneye_trigger_wrapper_STAR_VIBE_1/export/scaneye_trigger_wrapper_STAR_VIBE_1/sw/scaneye_trigger_wrapper_STAR_VIBE_1/freertos10_xilinx_ps7_cortexa9_0/system.mss], Thread: Worker-67: Build Project
+
+!ENTRY com.xilinx.sdk.utils 0 0 2021-11-29 16:06:33.690
+!MESSAGE XSCT command with result: [::hsi::utils::get_hw_sw_details -json C:/Scanway/Vivado/ScanEye_trigger/workspace/scaneye_trigger_wrapper_STAR_VIBE_1/export/scaneye_trigger_wrapper_STAR_VIBE_1/hw/scaneye_trigger_wrapper_STAR_VIBE.xsa C:/Scanway/Vivado/ScanEye_trigger/workspace/scaneye_trigger_wrapper_STAR_VIBE_1/export/scaneye_trigger_wrapper_STAR_VIBE_1/sw/scaneye_trigger_wrapper_STAR_VIBE_1/freertos10_xilinx_ps7_cortexa9_0/system.mss], Result: [null, {"procname": "ps7_cortexa9_0",
+"osname": "freertos10_xilinx",
+"osver": "1.9",
+}]. Thread: Worker-67: Build Project
+
+!ENTRY com.xilinx.sdk.utils 1 0 2021-11-29 16:06:33.691
+!MESSAGE Generating MD5 hash for file: C:\Scanway\Vivado\ScanEye_trigger\workspace\scaneye_trigger_wrapper_STAR_VIBE_1\export\scaneye_trigger_wrapper_STAR_VIBE_1\sw\scaneye_trigger_wrapper_STAR_VIBE_1\freertos10_xilinx_ps7_cortexa9_0\system.mss ...
+
+!ENTRY com.xilinx.sdk.utils 0 0 2021-11-29 16:06:33.692
+!MESSAGE XSCT Command: [::hsi::utils::closesw C:/Scanway/Vivado/ScanEye_trigger/workspace/scaneye_trigger_wrapper_STAR_VIBE_1/export/scaneye_trigger_wrapper_STAR_VIBE_1/sw/scaneye_trigger_wrapper_STAR_VIBE_1/freertos10_xilinx_ps7_cortexa9_0/system.mss], Thread: Worker-67: Build Project
+
+!ENTRY com.xilinx.sdk.utils 0 0 2021-11-29 16:06:33.695
+!MESSAGE XSCT command with result: [::hsi::utils::closesw C:/Scanway/Vivado/ScanEye_trigger/workspace/scaneye_trigger_wrapper_STAR_VIBE_1/export/scaneye_trigger_wrapper_STAR_VIBE_1/sw/scaneye_trigger_wrapper_STAR_VIBE_1/freertos10_xilinx_ps7_cortexa9_0/system.mss], Result: [null, ]. Thread: Worker-67: Build Project
+
+!ENTRY com.xilinx.sdx.core 1 0 2021-11-29 16:06:34.193
+!MESSAGE Build step failed, canceling full build chain.
+
+!ENTRY com.xilinx.sdk.utils 0 0 2021-11-29 16:06:50.471
+!MESSAGE XSCT Command: [ ::hsi::utils::set_current_hw_sw C:/Scanway/Vivado/ScanEye_trigger/workspace/scaneye_trigger_wrapper_STAR_VIBE_1/export/scaneye_trigger_wrapper_STAR_VIBE_1/hw/scaneye_trigger_wrapper_STAR_VIBE.xsa C:/Scanway/Vivado/ScanEye_trigger/workspace/scaneye_trigger_wrapper_STAR_VIBE_1/export/scaneye_trigger_wrapper_STAR_VIBE_1/sw/scaneye_trigger_wrapper_STAR_VIBE_1/freertos10_xilinx_ps7_cortexa9_0/system.mss ], Thread: Worker-65: Build Project
+
+!ENTRY com.xilinx.sdk.utils 0 0 2021-11-29 16:06:50.477
+!MESSAGE XSCT command with result: [ ::hsi::utils::set_current_hw_sw C:/Scanway/Vivado/ScanEye_trigger/workspace/scaneye_trigger_wrapper_STAR_VIBE_1/export/scaneye_trigger_wrapper_STAR_VIBE_1/hw/scaneye_trigger_wrapper_STAR_VIBE.xsa C:/Scanway/Vivado/ScanEye_trigger/workspace/scaneye_trigger_wrapper_STAR_VIBE_1/export/scaneye_trigger_wrapper_STAR_VIBE_1/sw/scaneye_trigger_wrapper_STAR_VIBE_1/freertos10_xilinx_ps7_cortexa9_0/system.mss ], Result: [null, ]. Thread: Worker-65: Build Project
+
+!ENTRY com.xilinx.sdk.utils 0 0 2021-11-29 16:06:50.478
+!MESSAGE XSCT Command: [::hsi::utils::get_hw_sw_details -json C:/Scanway/Vivado/ScanEye_trigger/workspace/scaneye_trigger_wrapper_STAR_VIBE_1/export/scaneye_trigger_wrapper_STAR_VIBE_1/hw/scaneye_trigger_wrapper_STAR_VIBE.xsa C:/Scanway/Vivado/ScanEye_trigger/workspace/scaneye_trigger_wrapper_STAR_VIBE_1/export/scaneye_trigger_wrapper_STAR_VIBE_1/sw/scaneye_trigger_wrapper_STAR_VIBE_1/freertos10_xilinx_ps7_cortexa9_0/system.mss], Thread: Worker-65: Build Project
+
+!ENTRY com.xilinx.sdk.utils 0 0 2021-11-29 16:06:50.481
+!MESSAGE XSCT command with result: [::hsi::utils::get_hw_sw_details -json C:/Scanway/Vivado/ScanEye_trigger/workspace/scaneye_trigger_wrapper_STAR_VIBE_1/export/scaneye_trigger_wrapper_STAR_VIBE_1/hw/scaneye_trigger_wrapper_STAR_VIBE.xsa C:/Scanway/Vivado/ScanEye_trigger/workspace/scaneye_trigger_wrapper_STAR_VIBE_1/export/scaneye_trigger_wrapper_STAR_VIBE_1/sw/scaneye_trigger_wrapper_STAR_VIBE_1/freertos10_xilinx_ps7_cortexa9_0/system.mss], Result: [null, {"procname": "ps7_cortexa9_0",
+"osname": "freertos10_xilinx",
+"osver": "1.9",
+}]. Thread: Worker-65: Build Project
+
+!ENTRY com.xilinx.sdk.utils 1 0 2021-11-29 16:06:50.481
+!MESSAGE Generating MD5 hash for file: C:\Scanway\Vivado\ScanEye_trigger\workspace\scaneye_trigger_wrapper_STAR_VIBE_1\export\scaneye_trigger_wrapper_STAR_VIBE_1\sw\scaneye_trigger_wrapper_STAR_VIBE_1\freertos10_xilinx_ps7_cortexa9_0\system.mss ...
+
+!ENTRY com.xilinx.sdk.utils 0 0 2021-11-29 16:06:50.482
+!MESSAGE XSCT Command: [::hsi::utils::closesw C:/Scanway/Vivado/ScanEye_trigger/workspace/scaneye_trigger_wrapper_STAR_VIBE_1/export/scaneye_trigger_wrapper_STAR_VIBE_1/sw/scaneye_trigger_wrapper_STAR_VIBE_1/freertos10_xilinx_ps7_cortexa9_0/system.mss], Thread: Worker-65: Build Project
+
+!ENTRY com.xilinx.sdk.utils 0 0 2021-11-29 16:06:50.497
+!MESSAGE XSCT command with result: [::hsi::utils::closesw C:/Scanway/Vivado/ScanEye_trigger/workspace/scaneye_trigger_wrapper_STAR_VIBE_1/export/scaneye_trigger_wrapper_STAR_VIBE_1/sw/scaneye_trigger_wrapper_STAR_VIBE_1/freertos10_xilinx_ps7_cortexa9_0/system.mss], Result: [null, ]. Thread: Worker-65: Build Project
+
+!ENTRY com.xilinx.sdk.utils 0 0 2021-11-29 16:40:48.585
+!MESSAGE XSCT Command: [disconnect tcfchan#9], Thread: Thread-2858
+
+!ENTRY com.xilinx.sdk.utils 0 0 2021-11-29 16:40:48.627
+!MESSAGE XSCT command with result: [disconnect tcfchan#9], Result: [null, ]. Thread: Thread-2858
+
+!ENTRY com.xilinx.sdk.utils 0 0 2021-11-29 16:41:33.645
+!MESSAGE XSCT Command: [ ::hsi::utils::set_current_hw_sw C:/Scanway/Vivado/ScanEye_trigger/workspace/scaneye_trigger_wrapper_STAR_VIBE_1/export/scaneye_trigger_wrapper_STAR_VIBE_1/hw/scaneye_trigger_wrapper_STAR_VIBE.xsa C:/Scanway/Vivado/ScanEye_trigger/workspace/scaneye_trigger_wrapper_STAR_VIBE_1/export/scaneye_trigger_wrapper_STAR_VIBE_1/sw/scaneye_trigger_wrapper_STAR_VIBE_1/freertos10_xilinx_ps7_cortexa9_0/system.mss ], Thread: Worker-66: Build Project
+
+!ENTRY com.xilinx.sdk.utils 0 0 2021-11-29 16:41:33.651
+!MESSAGE XSCT command with result: [ ::hsi::utils::set_current_hw_sw C:/Scanway/Vivado/ScanEye_trigger/workspace/scaneye_trigger_wrapper_STAR_VIBE_1/export/scaneye_trigger_wrapper_STAR_VIBE_1/hw/scaneye_trigger_wrapper_STAR_VIBE.xsa C:/Scanway/Vivado/ScanEye_trigger/workspace/scaneye_trigger_wrapper_STAR_VIBE_1/export/scaneye_trigger_wrapper_STAR_VIBE_1/sw/scaneye_trigger_wrapper_STAR_VIBE_1/freertos10_xilinx_ps7_cortexa9_0/system.mss ], Result: [null, ]. Thread: Worker-66: Build Project
+
+!ENTRY com.xilinx.sdk.utils 0 0 2021-11-29 16:41:33.652
+!MESSAGE XSCT Command: [::hsi::utils::get_hw_sw_details -json C:/Scanway/Vivado/ScanEye_trigger/workspace/scaneye_trigger_wrapper_STAR_VIBE_1/export/scaneye_trigger_wrapper_STAR_VIBE_1/hw/scaneye_trigger_wrapper_STAR_VIBE.xsa C:/Scanway/Vivado/ScanEye_trigger/workspace/scaneye_trigger_wrapper_STAR_VIBE_1/export/scaneye_trigger_wrapper_STAR_VIBE_1/sw/scaneye_trigger_wrapper_STAR_VIBE_1/freertos10_xilinx_ps7_cortexa9_0/system.mss], Thread: Worker-66: Build Project
+
+!ENTRY com.xilinx.sdk.utils 0 0 2021-11-29 16:41:33.656
+!MESSAGE XSCT command with result: [::hsi::utils::get_hw_sw_details -json C:/Scanway/Vivado/ScanEye_trigger/workspace/scaneye_trigger_wrapper_STAR_VIBE_1/export/scaneye_trigger_wrapper_STAR_VIBE_1/hw/scaneye_trigger_wrapper_STAR_VIBE.xsa C:/Scanway/Vivado/ScanEye_trigger/workspace/scaneye_trigger_wrapper_STAR_VIBE_1/export/scaneye_trigger_wrapper_STAR_VIBE_1/sw/scaneye_trigger_wrapper_STAR_VIBE_1/freertos10_xilinx_ps7_cortexa9_0/system.mss], Result: [null, {"procname": "ps7_cortexa9_0",
+"osname": "freertos10_xilinx",
+"osver": "1.9",
+}]. Thread: Worker-66: Build Project
+
+!ENTRY com.xilinx.sdk.utils 1 0 2021-11-29 16:41:33.657
+!MESSAGE Generating MD5 hash for file: C:\Scanway\Vivado\ScanEye_trigger\workspace\scaneye_trigger_wrapper_STAR_VIBE_1\export\scaneye_trigger_wrapper_STAR_VIBE_1\sw\scaneye_trigger_wrapper_STAR_VIBE_1\freertos10_xilinx_ps7_cortexa9_0\system.mss ...
+
+!ENTRY com.xilinx.sdk.utils 0 0 2021-11-29 16:41:33.658
+!MESSAGE XSCT Command: [::hsi::utils::closesw C:/Scanway/Vivado/ScanEye_trigger/workspace/scaneye_trigger_wrapper_STAR_VIBE_1/export/scaneye_trigger_wrapper_STAR_VIBE_1/sw/scaneye_trigger_wrapper_STAR_VIBE_1/freertos10_xilinx_ps7_cortexa9_0/system.mss], Thread: Worker-66: Build Project
+
+!ENTRY com.xilinx.sdk.utils 0 0 2021-11-29 16:41:33.659
+!MESSAGE XSCT command with result: [::hsi::utils::closesw C:/Scanway/Vivado/ScanEye_trigger/workspace/scaneye_trigger_wrapper_STAR_VIBE_1/export/scaneye_trigger_wrapper_STAR_VIBE_1/sw/scaneye_trigger_wrapper_STAR_VIBE_1/freertos10_xilinx_ps7_cortexa9_0/system.mss], Result: [null, ]. Thread: Worker-66: Build Project

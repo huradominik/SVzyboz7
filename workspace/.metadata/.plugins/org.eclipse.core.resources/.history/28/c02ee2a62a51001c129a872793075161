@@ -42,6 +42,9 @@ int cmvSequencerStart();
 int cmvSequencerStop();
 int init_cmvSoft(cmvConfig *cmvConfigInst);
 
+void sequencerStop();
+void sequencerStart();
+
 void sensorStart();
 void sensorStop();
 

@@ -27,22 +27,25 @@ typedef struct{
 } cmvConfig;
 
 typedef struct{
-	u8 ldo22;					/* Status of ldo 2,2 V */
-	u8 ldo36;					/* Status of ldo 3,6 V */
-	u8 Sequencer;				/* Status of sequencer */
-	u8 ContinuousMode;			/* Continuous mode	   */
+	u8 ldo;
+	u8 Sequencer;
+	u8 ContinuousMode;
 } cmvStatus;
 
 #define CPU_CLK_FREQ_HZ  XPAR_PS7_CORTEXA9_0_CPU_CLK_FREQ_HZ
 
 
-int cmvLdoStart();
-int cmvLdoStop();
-int cmvSequencerStart();
-int cmvSequencerStop();
+int init_ldo();
+int init_sequencer();
 int init_cmvSoft(cmvConfig *cmvConfigInst);
 
-void sensorStart();
-void sensorStop();
+int ldoStop();
+int ldoStart();
+
+int sequencerStop();
+int sequencerStart();
+
+int sensorStart();
+int sensorStop();
 
 #endif
