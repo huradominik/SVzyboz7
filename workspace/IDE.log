@@ -11479,3 +11479,1041 @@ configparams force-mem-access 0
 16:06:50 INFO  : Checking for BSP changes to sync application flags for project 'STAR_VIBE2'...
 16:40:48 INFO  : Disconnected from the channel tcfchan#9.
 16:41:33 INFO  : Checking for BSP changes to sync application flags for project 'STAR_VIBE2'...
+08:16:31 INFO  : Launching XSCT server: xsct.bat -n  -interactive C:\Scanway\Vivado\ScanEye_trigger\workspace\temp_xsdb_launch_script.tcl
+08:16:33 INFO  : XSCT server has started successfully.
+08:16:33 INFO  : plnx-install-location is set to ''
+08:16:33 INFO  : Successfully done setting XSCT server connection channel  
+08:16:33 INFO  : Successfully done setting workspace for the tool. 
+08:16:37 INFO  : Platform repository initialization has completed.
+08:16:38 INFO  : Registering command handlers for Vitis TCF services
+08:16:38 INFO  : Successfully done query RDI_DATADIR 
+08:21:00 INFO  : Checking for BSP changes to sync application flags for project 'STAR_VIBE2'...
+08:21:29 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+08:21:30 INFO  : Jtag cable 'Digilent Zybo Z7 210351AD67FBA' is selected.
+08:21:30 INFO  : 'jtag frequency' command is executed.
+08:21:30 INFO  : Context for 'APU' is selected.
+08:21:30 INFO  : System reset is completed.
+08:21:33 INFO  : 'after 3000' command is executed.
+08:21:33 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351AD67FBA" && level==0 && jtag_device_ctx=="jsn-Zybo Z7-210351AD67FBA-23727093-0"}' command is executed.
+08:21:35 INFO  : Device configured successfully with "C:/Scanway/Vivado/ScanEye_trigger/workspace/STAR_VIBE2/_ide/bitstream/scaneye_trigger_wrapper_STAR_VIBE.bit"
+08:21:35 INFO  : Context for 'APU' is selected.
+08:21:35 INFO  : Hardware design and registers information is loaded from 'C:/Scanway/Vivado/ScanEye_trigger/workspace/scaneye_trigger_wrapper_STAR_VIBE_1/export/scaneye_trigger_wrapper_STAR_VIBE_1/hw/scaneye_trigger_wrapper_STAR_VIBE.xsa'.
+08:21:35 INFO  : 'configparams force-mem-access 1' command is executed.
+08:21:35 INFO  : Context for 'APU' is selected.
+08:21:35 INFO  : Sourcing of 'C:/Scanway/Vivado/ScanEye_trigger/workspace/STAR_VIBE2/_ide/psinit/ps7_init.tcl' is done.
+08:21:36 INFO  : 'ps7_init' command is executed.
+08:21:36 INFO  : 'ps7_post_config' command is executed.
+08:21:36 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+08:21:36 INFO  : The application 'C:/Scanway/Vivado/ScanEye_trigger/workspace/STAR_VIBE2/Debug/STAR_VIBE2.elf' is downloaded to processor 'ps7_cortexa9_0'.
+08:21:36 INFO  : 'configparams force-mem-access 0' command is executed.
+08:21:36 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351AD67FBA" && level==0 && jtag_device_ctx=="jsn-Zybo Z7-210351AD67FBA-23727093-0"}
+fpga -file C:/Scanway/Vivado/ScanEye_trigger/workspace/STAR_VIBE2/_ide/bitstream/scaneye_trigger_wrapper_STAR_VIBE.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw C:/Scanway/Vivado/ScanEye_trigger/workspace/scaneye_trigger_wrapper_STAR_VIBE_1/export/scaneye_trigger_wrapper_STAR_VIBE_1/hw/scaneye_trigger_wrapper_STAR_VIBE.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source C:/Scanway/Vivado/ScanEye_trigger/workspace/STAR_VIBE2/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow C:/Scanway/Vivado/ScanEye_trigger/workspace/STAR_VIBE2/Debug/STAR_VIBE2.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+08:29:14 INFO  : Checking for BSP changes to sync application flags for project 'STAR_VIBE2'...
+08:29:26 INFO  : Disconnected from the channel tcfchan#1.
+08:29:28 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+08:29:29 INFO  : Jtag cable 'Digilent Zybo Z7 210351AD67FBA' is selected.
+08:29:29 INFO  : 'jtag frequency' command is executed.
+08:29:29 INFO  : Context for 'APU' is selected.
+08:29:29 INFO  : System reset is completed.
+08:29:32 INFO  : 'after 3000' command is executed.
+08:29:32 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351AD67FBA" && level==0 && jtag_device_ctx=="jsn-Zybo Z7-210351AD67FBA-23727093-0"}' command is executed.
+08:29:34 INFO  : Device configured successfully with "C:/Scanway/Vivado/ScanEye_trigger/workspace/STAR_VIBE2/_ide/bitstream/scaneye_trigger_wrapper_STAR_VIBE.bit"
+08:29:34 INFO  : Context for 'APU' is selected.
+08:29:36 INFO  : Hardware design and registers information is loaded from 'C:/Scanway/Vivado/ScanEye_trigger/workspace/scaneye_trigger_wrapper_STAR_VIBE_1/export/scaneye_trigger_wrapper_STAR_VIBE_1/hw/scaneye_trigger_wrapper_STAR_VIBE.xsa'.
+08:29:36 INFO  : 'configparams force-mem-access 1' command is executed.
+08:29:36 INFO  : Context for 'APU' is selected.
+08:29:36 INFO  : Sourcing of 'C:/Scanway/Vivado/ScanEye_trigger/workspace/STAR_VIBE2/_ide/psinit/ps7_init.tcl' is done.
+08:29:37 INFO  : 'ps7_init' command is executed.
+08:29:37 INFO  : 'ps7_post_config' command is executed.
+08:29:37 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+08:29:37 INFO  : The application 'C:/Scanway/Vivado/ScanEye_trigger/workspace/STAR_VIBE2/Debug/STAR_VIBE2.elf' is downloaded to processor 'ps7_cortexa9_0'.
+08:29:37 INFO  : 'configparams force-mem-access 0' command is executed.
+08:29:37 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351AD67FBA" && level==0 && jtag_device_ctx=="jsn-Zybo Z7-210351AD67FBA-23727093-0"}
+fpga -file C:/Scanway/Vivado/ScanEye_trigger/workspace/STAR_VIBE2/_ide/bitstream/scaneye_trigger_wrapper_STAR_VIBE.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw C:/Scanway/Vivado/ScanEye_trigger/workspace/scaneye_trigger_wrapper_STAR_VIBE_1/export/scaneye_trigger_wrapper_STAR_VIBE_1/hw/scaneye_trigger_wrapper_STAR_VIBE.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source C:/Scanway/Vivado/ScanEye_trigger/workspace/STAR_VIBE2/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow C:/Scanway/Vivado/ScanEye_trigger/workspace/STAR_VIBE2/Debug/STAR_VIBE2.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+08:34:28 INFO  : Checking for BSP changes to sync application flags for project 'STAR_VIBE2'...
+08:35:23 INFO  : Checking for BSP changes to sync application flags for project 'STAR_VIBE2'...
+08:35:35 INFO  : Checking for BSP changes to sync application flags for project 'STAR_VIBE2'...
+08:35:51 INFO  : Checking for BSP changes to sync application flags for project 'STAR_VIBE2'...
+08:36:02 INFO  : Checking for BSP changes to sync application flags for project 'STAR_VIBE2'...
+08:36:16 INFO  : Checking for BSP changes to sync application flags for project 'STAR_VIBE2'...
+08:36:35 INFO  : Checking for BSP changes to sync application flags for project 'STAR_VIBE2'...
+08:36:51 INFO  : Checking for BSP changes to sync application flags for project 'STAR_VIBE2'...
+08:37:21 INFO  : Checking for BSP changes to sync application flags for project 'STAR_VIBE2'...
+08:37:41 INFO  : Checking for BSP changes to sync application flags for project 'STAR_VIBE2'...
+08:38:20 INFO  : Checking for BSP changes to sync application flags for project 'STAR_VIBE2'...
+08:38:37 INFO  : Checking for BSP changes to sync application flags for project 'STAR_VIBE2'...
+08:38:46 INFO  : Checking for BSP changes to sync application flags for project 'STAR_VIBE2'...
+08:39:39 INFO  : Checking for BSP changes to sync application flags for project 'STAR_VIBE2'...
+08:40:10 INFO  : Checking for BSP changes to sync application flags for project 'STAR_VIBE2'...
+08:40:54 INFO  : Checking for BSP changes to sync application flags for project 'STAR_VIBE2'...
+08:41:04 INFO  : Checking for BSP changes to sync application flags for project 'STAR_VIBE2'...
+08:41:16 INFO  : Checking for BSP changes to sync application flags for project 'STAR_VIBE2'...
+08:42:01 INFO  : Checking for BSP changes to sync application flags for project 'STAR_VIBE2'...
+08:44:34 INFO  : Checking for BSP changes to sync application flags for project 'STAR_VIBE2'...
+08:44:37 INFO  : Disconnected from the channel tcfchan#2.
+08:44:40 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+08:44:40 INFO  : Jtag cable 'Digilent Zybo Z7 210351AD67FBA' is selected.
+08:44:40 INFO  : 'jtag frequency' command is executed.
+08:44:40 INFO  : Context for 'APU' is selected.
+08:44:40 INFO  : System reset is completed.
+08:44:43 INFO  : 'after 3000' command is executed.
+08:44:43 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351AD67FBA" && level==0 && jtag_device_ctx=="jsn-Zybo Z7-210351AD67FBA-23727093-0"}' command is executed.
+08:44:46 INFO  : Device configured successfully with "C:/Scanway/Vivado/ScanEye_trigger/workspace/STAR_VIBE2/_ide/bitstream/scaneye_trigger_wrapper_STAR_VIBE.bit"
+08:44:46 INFO  : Context for 'APU' is selected.
+08:44:48 INFO  : Hardware design and registers information is loaded from 'C:/Scanway/Vivado/ScanEye_trigger/workspace/scaneye_trigger_wrapper_STAR_VIBE_1/export/scaneye_trigger_wrapper_STAR_VIBE_1/hw/scaneye_trigger_wrapper_STAR_VIBE.xsa'.
+08:44:48 INFO  : 'configparams force-mem-access 1' command is executed.
+08:44:48 INFO  : Context for 'APU' is selected.
+08:44:48 INFO  : Sourcing of 'C:/Scanway/Vivado/ScanEye_trigger/workspace/STAR_VIBE2/_ide/psinit/ps7_init.tcl' is done.
+08:44:48 INFO  : 'ps7_init' command is executed.
+08:44:49 INFO  : 'ps7_post_config' command is executed.
+08:44:49 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+08:44:49 INFO  : The application 'C:/Scanway/Vivado/ScanEye_trigger/workspace/STAR_VIBE2/Debug/STAR_VIBE2.elf' is downloaded to processor 'ps7_cortexa9_0'.
+08:44:49 INFO  : 'configparams force-mem-access 0' command is executed.
+08:44:49 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351AD67FBA" && level==0 && jtag_device_ctx=="jsn-Zybo Z7-210351AD67FBA-23727093-0"}
+fpga -file C:/Scanway/Vivado/ScanEye_trigger/workspace/STAR_VIBE2/_ide/bitstream/scaneye_trigger_wrapper_STAR_VIBE.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw C:/Scanway/Vivado/ScanEye_trigger/workspace/scaneye_trigger_wrapper_STAR_VIBE_1/export/scaneye_trigger_wrapper_STAR_VIBE_1/hw/scaneye_trigger_wrapper_STAR_VIBE.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source C:/Scanway/Vivado/ScanEye_trigger/workspace/STAR_VIBE2/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow C:/Scanway/Vivado/ScanEye_trigger/workspace/STAR_VIBE2/Debug/STAR_VIBE2.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+08:48:00 INFO  : Checking for BSP changes to sync application flags for project 'STAR_VIBE2'...
+08:48:06 INFO  : Checking for BSP changes to sync application flags for project 'STAR_VIBE2'...
+09:04:10 INFO  : Checking for BSP changes to sync application flags for project 'STAR_VIBE2'...
+09:04:34 INFO  : Checking for BSP changes to sync application flags for project 'STAR_VIBE2'...
+09:04:42 INFO  : Checking for BSP changes to sync application flags for project 'STAR_VIBE2'...
+09:05:13 INFO  : Checking for BSP changes to sync application flags for project 'STAR_VIBE2'...
+09:05:45 INFO  : Checking for BSP changes to sync application flags for project 'STAR_VIBE2'...
+09:05:54 INFO  : Checking for BSP changes to sync application flags for project 'STAR_VIBE2'...
+09:06:00 INFO  : Disconnected from the channel tcfchan#3.
+09:06:05 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+09:06:05 INFO  : Jtag cable 'Digilent Zybo Z7 210351AD67FBA' is selected.
+09:06:05 INFO  : 'jtag frequency' command is executed.
+09:06:05 INFO  : Context for 'APU' is selected.
+09:06:05 INFO  : System reset is completed.
+09:06:08 INFO  : 'after 3000' command is executed.
+09:06:08 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351AD67FBA" && level==0 && jtag_device_ctx=="jsn-Zybo Z7-210351AD67FBA-23727093-0"}' command is executed.
+09:06:11 INFO  : Device configured successfully with "C:/Scanway/Vivado/ScanEye_trigger/workspace/STAR_VIBE2/_ide/bitstream/scaneye_trigger_wrapper_STAR_VIBE.bit"
+09:06:11 INFO  : Context for 'APU' is selected.
+09:06:13 INFO  : Hardware design and registers information is loaded from 'C:/Scanway/Vivado/ScanEye_trigger/workspace/scaneye_trigger_wrapper_STAR_VIBE_1/export/scaneye_trigger_wrapper_STAR_VIBE_1/hw/scaneye_trigger_wrapper_STAR_VIBE.xsa'.
+09:06:13 INFO  : 'configparams force-mem-access 1' command is executed.
+09:06:13 INFO  : Context for 'APU' is selected.
+09:06:13 INFO  : Sourcing of 'C:/Scanway/Vivado/ScanEye_trigger/workspace/STAR_VIBE2/_ide/psinit/ps7_init.tcl' is done.
+09:06:13 INFO  : 'ps7_init' command is executed.
+09:06:13 INFO  : 'ps7_post_config' command is executed.
+09:06:13 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+09:06:14 INFO  : The application 'C:/Scanway/Vivado/ScanEye_trigger/workspace/STAR_VIBE2/Debug/STAR_VIBE2.elf' is downloaded to processor 'ps7_cortexa9_0'.
+09:06:14 INFO  : 'configparams force-mem-access 0' command is executed.
+09:06:14 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351AD67FBA" && level==0 && jtag_device_ctx=="jsn-Zybo Z7-210351AD67FBA-23727093-0"}
+fpga -file C:/Scanway/Vivado/ScanEye_trigger/workspace/STAR_VIBE2/_ide/bitstream/scaneye_trigger_wrapper_STAR_VIBE.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw C:/Scanway/Vivado/ScanEye_trigger/workspace/scaneye_trigger_wrapper_STAR_VIBE_1/export/scaneye_trigger_wrapper_STAR_VIBE_1/hw/scaneye_trigger_wrapper_STAR_VIBE.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source C:/Scanway/Vivado/ScanEye_trigger/workspace/STAR_VIBE2/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow C:/Scanway/Vivado/ScanEye_trigger/workspace/STAR_VIBE2/Debug/STAR_VIBE2.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+09:34:06 INFO  : Checking for BSP changes to sync application flags for project 'STAR_VIBE2'...
+09:34:36 INFO  : Checking for BSP changes to sync application flags for project 'STAR_VIBE2'...
+09:34:39 INFO  : Checking for BSP changes to sync application flags for project 'STAR_VIBE2'...
+09:34:43 INFO  : Disconnected from the channel tcfchan#4.
+09:34:47 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+09:34:47 INFO  : Jtag cable 'Digilent Zybo Z7 210351AD67FBA' is selected.
+09:34:47 INFO  : 'jtag frequency' command is executed.
+09:34:47 INFO  : Context for 'APU' is selected.
+09:34:47 INFO  : System reset is completed.
+09:34:50 INFO  : 'after 3000' command is executed.
+09:34:51 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351AD67FBA" && level==0 && jtag_device_ctx=="jsn-Zybo Z7-210351AD67FBA-23727093-0"}' command is executed.
+09:34:53 INFO  : Device configured successfully with "C:/Scanway/Vivado/ScanEye_trigger/workspace/STAR_VIBE2/_ide/bitstream/scaneye_trigger_wrapper_STAR_VIBE.bit"
+09:34:53 INFO  : Context for 'APU' is selected.
+09:34:55 INFO  : Hardware design and registers information is loaded from 'C:/Scanway/Vivado/ScanEye_trigger/workspace/scaneye_trigger_wrapper_STAR_VIBE_1/export/scaneye_trigger_wrapper_STAR_VIBE_1/hw/scaneye_trigger_wrapper_STAR_VIBE.xsa'.
+09:34:55 INFO  : 'configparams force-mem-access 1' command is executed.
+09:34:55 INFO  : Context for 'APU' is selected.
+09:34:55 INFO  : Sourcing of 'C:/Scanway/Vivado/ScanEye_trigger/workspace/STAR_VIBE2/_ide/psinit/ps7_init.tcl' is done.
+09:34:55 INFO  : 'ps7_init' command is executed.
+09:34:55 INFO  : 'ps7_post_config' command is executed.
+09:34:56 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+09:34:56 INFO  : The application 'C:/Scanway/Vivado/ScanEye_trigger/workspace/STAR_VIBE2/Debug/STAR_VIBE2.elf' is downloaded to processor 'ps7_cortexa9_0'.
+09:34:56 INFO  : 'configparams force-mem-access 0' command is executed.
+09:34:56 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351AD67FBA" && level==0 && jtag_device_ctx=="jsn-Zybo Z7-210351AD67FBA-23727093-0"}
+fpga -file C:/Scanway/Vivado/ScanEye_trigger/workspace/STAR_VIBE2/_ide/bitstream/scaneye_trigger_wrapper_STAR_VIBE.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw C:/Scanway/Vivado/ScanEye_trigger/workspace/scaneye_trigger_wrapper_STAR_VIBE_1/export/scaneye_trigger_wrapper_STAR_VIBE_1/hw/scaneye_trigger_wrapper_STAR_VIBE.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source C:/Scanway/Vivado/ScanEye_trigger/workspace/STAR_VIBE2/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow C:/Scanway/Vivado/ScanEye_trigger/workspace/STAR_VIBE2/Debug/STAR_VIBE2.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+09:35:37 INFO  : Checking for BSP changes to sync application flags for project 'STAR_VIBE2'...
+09:35:39 INFO  : Disconnected from the channel tcfchan#5.
+09:35:42 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+09:35:43 INFO  : Jtag cable 'Digilent Zybo Z7 210351AD67FBA' is selected.
+09:35:43 INFO  : 'jtag frequency' command is executed.
+09:35:43 INFO  : Context for 'APU' is selected.
+09:35:43 INFO  : System reset is completed.
+09:35:46 INFO  : 'after 3000' command is executed.
+09:35:46 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351AD67FBA" && level==0 && jtag_device_ctx=="jsn-Zybo Z7-210351AD67FBA-23727093-0"}' command is executed.
+09:35:48 INFO  : Device configured successfully with "C:/Scanway/Vivado/ScanEye_trigger/workspace/STAR_VIBE2/_ide/bitstream/scaneye_trigger_wrapper_STAR_VIBE.bit"
+09:35:48 INFO  : Context for 'APU' is selected.
+09:35:50 INFO  : Hardware design and registers information is loaded from 'C:/Scanway/Vivado/ScanEye_trigger/workspace/scaneye_trigger_wrapper_STAR_VIBE_1/export/scaneye_trigger_wrapper_STAR_VIBE_1/hw/scaneye_trigger_wrapper_STAR_VIBE.xsa'.
+09:35:50 INFO  : 'configparams force-mem-access 1' command is executed.
+09:35:50 INFO  : Context for 'APU' is selected.
+09:35:50 INFO  : Sourcing of 'C:/Scanway/Vivado/ScanEye_trigger/workspace/STAR_VIBE2/_ide/psinit/ps7_init.tcl' is done.
+09:35:51 INFO  : 'ps7_init' command is executed.
+09:35:51 INFO  : 'ps7_post_config' command is executed.
+09:35:51 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+09:35:51 INFO  : The application 'C:/Scanway/Vivado/ScanEye_trigger/workspace/STAR_VIBE2/Debug/STAR_VIBE2.elf' is downloaded to processor 'ps7_cortexa9_0'.
+09:35:51 INFO  : 'configparams force-mem-access 0' command is executed.
+09:35:51 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351AD67FBA" && level==0 && jtag_device_ctx=="jsn-Zybo Z7-210351AD67FBA-23727093-0"}
+fpga -file C:/Scanway/Vivado/ScanEye_trigger/workspace/STAR_VIBE2/_ide/bitstream/scaneye_trigger_wrapper_STAR_VIBE.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw C:/Scanway/Vivado/ScanEye_trigger/workspace/scaneye_trigger_wrapper_STAR_VIBE_1/export/scaneye_trigger_wrapper_STAR_VIBE_1/hw/scaneye_trigger_wrapper_STAR_VIBE.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source C:/Scanway/Vivado/ScanEye_trigger/workspace/STAR_VIBE2/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow C:/Scanway/Vivado/ScanEye_trigger/workspace/STAR_VIBE2/Debug/STAR_VIBE2.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+09:38:11 INFO  : Checking for BSP changes to sync application flags for project 'STAR_VIBE2'...
+09:38:15 INFO  : Disconnected from the channel tcfchan#6.
+09:38:18 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+09:38:18 INFO  : Jtag cable 'Digilent Zybo Z7 210351AD67FBA' is selected.
+09:38:18 INFO  : 'jtag frequency' command is executed.
+09:38:18 INFO  : Context for 'APU' is selected.
+09:38:18 INFO  : System reset is completed.
+09:38:21 INFO  : 'after 3000' command is executed.
+09:38:21 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351AD67FBA" && level==0 && jtag_device_ctx=="jsn-Zybo Z7-210351AD67FBA-23727093-0"}' command is executed.
+09:38:24 INFO  : Device configured successfully with "C:/Scanway/Vivado/ScanEye_trigger/workspace/STAR_VIBE2/_ide/bitstream/scaneye_trigger_wrapper_STAR_VIBE.bit"
+09:38:24 INFO  : Context for 'APU' is selected.
+09:38:26 INFO  : Hardware design and registers information is loaded from 'C:/Scanway/Vivado/ScanEye_trigger/workspace/scaneye_trigger_wrapper_STAR_VIBE_1/export/scaneye_trigger_wrapper_STAR_VIBE_1/hw/scaneye_trigger_wrapper_STAR_VIBE.xsa'.
+09:38:26 INFO  : 'configparams force-mem-access 1' command is executed.
+09:38:26 INFO  : Context for 'APU' is selected.
+09:38:26 INFO  : Sourcing of 'C:/Scanway/Vivado/ScanEye_trigger/workspace/STAR_VIBE2/_ide/psinit/ps7_init.tcl' is done.
+09:38:27 INFO  : 'ps7_init' command is executed.
+09:38:27 INFO  : 'ps7_post_config' command is executed.
+09:38:27 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+09:38:27 INFO  : The application 'C:/Scanway/Vivado/ScanEye_trigger/workspace/STAR_VIBE2/Debug/STAR_VIBE2.elf' is downloaded to processor 'ps7_cortexa9_0'.
+09:38:27 INFO  : 'configparams force-mem-access 0' command is executed.
+09:38:27 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351AD67FBA" && level==0 && jtag_device_ctx=="jsn-Zybo Z7-210351AD67FBA-23727093-0"}
+fpga -file C:/Scanway/Vivado/ScanEye_trigger/workspace/STAR_VIBE2/_ide/bitstream/scaneye_trigger_wrapper_STAR_VIBE.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw C:/Scanway/Vivado/ScanEye_trigger/workspace/scaneye_trigger_wrapper_STAR_VIBE_1/export/scaneye_trigger_wrapper_STAR_VIBE_1/hw/scaneye_trigger_wrapper_STAR_VIBE.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source C:/Scanway/Vivado/ScanEye_trigger/workspace/STAR_VIBE2/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow C:/Scanway/Vivado/ScanEye_trigger/workspace/STAR_VIBE2/Debug/STAR_VIBE2.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+09:41:33 INFO  : Checking for BSP changes to sync application flags for project 'STAR_VIBE2'...
+09:41:37 INFO  : Disconnected from the channel tcfchan#7.
+09:41:56 INFO  : Checking for BSP changes to sync application flags for project 'STAR_VIBE2'...
+09:42:03 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+09:42:04 INFO  : Jtag cable 'Digilent Zybo Z7 210351AD67FBA' is selected.
+09:42:04 INFO  : 'jtag frequency' command is executed.
+09:42:04 INFO  : Context for 'APU' is selected.
+09:42:04 INFO  : System reset is completed.
+09:42:07 INFO  : 'after 3000' command is executed.
+09:42:07 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351AD67FBA" && level==0 && jtag_device_ctx=="jsn-Zybo Z7-210351AD67FBA-23727093-0"}' command is executed.
+09:42:10 INFO  : Device configured successfully with "C:/Scanway/Vivado/ScanEye_trigger/workspace/STAR_VIBE2/_ide/bitstream/scaneye_trigger_wrapper_STAR_VIBE.bit"
+09:42:10 INFO  : Context for 'APU' is selected.
+09:42:10 INFO  : Hardware design and registers information is loaded from 'C:/Scanway/Vivado/ScanEye_trigger/workspace/scaneye_trigger_wrapper_STAR_VIBE_1/export/scaneye_trigger_wrapper_STAR_VIBE_1/hw/scaneye_trigger_wrapper_STAR_VIBE.xsa'.
+09:42:10 INFO  : 'configparams force-mem-access 1' command is executed.
+09:42:10 INFO  : Context for 'APU' is selected.
+09:42:10 INFO  : Sourcing of 'C:/Scanway/Vivado/ScanEye_trigger/workspace/STAR_VIBE2/_ide/psinit/ps7_init.tcl' is done.
+09:42:10 INFO  : 'ps7_init' command is executed.
+09:42:10 INFO  : 'ps7_post_config' command is executed.
+09:42:10 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+09:42:11 INFO  : The application 'C:/Scanway/Vivado/ScanEye_trigger/workspace/STAR_VIBE2/Debug/STAR_VIBE2.elf' is downloaded to processor 'ps7_cortexa9_0'.
+09:42:11 INFO  : 'configparams force-mem-access 0' command is executed.
+09:42:11 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351AD67FBA" && level==0 && jtag_device_ctx=="jsn-Zybo Z7-210351AD67FBA-23727093-0"}
+fpga -file C:/Scanway/Vivado/ScanEye_trigger/workspace/STAR_VIBE2/_ide/bitstream/scaneye_trigger_wrapper_STAR_VIBE.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw C:/Scanway/Vivado/ScanEye_trigger/workspace/scaneye_trigger_wrapper_STAR_VIBE_1/export/scaneye_trigger_wrapper_STAR_VIBE_1/hw/scaneye_trigger_wrapper_STAR_VIBE.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source C:/Scanway/Vivado/ScanEye_trigger/workspace/STAR_VIBE2/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow C:/Scanway/Vivado/ScanEye_trigger/workspace/STAR_VIBE2/Debug/STAR_VIBE2.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+09:42:58 INFO  : Checking for BSP changes to sync application flags for project 'STAR_VIBE2'...
+09:44:01 INFO  : Checking for BSP changes to sync application flags for project 'STAR_VIBE2'...
+09:44:03 INFO  : Disconnected from the channel tcfchan#8.
+09:44:10 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+09:44:10 INFO  : Jtag cable 'Digilent Zybo Z7 210351AD67FBA' is selected.
+09:44:10 INFO  : 'jtag frequency' command is executed.
+09:44:10 INFO  : Context for 'APU' is selected.
+09:44:11 INFO  : System reset is completed.
+09:44:14 INFO  : 'after 3000' command is executed.
+09:44:14 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351AD67FBA" && level==0 && jtag_device_ctx=="jsn-Zybo Z7-210351AD67FBA-23727093-0"}' command is executed.
+09:44:16 INFO  : Device configured successfully with "C:/Scanway/Vivado/ScanEye_trigger/workspace/STAR_VIBE2/_ide/bitstream/scaneye_trigger_wrapper_STAR_VIBE.bit"
+09:44:16 INFO  : Context for 'APU' is selected.
+09:44:18 INFO  : Hardware design and registers information is loaded from 'C:/Scanway/Vivado/ScanEye_trigger/workspace/scaneye_trigger_wrapper_STAR_VIBE_1/export/scaneye_trigger_wrapper_STAR_VIBE_1/hw/scaneye_trigger_wrapper_STAR_VIBE.xsa'.
+09:44:18 INFO  : 'configparams force-mem-access 1' command is executed.
+09:44:18 INFO  : Context for 'APU' is selected.
+09:44:18 INFO  : Sourcing of 'C:/Scanway/Vivado/ScanEye_trigger/workspace/STAR_VIBE2/_ide/psinit/ps7_init.tcl' is done.
+09:44:19 INFO  : 'ps7_init' command is executed.
+09:44:19 INFO  : 'ps7_post_config' command is executed.
+09:44:19 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+09:44:19 INFO  : The application 'C:/Scanway/Vivado/ScanEye_trigger/workspace/STAR_VIBE2/Debug/STAR_VIBE2.elf' is downloaded to processor 'ps7_cortexa9_0'.
+09:44:19 INFO  : 'configparams force-mem-access 0' command is executed.
+09:44:19 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351AD67FBA" && level==0 && jtag_device_ctx=="jsn-Zybo Z7-210351AD67FBA-23727093-0"}
+fpga -file C:/Scanway/Vivado/ScanEye_trigger/workspace/STAR_VIBE2/_ide/bitstream/scaneye_trigger_wrapper_STAR_VIBE.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw C:/Scanway/Vivado/ScanEye_trigger/workspace/scaneye_trigger_wrapper_STAR_VIBE_1/export/scaneye_trigger_wrapper_STAR_VIBE_1/hw/scaneye_trigger_wrapper_STAR_VIBE.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source C:/Scanway/Vivado/ScanEye_trigger/workspace/STAR_VIBE2/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow C:/Scanway/Vivado/ScanEye_trigger/workspace/STAR_VIBE2/Debug/STAR_VIBE2.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+09:45:54 INFO  : Checking for BSP changes to sync application flags for project 'STAR_VIBE2'...
+09:45:58 INFO  : Disconnected from the channel tcfchan#9.
+09:46:01 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+09:46:01 INFO  : Jtag cable 'Digilent Zybo Z7 210351AD67FBA' is selected.
+09:46:01 INFO  : 'jtag frequency' command is executed.
+09:46:01 INFO  : Context for 'APU' is selected.
+09:46:01 INFO  : System reset is completed.
+09:46:04 INFO  : 'after 3000' command is executed.
+09:46:04 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351AD67FBA" && level==0 && jtag_device_ctx=="jsn-Zybo Z7-210351AD67FBA-23727093-0"}' command is executed.
+09:46:07 INFO  : Device configured successfully with "C:/Scanway/Vivado/ScanEye_trigger/workspace/STAR_VIBE2/_ide/bitstream/scaneye_trigger_wrapper_STAR_VIBE.bit"
+09:46:07 INFO  : Context for 'APU' is selected.
+09:46:09 INFO  : Hardware design and registers information is loaded from 'C:/Scanway/Vivado/ScanEye_trigger/workspace/scaneye_trigger_wrapper_STAR_VIBE_1/export/scaneye_trigger_wrapper_STAR_VIBE_1/hw/scaneye_trigger_wrapper_STAR_VIBE.xsa'.
+09:46:09 INFO  : 'configparams force-mem-access 1' command is executed.
+09:46:09 INFO  : Context for 'APU' is selected.
+09:46:09 INFO  : Sourcing of 'C:/Scanway/Vivado/ScanEye_trigger/workspace/STAR_VIBE2/_ide/psinit/ps7_init.tcl' is done.
+09:46:09 INFO  : 'ps7_init' command is executed.
+09:46:09 INFO  : 'ps7_post_config' command is executed.
+09:46:09 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+09:46:10 INFO  : The application 'C:/Scanway/Vivado/ScanEye_trigger/workspace/STAR_VIBE2/Debug/STAR_VIBE2.elf' is downloaded to processor 'ps7_cortexa9_0'.
+09:46:10 INFO  : 'configparams force-mem-access 0' command is executed.
+09:46:10 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351AD67FBA" && level==0 && jtag_device_ctx=="jsn-Zybo Z7-210351AD67FBA-23727093-0"}
+fpga -file C:/Scanway/Vivado/ScanEye_trigger/workspace/STAR_VIBE2/_ide/bitstream/scaneye_trigger_wrapper_STAR_VIBE.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw C:/Scanway/Vivado/ScanEye_trigger/workspace/scaneye_trigger_wrapper_STAR_VIBE_1/export/scaneye_trigger_wrapper_STAR_VIBE_1/hw/scaneye_trigger_wrapper_STAR_VIBE.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source C:/Scanway/Vivado/ScanEye_trigger/workspace/STAR_VIBE2/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow C:/Scanway/Vivado/ScanEye_trigger/workspace/STAR_VIBE2/Debug/STAR_VIBE2.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+09:55:46 INFO  : Checking for BSP changes to sync application flags for project 'STAR_VIBE2'...
+09:55:52 INFO  : Disconnected from the channel tcfchan#10.
+09:55:55 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+09:55:56 INFO  : Jtag cable 'Digilent Zybo Z7 210351AD67FBA' is selected.
+09:55:56 INFO  : 'jtag frequency' command is executed.
+09:55:56 INFO  : Context for 'APU' is selected.
+09:55:56 INFO  : System reset is completed.
+09:55:59 INFO  : 'after 3000' command is executed.
+09:55:59 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351AD67FBA" && level==0 && jtag_device_ctx=="jsn-Zybo Z7-210351AD67FBA-23727093-0"}' command is executed.
+09:56:01 INFO  : Device configured successfully with "C:/Scanway/Vivado/ScanEye_trigger/workspace/STAR_VIBE2/_ide/bitstream/scaneye_trigger_wrapper_STAR_VIBE.bit"
+09:56:01 INFO  : Context for 'APU' is selected.
+09:56:04 INFO  : Hardware design and registers information is loaded from 'C:/Scanway/Vivado/ScanEye_trigger/workspace/scaneye_trigger_wrapper_STAR_VIBE_1/export/scaneye_trigger_wrapper_STAR_VIBE_1/hw/scaneye_trigger_wrapper_STAR_VIBE.xsa'.
+09:56:04 INFO  : 'configparams force-mem-access 1' command is executed.
+09:56:04 INFO  : Context for 'APU' is selected.
+09:56:04 INFO  : Sourcing of 'C:/Scanway/Vivado/ScanEye_trigger/workspace/STAR_VIBE2/_ide/psinit/ps7_init.tcl' is done.
+09:56:04 INFO  : 'ps7_init' command is executed.
+09:56:04 INFO  : 'ps7_post_config' command is executed.
+09:56:04 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+09:56:05 INFO  : The application 'C:/Scanway/Vivado/ScanEye_trigger/workspace/STAR_VIBE2/Debug/STAR_VIBE2.elf' is downloaded to processor 'ps7_cortexa9_0'.
+09:56:05 INFO  : 'configparams force-mem-access 0' command is executed.
+09:56:05 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351AD67FBA" && level==0 && jtag_device_ctx=="jsn-Zybo Z7-210351AD67FBA-23727093-0"}
+fpga -file C:/Scanway/Vivado/ScanEye_trigger/workspace/STAR_VIBE2/_ide/bitstream/scaneye_trigger_wrapper_STAR_VIBE.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw C:/Scanway/Vivado/ScanEye_trigger/workspace/scaneye_trigger_wrapper_STAR_VIBE_1/export/scaneye_trigger_wrapper_STAR_VIBE_1/hw/scaneye_trigger_wrapper_STAR_VIBE.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source C:/Scanway/Vivado/ScanEye_trigger/workspace/STAR_VIBE2/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow C:/Scanway/Vivado/ScanEye_trigger/workspace/STAR_VIBE2/Debug/STAR_VIBE2.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+10:08:27 INFO  : Checking for BSP changes to sync application flags for project 'STAR_VIBE2'...
+10:08:42 INFO  : Checking for BSP changes to sync application flags for project 'STAR_VIBE2'...
+10:08:53 INFO  : Disconnected from the channel tcfchan#11.
+10:08:56 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+10:08:57 INFO  : Jtag cable 'Digilent Zybo Z7 210351AD67FBA' is selected.
+10:08:57 INFO  : 'jtag frequency' command is executed.
+10:08:57 INFO  : Context for 'APU' is selected.
+10:08:57 INFO  : System reset is completed.
+10:09:00 INFO  : 'after 3000' command is executed.
+10:09:00 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351AD67FBA" && level==0 && jtag_device_ctx=="jsn-Zybo Z7-210351AD67FBA-23727093-0"}' command is executed.
+10:09:02 INFO  : Device configured successfully with "C:/Scanway/Vivado/ScanEye_trigger/workspace/STAR_VIBE2/_ide/bitstream/scaneye_trigger_wrapper_STAR_VIBE.bit"
+10:09:02 INFO  : Context for 'APU' is selected.
+10:09:04 INFO  : Hardware design and registers information is loaded from 'C:/Scanway/Vivado/ScanEye_trigger/workspace/scaneye_trigger_wrapper_STAR_VIBE_1/export/scaneye_trigger_wrapper_STAR_VIBE_1/hw/scaneye_trigger_wrapper_STAR_VIBE.xsa'.
+10:09:04 INFO  : 'configparams force-mem-access 1' command is executed.
+10:09:04 INFO  : Context for 'APU' is selected.
+10:09:04 INFO  : Sourcing of 'C:/Scanway/Vivado/ScanEye_trigger/workspace/STAR_VIBE2/_ide/psinit/ps7_init.tcl' is done.
+10:09:04 INFO  : 'ps7_init' command is executed.
+10:09:04 INFO  : 'ps7_post_config' command is executed.
+10:09:04 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+10:09:05 INFO  : The application 'C:/Scanway/Vivado/ScanEye_trigger/workspace/STAR_VIBE2/Debug/STAR_VIBE2.elf' is downloaded to processor 'ps7_cortexa9_0'.
+10:09:05 INFO  : 'configparams force-mem-access 0' command is executed.
+10:09:05 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351AD67FBA" && level==0 && jtag_device_ctx=="jsn-Zybo Z7-210351AD67FBA-23727093-0"}
+fpga -file C:/Scanway/Vivado/ScanEye_trigger/workspace/STAR_VIBE2/_ide/bitstream/scaneye_trigger_wrapper_STAR_VIBE.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw C:/Scanway/Vivado/ScanEye_trigger/workspace/scaneye_trigger_wrapper_STAR_VIBE_1/export/scaneye_trigger_wrapper_STAR_VIBE_1/hw/scaneye_trigger_wrapper_STAR_VIBE.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source C:/Scanway/Vivado/ScanEye_trigger/workspace/STAR_VIBE2/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow C:/Scanway/Vivado/ScanEye_trigger/workspace/STAR_VIBE2/Debug/STAR_VIBE2.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+10:23:50 INFO  : Checking for BSP changes to sync application flags for project 'STAR_VIBE2'...
+10:24:44 INFO  : Checking for BSP changes to sync application flags for project 'STAR_VIBE2'...
+10:31:47 INFO  : Checking for BSP changes to sync application flags for project 'STAR_VIBE2'...
+10:31:49 INFO  : Disconnected from the channel tcfchan#12.
+10:31:52 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+10:31:53 INFO  : Jtag cable 'Digilent Zybo Z7 210351AD67FBA' is selected.
+10:31:53 INFO  : 'jtag frequency' command is executed.
+10:31:53 INFO  : Context for 'APU' is selected.
+10:31:53 INFO  : System reset is completed.
+10:31:56 INFO  : 'after 3000' command is executed.
+10:31:56 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351AD67FBA" && level==0 && jtag_device_ctx=="jsn-Zybo Z7-210351AD67FBA-23727093-0"}' command is executed.
+10:31:58 INFO  : Device configured successfully with "C:/Scanway/Vivado/ScanEye_trigger/workspace/STAR_VIBE2/_ide/bitstream/scaneye_trigger_wrapper_STAR_VIBE.bit"
+10:31:58 INFO  : Context for 'APU' is selected.
+10:32:00 INFO  : Hardware design and registers information is loaded from 'C:/Scanway/Vivado/ScanEye_trigger/workspace/scaneye_trigger_wrapper_STAR_VIBE_1/export/scaneye_trigger_wrapper_STAR_VIBE_1/hw/scaneye_trigger_wrapper_STAR_VIBE.xsa'.
+10:32:00 INFO  : 'configparams force-mem-access 1' command is executed.
+10:32:00 INFO  : Context for 'APU' is selected.
+10:32:00 INFO  : Sourcing of 'C:/Scanway/Vivado/ScanEye_trigger/workspace/STAR_VIBE2/_ide/psinit/ps7_init.tcl' is done.
+10:32:00 INFO  : 'ps7_init' command is executed.
+10:32:00 INFO  : 'ps7_post_config' command is executed.
+10:32:00 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+10:32:01 INFO  : The application 'C:/Scanway/Vivado/ScanEye_trigger/workspace/STAR_VIBE2/Debug/STAR_VIBE2.elf' is downloaded to processor 'ps7_cortexa9_0'.
+10:32:01 INFO  : 'configparams force-mem-access 0' command is executed.
+10:32:01 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351AD67FBA" && level==0 && jtag_device_ctx=="jsn-Zybo Z7-210351AD67FBA-23727093-0"}
+fpga -file C:/Scanway/Vivado/ScanEye_trigger/workspace/STAR_VIBE2/_ide/bitstream/scaneye_trigger_wrapper_STAR_VIBE.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw C:/Scanway/Vivado/ScanEye_trigger/workspace/scaneye_trigger_wrapper_STAR_VIBE_1/export/scaneye_trigger_wrapper_STAR_VIBE_1/hw/scaneye_trigger_wrapper_STAR_VIBE.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source C:/Scanway/Vivado/ScanEye_trigger/workspace/STAR_VIBE2/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow C:/Scanway/Vivado/ScanEye_trigger/workspace/STAR_VIBE2/Debug/STAR_VIBE2.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+11:04:51 INFO  : Checking for BSP changes to sync application flags for project 'STAR_VIBE2'...
+11:05:25 INFO  : Checking for BSP changes to sync application flags for project 'STAR_VIBE2'...
+11:06:02 INFO  : Checking for BSP changes to sync application flags for project 'STAR_VIBE2'...
+11:06:17 INFO  : Checking for BSP changes to sync application flags for project 'STAR_VIBE2'...
+11:07:07 INFO  : Checking for BSP changes to sync application flags for project 'STAR_VIBE2'...
+11:08:33 INFO  : Checking for BSP changes to sync application flags for project 'STAR_VIBE2'...
+11:08:41 INFO  : Checking for BSP changes to sync application flags for project 'STAR_VIBE2'...
+11:09:12 INFO  : Checking for BSP changes to sync application flags for project 'STAR_VIBE2'...
+11:09:21 INFO  : Checking for BSP changes to sync application flags for project 'STAR_VIBE2'...
+11:09:33 INFO  : Checking for BSP changes to sync application flags for project 'STAR_VIBE2'...
+11:09:45 INFO  : Checking for BSP changes to sync application flags for project 'STAR_VIBE2'...
+11:10:09 INFO  : Checking for BSP changes to sync application flags for project 'STAR_VIBE2'...
+11:10:30 INFO  : Checking for BSP changes to sync application flags for project 'STAR_VIBE2'...
+11:10:32 INFO  : Disconnected from the channel tcfchan#13.
+11:10:35 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+11:10:35 INFO  : Jtag cable 'Digilent Zybo Z7 210351AD67FBA' is selected.
+11:10:35 INFO  : 'jtag frequency' command is executed.
+11:10:35 INFO  : Context for 'APU' is selected.
+11:10:35 INFO  : System reset is completed.
+11:10:38 INFO  : 'after 3000' command is executed.
+11:10:38 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351AD67FBA" && level==0 && jtag_device_ctx=="jsn-Zybo Z7-210351AD67FBA-23727093-0"}' command is executed.
+11:10:41 INFO  : Device configured successfully with "C:/Scanway/Vivado/ScanEye_trigger/workspace/STAR_VIBE2/_ide/bitstream/scaneye_trigger_wrapper_STAR_VIBE.bit"
+11:10:41 INFO  : Context for 'APU' is selected.
+11:10:43 INFO  : Hardware design and registers information is loaded from 'C:/Scanway/Vivado/ScanEye_trigger/workspace/scaneye_trigger_wrapper_STAR_VIBE_1/export/scaneye_trigger_wrapper_STAR_VIBE_1/hw/scaneye_trigger_wrapper_STAR_VIBE.xsa'.
+11:10:43 INFO  : 'configparams force-mem-access 1' command is executed.
+11:10:43 INFO  : Context for 'APU' is selected.
+11:10:43 INFO  : Sourcing of 'C:/Scanway/Vivado/ScanEye_trigger/workspace/STAR_VIBE2/_ide/psinit/ps7_init.tcl' is done.
+11:10:43 INFO  : 'ps7_init' command is executed.
+11:10:43 INFO  : 'ps7_post_config' command is executed.
+11:10:43 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+11:10:43 INFO  : The application 'C:/Scanway/Vivado/ScanEye_trigger/workspace/STAR_VIBE2/Debug/STAR_VIBE2.elf' is downloaded to processor 'ps7_cortexa9_0'.
+11:10:43 INFO  : 'configparams force-mem-access 0' command is executed.
+11:10:43 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351AD67FBA" && level==0 && jtag_device_ctx=="jsn-Zybo Z7-210351AD67FBA-23727093-0"}
+fpga -file C:/Scanway/Vivado/ScanEye_trigger/workspace/STAR_VIBE2/_ide/bitstream/scaneye_trigger_wrapper_STAR_VIBE.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw C:/Scanway/Vivado/ScanEye_trigger/workspace/scaneye_trigger_wrapper_STAR_VIBE_1/export/scaneye_trigger_wrapper_STAR_VIBE_1/hw/scaneye_trigger_wrapper_STAR_VIBE.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source C:/Scanway/Vivado/ScanEye_trigger/workspace/STAR_VIBE2/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow C:/Scanway/Vivado/ScanEye_trigger/workspace/STAR_VIBE2/Debug/STAR_VIBE2.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+11:12:29 INFO  : Checking for BSP changes to sync application flags for project 'STAR_VIBE2'...
+11:12:31 INFO  : Disconnected from the channel tcfchan#14.
+11:12:36 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+11:12:36 INFO  : Jtag cable 'Digilent Zybo Z7 210351AD67FBA' is selected.
+11:12:36 INFO  : 'jtag frequency' command is executed.
+11:12:36 INFO  : Context for 'APU' is selected.
+11:12:36 INFO  : System reset is completed.
+11:12:39 INFO  : 'after 3000' command is executed.
+11:12:39 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351AD67FBA" && level==0 && jtag_device_ctx=="jsn-Zybo Z7-210351AD67FBA-23727093-0"}' command is executed.
+11:12:41 INFO  : Device configured successfully with "C:/Scanway/Vivado/ScanEye_trigger/workspace/STAR_VIBE2/_ide/bitstream/scaneye_trigger_wrapper_STAR_VIBE.bit"
+11:12:42 INFO  : Context for 'APU' is selected.
+11:12:43 INFO  : Hardware design and registers information is loaded from 'C:/Scanway/Vivado/ScanEye_trigger/workspace/scaneye_trigger_wrapper_STAR_VIBE_1/export/scaneye_trigger_wrapper_STAR_VIBE_1/hw/scaneye_trigger_wrapper_STAR_VIBE.xsa'.
+11:12:43 INFO  : 'configparams force-mem-access 1' command is executed.
+11:12:43 INFO  : Context for 'APU' is selected.
+11:12:43 INFO  : Sourcing of 'C:/Scanway/Vivado/ScanEye_trigger/workspace/STAR_VIBE2/_ide/psinit/ps7_init.tcl' is done.
+11:12:44 INFO  : 'ps7_init' command is executed.
+11:12:44 INFO  : 'ps7_post_config' command is executed.
+11:12:44 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+11:12:44 INFO  : The application 'C:/Scanway/Vivado/ScanEye_trigger/workspace/STAR_VIBE2/Debug/STAR_VIBE2.elf' is downloaded to processor 'ps7_cortexa9_0'.
+11:12:44 INFO  : 'configparams force-mem-access 0' command is executed.
+11:12:44 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351AD67FBA" && level==0 && jtag_device_ctx=="jsn-Zybo Z7-210351AD67FBA-23727093-0"}
+fpga -file C:/Scanway/Vivado/ScanEye_trigger/workspace/STAR_VIBE2/_ide/bitstream/scaneye_trigger_wrapper_STAR_VIBE.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw C:/Scanway/Vivado/ScanEye_trigger/workspace/scaneye_trigger_wrapper_STAR_VIBE_1/export/scaneye_trigger_wrapper_STAR_VIBE_1/hw/scaneye_trigger_wrapper_STAR_VIBE.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source C:/Scanway/Vivado/ScanEye_trigger/workspace/STAR_VIBE2/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow C:/Scanway/Vivado/ScanEye_trigger/workspace/STAR_VIBE2/Debug/STAR_VIBE2.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+11:16:35 INFO  : Checking for BSP changes to sync application flags for project 'STAR_VIBE2'...
+11:16:38 INFO  : Disconnected from the channel tcfchan#15.
+11:16:41 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+11:16:41 INFO  : Jtag cable 'Digilent Zybo Z7 210351AD67FBA' is selected.
+11:16:41 INFO  : 'jtag frequency' command is executed.
+11:16:41 INFO  : Context for 'APU' is selected.
+11:16:41 INFO  : System reset is completed.
+11:16:44 INFO  : 'after 3000' command is executed.
+11:16:44 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351AD67FBA" && level==0 && jtag_device_ctx=="jsn-Zybo Z7-210351AD67FBA-23727093-0"}' command is executed.
+11:16:46 INFO  : Device configured successfully with "C:/Scanway/Vivado/ScanEye_trigger/workspace/STAR_VIBE2/_ide/bitstream/scaneye_trigger_wrapper_STAR_VIBE.bit"
+11:16:47 INFO  : Context for 'APU' is selected.
+11:16:48 INFO  : Hardware design and registers information is loaded from 'C:/Scanway/Vivado/ScanEye_trigger/workspace/scaneye_trigger_wrapper_STAR_VIBE_1/export/scaneye_trigger_wrapper_STAR_VIBE_1/hw/scaneye_trigger_wrapper_STAR_VIBE.xsa'.
+11:16:48 INFO  : 'configparams force-mem-access 1' command is executed.
+11:16:48 INFO  : Context for 'APU' is selected.
+11:16:48 INFO  : Sourcing of 'C:/Scanway/Vivado/ScanEye_trigger/workspace/STAR_VIBE2/_ide/psinit/ps7_init.tcl' is done.
+11:16:48 INFO  : 'ps7_init' command is executed.
+11:16:48 INFO  : 'ps7_post_config' command is executed.
+11:16:48 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+11:16:49 INFO  : The application 'C:/Scanway/Vivado/ScanEye_trigger/workspace/STAR_VIBE2/Debug/STAR_VIBE2.elf' is downloaded to processor 'ps7_cortexa9_0'.
+11:16:49 INFO  : 'configparams force-mem-access 0' command is executed.
+11:16:49 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351AD67FBA" && level==0 && jtag_device_ctx=="jsn-Zybo Z7-210351AD67FBA-23727093-0"}
+fpga -file C:/Scanway/Vivado/ScanEye_trigger/workspace/STAR_VIBE2/_ide/bitstream/scaneye_trigger_wrapper_STAR_VIBE.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw C:/Scanway/Vivado/ScanEye_trigger/workspace/scaneye_trigger_wrapper_STAR_VIBE_1/export/scaneye_trigger_wrapper_STAR_VIBE_1/hw/scaneye_trigger_wrapper_STAR_VIBE.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source C:/Scanway/Vivado/ScanEye_trigger/workspace/STAR_VIBE2/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow C:/Scanway/Vivado/ScanEye_trigger/workspace/STAR_VIBE2/Debug/STAR_VIBE2.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+11:23:27 INFO  : Checking for BSP changes to sync application flags for project 'STAR_VIBE2'...
+11:23:37 INFO  : Checking for BSP changes to sync application flags for project 'STAR_VIBE2'...
+11:24:02 INFO  : Checking for BSP changes to sync application flags for project 'STAR_VIBE2'...
+11:24:32 INFO  : Checking for BSP changes to sync application flags for project 'STAR_VIBE2'...
+11:32:56 INFO  : Checking for BSP changes to sync application flags for project 'STAR_VIBE2'...
+11:36:36 INFO  : Checking for BSP changes to sync application flags for project 'STAR_VIBE2'...
+11:37:59 INFO  : Checking for BSP changes to sync application flags for project 'STAR_VIBE2'...
+11:38:12 INFO  : Checking for BSP changes to sync application flags for project 'STAR_VIBE2'...
+11:38:34 INFO  : Checking for BSP changes to sync application flags for project 'STAR_VIBE2'...
+11:38:37 INFO  : Disconnected from the channel tcfchan#16.
+11:38:41 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+11:38:41 INFO  : Jtag cable 'Digilent Zybo Z7 210351AD67FBA' is selected.
+11:38:41 INFO  : 'jtag frequency' command is executed.
+11:38:41 INFO  : Context for 'APU' is selected.
+11:38:41 INFO  : System reset is completed.
+11:38:44 INFO  : 'after 3000' command is executed.
+11:38:44 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351AD67FBA" && level==0 && jtag_device_ctx=="jsn-Zybo Z7-210351AD67FBA-23727093-0"}' command is executed.
+11:38:47 INFO  : Device configured successfully with "C:/Scanway/Vivado/ScanEye_trigger/workspace/STAR_VIBE2/_ide/bitstream/scaneye_trigger_wrapper_STAR_VIBE.bit"
+11:38:47 INFO  : Context for 'APU' is selected.
+11:38:49 INFO  : Hardware design and registers information is loaded from 'C:/Scanway/Vivado/ScanEye_trigger/workspace/scaneye_trigger_wrapper_STAR_VIBE_1/export/scaneye_trigger_wrapper_STAR_VIBE_1/hw/scaneye_trigger_wrapper_STAR_VIBE.xsa'.
+11:38:49 INFO  : 'configparams force-mem-access 1' command is executed.
+11:38:49 INFO  : Context for 'APU' is selected.
+11:38:49 INFO  : Sourcing of 'C:/Scanway/Vivado/ScanEye_trigger/workspace/STAR_VIBE2/_ide/psinit/ps7_init.tcl' is done.
+11:38:49 INFO  : 'ps7_init' command is executed.
+11:38:49 INFO  : 'ps7_post_config' command is executed.
+11:38:49 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+11:38:49 INFO  : The application 'C:/Scanway/Vivado/ScanEye_trigger/workspace/STAR_VIBE2/Debug/STAR_VIBE2.elf' is downloaded to processor 'ps7_cortexa9_0'.
+11:38:49 INFO  : 'configparams force-mem-access 0' command is executed.
+11:38:49 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351AD67FBA" && level==0 && jtag_device_ctx=="jsn-Zybo Z7-210351AD67FBA-23727093-0"}
+fpga -file C:/Scanway/Vivado/ScanEye_trigger/workspace/STAR_VIBE2/_ide/bitstream/scaneye_trigger_wrapper_STAR_VIBE.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw C:/Scanway/Vivado/ScanEye_trigger/workspace/scaneye_trigger_wrapper_STAR_VIBE_1/export/scaneye_trigger_wrapper_STAR_VIBE_1/hw/scaneye_trigger_wrapper_STAR_VIBE.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source C:/Scanway/Vivado/ScanEye_trigger/workspace/STAR_VIBE2/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow C:/Scanway/Vivado/ScanEye_trigger/workspace/STAR_VIBE2/Debug/STAR_VIBE2.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+11:40:49 INFO  : Checking for BSP changes to sync application flags for project 'STAR_VIBE2'...
+11:41:07 INFO  : Checking for BSP changes to sync application flags for project 'STAR_VIBE2'...
+11:41:10 INFO  : Disconnected from the channel tcfchan#17.
+11:41:13 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+11:41:13 INFO  : Jtag cable 'Digilent Zybo Z7 210351AD67FBA' is selected.
+11:41:13 INFO  : 'jtag frequency' command is executed.
+11:41:13 INFO  : Context for 'APU' is selected.
+11:41:13 INFO  : System reset is completed.
+11:41:16 INFO  : 'after 3000' command is executed.
+11:41:16 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351AD67FBA" && level==0 && jtag_device_ctx=="jsn-Zybo Z7-210351AD67FBA-23727093-0"}' command is executed.
+11:41:19 INFO  : Device configured successfully with "C:/Scanway/Vivado/ScanEye_trigger/workspace/STAR_VIBE2/_ide/bitstream/scaneye_trigger_wrapper_STAR_VIBE.bit"
+11:41:19 INFO  : Context for 'APU' is selected.
+11:41:20 INFO  : Hardware design and registers information is loaded from 'C:/Scanway/Vivado/ScanEye_trigger/workspace/scaneye_trigger_wrapper_STAR_VIBE_1/export/scaneye_trigger_wrapper_STAR_VIBE_1/hw/scaneye_trigger_wrapper_STAR_VIBE.xsa'.
+11:41:20 INFO  : 'configparams force-mem-access 1' command is executed.
+11:41:20 INFO  : Context for 'APU' is selected.
+11:41:20 INFO  : Sourcing of 'C:/Scanway/Vivado/ScanEye_trigger/workspace/STAR_VIBE2/_ide/psinit/ps7_init.tcl' is done.
+11:41:21 INFO  : 'ps7_init' command is executed.
+11:41:21 INFO  : 'ps7_post_config' command is executed.
+11:41:21 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+11:41:21 INFO  : The application 'C:/Scanway/Vivado/ScanEye_trigger/workspace/STAR_VIBE2/Debug/STAR_VIBE2.elf' is downloaded to processor 'ps7_cortexa9_0'.
+11:41:21 INFO  : 'configparams force-mem-access 0' command is executed.
+11:41:21 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351AD67FBA" && level==0 && jtag_device_ctx=="jsn-Zybo Z7-210351AD67FBA-23727093-0"}
+fpga -file C:/Scanway/Vivado/ScanEye_trigger/workspace/STAR_VIBE2/_ide/bitstream/scaneye_trigger_wrapper_STAR_VIBE.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw C:/Scanway/Vivado/ScanEye_trigger/workspace/scaneye_trigger_wrapper_STAR_VIBE_1/export/scaneye_trigger_wrapper_STAR_VIBE_1/hw/scaneye_trigger_wrapper_STAR_VIBE.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source C:/Scanway/Vivado/ScanEye_trigger/workspace/STAR_VIBE2/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow C:/Scanway/Vivado/ScanEye_trigger/workspace/STAR_VIBE2/Debug/STAR_VIBE2.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+12:01:09 INFO  : Checking for BSP changes to sync application flags for project 'STAR_VIBE2'...
+12:01:11 INFO  : Disconnected from the channel tcfchan#18.
+12:01:14 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+12:01:14 INFO  : Jtag cable 'Digilent Zybo Z7 210351AD67FBA' is selected.
+12:01:14 INFO  : 'jtag frequency' command is executed.
+12:01:14 INFO  : Context for 'APU' is selected.
+12:01:14 INFO  : System reset is completed.
+12:01:17 INFO  : 'after 3000' command is executed.
+12:01:18 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351AD67FBA" && level==0 && jtag_device_ctx=="jsn-Zybo Z7-210351AD67FBA-23727093-0"}' command is executed.
+12:01:20 INFO  : Device configured successfully with "C:/Scanway/Vivado/ScanEye_trigger/workspace/STAR_VIBE2/_ide/bitstream/scaneye_trigger_wrapper_STAR_VIBE.bit"
+12:01:20 INFO  : Context for 'APU' is selected.
+12:01:22 INFO  : Hardware design and registers information is loaded from 'C:/Scanway/Vivado/ScanEye_trigger/workspace/scaneye_trigger_wrapper_STAR_VIBE_1/export/scaneye_trigger_wrapper_STAR_VIBE_1/hw/scaneye_trigger_wrapper_STAR_VIBE.xsa'.
+12:01:22 INFO  : 'configparams force-mem-access 1' command is executed.
+12:01:22 INFO  : Context for 'APU' is selected.
+12:01:22 INFO  : Sourcing of 'C:/Scanway/Vivado/ScanEye_trigger/workspace/STAR_VIBE2/_ide/psinit/ps7_init.tcl' is done.
+12:01:23 INFO  : 'ps7_init' command is executed.
+12:01:23 INFO  : 'ps7_post_config' command is executed.
+12:01:23 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+12:01:23 INFO  : The application 'C:/Scanway/Vivado/ScanEye_trigger/workspace/STAR_VIBE2/Debug/STAR_VIBE2.elf' is downloaded to processor 'ps7_cortexa9_0'.
+12:01:23 INFO  : 'configparams force-mem-access 0' command is executed.
+12:01:23 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351AD67FBA" && level==0 && jtag_device_ctx=="jsn-Zybo Z7-210351AD67FBA-23727093-0"}
+fpga -file C:/Scanway/Vivado/ScanEye_trigger/workspace/STAR_VIBE2/_ide/bitstream/scaneye_trigger_wrapper_STAR_VIBE.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw C:/Scanway/Vivado/ScanEye_trigger/workspace/scaneye_trigger_wrapper_STAR_VIBE_1/export/scaneye_trigger_wrapper_STAR_VIBE_1/hw/scaneye_trigger_wrapper_STAR_VIBE.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source C:/Scanway/Vivado/ScanEye_trigger/workspace/STAR_VIBE2/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow C:/Scanway/Vivado/ScanEye_trigger/workspace/STAR_VIBE2/Debug/STAR_VIBE2.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+12:18:26 INFO  : Checking for BSP changes to sync application flags for project 'STAR_VIBE2'...
+12:19:31 INFO  : Checking for BSP changes to sync application flags for project 'STAR_VIBE2'...
+12:19:33 INFO  : Disconnected from the channel tcfchan#19.
+12:19:36 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+12:19:36 INFO  : Jtag cable 'Digilent Zybo Z7 210351AD67FBA' is selected.
+12:19:36 INFO  : 'jtag frequency' command is executed.
+12:19:36 INFO  : Context for 'APU' is selected.
+12:19:36 INFO  : System reset is completed.
+12:19:40 INFO  : 'after 3000' command is executed.
+12:19:40 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351AD67FBA" && level==0 && jtag_device_ctx=="jsn-Zybo Z7-210351AD67FBA-23727093-0"}' command is executed.
+12:19:42 INFO  : Device configured successfully with "C:/Scanway/Vivado/ScanEye_trigger/workspace/STAR_VIBE2/_ide/bitstream/scaneye_trigger_wrapper_STAR_VIBE.bit"
+12:19:42 INFO  : Context for 'APU' is selected.
+12:19:44 INFO  : Hardware design and registers information is loaded from 'C:/Scanway/Vivado/ScanEye_trigger/workspace/scaneye_trigger_wrapper_STAR_VIBE_1/export/scaneye_trigger_wrapper_STAR_VIBE_1/hw/scaneye_trigger_wrapper_STAR_VIBE.xsa'.
+12:19:44 INFO  : 'configparams force-mem-access 1' command is executed.
+12:19:44 INFO  : Context for 'APU' is selected.
+12:19:44 INFO  : Sourcing of 'C:/Scanway/Vivado/ScanEye_trigger/workspace/STAR_VIBE2/_ide/psinit/ps7_init.tcl' is done.
+12:19:44 INFO  : 'ps7_init' command is executed.
+12:19:44 INFO  : 'ps7_post_config' command is executed.
+12:19:44 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+12:19:45 INFO  : The application 'C:/Scanway/Vivado/ScanEye_trigger/workspace/STAR_VIBE2/Debug/STAR_VIBE2.elf' is downloaded to processor 'ps7_cortexa9_0'.
+12:19:45 INFO  : 'configparams force-mem-access 0' command is executed.
+12:19:45 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351AD67FBA" && level==0 && jtag_device_ctx=="jsn-Zybo Z7-210351AD67FBA-23727093-0"}
+fpga -file C:/Scanway/Vivado/ScanEye_trigger/workspace/STAR_VIBE2/_ide/bitstream/scaneye_trigger_wrapper_STAR_VIBE.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw C:/Scanway/Vivado/ScanEye_trigger/workspace/scaneye_trigger_wrapper_STAR_VIBE_1/export/scaneye_trigger_wrapper_STAR_VIBE_1/hw/scaneye_trigger_wrapper_STAR_VIBE.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source C:/Scanway/Vivado/ScanEye_trigger/workspace/STAR_VIBE2/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow C:/Scanway/Vivado/ScanEye_trigger/workspace/STAR_VIBE2/Debug/STAR_VIBE2.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+12:21:24 INFO  : Checking for BSP changes to sync application flags for project 'STAR_VIBE2'...
+12:27:43 INFO  : Checking for BSP changes to sync application flags for project 'STAR_VIBE2'...
+12:27:47 INFO  : Disconnected from the channel tcfchan#20.
+12:27:50 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+12:27:50 INFO  : Jtag cable 'Digilent Zybo Z7 210351AD67FBA' is selected.
+12:27:50 INFO  : 'jtag frequency' command is executed.
+12:27:50 INFO  : Context for 'APU' is selected.
+12:27:51 INFO  : System reset is completed.
+12:27:54 INFO  : 'after 3000' command is executed.
+12:27:54 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351AD67FBA" && level==0 && jtag_device_ctx=="jsn-Zybo Z7-210351AD67FBA-23727093-0"}' command is executed.
+12:27:56 INFO  : Device configured successfully with "C:/Scanway/Vivado/ScanEye_trigger/workspace/STAR_VIBE2/_ide/bitstream/scaneye_trigger_wrapper_STAR_VIBE.bit"
+12:27:56 INFO  : Context for 'APU' is selected.
+12:27:58 INFO  : Hardware design and registers information is loaded from 'C:/Scanway/Vivado/ScanEye_trigger/workspace/scaneye_trigger_wrapper_STAR_VIBE_1/export/scaneye_trigger_wrapper_STAR_VIBE_1/hw/scaneye_trigger_wrapper_STAR_VIBE.xsa'.
+12:27:58 INFO  : 'configparams force-mem-access 1' command is executed.
+12:27:58 INFO  : Context for 'APU' is selected.
+12:27:58 INFO  : Sourcing of 'C:/Scanway/Vivado/ScanEye_trigger/workspace/STAR_VIBE2/_ide/psinit/ps7_init.tcl' is done.
+12:27:58 INFO  : 'ps7_init' command is executed.
+12:27:58 INFO  : 'ps7_post_config' command is executed.
+12:27:58 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+12:27:59 INFO  : The application 'C:/Scanway/Vivado/ScanEye_trigger/workspace/STAR_VIBE2/Debug/STAR_VIBE2.elf' is downloaded to processor 'ps7_cortexa9_0'.
+12:27:59 INFO  : 'configparams force-mem-access 0' command is executed.
+12:27:59 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351AD67FBA" && level==0 && jtag_device_ctx=="jsn-Zybo Z7-210351AD67FBA-23727093-0"}
+fpga -file C:/Scanway/Vivado/ScanEye_trigger/workspace/STAR_VIBE2/_ide/bitstream/scaneye_trigger_wrapper_STAR_VIBE.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw C:/Scanway/Vivado/ScanEye_trigger/workspace/scaneye_trigger_wrapper_STAR_VIBE_1/export/scaneye_trigger_wrapper_STAR_VIBE_1/hw/scaneye_trigger_wrapper_STAR_VIBE.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source C:/Scanway/Vivado/ScanEye_trigger/workspace/STAR_VIBE2/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow C:/Scanway/Vivado/ScanEye_trigger/workspace/STAR_VIBE2/Debug/STAR_VIBE2.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+12:28:33 INFO  : Checking for BSP changes to sync application flags for project 'STAR_VIBE2'...
+12:28:44 INFO  : Disconnected from the channel tcfchan#21.
+12:28:47 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+12:28:47 INFO  : Jtag cable 'Digilent Zybo Z7 210351AD67FBA' is selected.
+12:28:47 INFO  : 'jtag frequency' command is executed.
+12:28:47 INFO  : Context for 'APU' is selected.
+12:28:47 INFO  : System reset is completed.
+12:28:50 INFO  : 'after 3000' command is executed.
+12:28:50 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351AD67FBA" && level==0 && jtag_device_ctx=="jsn-Zybo Z7-210351AD67FBA-23727093-0"}' command is executed.
+12:28:53 INFO  : Device configured successfully with "C:/Scanway/Vivado/ScanEye_trigger/workspace/STAR_VIBE2/_ide/bitstream/scaneye_trigger_wrapper_STAR_VIBE.bit"
+12:28:53 INFO  : Context for 'APU' is selected.
+12:28:55 INFO  : Hardware design and registers information is loaded from 'C:/Scanway/Vivado/ScanEye_trigger/workspace/scaneye_trigger_wrapper_STAR_VIBE_1/export/scaneye_trigger_wrapper_STAR_VIBE_1/hw/scaneye_trigger_wrapper_STAR_VIBE.xsa'.
+12:28:55 INFO  : 'configparams force-mem-access 1' command is executed.
+12:28:55 INFO  : Context for 'APU' is selected.
+12:28:55 INFO  : Sourcing of 'C:/Scanway/Vivado/ScanEye_trigger/workspace/STAR_VIBE2/_ide/psinit/ps7_init.tcl' is done.
+12:28:55 INFO  : 'ps7_init' command is executed.
+12:28:55 INFO  : 'ps7_post_config' command is executed.
+12:28:55 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+12:28:55 INFO  : The application 'C:/Scanway/Vivado/ScanEye_trigger/workspace/STAR_VIBE2/Debug/STAR_VIBE2.elf' is downloaded to processor 'ps7_cortexa9_0'.
+12:28:55 INFO  : 'configparams force-mem-access 0' command is executed.
+12:28:55 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351AD67FBA" && level==0 && jtag_device_ctx=="jsn-Zybo Z7-210351AD67FBA-23727093-0"}
+fpga -file C:/Scanway/Vivado/ScanEye_trigger/workspace/STAR_VIBE2/_ide/bitstream/scaneye_trigger_wrapper_STAR_VIBE.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw C:/Scanway/Vivado/ScanEye_trigger/workspace/scaneye_trigger_wrapper_STAR_VIBE_1/export/scaneye_trigger_wrapper_STAR_VIBE_1/hw/scaneye_trigger_wrapper_STAR_VIBE.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source C:/Scanway/Vivado/ScanEye_trigger/workspace/STAR_VIBE2/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow C:/Scanway/Vivado/ScanEye_trigger/workspace/STAR_VIBE2/Debug/STAR_VIBE2.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+12:35:37 INFO  : Checking for BSP changes to sync application flags for project 'STAR_VIBE2'...
+12:35:41 INFO  : Disconnected from the channel tcfchan#22.
+12:35:44 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+12:35:44 INFO  : Jtag cable 'Digilent Zybo Z7 210351AD67FBA' is selected.
+12:35:44 INFO  : 'jtag frequency' command is executed.
+12:35:44 INFO  : Context for 'APU' is selected.
+12:35:45 INFO  : System reset is completed.
+12:35:48 INFO  : 'after 3000' command is executed.
+12:35:48 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351AD67FBA" && level==0 && jtag_device_ctx=="jsn-Zybo Z7-210351AD67FBA-23727093-0"}' command is executed.
+12:35:50 INFO  : Device configured successfully with "C:/Scanway/Vivado/ScanEye_trigger/workspace/STAR_VIBE2/_ide/bitstream/scaneye_trigger_wrapper_STAR_VIBE.bit"
+12:35:50 INFO  : Context for 'APU' is selected.
+12:35:52 INFO  : Hardware design and registers information is loaded from 'C:/Scanway/Vivado/ScanEye_trigger/workspace/scaneye_trigger_wrapper_STAR_VIBE_1/export/scaneye_trigger_wrapper_STAR_VIBE_1/hw/scaneye_trigger_wrapper_STAR_VIBE.xsa'.
+12:35:52 INFO  : 'configparams force-mem-access 1' command is executed.
+12:35:52 INFO  : Context for 'APU' is selected.
+12:35:52 INFO  : Sourcing of 'C:/Scanway/Vivado/ScanEye_trigger/workspace/STAR_VIBE2/_ide/psinit/ps7_init.tcl' is done.
+12:35:52 INFO  : 'ps7_init' command is executed.
+12:35:52 INFO  : 'ps7_post_config' command is executed.
+12:35:52 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+12:35:52 INFO  : The application 'C:/Scanway/Vivado/ScanEye_trigger/workspace/STAR_VIBE2/Debug/STAR_VIBE2.elf' is downloaded to processor 'ps7_cortexa9_0'.
+12:35:52 INFO  : 'configparams force-mem-access 0' command is executed.
+12:35:52 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351AD67FBA" && level==0 && jtag_device_ctx=="jsn-Zybo Z7-210351AD67FBA-23727093-0"}
+fpga -file C:/Scanway/Vivado/ScanEye_trigger/workspace/STAR_VIBE2/_ide/bitstream/scaneye_trigger_wrapper_STAR_VIBE.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw C:/Scanway/Vivado/ScanEye_trigger/workspace/scaneye_trigger_wrapper_STAR_VIBE_1/export/scaneye_trigger_wrapper_STAR_VIBE_1/hw/scaneye_trigger_wrapper_STAR_VIBE.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source C:/Scanway/Vivado/ScanEye_trigger/workspace/STAR_VIBE2/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow C:/Scanway/Vivado/ScanEye_trigger/workspace/STAR_VIBE2/Debug/STAR_VIBE2.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+12:47:52 INFO  : Checking for BSP changes to sync application flags for project 'STAR_VIBE2'...
+12:47:55 INFO  : Disconnected from the channel tcfchan#23.
+12:48:03 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+12:48:03 INFO  : Jtag cable 'Digilent Zybo Z7 210351AD67FBA' is selected.
+12:48:03 INFO  : 'jtag frequency' command is executed.
+12:48:03 INFO  : Context for 'APU' is selected.
+12:48:03 INFO  : System reset is completed.
+12:48:06 INFO  : 'after 3000' command is executed.
+12:48:06 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351AD67FBA" && level==0 && jtag_device_ctx=="jsn-Zybo Z7-210351AD67FBA-23727093-0"}' command is executed.
+12:48:09 INFO  : Device configured successfully with "C:/Scanway/Vivado/ScanEye_trigger/workspace/STAR_VIBE2/_ide/bitstream/scaneye_trigger_wrapper_STAR_VIBE.bit"
+12:48:09 INFO  : Context for 'APU' is selected.
+12:48:11 INFO  : Hardware design and registers information is loaded from 'C:/Scanway/Vivado/ScanEye_trigger/workspace/scaneye_trigger_wrapper_STAR_VIBE_1/export/scaneye_trigger_wrapper_STAR_VIBE_1/hw/scaneye_trigger_wrapper_STAR_VIBE.xsa'.
+12:48:11 INFO  : 'configparams force-mem-access 1' command is executed.
+12:48:11 INFO  : Context for 'APU' is selected.
+12:48:11 INFO  : Sourcing of 'C:/Scanway/Vivado/ScanEye_trigger/workspace/STAR_VIBE2/_ide/psinit/ps7_init.tcl' is done.
+12:48:11 INFO  : 'ps7_init' command is executed.
+12:48:11 INFO  : 'ps7_post_config' command is executed.
+12:48:11 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+12:48:12 INFO  : The application 'C:/Scanway/Vivado/ScanEye_trigger/workspace/STAR_VIBE2/Debug/STAR_VIBE2.elf' is downloaded to processor 'ps7_cortexa9_0'.
+12:48:12 INFO  : 'configparams force-mem-access 0' command is executed.
+12:48:12 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351AD67FBA" && level==0 && jtag_device_ctx=="jsn-Zybo Z7-210351AD67FBA-23727093-0"}
+fpga -file C:/Scanway/Vivado/ScanEye_trigger/workspace/STAR_VIBE2/_ide/bitstream/scaneye_trigger_wrapper_STAR_VIBE.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw C:/Scanway/Vivado/ScanEye_trigger/workspace/scaneye_trigger_wrapper_STAR_VIBE_1/export/scaneye_trigger_wrapper_STAR_VIBE_1/hw/scaneye_trigger_wrapper_STAR_VIBE.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source C:/Scanway/Vivado/ScanEye_trigger/workspace/STAR_VIBE2/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow C:/Scanway/Vivado/ScanEye_trigger/workspace/STAR_VIBE2/Debug/STAR_VIBE2.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+12:48:15 INFO  : Disconnected from the channel tcfchan#24.
+12:48:17 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+12:48:17 INFO  : Jtag cable 'Digilent Zybo Z7 210351AD67FBA' is selected.
+12:48:17 INFO  : 'jtag frequency' command is executed.
+12:48:17 INFO  : Context for 'APU' is selected.
+12:48:17 INFO  : System reset is completed.
+12:48:20 INFO  : 'after 3000' command is executed.
+12:48:20 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351AD67FBA" && level==0 && jtag_device_ctx=="jsn-Zybo Z7-210351AD67FBA-23727093-0"}' command is executed.
+12:48:23 INFO  : Device configured successfully with "C:/Scanway/Vivado/ScanEye_trigger/workspace/STAR_VIBE2/_ide/bitstream/scaneye_trigger_wrapper_STAR_VIBE.bit"
+12:48:23 INFO  : Context for 'APU' is selected.
+12:48:24 INFO  : Hardware design and registers information is loaded from 'C:/Scanway/Vivado/ScanEye_trigger/workspace/scaneye_trigger_wrapper_STAR_VIBE_1/export/scaneye_trigger_wrapper_STAR_VIBE_1/hw/scaneye_trigger_wrapper_STAR_VIBE.xsa'.
+12:48:24 INFO  : 'configparams force-mem-access 1' command is executed.
+12:48:24 INFO  : Context for 'APU' is selected.
+12:48:24 INFO  : Sourcing of 'C:/Scanway/Vivado/ScanEye_trigger/workspace/STAR_VIBE2/_ide/psinit/ps7_init.tcl' is done.
+12:48:25 INFO  : 'ps7_init' command is executed.
+12:48:25 INFO  : 'ps7_post_config' command is executed.
+12:48:25 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+12:48:25 INFO  : The application 'C:/Scanway/Vivado/ScanEye_trigger/workspace/STAR_VIBE2/Debug/STAR_VIBE2.elf' is downloaded to processor 'ps7_cortexa9_0'.
+12:48:25 INFO  : 'configparams force-mem-access 0' command is executed.
+12:48:25 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351AD67FBA" && level==0 && jtag_device_ctx=="jsn-Zybo Z7-210351AD67FBA-23727093-0"}
+fpga -file C:/Scanway/Vivado/ScanEye_trigger/workspace/STAR_VIBE2/_ide/bitstream/scaneye_trigger_wrapper_STAR_VIBE.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw C:/Scanway/Vivado/ScanEye_trigger/workspace/scaneye_trigger_wrapper_STAR_VIBE_1/export/scaneye_trigger_wrapper_STAR_VIBE_1/hw/scaneye_trigger_wrapper_STAR_VIBE.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source C:/Scanway/Vivado/ScanEye_trigger/workspace/STAR_VIBE2/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow C:/Scanway/Vivado/ScanEye_trigger/workspace/STAR_VIBE2/Debug/STAR_VIBE2.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+12:56:51 INFO  : Checking for BSP changes to sync application flags for project 'STAR_VIBE2'...

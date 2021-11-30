@@ -5,12 +5,15 @@
 #include "xil_exception.h"
 #include "gpio_access.h"
 #include "xil_printf.h"
+#include "cmvsoft.h"
+
 
 /* The instance of the interrupt controler used by this port. This is required
  * by the Xilinx library API functions. (port.c static ???)
  */
 
 extern XScuGic xInterruptController;
+extern cmvConfig cmvConfigInstance;
 //extern SemaphoreHandle_t xSemaphoreGpio;
 
 
@@ -24,11 +27,29 @@ static void Gpio_InterruptHandler(void *CallbackRef)
 	XGpio *GpioPtr = (XGpio *) CallbackRef;
 	u32 GpioSwIntr;
 
+	cmvConfig *cmvConfigInst = &cmvConfigInstance;
+
 	XGpio_InterruptClear(GpioPtr, INTR_CMV_MASK);
 
 	//przerwanie od danego wejœcia GPIO -> rozpisaæ //
 
 	GpioSwIntr = XGpio_DiscreteRead(GpioPtr, CMV_CHANNEL_INPUT);
+
+	if((GpioSwIntr & CMV_DIG_SENR_SD1_PGD_MASK) == 0)
+	{
+		cmvConfigInst->SensorStatus.ldo22 = 0;
+	}
+
+	if((GpioSwIntr & CMV_DIG_SENR_SD2_PGD_MASK) == 0)
+	{
+		cmvConfigInst->SensorStatus.ldo36 = 0;
+	}
+
+	if((GpioSwIntr & CMV_DIG_SEQ_PWRGD_MASK) == 0)
+	{
+		cmvConfigInst->SensorStatus.Sequencer = 0;
+	}
+
 
 	xil_printf("Key pressed %x \n\r", GpioSwIntr);
 
