@@ -154,11 +154,20 @@
 #define CMV_126					0x7E	/* EMPTY - DEFAULT 770 */
 #define CMV_TEMP_SENSOR			0x7F	/* SENSOR TEMP - READ ONLY */
 
+/* Definition of default tables settings */
+
+u8 cmv_default_address[128] = {
+		CMV_NUM_LINE_TOT, /*   */
+
+
+
+};
+
 
 /*********************** Function Prototyping *********************************/
 
 int init_spi_cmv12000();
-int SpiRead_cmv12000(XSpi *InstanceSpiPtr, XGpio *InstanceGpioPtr, u32 *DataWrite, u32 *DataRead, u32 NumberOfData);
-int SpiWrite_cmv12000(XSpi *InstanceSpiPtr, XGpio *InstanceGpioPtr, u32 *DataWrite, u32 *DataRead, u32 NumberOfData);
+int SpiRead_cmv12000(XSpi *InstanceSpiPtr, XGpio *InstanceGpioPtr, u8 *Address, u16 *DataRead, u32 NumberOfData);
+int SpiWrite_cmv12000(XSpi *InstanceSpiPtr, XGpio *InstanceGpioPtr, u8 *Address, u16 *DataWrite, u32 NumberOfData);
 
 #endif

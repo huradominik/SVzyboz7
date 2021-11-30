@@ -1,142 +1,22 @@
-12:56:51 **** Incremental Build of configuration Debug for project STAR_VIBE2 ****
+15:40:15 **** Incremental Build of configuration Debug for project STAR_VIBE2 ****
 make all 
 make --no-print-directory pre-build
 a9-linaro-pre-build-step
 ' '
 make --no-print-directory main-build
-'Building file: ../src/main.c'
+'Building file: ../src/devices/spi_cmv12000.c'
 'Invoking: ARM v7 gcc compiler'
-arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -IC:/Scanway/Vivado/ScanEye_trigger/workspace/scaneye_trigger_wrapper_STAR_VIBE_1/export/scaneye_trigger_wrapper_STAR_VIBE_1/sw/scaneye_trigger_wrapper_STAR_VIBE_1/freertos10_xilinx_ps7_cortexa9_0/bspinclude/include -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
-In file included from ../src/main.c:30:
-../src/devices/spi_access.h:11: warning: "ZYBO_Z7_PLATFORM" redefined
-   11 | #define ZYBO_Z7_PLATFORM 2
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/devices/spi_cmv12000.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -IC:/Scanway/Vivado/ScanEye_trigger/workspace/scaneye_trigger_wrapper_STAR_VIBE_1/export/scaneye_trigger_wrapper_STAR_VIBE_1/sw/scaneye_trigger_wrapper_STAR_VIBE_1/freertos10_xilinx_ps7_cortexa9_0/bspinclude/include -MMD -MP -MF"src/devices/spi_cmv12000.d" -MT"src/devices/spi_cmv12000.o" -o "src/devices/spi_cmv12000.o" "../src/devices/spi_cmv12000.c"
+In file included from ../src/devices/spi_cmv12000.c:2:
+../src/devices/spi_cmv12000.h:16: warning: "INTC_DEVICE_ID" redefined
+   16 | #define INTC_DEVICE_ID   XPAR_SCUGIC_0_DEVICE_ID
       | 
-In file included from ../src/main.c:29:
-../src/devices/GPIO_access.h:9: note: this is the location of the previous definition
-    9 | #define ZYBO_Z7_PLATFORM 1
-      | 
-In file included from ../src/main.c:30:
-../src/devices/spi_access.h:14: warning: "INTC_DEVICE_ID" redefined
-   14 | #define INTC_DEVICE_ID  XPAR_SCUGIC_0_DEVICE_ID
-      | 
-In file included from ../src/main.c:29:
+In file included from ../src/devices/spi_cmv12000.h:11,
+                 from ../src/devices/spi_cmv12000.c:2:
 ../src/devices/GPIO_access.h:12: note: this is the location of the previous definition
    12 | #define INTC_DEVICE_ID   XPAR_PS7_SCUGIC_0_DEVICE_ID
       | 
-In file included from ../src/main.c:34:
-../src/devices/TIMER_access.h:20: warning: "INTC_DEVICE_ID" redefined
-   20 | #define INTC_DEVICE_ID   XPAR_PS7_SCUGIC_0_DEVICE_ID
-      | 
-In file included from ../src/main.c:32:
-../src/devices/trigger_cmv_access.h:13: note: this is the location of the previous definition
-   13 | #define INTC_DEVICE_ID    XPAR_SCUGIC_0_DEVICE_ID
-      | 
-../src/main.c: In function 'vTaskInitialize':
-../src/main.c:165:11: warning: implicit declaration of function 'init_spi_cmv12000' [-Wimplicit-function-declaration]
-  165 |  Status = init_spi_cmv12000();
-      |           ^~~~~~~~~~~~~~~~~
-../src/main.c: In function 'vTaskUserInterface':
-../src/main.c:318:6: warning: implicit declaration of function 'scanf' [-Wimplicit-function-declaration]
-  318 |      scanf(" %c", &submain);
-      |      ^~~~~
-../src/main.c:318:6: warning: incompatible implicit declaration of built-in function 'scanf'
-../src/main.c:39:1: note: include '<stdio.h>' or provide a declaration of 'scanf'
-   38 | #include "devices/cmvsoft.h"
-  +++ |+#include <stdio.h>
-   39 | 
-../src/main.c:330:6: warning: incompatible implicit declaration of built-in function 'scanf'
-  330 |      scanf(" %c",&submain);
-      |      ^~~~~
-../src/main.c:330:6: note: include '<stdio.h>' or provide a declaration of 'scanf'
-../src/main.c:338:6: warning: incompatible implicit declaration of built-in function 'scanf'
-  338 |      scanf(" %c",&submain);
-      |      ^~~~~
-../src/main.c:338:6: note: include '<stdio.h>' or provide a declaration of 'scanf'
-../src/main.c:375:6: warning: incompatible implicit declaration of built-in function 'scanf'
-  375 |      scanf(" %c",&sub);
-      |      ^~~~~
-../src/main.c:375:6: note: include '<stdio.h>' or provide a declaration of 'scanf'
-../src/main.c:400:16: warning: format '%d' expects argument of type 'int *', but argument 2 has type 'u32 *' {aka 'long unsigned int *'} [-Wformat=]
-  400 |       scanf(" %d",&cmvConfigPtr->ExposureTimeTexp1Us);
-      |               ~^  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-      |                |  |
-      |                |  u32 * {aka long unsigned int *}
-      |                int *
-      |               %ld
-../src/main.c:407:16: warning: format '%d' expects argument of type 'int *', but argument 2 has type 'u32 *' {aka 'long unsigned int *'} [-Wformat=]
-  407 |       scanf(" %d",&cmvConfigPtr->ExposureTimeTexp2Us);
-      |               ~^  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-      |                |  |
-      |                |  u32 * {aka long unsigned int *}
-      |                int *
-      |               %ld
-../src/main.c:415:16: warning: format '%d' expects argument of type 'int *', but argument 2 has type 'u32 *' {aka 'long unsigned int *'} [-Wformat=]
-  415 |       scanf(" %d",&cmvConfigPtr->NumberOfFrame);
-      |               ~^  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-      |                |  |
-      |                |  u32 * {aka long unsigned int *}
-      |                int *
-      |               %ld
-../src/main.c:496:5: warning: incompatible implicit declaration of built-in function 'scanf'
-  496 |     scanf(" %c",&submain);
-      |     ^~~~~
-../src/main.c:496:5: note: include '<stdio.h>' or provide a declaration of 'scanf'
-../src/main.c:296:13: warning: unused variable 'Status' [-Wunused-variable]
-  296 |  BaseType_t Status;
-      |             ^~~~~~
-../src/main.c: In function 'vTaskHousekeeping':
-../src/main.c:545:6: warning: unused variable 'channel' [-Wunused-variable]
-  545 |  u32 channel;
-      |      ^~~~~~~
-../src/main.c:544:16: warning: unused variable 'thousands' [-Wunused-variable]
-  544 |  u32 whole[4], thousands[4];
-      |                ^~~~~~~~~
-../src/main.c:544:6: warning: unused variable 'whole' [-Wunused-variable]
-  544 |  u32 whole[4], thousands[4];
-      |      ^~~~~
-../src/main.c:539:13: warning: variable 'xStatus' set but not used [-Wunused-but-set-variable]
-  539 |  BaseType_t xStatus;
-      |             ^~~~~~~
-../src/main.c: In function 'vTaskCommunication':
-../src/main.c:598:7: warning: unused variable 'work' [-Wunused-variable]
-  598 |  UINT work[FF_MAX_SS];
-      |       ^~~~
-../src/main.c:597:9: warning: unused variable 'Path' [-Wunused-variable]
-  597 |  TCHAR *Path = "0:/";
-      |         ^~~~
-../src/main.c:595:14: warning: unused variable 'FileName' [-Wunused-variable]
-  595 |  static char FileName[32] = "pom.txt";
-      |              ^~~~~~~~
-../src/main.c:594:8: warning: unused variable 'fatfs' [-Wunused-variable]
-  594 |  FATFS fatfs;
-      |        ^~~~~
-../src/main.c:593:6: warning: unused variable 'fil' [-Wunused-variable]
-  593 |  FIL fil;
-      |      ^~~
-../src/main.c:592:10: warning: unused variable 'Res' [-Wunused-variable]
-  592 |  FRESULT Res;
-      |          ^~~
-../src/main.c: In function 'vTaskCmvSoftTrigger':
-../src/main.c:716:13: warning: unused variable 'Status' [-Wunused-variable]
-  716 |  BaseType_t Status;
-      |             ^~~~~~
-At top level:
-../src/main.c:595:14: warning: 'FileName' defined but not used [-Wunused-variable]
-  595 |  static char FileName[32] = "pom.txt";
-      |              ^~~~~~~~
-../src/main.c:1076:13: warning: 'vTaskCmvTest' defined but not used [-Wunused-function]
- 1076 | static void vTaskCmvTest(void *p)
-      |             ^~~~~~~~~~~~
-../src/main.c:588:13: warning: 'vTaskCommunication' defined but not used [-Wunused-function]
-  588 | static void vTaskCommunication(void *p)
-      |             ^~~~~~~~~~~~~~~~~~
-../src/main.c:536:13: warning: 'vTaskHousekeeping' defined but not used [-Wunused-function]
-  536 | static void vTaskHousekeeping(void *p)
-      |             ^~~~~~~~~~~~~~~~~
-../src/main.c:221:13: warning: 'vTaskTest' defined but not used [-Wunused-function]
-  221 | static void vTaskTest(void *p)
-      |             ^~~~~~~~~
-'Finished building: ../src/main.c'
+'Finished building: ../src/devices/spi_cmv12000.c'
 ' '
 'Building target: STAR_VIBE2.elf'
 'Invoking: ARM v7 gcc linker'
@@ -146,9 +26,9 @@ arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=non
 'Invoking: ARM v7 Print Size'
 arm-none-eabi-size STAR_VIBE2.elf  |tee "STAR_VIBE2.elf.size"
    text	   data	    bss	    dec	    hex	filename
- 143320	   3568	  89920	 236808	  39d08	STAR_VIBE2.elf
+ 143256	   3696	  90432	 237384	  39f48	STAR_VIBE2.elf
 'Finished building: STAR_VIBE2.elf.size'
 ' '
 
-12:56:52 Build Finished (took 928ms)
+15:40:16 Build Finished (took 1s.186ms)
 

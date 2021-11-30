@@ -10,8 +10,8 @@ XSpi SpiInstanceCmv12000;					/* The instance of the Spi device   */
 XSpi_Stats statsSPIcmv12000;				/* Statyscit SPI interrupt			*/
 volatile static int TransferProgress;		/* Transfer in progress flag		*/
 static int ErrorCount;						/* Statistic error counter			*/
-static u8 ReadBufferCmv[128];					/* Read buffer from Slave			*/
-static u8 WriteBufferCmv[128];					/* Write buffer to Slave			*/
+static u8 ReadBufferCmv[128*3];					/* Read buffer from Slave			*/
+static u8 WriteBufferCmv[128*3];					/* Write buffer to Slave			*/
 //static u8 Buffer[16];						/* Data buffer						*/
 
 //u8 wBuffer[10] = {0x00, 0x80, 0x00, 0x10, 0x00, 0x18, 0x00, 0x00};
@@ -142,7 +142,7 @@ int init_spi_cmv12000()
 	return XST_SUCCESS;
 }
 
-int SpiRead_cmv12000(XSpi *InstanceSpiPtr, XGpio *InstanceGpioPtr, u32 *DataWrite, u32 *DataRead, u32 NumberOfData)
+int SpiRead_cmv12000(XSpi *InstanceSpiPtr, XGpio *InstanceGpioPtr, u8 *Address, u16 *DataRead, u32 NumberOfData)
 {
 	int Status;
 	u32 GpioReg;
@@ -150,9 +150,9 @@ int SpiRead_cmv12000(XSpi *InstanceSpiPtr, XGpio *InstanceGpioPtr, u32 *DataWrit
 
 	for(int i=0; i<NumberOfData; i++ )
 	{
-		WriteBufferCmv[i*3] = (*(DataWrite+i) & 0x7F) | (CMV_READ << 7 );
-		WriteBufferCmv[i*3+1] = 0;
-		WriteBufferCmv[i*3+2] = 0;
+		WriteBufferCmv[i*3] = (*(Address+i) & 0x7F) | (CMV_READ << 7 );
+		WriteBufferCmv[(i*3)+1] = 0;
+		WriteBufferCmv[(i*3)+2] = 0;
 	}
 	//uwzglêdniæ iloœæ danych
 
@@ -183,24 +183,23 @@ int SpiRead_cmv12000(XSpi *InstanceSpiPtr, XGpio *InstanceGpioPtr, u32 *DataWrit
 
 	for(int i=0;i<NumberOfData; i++)
 	{
-		*(DataRead+i) = (ReadBufferCmv[i*3+1] & 0xff) << 8;
-		*(DataRead+i) |= ReadBufferCmv[i*3+2] & 0xff;
+		*(DataRead+i) = (ReadBufferCmv[(i*3)+1] & 0xff) << 8;
+		*(DataRead+i) |= (ReadBufferCmv[(i*3)+2] & 0xff);
 	}
-
 
 	return XST_SUCCESS;
 }
 
-int SpiWrite_cmv12000(XSpi *InstanceSpiPtr, XGpio *InstanceGpioPtr, u32 *DataWrite, u32 *DataRead, u32 NumberOfData)
+int SpiWrite_cmv12000(XSpi *InstanceSpiPtr, XGpio *InstanceGpioPtr, u8 *Address, u16 *DataWrite, u32 NumberOfData)
 {
 	int Status;
 	u32 GpioReg;
 
 	for(int i=0; i<NumberOfData; i++ )
 	{
-		WriteBufferCmv[i*3] = (*(DataWrite+i) & 0x7F) | (CMV_WRITE << 7 );
-		WriteBufferCmv[i*3+1] = (*(DataWrite+i) >> 8) & 0xff;
-		WriteBufferCmv[i*3+2] = (*(DataWrite+i) >> 16) & 0xff;
+		WriteBufferCmv[i*3] = (*(Address+i) & 0x7F) | (CMV_WRITE << 7 );
+		WriteBufferCmv[(i*3)+1] = (*(DataWrite+i) & 0xff00) >> 8;
+		WriteBufferCmv[(i*3)+2] = (*(DataWrite+i) & 0x00ff);
 	}
 
 	/* SPI  CMV slave select assert	*/
@@ -210,7 +209,7 @@ int SpiWrite_cmv12000(XSpi *InstanceSpiPtr, XGpio *InstanceGpioPtr, u32 *DataWri
 
 	TransferProgress = TRUE;
 
-	Status = XSpi_Transfer(&SpiInstanceCmv12000, WriteBufferCmv, ReadBufferCmv, NumberOfData*3);
+	Status = XSpi_Transfer(&SpiInstanceCmv12000, WriteBufferCmv, NULL, NumberOfData*3);
 	if(Status != XST_SUCCESS)
 	{
 		return XST_FAILURE;
