@@ -280,6 +280,9 @@ static void vTaskSpiCmvTest(void *p)
 	xil_printf("Sensor tmp: %d\n\r", buffer[0]);
 	vTaskDelay(pdMS_TO_TICKS(5000));
 */
+
+	xSemaphoreGive(xSemaphoreUserInterface);
+
 	vTaskDelete(NULL);
 }
 
@@ -587,29 +590,28 @@ static void vTaskUserInterface(void *p)
 			}
 			break;
 			case '4':
-				xil_printf("\x1B[H\x1B[J");
-				xil_printf("Diagnostic:\n\r");
-				xil_printf("1) TEST SPI CMV\n\r");
-				xil_printf("4) Exit\n\r");
-				scanf(" %c",&submain);
-
-				xTaskCreate(vTaskSpiCmvTest, "CMV_SPI_TEST", THREAD_STACKSIZE, NULL, DEFAULT_THREAD_PRIO+2, NULL);
-				vTaskDelay(pdMS_TO_TICKS(1));
+				submain = 'A';
 				while(submain != '0')
 				{
+					xil_printf("\x1B[H\x1B[J");
+					xil_printf("Diagnostic:\n\r");
+					xil_printf("1) TEST SPI CMV\n\r");
+					xil_printf("4) Exit\n\r");
+					scanf(" %c",&submain);
+
 					if(submain == '1')
 					{
 						xil_printf("\x1B[H\x1B[J");
 						xil_printf("SPI CMV\n\r");
 						xTaskCreate(vTaskSpiCmvTest, "CMV_SPI_TEST", THREAD_STACKSIZE, NULL, DEFAULT_THREAD_PRIO+2, NULL);
+
+						xSemaphoreTake(xSemaphoreUserInterface, portMAX_DELAY);
+						vTaskDelay(pdMS_TO_TICKS(5000));
 					}
-
-
-					if(submain < '1' || submain >'3')
+					if(submain < '1' || submain > '3')
 					{
 						submain = '0';
 					}
-
 				}
 				break;
 			default:
