@@ -1,33 +1,9 @@
 Nothing to build in platform 'scaneye_trigger_wrapper_STAR_VIBE_1'
 
-15:40:15 **** Incremental Build of configuration Debug for project STAR_VIBE2 ****
+12:43:40 **** Incremental Build of configuration Debug for project STAR_VIBE2 ****
 make all 
 make --no-print-directory pre-build
 a9-linaro-pre-build-step
 ' '
 make --no-print-directory main-build
-'Building file: ../src/devices/spi_cmv12000.c'
-'Invoking: ARM v7 gcc compiler'
-arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/devices/spi_cmv12000.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -IC:/Scanway/Vivado/ScanEye_trigger/workspace/scaneye_trigger_wrapper_STAR_VIBE_1/export/scaneye_trigger_wrapper_STAR_VIBE_1/sw/scaneye_trigger_wrapper_STAR_VIBE_1/freertos10_xilinx_ps7_cortexa9_0/bspinclude/include -MMD -MP -MF"src/devices/spi_cmv12000.d" -MT"src/devices/spi_cmv12000.o" -o "src/devices/spi_cmv12000.o" "../src/devices/spi_cmv12000.c"
-In file included from ../src/devices/spi_cmv12000.c:2:
-../src/devices/spi_cmv12000.h:16: warning: "INTC_DEVICE_ID" redefined
-   16 | #define INTC_DEVICE_ID   XPAR_SCUGIC_0_DEVICE_ID
-      | 
-In file included from ../src/devices/spi_cmv12000.h:11,
-                 from ../src/devices/spi_cmv12000.c:2:
-../src/devices/GPIO_access.h:12: note: this is the location of the previous definition
-   12 | #define INTC_DEVICE_ID   XPAR_PS7_SCUGIC_0_DEVICE_ID
-      | 
-'Finished building: ../src/devices/spi_cmv12000.c'
-' '
-'Building target: STAR_VIBE2.elf'
-'Invoking: ARM v7 gcc linker'
-arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -LC:/Scanway/Vivado/ScanEye_trigger/workspace/scaneye_trigger_wrapper_STAR_VIBE_1/export/scaneye_trigger_wrapper_STAR_VIBE_1/sw/scaneye_trigger_wrapper_STAR_VIBE_1/freertos10_xilinx_ps7_cortexa9_0/bsplib/lib -o "STAR_VIBE2.elf"  ./src/devices/GPIO_access.o ./src/devices/SPI_access.o ./src/devices/TIMER_access.o ./src/devices/XCMV.o ./src/devices/XCMV_selftest.o ./src/devices/clkwiz_access.o ./src/devices/cmvsoft.o ./src/devices/spi_cmv12000.o ./src/devices/trigger_cmv_access.o ./src/devices/uartps_access.o ./src/devices/xcmv_g.o ./src/devices/xcmv_sinit.o ./src/devices/xcmv_tests.o  ./src/main.o ./src/platform.o ./src/userinterface.o   -Wl,--start-group,-lxil,-lfreertos,-lgcc,-lc,--end-group -Wl,--start-group,-lxilffs,-lxil,-lgcc,-lc,--end-group
-'Finished building target: STAR_VIBE2.elf'
-' '
-'Invoking: ARM v7 Print Size'
-arm-none-eabi-size STAR_VIBE2.elf  |tee "STAR_VIBE2.elf.size"
-   text	   data	    bss	    dec	    hex	filename
- 143256	   3696	  90432	 237384	  39f48	STAR_VIBE2.elf
-'Finished building: STAR_VIBE2.elf.size'
-' '
+make[1]: Nothing to be done for 'main-build'.

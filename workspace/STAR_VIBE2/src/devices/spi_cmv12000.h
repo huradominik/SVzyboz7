@@ -120,8 +120,8 @@
 #define CMV_CHANNEL_EN_TOP_LSB	0x5C	/* Number of active LVDS channel for top outputs LSB */
 #define CMV_CHANNEL_EN_TOP_MSB	0x5D	/* Number of active LVDS channel for top outputs MSB */
 #define CMV_CHANNEL_EN			0x5E	/* Channel enable [0]- out clock ch; [1]- ctrl ch; [2]-input clock ch */
-#define CMV_ADC_CLK_EN_BOT		0x5F	/* DESCRIBE */
-#define CMV_ADC_CLK_EN_TOP		0x60	/* DESCRIBE */
+#define CMV_ADC_CLK_EN_BOT		0x5F	/* Sprawdzic dzia³anie - default 65535 */
+#define CMV_ADC_CLK_EN_TOP		0x60	/* Sprawdzic dzia³anie - default 65535 */
 #define CMV_97					0x61	/* EMPTY - DEFAULT 0 */
 #define CMV_98					0x62	/* EMPTY - DEFAULT 34952 */
 #define CMV_99					0x63	/* EMPTY - DEFAULT 34952 FIXED 34956 */
@@ -154,14 +154,6 @@
 #define CMV_126					0x7E	/* EMPTY - DEFAULT 770 */
 #define CMV_TEMP_SENSOR			0x7F	/* SENSOR TEMP - READ ONLY */
 
-/* Definition of default tables settings */
-
-u8 cmv_default_address[128] = {
-		CMV_NUM_LINE_TOT, /*   */
-
-
-
-};
 
 
 /*********************** Function Prototyping *********************************/
@@ -169,5 +161,6 @@ u8 cmv_default_address[128] = {
 int init_spi_cmv12000();
 int SpiRead_cmv12000(XSpi *InstanceSpiPtr, XGpio *InstanceGpioPtr, u8 *Address, u16 *DataRead, u32 NumberOfData);
 int SpiWrite_cmv12000(XSpi *InstanceSpiPtr, XGpio *InstanceGpioPtr, u8 *Address, u16 *DataWrite, u32 NumberOfData);
+
 
 #endif

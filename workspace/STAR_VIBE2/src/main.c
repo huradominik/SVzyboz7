@@ -27,7 +27,7 @@
 
 
 #include "devices/GPIO_access.h"
-#include "devices/spi_access.h"
+#include "devices/spi_cmv12000.h"
 #include "devices/clkwiz_access.h"
 #include "devices/trigger_cmv_access.h"
 #include "devices/uartps_access.h"
@@ -72,9 +72,11 @@ SemaphoreHandle_t xSemaphoreGpio = NULL;
 /* Initialization and operation function for FPGA components */
 static void vTaskInitialize( void *p);
 static void vTaskCmvTest(void *p);
-static void vTaskHousekeeping(void *p);
+//static void vTaskHousekeeping(void *p);
 static void vTaskCommunication(void *p);
 static void vTaskUserInterface(void *p);
+
+static void vTaskSpiCmvTest(void *p);
 
 static void vTaskCmvSoftTrigger(void *p);
 
@@ -95,6 +97,35 @@ typedef struct
 	u32 voltageTotal;				// caloœci
 	u32 voltageTens;				// dziesi¹tki
 } Hk_data;
+
+/* Definition of default tables settings */
+
+u8 cmv_default_address[11] = {
+		CMV_EXP_DUAL_EXT,		/* 1 - external exposure time */
+		CMV_EXP_TIME_LSB,		/* 10000 */
+		CMV_EXP_TIME2_LSB,		/* 7000 */
+		CMV_NUMBER_FRAMES,		/* 2 */
+		CMV_BIT_MODE,			/* 0 */
+		CMV_OUTPUT_MODE,		/* 0x7  4- channels */
+		CMV_CHANNEL_EN_BOT_LSB, /* 1 bit przy ka¿dym kanale enable */
+		CMV_CHANNEL_EN_BOT_MSB, /* 1 bit przy ka¿dym kanale enable */
+		CMV_CHANNEL_EN_TOP_LSB, /* 1 bit przy ka¿dym kanale enable */
+		CMV_CHANNEL_EN_TOP_MSB, /* 1 bit przy ka¿dym kanale enable */
+		CMV_CHANNEL_EN         /* default 7 */
+};
+u16 cmv_default_data[11] = {
+		0x1,
+		0x2710,
+		0x1857,
+		0x2,
+		0x0,
+		0x7,
+		0x101,
+		0x101,
+		0x101,
+		0x101,
+		0x7
+};
 
 int main( void )
 {
@@ -183,16 +214,7 @@ static void vTaskInitialize(void *p)
 		vTaskDelay(pdMS_TO_TICKS(3000));
 	}
 
-
-
-
-
-/*	Status = init_uartps();
-	if (Status == XST_FAILURE)
-	{
-		xil_printf("UARTPS Initialize FAILURE \n\r");
-	}
-
+/*
 	Status = init_trigger_cmv();
 	if (Status == XST_FAILURE)
 	{
@@ -215,6 +237,49 @@ static void vTaskInitialize(void *p)
 
 	xTaskCreate(vTaskUserInterface, "User", THREAD_STACKSIZE, (void*)cmvConfigPointer, DEFAULT_THREAD_PRIO+1, NULL);
 
+	vTaskDelete(NULL);
+}
+
+static void vTaskSpiCmvTest(void *p)
+{
+	BaseType_t Status;
+	u16 buffer[11];
+	u8 address = CMV_TEMP_SENSOR;
+	u8 *addressPtr = &address;
+
+	Status = SpiRead_cmv12000(&SpiInstance, &GpioInstance, cmv_default_address, buffer, 11);
+	if (Status != XST_SUCCESS)
+	{
+		xil_printf("Read SPI CMV12000 FAILURE\n\r");
+	}
+	xil_printf("READ FROM SENSOR (1)\n\r");
+	for(int i=0;i<11;i++)
+	{
+		xil_printf("Wartosc[i] = %d\n\r",buffer[i]);
+	}
+
+	SpiWrite_cmv12000(&SpiInstance, &GpioInstance, cmv_default_address, cmv_default_data, 11);
+
+	Status = SpiRead_cmv12000(&SpiInstance, &GpioInstance, cmv_default_address, buffer, 11);
+	if (Status != XST_SUCCESS)
+	{
+		xil_printf("Read SPI CMV12000 FAILURE\n\r");
+	}
+	xil_printf("READ FROM SENSOR (2)\n\r");
+	for(int i=0;i<11;i++)
+	{
+		xil_printf("Wartosc[i] = %d\n\r",buffer[i]);
+	}
+	/* Read Sensor temperature */
+/*	Status = SpiRead_cmv12000(&SpiInstance, &GpioInstance, addressPtr, buffer, 1);
+	if (Status != XST_SUCCESS)
+	{
+		xil_printf("Read SPI CMV12000 FAILURE\n\r");
+	}
+	xil_printf("READ FROM SENSOR TEMPERATURE \n\r");
+	xil_printf("Sensor tmp: %d\n\r", buffer[0]);
+	vTaskDelay(pdMS_TO_TICKS(5000));
+*/
 	vTaskDelete(NULL);
 }
 
@@ -481,7 +546,7 @@ static void vTaskUserInterface(void *p)
 
 			}
 			break;
-			case '3':
+			case '3':	/* STATUS  */
 				submain = 'A';
 			while(submain != '0')
 			{
@@ -520,8 +585,33 @@ static void vTaskUserInterface(void *p)
 					submain ='A';
 				}
 			}
-
 			break;
+			case '4':
+				xil_printf("\x1B[H\x1B[J");
+				xil_printf("Diagnostic:\n\r");
+				xil_printf("1) TEST SPI CMV\n\r");
+				xil_printf("4) Exit\n\r");
+				scanf(" %c",&submain);
+
+				xTaskCreate(vTaskSpiCmvTest, "CMV_SPI_TEST", THREAD_STACKSIZE, NULL, DEFAULT_THREAD_PRIO+2, NULL);
+				vTaskDelay(pdMS_TO_TICKS(1));
+				while(submain != '0')
+				{
+					if(submain == '1')
+					{
+						xil_printf("\x1B[H\x1B[J");
+						xil_printf("SPI CMV\n\r");
+						xTaskCreate(vTaskSpiCmvTest, "CMV_SPI_TEST", THREAD_STACKSIZE, NULL, DEFAULT_THREAD_PRIO+2, NULL);
+					}
+
+
+					if(submain < '1' || submain >'3')
+					{
+						submain = '0';
+					}
+
+				}
+				break;
 			default:
 				{
 					xil_printf("\x1B[H\x1B[J");
@@ -532,7 +622,7 @@ static void vTaskUserInterface(void *p)
 
 	}
 }
-
+/*
 static void vTaskHousekeeping(void *p)
 {
 	int Status = XST_SUCCESS;
@@ -585,6 +675,7 @@ static void vTaskHousekeeping(void *p)
 	}
 }
 
+*/
 static void vTaskCommunication(void *p)
 {
 //	int Status = XST_SUCCESS;
